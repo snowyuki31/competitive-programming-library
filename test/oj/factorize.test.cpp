@@ -2,7 +2,7 @@
 
 #include<iostream>
 
-#include<src/math/factorize.hpp>
+#include "src/math/factorize.hpp"
 
 int main(){
     int Q;
