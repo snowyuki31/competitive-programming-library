@@ -9,16 +9,18 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"snow/io/setup.hpp\"\n#include <iostream>\n#include <iomanip>\n\
+    \nnamespace snow{\n\nstruct IoSetup {\n    IoSetup() {\n        std::cin.tie(nullptr);\n\
+    \        std::ios::sync_with_stdio(false);\n        std::cout << std::fixed <<\
+    \ std::setprecision(10);\n    }\n} iosetup;\n\n}\n"
+  code: "#pragma once\n#include <iostream>\n#include <iomanip>\n\nnamespace snow{\n\
     \nstruct IoSetup {\n    IoSetup() {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
-    \        std::cout << std::fixed << std::setprecision(10);\n    }\n} iosetup;\n"
-  code: "#pragma once\n#include <iostream>\n#include <iomanip>\n\nstruct IoSetup {\n\
-    \    IoSetup() {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
-    \        std::cout << std::fixed << std::setprecision(10);\n    }\n} iosetup;\n"
+    \        std::cout << std::fixed << std::setprecision(10);\n    }\n} iosetup;\n\
+    \n}"
   dependsOn: []
   isVerificationFile: false
   path: snow/io/setup.hpp
   requiredBy: []
-  timestamp: '2021-03-20 02:37:24+09:00'
+  timestamp: '2021-03-20 04:55:24+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: snow/io/setup.hpp

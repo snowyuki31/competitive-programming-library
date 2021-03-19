@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: snow/datastructure
+    pages:
+    - icon: ':warning:'
+      path: snow/datastructure/weighted-unionfind.hpp
+      title: snow/datastructure/weighted-unionfind.hpp
   - name: snow/graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -41,6 +46,9 @@ data:
   verificationCategories:
   - name: test/aoj
     pages:
+    - icon: ':x:'
+      path: test/aoj/DSL_1_B.test.cpp
+      title: test/aoj/DSL_1_B.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_1_A.test.cpp
       title: test/aoj/GRL_1_A.test.cpp
