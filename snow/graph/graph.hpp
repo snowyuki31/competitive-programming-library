@@ -14,7 +14,7 @@ struct Graph {
     };
     using Edges = std::vector<Edge>;
 
-    const auto INF = std::numeric_limits<T>::max();
+    const T INF = std::numeric_limits<T>::max();
     std::vector<Edges> G;
 
     Graph() : G() {}
