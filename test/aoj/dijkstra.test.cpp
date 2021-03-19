@@ -9,7 +9,7 @@ int main(){
     int V, E, r;
     std::cin >> V >> E >> r;
 
-    snow::Graph<int> G(V);
+    snow::Graph<long long> G(V);
     while(E--){
         int s, t, d;
         std::cin >> s >> t >> d;
