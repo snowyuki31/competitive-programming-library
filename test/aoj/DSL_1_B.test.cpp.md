@@ -17,15 +17,15 @@ data:
   bundledCode: "#line 1 \"test/aoj/DSL_1_B.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B\"\
     \n\n#include <iostream>\n#line 2 \"snow/datastructure/weighted-unionfind.hpp\"\
     \n\n#include <algorithm>\n#include <cassert>\n#include <vector>\n\nnamespace snow\
-    \ {\n\n// Based on ACL implementation\ntemplate < typename Abel = int >\nstruct\
-    \ WeightedUnionFind {\n  public:\n    WeightedUnionFind() : _n(0) {}\n    explicit\
-    \ WeightedUnionFind(int n, Abel e = 0) : _n(n), parent_or_size(n, -1), diff_weight(n,\
-    \ e) {}\n\n    bool merge(int a, int b, Abel w) {\n        assert(0 <= a && a\
-    \ < _n);\n        assert(0 <= b && b < _n);\n        w += weight(a), w -= weight(b);\n\
-    \        int x = leader(a), y = leader(b);\n        if (x == y) return false;\n\
-    \        if (-parent_or_size[x] < -parent_or_size[y]) std::swap(x, y), w *= -1;\n\
-    \        parent_or_size[x] += parent_or_size[y];\n        parent_or_size[y] =\
-    \ x;\n        diff_weight[y] = w;\n        return true;\n    }\n\n    bool same(int\
+    \ {\n\n// Based on ac-library implementation\ntemplate < typename Abel = int >\n\
+    struct WeightedUnionFind {\n  public:\n    WeightedUnionFind() : _n(0) {}\n  \
+    \  explicit WeightedUnionFind(int n, Abel e = 0) : _n(n), parent_or_size(n, -1),\
+    \ diff_weight(n, e) {}\n\n    bool merge(int a, int b, Abel w) {\n        assert(0\
+    \ <= a && a < _n);\n        assert(0 <= b && b < _n);\n        w += weight(a),\
+    \ w -= weight(b);\n        int x = leader(a), y = leader(b);\n        if (x ==\
+    \ y) return false;\n        if (-parent_or_size[x] < -parent_or_size[y]) std::swap(x,\
+    \ y), w *= -1;\n        parent_or_size[x] += parent_or_size[y];\n        parent_or_size[y]\
+    \ = x;\n        diff_weight[y] = w;\n        return true;\n    }\n\n    bool same(int\
     \ a, int b) {\n        assert(0 <= a && a < _n);\n        assert(0 <= b && b <\
     \ _n);\n        return leader(a) == leader(b);\n    }\n\n    int leader(int a)\
     \ {\n        assert(0 <= a && a < _n);\n        if (parent_or_size[a] < 0) return\
@@ -67,7 +67,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2021-03-20 05:55:32+09:00'
+  timestamp: '2021-03-20 06:10:18+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_1_B.test.cpp
