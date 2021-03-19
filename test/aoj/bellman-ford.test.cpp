@@ -17,7 +17,6 @@ int main(){
     }
 
     const auto INF = std::numeric_limits<int>::max();
-
     auto ret = G.bellman_ford(r);
     if(ret.empty()) std::cout << "NEGATIVE CYCLE" << '\n';
     else{
