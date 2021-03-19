@@ -6,14 +6,14 @@ data:
     - icon: ':x:'
       path: snow/graph/graph.hpp
       title: snow/graph/graph.hpp
-  - name: snow/graph/shortest
+  - name: snow/graph/shortest-path
     pages:
     - icon: ':x:'
-      path: snow/graph/shortest/bellman-ford.hpp
-      title: snow/graph/shortest/bellman-ford.hpp
+      path: snow/graph/shortest-path/bellman-ford.hpp
+      title: snow/graph/shortest-path/bellman-ford.hpp
     - icon: ':x:'
-      path: snow/graph/shortest/dijkstra.hpp
-      title: snow/graph/shortest/dijkstra.hpp
+      path: snow/graph/shortest-path/dijkstra.hpp
+      title: snow/graph/shortest-path/dijkstra.hpp
   - name: snow/math
     pages:
     - icon: ':heavy_check_mark:'

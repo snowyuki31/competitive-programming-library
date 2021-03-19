@@ -14,7 +14,7 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"snow/graph/shortest/dijkstra.hpp\"\n\r\n#include <vector>\r\
+  bundledCode: "#line 2 \"snow/graph/shortest-path/dijkstra.hpp\"\n\r\n#include <vector>\r\
     \n#include <queue>\r\n#include <limits>\r\n\r\n#line 2 \"snow/graph/graph.hpp\"\
     \n\r\n#line 4 \"snow/graph/graph.hpp\"\n\r\nnamespace snow {\r\n\r\ntemplate <\
     \ typename T >\r\nstruct Graph {\r\n    struct Edge {\r\n        int from, to;\r\
@@ -30,8 +30,8 @@ data:
     \    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a, b,\
     \ w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\
     \n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\
-    \n};\r\n\r\n} // namespace snow\n#line 8 \"snow/graph/shortest/dijkstra.hpp\"\n\
-    \r\nnamespace snow{\r\n\r\ntemplate < typename T >\r\nstd::vector<T> Graph<T>::dijkstra(int\
+    \n};\r\n\r\n} // namespace snow\n#line 8 \"snow/graph/shortest-path/dijkstra.hpp\"\
+    \n\r\nnamespace snow{\r\n\r\ntemplate < typename T >\r\nstd::vector<T> Graph<T>::dijkstra(int\
     \ s) const{\r\n    std::priority_queue<std::pair<T, int>, std::vector<std::pair<T,\
     \ int>>, std::greater<>> que;\r\n    std::vector<T> dist(G.size(), INF);\r\n \
     \   dist[s] = 0;\r\n    que.emplace(dist[s], s);\r\n\r\n    while(!que.empty()){\r\
@@ -54,16 +54,16 @@ data:
   dependsOn:
   - snow/graph/graph.hpp
   isVerificationFile: false
-  path: snow/graph/shortest/dijkstra.hpp
+  path: snow/graph/shortest-path/dijkstra.hpp
   requiredBy: []
-  timestamp: '2021-03-19 17:41:27+09:00'
+  timestamp: '2021-03-19 17:50:45+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/dijkstra.test.cpp
-documentation_of: snow/graph/shortest/dijkstra.hpp
+documentation_of: snow/graph/shortest-path/dijkstra.hpp
 layout: document
 redirect_from:
-- /library/snow/graph/shortest/dijkstra.hpp
-- /library/snow/graph/shortest/dijkstra.hpp.html
-title: snow/graph/shortest/dijkstra.hpp
+- /library/snow/graph/shortest-path/dijkstra.hpp
+- /library/snow/graph/shortest-path/dijkstra.hpp.html
+title: snow/graph/shortest-path/dijkstra.hpp
 ---

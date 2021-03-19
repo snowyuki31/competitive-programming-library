@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':x:'
-    path: snow/graph/shortest/bellman-ford.hpp
-    title: snow/graph/shortest/bellman-ford.hpp
+    path: snow/graph/shortest-path/bellman-ford.hpp
+    title: snow/graph/shortest-path/bellman-ford.hpp
   - icon: ':x:'
-    path: snow/graph/shortest/dijkstra.hpp
-    title: snow/graph/shortest/dijkstra.hpp
+    path: snow/graph/shortest-path/dijkstra.hpp
+    title: snow/graph/shortest-path/dijkstra.hpp
   _extendedVerifiedWith:
   - icon: ':x:'
     path: test/aoj/bellman-ford.test.cpp
@@ -55,8 +55,8 @@ data:
   isVerificationFile: false
   path: snow/graph/graph.hpp
   requiredBy:
-  - snow/graph/shortest/bellman-ford.hpp
-  - snow/graph/shortest/dijkstra.hpp
+  - snow/graph/shortest-path/bellman-ford.hpp
+  - snow/graph/shortest-path/dijkstra.hpp
   timestamp: '2021-03-19 17:41:27+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
