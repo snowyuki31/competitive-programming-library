@@ -2,7 +2,7 @@
 
 namespace snow {
 
-template <typename T>
+template < typename T >
 T euler_phi(T n) {
    T ret = n;
    for(T i = 2; i * i <= n; ++i){

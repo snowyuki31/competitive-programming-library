@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "src/math/euler_phi.hpp"
+#include "src/math/euler-phi.hpp"
 
 int main(){
     int n;
