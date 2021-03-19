@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: snow/datastructure
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: snow/datastructure/weighted-unionfind.hpp
       title: snow/datastructure/weighted-unionfind.hpp
   - name: snow/graph
@@ -46,7 +46,7 @@ data:
   verificationCategories:
   - name: test/aoj
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_1_B.test.cpp
       title: test/aoj/DSL_1_B.test.cpp
     - icon: ':heavy_check_mark:'

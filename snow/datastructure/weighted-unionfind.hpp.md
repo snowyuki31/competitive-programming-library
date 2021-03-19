@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_1_B.test.cpp
     title: test/aoj/DSL_1_B.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"snow/datastructure/weighted-unionfind.hpp\"\n\n#include\
@@ -28,8 +28,8 @@ data:
     \        diff_weight[a] += diff_weight[parent_or_size[a]];\n        return parent_or_size[a]\
     \ = r;\n    }\n\n    int size(int a) {\n        assert(0 <= a && a < _n);\n  \
     \      return -parent_or_size[leader(a)];\n    }\n\n    Abel weight(int a){\n\
-    \        return diff_weight[leader(a)];\n    }\n\n    Abel diff(int a, int b){\n\
-    \        return weight(b) - weight(a);\n    }\n\n    std::vector<std::vector<int>>\
+    \        leader(a);\n        return diff_weight[a];\n    }\n\n    Abel diff(int\
+    \ a, int b){\n        return weight(b) - weight(a);\n    }\n\n    std::vector<std::vector<int>>\
     \ groups() {\n        std::vector<int> leader_buf(_n), group_size(_n);\n     \
     \   for (int i = 0; i < _n; i++) {\n            leader_buf[i] = leader(i);\n \
     \           group_size[leader_buf[i]]++;\n        }\n        std::vector<std::vector<int>>\
@@ -58,8 +58,8 @@ data:
     \        diff_weight[a] += diff_weight[parent_or_size[a]];\n        return parent_or_size[a]\
     \ = r;\n    }\n\n    int size(int a) {\n        assert(0 <= a && a < _n);\n  \
     \      return -parent_or_size[leader(a)];\n    }\n\n    Abel weight(int a){\n\
-    \        return diff_weight[leader(a)];\n    }\n\n    Abel diff(int a, int b){\n\
-    \        return weight(b) - weight(a);\n    }\n\n    std::vector<std::vector<int>>\
+    \        leader(a);\n        return diff_weight[a];\n    }\n\n    Abel diff(int\
+    \ a, int b){\n        return weight(b) - weight(a);\n    }\n\n    std::vector<std::vector<int>>\
     \ groups() {\n        std::vector<int> leader_buf(_n), group_size(_n);\n     \
     \   for (int i = 0; i < _n; i++) {\n            leader_buf[i] = leader(i);\n \
     \           group_size[leader_buf[i]]++;\n        }\n        std::vector<std::vector<int>>\
@@ -75,8 +75,8 @@ data:
   isVerificationFile: false
   path: snow/datastructure/weighted-unionfind.hpp
   requiredBy: []
-  timestamp: '2021-03-20 05:38:06+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-03-20 05:55:32+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/DSL_1_B.test.cpp
 documentation_of: snow/datastructure/weighted-unionfind.hpp

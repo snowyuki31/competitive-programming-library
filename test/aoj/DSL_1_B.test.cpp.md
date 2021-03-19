@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: snow/datastructure/weighted-unionfind.hpp
     title: snow/datastructure/weighted-unionfind.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B
@@ -32,13 +32,14 @@ data:
     \ a;\n        int r = leader(parent_or_size[a]);\n        diff_weight[a] += diff_weight[parent_or_size[a]];\n\
     \        return parent_or_size[a] = r;\n    }\n\n    int size(int a) {\n     \
     \   assert(0 <= a && a < _n);\n        return -parent_or_size[leader(a)];\n  \
-    \  }\n\n    Abel weight(int a){\n        return diff_weight[leader(a)];\n    }\n\
-    \n    Abel diff(int a, int b){\n        return weight(b) - weight(a);\n    }\n\
-    \n    std::vector<std::vector<int>> groups() {\n        std::vector<int> leader_buf(_n),\
-    \ group_size(_n);\n        for (int i = 0; i < _n; i++) {\n            leader_buf[i]\
-    \ = leader(i);\n            group_size[leader_buf[i]]++;\n        }\n        std::vector<std::vector<int>>\
-    \ result(_n);\n        for (int i = 0; i < _n; i++) {\n            result[i].reserve(group_size[i]);\n\
-    \        }\n        for (int i = 0; i < _n; i++) {\n            result[leader_buf[i]].push_back(i);\n\
+    \  }\n\n    Abel weight(int a){\n        leader(a);\n        return diff_weight[a];\n\
+    \    }\n\n    Abel diff(int a, int b){\n        return weight(b) - weight(a);\n\
+    \    }\n\n    std::vector<std::vector<int>> groups() {\n        std::vector<int>\
+    \ leader_buf(_n), group_size(_n);\n        for (int i = 0; i < _n; i++) {\n  \
+    \          leader_buf[i] = leader(i);\n            group_size[leader_buf[i]]++;\n\
+    \        }\n        std::vector<std::vector<int>> result(_n);\n        for (int\
+    \ i = 0; i < _n; i++) {\n            result[i].reserve(group_size[i]);\n     \
+    \   }\n        for (int i = 0; i < _n; i++) {\n            result[leader_buf[i]].push_back(i);\n\
     \        }\n        result.erase(\n            std::remove_if(result.begin(),\
     \ result.end(),\n                           [&](const std::vector<int>& v) { return\
     \ v.empty(); }),\n            result.end());\n        return result;\n    }\n\n\
@@ -66,8 +67,8 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2021-03-20 05:38:06+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-03-20 05:55:32+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_1_B.test.cpp
 layout: document
