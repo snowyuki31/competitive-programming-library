@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/oj/enumerate_primes.cpp
+    title: test/oj/enumerate_primes.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/ALDS1_4_B.test.cpp
@@ -51,7 +54,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: snow/io/helper.hpp
-  requiredBy: []
+  requiredBy:
+  - test/oj/enumerate_primes.cpp
   timestamp: '2021-03-20 06:51:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

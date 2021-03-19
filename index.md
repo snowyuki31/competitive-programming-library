@@ -43,11 +43,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/math/factorize.hpp
       title: snow/math/factorize.hpp
+    - icon: ':warning:'
+      path: snow/math/sieve.hpp
+      title: Sieve of Eratosthenes
   - name: snow
     pages:
     - icon: ':warning:'
       path: snow/template.hpp
       title: snow/template.hpp
+  - name: test/oj
+    pages:
+    - icon: ':warning:'
+      path: test/oj/enumerate_primes.cpp
+      title: test/oj/enumerate_primes.cpp
   verificationCategories:
   - name: test/aoj
     pages:
