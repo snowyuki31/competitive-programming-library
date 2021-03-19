@@ -82,8 +82,15 @@ data:
   - test/aoj/DSL_1_B.test.cpp
 documentation_of: snow/datastructure/weighted-unionfind.hpp
 layout: document
-redirect_from:
-- /library/snow/datastructure/weighted-unionfind.hpp
-- /library/snow/datastructure/weighted-unionfind.hpp.html
-title: snow/datastructure/weighted-unionfind.hpp
+title: Weighted UnionFind
 ---
+
+[atcoder/dsu](https://github.com/atcoder/ac-library/blob/master/atcoder/dsu.hpp)のポテンシャル付きversionです．
+
+```bool d.merge(int a, int b)```
+
+```Abel d.weight(int a)```
+
+```Abel d.diff(int a, int b)```
+
+その他は`atcoder/dsu`に準拠します．

@@ -1,11 +1,16 @@
 ---
 data:
   libraryCategories:
+  - name: snow/algorithm
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: snow/algorithm/binary-search.hpp
+      title: snow/algorithm/binary-search.hpp
   - name: snow/datastructure
     pages:
     - icon: ':heavy_check_mark:'
       path: snow/datastructure/weighted-unionfind.hpp
-      title: snow/datastructure/weighted-unionfind.hpp
+      title: Weighted UnionFind
   - name: snow/graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -24,7 +29,7 @@ data:
       title: snow/graph/shortest-path/warshall-floyd.hpp
   - name: snow/io
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: snow/io/helper.hpp
       title: snow/io/helper.hpp
     - icon: ':warning:'
@@ -46,6 +51,9 @@ data:
   verificationCategories:
   - name: test/aoj
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/ALDS1_4_B.test.cpp
+      title: test/aoj/ALDS1_4_B.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_1_B.test.cpp
       title: test/aoj/DSL_1_B.test.cpp

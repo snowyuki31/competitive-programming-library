@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: snow/datastructure/weighted-unionfind.hpp
-    title: snow/datastructure/weighted-unionfind.hpp
+    title: Weighted UnionFind
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
