@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: src/graph/graph-template.hpp
     title: src/graph/graph-template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/bellman-ford.test.cpp
     title: test/aoj/bellman-ford.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"src/graph/shortest/bellman-ford.hpp\"\n\r\n#include <vector>\r\
@@ -20,14 +20,14 @@ data:
     \ T >\r\nstruct Graph {\r\n    struct Edge {\r\n        int from, to;\r\n    \
     \    T weight;\r\n        Edge() : from(0), to(0), weight(0) {}\r\n        Edge(int\
     \ from, int to, T weight) : from(from), to(to), weight(weight) {}\r\n    };\r\n\
-    \    using Edges = std::vector<Edge>;\r\n\r\n    Edges G;\r\n\r\n    Graph() :\
-    \ G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n    Edges operator[](int\
+    \    using Edges = std::vector<Edge>;\r\n\r\n    std::vector<Edges> G;\r\n\r\n\
+    \    Graph() : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n    Edges operator[](int\
     \ k) const{\r\n        return G[k];\r\n    }\r\n\r\n    size_t size() const{\r\
     \n        return G.size();\r\n    }\r\n\r\n    void add_edge(int a, int b, T w\
     \ = 1){\r\n        G[a].emplace_back(a, b, w);\r\n        G[b].emplace_back(b,\
     \ a, w);\r\n    }\r\n\r\n    void add_directed_edge(int a, int b, T w = 1){\r\n\
     \        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n    void add_arrow(int a,\
-    \ int b, T W = 1){\r\n        add_directed_edge(a, b, w);\r\n    }\r\n\r\n   \
+    \ int b, T w = 1){\r\n        add_directed_edge(a, b, w);\r\n    }\r\n\r\n   \
     \ //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\n};\r\n\
     \r\n} // namespace snow\n#line 7 \"src/graph/shortest/bellman-ford.hpp\"\n\r\n\
     namespace snow{\r\n\r\ntemplate < typename T >\r\nstd::vector<T> Graph<T>::bellman_ford(int\
@@ -54,8 +54,8 @@ data:
   isVerificationFile: false
   path: src/graph/shortest/bellman-ford.hpp
   requiredBy: []
-  timestamp: '2021-03-19 10:23:04+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-03-19 10:34:53+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/bellman-ford.test.cpp
 documentation_of: src/graph/shortest/bellman-ford.hpp

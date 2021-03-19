@@ -3,12 +3,12 @@ data:
   libraryCategories:
   - name: src/graph
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/graph/graph-template.hpp
       title: src/graph/graph-template.hpp
   - name: src/graph/shortest
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/graph/shortest/bellman-ford.hpp
       title: src/graph/shortest/bellman-ford.hpp
   - name: src/math
@@ -22,7 +22,7 @@ data:
   verificationCategories:
   - name: test/aoj
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/bellman-ford.test.cpp
       title: test/aoj/bellman-ford.test.cpp
     - icon: ':heavy_check_mark:'
