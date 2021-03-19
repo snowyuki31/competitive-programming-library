@@ -3,7 +3,7 @@
 #include <iostream>
 #include <limits>
 
-#include "snow/graph/shortest/bellman-ford.hpp"
+#include "snow/graph/shortest-path/bellman-ford.hpp"
 
 int main(){
     int V, E, r;

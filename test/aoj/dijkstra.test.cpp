@@ -3,7 +3,7 @@
 #include <iostream>
 #include <limits>
 
-#include "snow/graph/shortest/dijkstra.hpp"
+#include "snow/graph/shortest-path/dijkstra.hpp"
 
 int main(){
     int V, E, r;
