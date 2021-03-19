@@ -6,7 +6,8 @@
 #include "snow/graph/shortest/dijkstra.hpp"
 
 int main(){
-    int V, E, r;
+    int V, E;
+    long long r;
     std::cin >> V >> E >> r;
 
     snow::Graph<int> G(V);
