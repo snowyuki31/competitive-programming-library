@@ -3,12 +3,12 @@ data:
   libraryCategories:
   - name: snow/graph
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: snow/graph/graph.hpp
       title: snow/graph/graph.hpp
   - name: snow/graph/shortest-path
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: snow/graph/shortest-path/bellman-ford.hpp
       title: snow/graph/shortest-path/bellman-ford.hpp
     - icon: ':x:'
@@ -25,7 +25,7 @@ data:
   verificationCategories:
   - name: test/aoj
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/bellman-ford.test.cpp
       title: test/aoj/bellman-ford.test.cpp
     - icon: ':x:'

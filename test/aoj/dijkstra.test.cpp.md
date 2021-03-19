@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: snow/graph/graph.hpp
     title: snow/graph/graph.hpp
   - icon: ':x:'
@@ -25,7 +25,7 @@ data:
     \ Edge {\r\n        int from, to;\r\n        T weight;\r\n        Edge() : from(0),\
     \ to(0), weight(0) {}\r\n        Edge(int from, int to, T weight) : from(from),\
     \ to(to), weight(weight) {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\
-    \n\r\n    const auto INF = std::numeric_limits<T>::max();\r\n    std::vector<Edges>\
+    \n\r\n    const T INF = std::numeric_limits<T>::max();\r\n    std::vector<Edges>\
     \ G;\r\n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n\
     \    Edges operator[](int k) const{\r\n        return G[k];\r\n    }\r\n\r\n \
     \   size_t size() const{\r\n        return G.size();\r\n    }\r\n\r\n    void\
@@ -65,7 +65,7 @@ data:
   isVerificationFile: true
   path: test/aoj/dijkstra.test.cpp
   requiredBy: []
-  timestamp: '2021-03-19 17:50:45+09:00'
+  timestamp: '2021-03-19 17:58:25+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/dijkstra.test.cpp
