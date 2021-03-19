@@ -3,14 +3,14 @@ data:
   libraryCategories:
   - name: src/math
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: src/math/factorize.hpp
       title: src/math/factorize.hpp
   verificationCategories:
-  - name: test/oj
+  - name: test/aoj
     pages:
-    - icon: ':x:'
-      path: test/oj/factorize.test.cpp
-      title: test/oj/factorize.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/factorize.test.cpp
+      title: test/aoj/factorize.test.cpp
 layout: toppage
 ---
