@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: snow/graph/graph.hpp
     title: snow/graph/graph.hpp
   _extendedRequiredBy: []
@@ -37,8 +37,8 @@ data:
     \ ++j){\r\n            for(auto& e : G[j]){\r\n                if(dist[e.from]\
     \ == INF) continue;\r\n                if(dist[e.to] > dist[e.from] + e.weight){\r\
     \n                    dist[e.to] = dist[e.from] + e.weight;\r\n              \
-    \      if(i == G.size() - 1) return {};\r\n                }\r\n            }\r\
-    \n        }\r\n    }\r\n    return dist;\r\n}\r\n\r\n}\n"
+    \      if(i == (G.size() - 1)) return {};\r\n                }\r\n           \
+    \ }\r\n        }\r\n    }\r\n    return dist;\r\n}\r\n\r\n}\n"
   code: "#pragma once\r\n\r\n#include <vector>\r\n#include <limits>\r\n\r\n#include\
     \ \"snow/graph/graph.hpp\"\r\n\r\nnamespace snow{\r\n\r\ntemplate < typename T\
     \ >\r\nstd::vector<T> Graph<T>::bellman_ford(int s) const{\r\n    std::vector<T>\
@@ -46,7 +46,7 @@ data:
     \ ++i){\r\n        for(int j = 0; j < G.size(); ++j){\r\n            for(auto&\
     \ e : G[j]){\r\n                if(dist[e.from] == INF) continue;\r\n        \
     \        if(dist[e.to] > dist[e.from] + e.weight){\r\n                    dist[e.to]\
-    \ = dist[e.from] + e.weight;\r\n                    if(i == G.size() - 1) return\
+    \ = dist[e.from] + e.weight;\r\n                    if(i == (G.size() - 1)) return\
     \ {};\r\n                }\r\n            }\r\n        }\r\n    }\r\n    return\
     \ dist;\r\n}\r\n\r\n}"
   dependsOn:
@@ -54,7 +54,7 @@ data:
   isVerificationFile: false
   path: snow/graph/shortest-path/bellman-ford.hpp
   requiredBy: []
-  timestamp: '2021-03-19 17:58:25+09:00'
+  timestamp: '2021-03-19 19:13:47+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/bellman-ford.test.cpp

@@ -5,19 +5,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/graph/shortest-path/bellman-ford.hpp
     title: snow/graph/shortest-path/bellman-ford.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: snow/graph/shortest-path/dijkstra.hpp
     title: snow/graph/shortest-path/dijkstra.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/bellman-ford.test.cpp
     title: test/aoj/bellman-ford.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/dijkstra.test.cpp
     title: test/aoj/dijkstra.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"snow/graph/graph.hpp\"\n\r\n#include <vector>\r\n\r\nnamespace\
@@ -58,7 +58,7 @@ data:
   - snow/graph/shortest-path/bellman-ford.hpp
   - snow/graph/shortest-path/dijkstra.hpp
   timestamp: '2021-03-19 17:58:25+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/dijkstra.test.cpp
   - test/aoj/bellman-ford.test.cpp

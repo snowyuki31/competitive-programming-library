@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: snow/graph/graph.hpp
     title: snow/graph/graph.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: snow/graph/shortest-path/dijkstra.hpp
     title: snow/graph/shortest-path/dijkstra.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A
@@ -46,18 +46,18 @@ data:
     \            dist[e.to] = next_cost;\r\n            que.emplace(dist[e.to], e.to);\r\
     \n        }\r\n    }\r\n    return dist;\r\n}\r\n\r\n}\n#line 7 \"test/aoj/dijkstra.test.cpp\"\
     \n\r\nint main(){\r\n    int V, E, r;\r\n    std::cin >> V >> E >> r;\r\n\r\n\
-    \    snow::Graph<long long> G(V);\r\n    while(E--){\r\n        int s, t, d;\r\
-    \n        std::cin >> s >> t >> d;\r\n        G.add_directed_edge(s, t, d);\r\n\
-    \    }\r\n\r\n    auto ret = G.dijkstra(r);\r\n    for(auto r : ret){\r\n    \
-    \    if(r == G.INF) std::cout << \"INF\" << '\\n';\r\n        else std::cout <<\
+    \    snow::Graph<int> G(V);\r\n    while(E--){\r\n        int s, t, d;\r\n   \
+    \     std::cin >> s >> t >> d;\r\n        G.add_directed_edge(s, t, d);\r\n  \
+    \  }\r\n\r\n    auto ret = G.dijkstra(r);\r\n    for(auto r : ret){\r\n      \
+    \  if(r == G.INF) std::cout << \"INF\" << '\\n';\r\n        else std::cout <<\
     \ r << '\\n';\r\n    }\r\n\r\n    return 0;\r\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A\"\
     \r\n\r\n#include <iostream>\r\n#include <limits>\r\n\r\n#include \"snow/graph/shortest-path/dijkstra.hpp\"\
     \r\n\r\nint main(){\r\n    int V, E, r;\r\n    std::cin >> V >> E >> r;\r\n\r\n\
-    \    snow::Graph<long long> G(V);\r\n    while(E--){\r\n        int s, t, d;\r\
-    \n        std::cin >> s >> t >> d;\r\n        G.add_directed_edge(s, t, d);\r\n\
-    \    }\r\n\r\n    auto ret = G.dijkstra(r);\r\n    for(auto r : ret){\r\n    \
-    \    if(r == G.INF) std::cout << \"INF\" << '\\n';\r\n        else std::cout <<\
+    \    snow::Graph<int> G(V);\r\n    while(E--){\r\n        int s, t, d;\r\n   \
+    \     std::cin >> s >> t >> d;\r\n        G.add_directed_edge(s, t, d);\r\n  \
+    \  }\r\n\r\n    auto ret = G.dijkstra(r);\r\n    for(auto r : ret){\r\n      \
+    \  if(r == G.INF) std::cout << \"INF\" << '\\n';\r\n        else std::cout <<\
     \ r << '\\n';\r\n    }\r\n\r\n    return 0;\r\n}"
   dependsOn:
   - snow/graph/shortest-path/dijkstra.hpp
@@ -65,8 +65,8 @@ data:
   isVerificationFile: true
   path: test/aoj/dijkstra.test.cpp
   requiredBy: []
-  timestamp: '2021-03-19 17:58:25+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-03-19 19:14:05+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/dijkstra.test.cpp
 layout: document

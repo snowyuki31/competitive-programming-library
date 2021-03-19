@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: snow/graph
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: snow/graph/graph.hpp
       title: snow/graph/graph.hpp
   - name: snow/graph/shortest-path
@@ -11,7 +11,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/graph/shortest-path/bellman-ford.hpp
       title: snow/graph/shortest-path/bellman-ford.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: snow/graph/shortest-path/dijkstra.hpp
       title: snow/graph/shortest-path/dijkstra.hpp
   - name: snow/math
@@ -28,7 +28,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/bellman-ford.test.cpp
       title: test/aoj/bellman-ford.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/dijkstra.test.cpp
       title: test/aoj/dijkstra.test.cpp
     - icon: ':heavy_check_mark:'

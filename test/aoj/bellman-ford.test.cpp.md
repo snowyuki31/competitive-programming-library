@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: snow/graph/graph.hpp
     title: snow/graph/graph.hpp
   - icon: ':heavy_check_mark:'
@@ -42,8 +42,8 @@ data:
     \ ++j){\r\n            for(auto& e : G[j]){\r\n                if(dist[e.from]\
     \ == INF) continue;\r\n                if(dist[e.to] > dist[e.from] + e.weight){\r\
     \n                    dist[e.to] = dist[e.from] + e.weight;\r\n              \
-    \      if(i == G.size() - 1) return {};\r\n                }\r\n            }\r\
-    \n        }\r\n    }\r\n    return dist;\r\n}\r\n\r\n}\n#line 7 \"test/aoj/bellman-ford.test.cpp\"\
+    \      if(i == (G.size() - 1)) return {};\r\n                }\r\n           \
+    \ }\r\n        }\r\n    }\r\n    return dist;\r\n}\r\n\r\n}\n#line 7 \"test/aoj/bellman-ford.test.cpp\"\
     \n\r\nint main(){\r\n    int V, E, r;\r\n    std::cin >> V >> E >> r;\r\n\r\n\
     \    snow::Graph<int> G(V);\r\n    while(E--){\r\n        int s, t, d;\r\n   \
     \     std::cin >> s >> t >> d;\r\n        G.add_directed_edge(s, t, d);\r\n  \
@@ -68,7 +68,7 @@ data:
   isVerificationFile: true
   path: test/aoj/bellman-ford.test.cpp
   requiredBy: []
-  timestamp: '2021-03-19 17:58:25+09:00'
+  timestamp: '2021-03-19 19:13:47+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/bellman-ford.test.cpp

@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: snow/graph/graph.hpp
     title: snow/graph/graph.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/dijkstra.test.cpp
     title: test/aoj/dijkstra.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"snow/graph/shortest-path/dijkstra.hpp\"\n\r\n#include <vector>\r\
@@ -57,7 +57,7 @@ data:
   path: snow/graph/shortest-path/dijkstra.hpp
   requiredBy: []
   timestamp: '2021-03-19 17:58:25+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/dijkstra.test.cpp
 documentation_of: snow/graph/shortest-path/dijkstra.hpp
