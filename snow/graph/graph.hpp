@@ -41,6 +41,9 @@ struct Graph {
         add_directed_edge(a, b, w);
     }
 
+    //Dijkstra
+    std::vector<T> dijkstra(int s) const;
+
     //Bellman-Ford
     std::vector<T> bellman_ford(int s) const;
 

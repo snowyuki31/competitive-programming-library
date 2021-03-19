@@ -3,7 +3,7 @@
 #include <iostream>
 #include <limits>
 
-#include "src/graph/shortest/bellman-ford.hpp"
+#include "snow/graph/shortest/bellman-ford.hpp"
 
 int main(){
     int V, E, r;
@@ -13,7 +13,7 @@ int main(){
     while(E--){
         int s, t, d;
         std::cin >> s >> t >> d;
-        G.add_arrow(s, t, d);
+        G.add_directed_edge(s, t, d);
     }
 
     const auto INF = std::numeric_limits<int>::max();
@@ -25,4 +25,6 @@ int main(){
             else std::cout << r << '\n';
         }
     }
+
+    return 0;
 }

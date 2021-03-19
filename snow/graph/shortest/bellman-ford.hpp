@@ -3,7 +3,7 @@
 #include <vector>
 #include <limits>
 
-#include "src/graph/graph-template.hpp"
+#include "snow/graph/graph.hpp"
 
 namespace snow{
 

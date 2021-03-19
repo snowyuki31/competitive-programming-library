@@ -2,10 +2,13 @@
 
 #include <iostream>
 
-#include "src/math/euler-phi.hpp"
+#include "snow/math/euler-phi.hpp"
 
 int main(){
     int n;
     std::cin >> n;
+    
     std::cout << snow::euler_phi(n) << '\n';
+
+    return 0;
 }

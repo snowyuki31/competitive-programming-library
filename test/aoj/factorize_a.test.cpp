@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "src/math/factorize.hpp"
+#include "snow/math/factorize.hpp"
 
 int main(){
     int n;
@@ -13,4 +13,6 @@ int main(){
         while(v--) std::cout << ' ' << k;
     }
     std::cout << '\n';
+    
+    return 0;
 }
