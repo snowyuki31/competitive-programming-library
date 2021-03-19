@@ -2,283 +2,83 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/aoj/DSL_1_B.test.cpp
+    title: test/aoj/DSL_1_B.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
-  bundledCode: '#line 1 "snow/datastructure/weighted-unionfind.hpp"
-
-    // #pragma once
-
-
-    // #include <algorithm>
-
-    // #include <cassert>
-
-    // #include <vector>
-
-
-    // namespace snow {
-
-
-    // // Based on ACL Implementation
-
-    // struct WeightedUnionFind {
-
-    //   public:
-
-    //     dsu() : _n(0) {}
-
-    //     explicit dsu(int n) : _n(n), parent_or_size(n, -1) {}
-
-
-    //     int merge(int a, int b) {
-
-    //         assert(0 <= a && a < _n);
-
-    //         assert(0 <= b && b < _n);
-
-    //         int x = leader(a), y = leader(b);
-
-    //         if (x == y) return x;
-
-    //         if (-parent_or_size[x] < -parent_or_size[y]) std::swap(x, y);
-
-    //         parent_or_size[x] += parent_or_size[y];
-
-    //         parent_or_size[y] = x;
-
-    //         return x;
-
-    //     }
-
-
-    //     bool same(int a, int b) {
-
-    //         assert(0 <= a && a < _n);
-
-    //         assert(0 <= b && b < _n);
-
-    //         return leader(a) == leader(b);
-
-    //     }
-
-
-    //     int leader(int a) {
-
-    //         assert(0 <= a && a < _n);
-
-    //         if (parent_or_size[a] < 0) return a;
-
-    //         return parent_or_size[a] = leader(parent_or_size[a]);
-
-    //     }
-
-
-    //     int size(int a) {
-
-    //         assert(0 <= a && a < _n);
-
-    //         return -parent_or_size[leader(a)];
-
-    //     }
-
-
-    //     std::vector<std::vector<int>> groups() {
-
-    //         std::vector<int> leader_buf(_n), group_size(_n);
-
-    //         for (int i = 0; i < _n; i++) {
-
-    //             leader_buf[i] = leader(i);
-
-    //             group_size[leader_buf[i]]++;
-
-    //         }
-
-    //         std::vector<std::vector<int>> result(_n);
-
-    //         for (int i = 0; i < _n; i++) {
-
-    //             result[i].reserve(group_size[i]);
-
-    //         }
-
-    //         for (int i = 0; i < _n; i++) {
-
-    //             result[leader_buf[i]].push_back(i);
-
-    //         }
-
-    //         result.erase(
-
-    //             std::remove_if(result.begin(), result.end(),
-
-    //                            [&](const std::vector<int>& v) { return v.empty();
-    }),
-
-    //             result.end());
-
-    //         return result;
-
-    //     }
-
-
-    //   private:
-
-    //     int _n;
-
-    //     // root node: -1 * component size
-
-    //     // otherwise: parent
-
-    //     std::vector<int> parent_or_size;
-
-    // };
-
-
-    // }  // namespace atcoder
-
-    '
-  code: '// #pragma once
-
-
-    // #include <algorithm>
-
-    // #include <cassert>
-
-    // #include <vector>
-
-
-    // namespace snow {
-
-
-    // // Based on ACL Implementation
-
-    // struct WeightedUnionFind {
-
-    //   public:
-
-    //     dsu() : _n(0) {}
-
-    //     explicit dsu(int n) : _n(n), parent_or_size(n, -1) {}
-
-
-    //     int merge(int a, int b) {
-
-    //         assert(0 <= a && a < _n);
-
-    //         assert(0 <= b && b < _n);
-
-    //         int x = leader(a), y = leader(b);
-
-    //         if (x == y) return x;
-
-    //         if (-parent_or_size[x] < -parent_or_size[y]) std::swap(x, y);
-
-    //         parent_or_size[x] += parent_or_size[y];
-
-    //         parent_or_size[y] = x;
-
-    //         return x;
-
-    //     }
-
-
-    //     bool same(int a, int b) {
-
-    //         assert(0 <= a && a < _n);
-
-    //         assert(0 <= b && b < _n);
-
-    //         return leader(a) == leader(b);
-
-    //     }
-
-
-    //     int leader(int a) {
-
-    //         assert(0 <= a && a < _n);
-
-    //         if (parent_or_size[a] < 0) return a;
-
-    //         return parent_or_size[a] = leader(parent_or_size[a]);
-
-    //     }
-
-
-    //     int size(int a) {
-
-    //         assert(0 <= a && a < _n);
-
-    //         return -parent_or_size[leader(a)];
-
-    //     }
-
-
-    //     std::vector<std::vector<int>> groups() {
-
-    //         std::vector<int> leader_buf(_n), group_size(_n);
-
-    //         for (int i = 0; i < _n; i++) {
-
-    //             leader_buf[i] = leader(i);
-
-    //             group_size[leader_buf[i]]++;
-
-    //         }
-
-    //         std::vector<std::vector<int>> result(_n);
-
-    //         for (int i = 0; i < _n; i++) {
-
-    //             result[i].reserve(group_size[i]);
-
-    //         }
-
-    //         for (int i = 0; i < _n; i++) {
-
-    //             result[leader_buf[i]].push_back(i);
-
-    //         }
-
-    //         result.erase(
-
-    //             std::remove_if(result.begin(), result.end(),
-
-    //                            [&](const std::vector<int>& v) { return v.empty();
-    }),
-
-    //             result.end());
-
-    //         return result;
-
-    //     }
-
-
-    //   private:
-
-    //     int _n;
-
-    //     // root node: -1 * component size
-
-    //     // otherwise: parent
-
-    //     std::vector<int> parent_or_size;
-
-    // };
-
-
-    // }  // namespace atcoder'
+  bundledCode: "#line 2 \"snow/datastructure/weighted-unionfind.hpp\"\n\n#include\
+    \ <algorithm>\n#include <cassert>\n#include <vector>\n\nnamespace snow {\n\n//\
+    \ Based on ACL implementation\ntemplate < typename Abel = int >\nstruct WeightedUnionFind\
+    \ {\n  public:\n    WeightedUnionFind() : _n(0) {}\n    explicit WeightedUnionFind(int\
+    \ n, Abel e = 0) : _n(n), parent_or_size(n, -1), diff_weight(n, e) {}\n\n    bool\
+    \ merge(int a, int b, Abel w) {\n        assert(0 <= a && a < _n);\n        assert(0\
+    \ <= b && b < _n);\n        w += weight(a), w -= weight(b);\n        int x = leader(a),\
+    \ y = leader(b);\n        if (x == y) return false;\n        if (-parent_or_size[x]\
+    \ < -parent_or_size[y]) std::swap(x, y), w *= -1;\n        parent_or_size[x] +=\
+    \ parent_or_size[y];\n        parent_or_size[y] = x;\n        diff_weight[y] =\
+    \ w;\n        return true;\n    }\n\n    bool same(int a, int b) {\n        assert(0\
+    \ <= a && a < _n);\n        assert(0 <= b && b < _n);\n        return leader(a)\
+    \ == leader(b);\n    }\n\n    int leader(int a) {\n        assert(0 <= a && a\
+    \ < _n);\n        if (parent_or_size[a] < 0) return a;\n        int r = leader(parent_or_size[a]);\n\
+    \        diff_weight[a] += diff_weight[parent_or_size[a]];\n        return parent_or_size[a]\
+    \ = r;\n    }\n\n    int size(int a) {\n        assert(0 <= a && a < _n);\n  \
+    \      return -parent_or_size[leader(a)];\n    }\n\n    Abel weight(int a){\n\
+    \        return diff_weight[leader(a)];\n    }\n\n    Abel diff(int a, int b){\n\
+    \        return weight(b) - weight(a);\n    }\n\n    std::vector<std::vector<int>>\
+    \ groups() {\n        std::vector<int> leader_buf(_n), group_size(_n);\n     \
+    \   for (int i = 0; i < _n; i++) {\n            leader_buf[i] = leader(i);\n \
+    \           group_size[leader_buf[i]]++;\n        }\n        std::vector<std::vector<int>>\
+    \ result(_n);\n        for (int i = 0; i < _n; i++) {\n            result[i].reserve(group_size[i]);\n\
+    \        }\n        for (int i = 0; i < _n; i++) {\n            result[leader_buf[i]].push_back(i);\n\
+    \        }\n        result.erase(\n            std::remove_if(result.begin(),\
+    \ result.end(),\n                           [&](const std::vector<int>& v) { return\
+    \ v.empty(); }),\n            result.end());\n        return result;\n    }\n\n\
+    \  private:\n    int _n;\n    // root node: -1 * component size\n    // otherwise:\
+    \ parent\n    std::vector<int> parent_or_size;\n    std::vector<Abel> diff_weight;\n\
+    };\n\n}  // namespace snow\n"
+  code: "#pragma once\n\n#include <algorithm>\n#include <cassert>\n#include <vector>\n\
+    \nnamespace snow {\n\n// Based on ACL implementation\ntemplate < typename Abel\
+    \ = int >\nstruct WeightedUnionFind {\n  public:\n    WeightedUnionFind() : _n(0)\
+    \ {}\n    explicit WeightedUnionFind(int n, Abel e = 0) : _n(n), parent_or_size(n,\
+    \ -1), diff_weight(n, e) {}\n\n    bool merge(int a, int b, Abel w) {\n      \
+    \  assert(0 <= a && a < _n);\n        assert(0 <= b && b < _n);\n        w +=\
+    \ weight(a), w -= weight(b);\n        int x = leader(a), y = leader(b);\n    \
+    \    if (x == y) return false;\n        if (-parent_or_size[x] < -parent_or_size[y])\
+    \ std::swap(x, y), w *= -1;\n        parent_or_size[x] += parent_or_size[y];\n\
+    \        parent_or_size[y] = x;\n        diff_weight[y] = w;\n        return true;\n\
+    \    }\n\n    bool same(int a, int b) {\n        assert(0 <= a && a < _n);\n \
+    \       assert(0 <= b && b < _n);\n        return leader(a) == leader(b);\n  \
+    \  }\n\n    int leader(int a) {\n        assert(0 <= a && a < _n);\n        if\
+    \ (parent_or_size[a] < 0) return a;\n        int r = leader(parent_or_size[a]);\n\
+    \        diff_weight[a] += diff_weight[parent_or_size[a]];\n        return parent_or_size[a]\
+    \ = r;\n    }\n\n    int size(int a) {\n        assert(0 <= a && a < _n);\n  \
+    \      return -parent_or_size[leader(a)];\n    }\n\n    Abel weight(int a){\n\
+    \        return diff_weight[leader(a)];\n    }\n\n    Abel diff(int a, int b){\n\
+    \        return weight(b) - weight(a);\n    }\n\n    std::vector<std::vector<int>>\
+    \ groups() {\n        std::vector<int> leader_buf(_n), group_size(_n);\n     \
+    \   for (int i = 0; i < _n; i++) {\n            leader_buf[i] = leader(i);\n \
+    \           group_size[leader_buf[i]]++;\n        }\n        std::vector<std::vector<int>>\
+    \ result(_n);\n        for (int i = 0; i < _n; i++) {\n            result[i].reserve(group_size[i]);\n\
+    \        }\n        for (int i = 0; i < _n; i++) {\n            result[leader_buf[i]].push_back(i);\n\
+    \        }\n        result.erase(\n            std::remove_if(result.begin(),\
+    \ result.end(),\n                           [&](const std::vector<int>& v) { return\
+    \ v.empty(); }),\n            result.end());\n        return result;\n    }\n\n\
+    \  private:\n    int _n;\n    // root node: -1 * component size\n    // otherwise:\
+    \ parent\n    std::vector<int> parent_or_size;\n    std::vector<Abel> diff_weight;\n\
+    };\n\n}  // namespace snow\n"
   dependsOn: []
   isVerificationFile: false
   path: snow/datastructure/weighted-unionfind.hpp
   requiredBy: []
-  timestamp: '2021-03-20 04:55:24+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-03-20 05:38:06+09:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/aoj/DSL_1_B.test.cpp
 documentation_of: snow/datastructure/weighted-unionfind.hpp
 layout: document
 redirect_from:
