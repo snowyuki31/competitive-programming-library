@@ -17,7 +17,7 @@ int main(){
     }
 
     auto ret = G.dijkstra(r);
-    for(auto& r : ret){
+    for(auto r : ret){
         if(r == G.INF) std::cout << "INF" << '\n';
         else std::cout << r << '\n';
     }
