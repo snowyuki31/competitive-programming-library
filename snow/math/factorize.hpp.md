@@ -11,7 +11,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"src/math/factorize.hpp\"\n\r\n#include <map>\r\n\r\nnamespace\
+  bundledCode: "#line 2 \"snow/math/factorize.hpp\"\n\r\n#include <map>\r\n\r\nnamespace\
     \ snow {\r\n\r\ntemplate < typename T >\r\nstd::map<T, int> factorize(T v){\r\n\
     \    std::map<T, int> ret;\r\n    for(T i = 2; i * i <= v; ++i){\r\n        while(!(v\
     \ % i)) ret[i]++, v /= i;\r\n    }\r\n    if(v != 1) ret[v]++;\r\n    return ret;\r\
@@ -23,16 +23,16 @@ data:
     \ namespace snow"
   dependsOn: []
   isVerificationFile: false
-  path: src/math/factorize.hpp
+  path: snow/math/factorize.hpp
   requiredBy: []
-  timestamp: '2021-03-19 10:23:04+09:00'
+  timestamp: '2021-03-19 10:56:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/factorize_a.test.cpp
-documentation_of: src/math/factorize.hpp
+documentation_of: snow/math/factorize.hpp
 layout: document
 redirect_from:
-- /library/src/math/factorize.hpp
-- /library/src/math/factorize.hpp.html
-title: src/math/factorize.hpp
+- /library/snow/math/factorize.hpp
+- /library/snow/math/factorize.hpp.html
+title: snow/math/factorize.hpp
 ---

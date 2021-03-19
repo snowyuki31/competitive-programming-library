@@ -1,30 +1,36 @@
 ---
 data:
   libraryCategories:
-  - name: src/graph
+  - name: snow/graph
+    pages:
+    - icon: ':question:'
+      path: snow/graph/graph.hpp
+      title: snow/graph/graph.hpp
+  - name: snow/graph/shortest
     pages:
     - icon: ':heavy_check_mark:'
-      path: src/graph/graph-template.hpp
-      title: src/graph/graph-template.hpp
-  - name: src/graph/shortest
+      path: snow/graph/shortest/bellman-ford.hpp
+      title: snow/graph/shortest/bellman-ford.hpp
+    - icon: ':x:'
+      path: snow/graph/shortest/dijkstra.hpp
+      title: snow/graph/shortest/dijkstra.hpp
+  - name: snow/math
     pages:
     - icon: ':heavy_check_mark:'
-      path: src/graph/shortest/bellman-ford.hpp
-      title: src/graph/shortest/bellman-ford.hpp
-  - name: src/math
-    pages:
+      path: snow/math/euler-phi.hpp
+      title: snow/math/euler-phi.hpp
     - icon: ':heavy_check_mark:'
-      path: src/math/euler-phi.hpp
-      title: src/math/euler-phi.hpp
-    - icon: ':heavy_check_mark:'
-      path: src/math/factorize.hpp
-      title: src/math/factorize.hpp
+      path: snow/math/factorize.hpp
+      title: snow/math/factorize.hpp
   verificationCategories:
   - name: test/aoj
     pages:
     - icon: ':heavy_check_mark:'
       path: test/aoj/bellman-ford.test.cpp
       title: test/aoj/bellman-ford.test.cpp
+    - icon: ':x:'
+      path: test/aoj/dijkstra.test.cpp
+      title: test/aoj/dijkstra.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/euler-phi_a.test.cpp
       title: test/aoj/euler-phi_a.test.cpp
