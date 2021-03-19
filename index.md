@@ -17,6 +17,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/graph/shortest-path/warshall-floyd.hpp
       title: snow/graph/shortest-path/warshall-floyd.hpp
+  - name: snow/io
+    pages:
+    - icon: ':warning:'
+      path: snow/io/helper.hpp
+      title: snow/io/helper.hpp
+    - icon: ':warning:'
+      path: snow/io/setup.hpp
+      title: snow/io/setup.hpp
   - name: snow/math
     pages:
     - icon: ':heavy_check_mark:'
@@ -25,6 +33,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/math/factorize.hpp
       title: snow/math/factorize.hpp
+  - name: snow
+    pages:
+    - icon: ':warning:'
+      path: snow/template.hpp
+      title: snow/template.hpp
   verificationCategories:
   - name: test/aoj
     pages:
