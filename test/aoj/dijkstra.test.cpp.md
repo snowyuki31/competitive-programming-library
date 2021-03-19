@@ -45,20 +45,19 @@ data:
     \   if(dist[e.to] <= next_cost) continue;\r\n            dist[e.to] = next_cost;\r\
     \n            que.emplace(dist[e.to], e.to);\r\n        }\r\n    }\r\n    return\
     \ dist;\r\n}\r\n\r\n}\n#line 7 \"test/aoj/dijkstra.test.cpp\"\n\r\nint main(){\r\
-    \n    int V, E;\r\n    long long r;\r\n    std::cin >> V >> E >> r;\r\n\r\n  \
-    \  snow::Graph<int> G(V);\r\n    while(E--){\r\n        int s, t, d;\r\n     \
-    \   std::cin >> s >> t >> d;\r\n        G.add_directed_edge(s, t, d);\r\n    }\r\
-    \n\r\n    const auto INF = std::numeric_limits<int>::max();\r\n    auto ret =\
-    \ G.dijkstra(r);\r\n    for(auto r : ret){\r\n        if(r == INF) std::cout <<\
-    \ \"INF\" << '\\n';\r\n        else std::cout << r << '\\n';\r\n    }\r\n\r\n\
-    \    return 0;\r\n}\n"
+    \n    int V, E, r;\r\n    std::cin >> V >> E >> r;\r\n\r\n    snow::Graph<long\
+    \ long> G(V);\r\n    while(E--){\r\n        int s, t, d;\r\n        std::cin >>\
+    \ s >> t >> d;\r\n        G.add_directed_edge(s, t, d);\r\n    }\r\n\r\n    const\
+    \ auto INF = std::numeric_limits<long long>::max();\r\n    auto ret = G.dijkstra(r);\r\
+    \n    for(auto r : ret){\r\n        if(r == INF) std::cout << \"INF\" << '\\n';\r\
+    \n        else std::cout << r << '\\n';\r\n    }\r\n\r\n    return 0;\r\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A\"\
     \r\n\r\n#include <iostream>\r\n#include <limits>\r\n\r\n#include \"snow/graph/shortest/dijkstra.hpp\"\
-    \r\n\r\nint main(){\r\n    int V, E;\r\n    long long r;\r\n    std::cin >> V\
-    \ >> E >> r;\r\n\r\n    snow::Graph<int> G(V);\r\n    while(E--){\r\n        int\
-    \ s, t, d;\r\n        std::cin >> s >> t >> d;\r\n        G.add_directed_edge(s,\
-    \ t, d);\r\n    }\r\n\r\n    const auto INF = std::numeric_limits<int>::max();\r\
-    \n    auto ret = G.dijkstra(r);\r\n    for(auto r : ret){\r\n        if(r == INF)\
+    \r\n\r\nint main(){\r\n    int V, E, r;\r\n    std::cin >> V >> E >> r;\r\n\r\n\
+    \    snow::Graph<long long> G(V);\r\n    while(E--){\r\n        int s, t, d;\r\
+    \n        std::cin >> s >> t >> d;\r\n        G.add_directed_edge(s, t, d);\r\n\
+    \    }\r\n\r\n    const auto INF = std::numeric_limits<long long>::max();\r\n\
+    \    auto ret = G.dijkstra(r);\r\n    for(auto r : ret){\r\n        if(r == INF)\
     \ std::cout << \"INF\" << '\\n';\r\n        else std::cout << r << '\\n';\r\n\
     \    }\r\n\r\n    return 0;\r\n}"
   dependsOn:
@@ -67,7 +66,7 @@ data:
   isVerificationFile: true
   path: test/aoj/dijkstra.test.cpp
   requiredBy: []
-  timestamp: '2021-03-19 17:30:45+09:00'
+  timestamp: '2021-03-19 17:34:07+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj/dijkstra.test.cpp
