@@ -14,7 +14,7 @@ struct Graph {
     };
     using Edges = std::vector<Edge>;
 
-    Edges G;
+    std::vector<Edges> G;
 
     Graph() : G() {}
     
@@ -37,7 +37,7 @@ struct Graph {
         G[a].emplace_back(a, b, w);
     }
 
-    void add_arrow(int a, int b, T W = 1){
+    void add_arrow(int a, int b, T w = 1){
         add_directed_edge(a, b, w);
     }
 
