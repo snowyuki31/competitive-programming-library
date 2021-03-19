@@ -2,6 +2,8 @@
 #include <iostream>
 #include <iomanip>
 
+namespace snow{
+
 struct IoSetup {
     IoSetup() {
         std::cin.tie(nullptr);
@@ -9,3 +11,5 @@ struct IoSetup {
         std::cout << std::fixed << std::setprecision(10);
     }
 } iosetup;
+
+}
