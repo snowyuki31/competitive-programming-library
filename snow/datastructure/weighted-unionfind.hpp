@@ -46,7 +46,8 @@ struct WeightedUnionFind {
     }
 
     Abel weight(int a){
-        return diff_weight[leader(a)];
+        leader(a);
+        return diff_weight[a];
     }
 
     Abel diff(int a, int b){
