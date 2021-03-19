@@ -6,18 +6,17 @@
 #include "snow/graph/shortest/dijkstra.hpp"
 
 int main(){
-    int V, E;
-    long long r;
+    int V, E, r;
     std::cin >> V >> E >> r;
 
-    snow::Graph<int> G(V);
+    snow::Graph<long long> G(V);
     while(E--){
         int s, t, d;
         std::cin >> s >> t >> d;
         G.add_directed_edge(s, t, d);
     }
 
-    const auto INF = std::numeric_limits<int>::max();
+    const auto INF = std::numeric_limits<long long>::max();
     auto ret = G.dijkstra(r);
     for(auto r : ret){
         if(r == INF) std::cout << "INF" << '\n';
