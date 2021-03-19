@@ -16,10 +16,9 @@ int main(){
         G.add_directed_edge(s, t, d);
     }
 
-    const auto INF = std::numeric_limits<long long>::max();
     auto ret = G.dijkstra(r);
     for(auto r : ret){
-        if(r == INF) std::cout << "INF" << '\n';
+        if(r == G.INF) std::cout << "INF" << '\n';
         else std::cout << r << '\n';
     }
 
