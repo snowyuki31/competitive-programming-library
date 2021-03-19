@@ -1,6 +1,6 @@
 ---
 title: Weighted UnionFind
-documentation_of: snow/datastructure/weighted-unionfind
+documentation_of: snow/datastructure/weighted-unionfind.hpp
 ---
 
 [atcoder/dsu](https://github.com/atcoder/ac-library/blob/master/atcoder/dsu.hpp)のポテンシャル付きversionです．
