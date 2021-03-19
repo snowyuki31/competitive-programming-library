@@ -2,7 +2,6 @@
 
 #include <vector>
 #include <queue>
-#include <limits>
 
 #include "snow/graph/graph.hpp"
 

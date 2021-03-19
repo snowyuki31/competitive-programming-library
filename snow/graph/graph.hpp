@@ -48,6 +48,9 @@ struct Graph {
     //Bellman-Ford
     std::vector<T> bellman_ford(int s) const;
 
+    //warshall-floyd
+    std::vector<std::vector<T>> warshall_floyd() const;
+
 };
 
 } // namespace snow
