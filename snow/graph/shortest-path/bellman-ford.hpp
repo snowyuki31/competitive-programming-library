@@ -17,7 +17,7 @@ std::vector<T> Graph<T>::bellman_ford(int s) const{
                 if(dist[e.from] == INF) continue;
                 if(dist[e.to] > dist[e.from] + e.weight){
                     dist[e.to] = dist[e.from] + e.weight;
-                    if(i == G.size() - 1) return {};
+                    if(i == (G.size() - 1)) return {};
                 }
             }
         }

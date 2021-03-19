@@ -9,7 +9,7 @@ int main(){
     int V, E, r;
     std::cin >> V >> E >> r;
 
-    snow::Graph<long long> G(V);
+    snow::Graph<int> G(V);
     while(E--){
         int s, t, d;
         std::cin >> s >> t >> d;
@@ -17,7 +17,7 @@ int main(){
     }
 
     auto ret = G.dijkstra(r);
-    for(auto r : ret){
+    for(auto& r : ret){
         if(r == G.INF) std::cout << "INF" << '\n';
         else std::cout << r << '\n';
     }
