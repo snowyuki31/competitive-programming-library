@@ -1,6 +1,7 @@
 {
-"test/aoj/bellman-ford.test.cpp": "2021-03-19 19:13:47 +0900",
-"test/aoj/dijkstra.test.cpp": "2021-03-19 19:28:26 +0900",
-"test/aoj/euler-phi_a.test.cpp": "2021-03-19 10:56:39 +0900",
-"test/aoj/factorize_a.test.cpp": "2021-03-19 10:56:39 +0900"
+"test/aoj/GRL_1_A.test.cpp": "2021-03-19 20:50:23 +0900",
+"test/aoj/GRL_1_B.test.cpp": "2021-03-19 20:50:23 +0900",
+"test/aoj/GRL_1_C.test.cpp": "2021-03-19 20:50:23 +0900",
+"test/aoj/NTL_1_A.test.cpp": "2021-03-19 20:50:23 +0900",
+"test/aoj/NTL_1_D.test.cpp": "2021-03-19 20:50:23 +0900"
 }
