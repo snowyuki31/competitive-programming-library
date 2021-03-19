@@ -6,7 +6,7 @@
 
 namespace snow {
 
-// Based on ACL implementation
+// Based on ac-library implementation
 template < typename Abel = int >
 struct WeightedUnionFind {
   public:
