@@ -8,13 +8,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/graph/shortest-path/dijkstra.hpp
     title: snow/graph/shortest-path/dijkstra.hpp
+  - icon: ':heavy_check_mark:'
+    path: snow/graph/shortest-path/warshall-floyd.hpp
+    title: snow/graph/shortest-path/warshall-floyd.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/bellman-ford.test.cpp
-    title: test/aoj/bellman-ford.test.cpp
+    path: test/aoj/GRL_1_A.test.cpp
+    title: test/aoj/GRL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj/dijkstra.test.cpp
-    title: test/aoj/dijkstra.test.cpp
+    path: test/aoj/GRL_1_B.test.cpp
+    title: test/aoj/GRL_1_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/GRL_1_C.test.cpp
+    title: test/aoj/GRL_1_C.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -34,8 +40,9 @@ data:
     \        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n    void add_arrow(int a,\
     \ int b, T w = 1){\r\n        add_directed_edge(a, b, w);\r\n    }\r\n\r\n   \
     \ //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\n\r\n    //Bellman-Ford\r\
-    \n    std::vector<T> bellman_ford(int s) const;\r\n\r\n};\r\n\r\n} // namespace\
-    \ snow\n"
+    \n    std::vector<T> bellman_ford(int s) const;\r\n\r\n    //warshall-floyd\r\n\
+    \    std::vector<std::vector<T>> warshall_floyd() const;\r\n\r\n};\r\n\r\n} //\
+    \ namespace snow\n"
   code: "#pragma once\r\n\r\n#include <vector>\r\n\r\nnamespace snow {\r\n\r\ntemplate\
     \ < typename T >\r\nstruct Graph {\r\n    struct Edge {\r\n        int from, to;\r\
     \n        T weight;\r\n        Edge() : from(0), to(0), weight(0) {}\r\n     \
@@ -50,18 +57,21 @@ data:
     \    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a, b,\
     \ w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\
     \n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\
-    \n};\r\n\r\n} // namespace snow"
+    \n    //warshall-floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
+    \n\r\n};\r\n\r\n} // namespace snow"
   dependsOn: []
   isVerificationFile: false
   path: snow/graph/graph.hpp
   requiredBy:
   - snow/graph/shortest-path/bellman-ford.hpp
+  - snow/graph/shortest-path/warshall-floyd.hpp
   - snow/graph/shortest-path/dijkstra.hpp
-  timestamp: '2021-03-19 17:58:25+09:00'
+  timestamp: '2021-03-19 20:50:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/dijkstra.test.cpp
-  - test/aoj/bellman-ford.test.cpp
+  - test/aoj/GRL_1_C.test.cpp
+  - test/aoj/GRL_1_B.test.cpp
+  - test/aoj/GRL_1_A.test.cpp
 documentation_of: snow/graph/graph.hpp
 layout: document
 redirect_from:

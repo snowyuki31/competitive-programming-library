@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj/euler-phi_a.test.cpp
-    title: test/aoj/euler-phi_a.test.cpp
+    path: test/aoj/NTL_1_D.test.cpp
+    title: test/aoj/NTL_1_D.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -28,7 +28,7 @@ data:
   timestamp: '2021-03-19 10:56:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/euler-phi_a.test.cpp
+  - test/aoj/NTL_1_D.test.cpp
 documentation_of: snow/math/euler-phi.hpp
 layout: document
 redirect_from:

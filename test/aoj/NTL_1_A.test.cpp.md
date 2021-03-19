@@ -14,13 +14,13 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A
-  bundledCode: "#line 1 \"test/aoj/factorize_a.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A\"\
+  bundledCode: "#line 1 \"test/aoj/NTL_1_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A\"\
     \r\n\r\n#include <iostream>\r\n\r\n#line 2 \"snow/math/factorize.hpp\"\n\r\n#include\
     \ <map>\r\n\r\nnamespace snow {\r\n\r\ntemplate < typename T >\r\nstd::map<T,\
     \ int> factorize(T v){\r\n    std::map<T, int> ret;\r\n    for(T i = 2; i * i\
     \ <= v; ++i){\r\n        while(!(v % i)) ret[i]++, v /= i;\r\n    }\r\n    if(v\
     \ != 1) ret[v]++;\r\n    return ret;\r\n}\r\n\r\n} // namespace snow\n#line 6\
-    \ \"test/aoj/factorize_a.test.cpp\"\n\r\nint main(){\r\n    int n;\r\n    std::cin\
+    \ \"test/aoj/NTL_1_A.test.cpp\"\n\r\nint main(){\r\n    int n;\r\n    std::cin\
     \ >> n;\r\n    auto ret = snow::factorize(n);\r\n    std::cout << n << ':';\r\n\
     \    for(auto [k, v] : ret){\r\n        while(v--) std::cout << ' ' << k;\r\n\
     \    }\r\n    std::cout << '\\n';\r\n    \r\n    return 0;\r\n}\r\n"
@@ -33,15 +33,15 @@ data:
   dependsOn:
   - snow/math/factorize.hpp
   isVerificationFile: true
-  path: test/aoj/factorize_a.test.cpp
+  path: test/aoj/NTL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2021-03-19 10:56:39+09:00'
+  timestamp: '2021-03-19 20:50:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/aoj/factorize_a.test.cpp
+documentation_of: test/aoj/NTL_1_A.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/factorize_a.test.cpp
-- /verify/test/aoj/factorize_a.test.cpp.html
-title: test/aoj/factorize_a.test.cpp
+- /verify/test/aoj/NTL_1_A.test.cpp
+- /verify/test/aoj/NTL_1_A.test.cpp.html
+title: test/aoj/NTL_1_A.test.cpp
 ---

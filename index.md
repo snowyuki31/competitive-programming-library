@@ -14,6 +14,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/graph/shortest-path/dijkstra.hpp
       title: snow/graph/shortest-path/dijkstra.hpp
+    - icon: ':heavy_check_mark:'
+      path: snow/graph/shortest-path/warshall-floyd.hpp
+      title: snow/graph/shortest-path/warshall-floyd.hpp
   - name: snow/math
     pages:
     - icon: ':heavy_check_mark:'
@@ -26,16 +29,19 @@ data:
   - name: test/aoj
     pages:
     - icon: ':heavy_check_mark:'
-      path: test/aoj/bellman-ford.test.cpp
-      title: test/aoj/bellman-ford.test.cpp
+      path: test/aoj/GRL_1_A.test.cpp
+      title: test/aoj/GRL_1_A.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/aoj/dijkstra.test.cpp
-      title: test/aoj/dijkstra.test.cpp
+      path: test/aoj/GRL_1_B.test.cpp
+      title: test/aoj/GRL_1_B.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/aoj/euler-phi_a.test.cpp
-      title: test/aoj/euler-phi_a.test.cpp
+      path: test/aoj/GRL_1_C.test.cpp
+      title: test/aoj/GRL_1_C.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/aoj/factorize_a.test.cpp
-      title: test/aoj/factorize_a.test.cpp
+      path: test/aoj/NTL_1_A.test.cpp
+      title: test/aoj/NTL_1_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/NTL_1_D.test.cpp
+      title: test/aoj/NTL_1_D.test.cpp
 layout: toppage
 ---
