@@ -4,7 +4,7 @@
 
 namespace snow {
 
-template<typename T>
+template <typename T>
 std::map<T, int> factorize(T v){
     std::map<T, int> ret;
     for(T i = 2; i * i <= v; ++i){
