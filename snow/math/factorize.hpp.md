@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/2932.test.cpp
+    title: test/aoj/2932.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_A.test.cpp
     title: test/aoj/NTL_1_A.test.cpp
   _isVerificationFailed: false
@@ -28,6 +31,7 @@ data:
   timestamp: '2021-03-19 10:56:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj/2932.test.cpp
   - test/aoj/NTL_1_A.test.cpp
 documentation_of: snow/math/factorize.hpp
 layout: document

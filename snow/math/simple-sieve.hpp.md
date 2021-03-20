@@ -54,11 +54,11 @@ title: Sieve of Eratosthenes
 
 ## About
 
-エラトステネスの篩
+エラトステネスの篩．
 
 ## How to
 
-```simple_sieve sieve(n)``` : 前処理$O(N\log\logN)$
+```simple_sieve sieve(n)``` : 前処理$O(n\log\log n)$
 
 ```bool sieve.isprime(x)``` : $x$が素数かどうかを返す
 

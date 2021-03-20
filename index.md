@@ -38,6 +38,9 @@ data:
   - name: snow/math
     pages:
     - icon: ':heavy_check_mark:'
+      path: snow/math/divisor.hpp
+      title: snow/math/divisor.hpp
+    - icon: ':heavy_check_mark:'
       path: snow/math/euler-phi.hpp
       title: snow/math/euler-phi.hpp
     - icon: ':heavy_check_mark:'
@@ -62,6 +65,9 @@ data:
   verificationCategories:
   - name: test/aoj
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/2932.test.cpp
+      title: test/aoj/2932.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/ALDS1_1_C.test.cpp
       title: test/aoj/ALDS1_1_C.test.cpp
