@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "snow/math/simple-sieve.hpp"
+#include "snow/io/setup.hpp"
 #include "snow/io/helper.hpp"
 
 int main() {
