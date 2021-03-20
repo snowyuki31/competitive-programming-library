@@ -20,12 +20,12 @@ data:
     \ {\n\n// Based on ac-library implementation\ntemplate < typename Abel = int >\n\
     struct WeightedUnionFind {\n  public:\n    WeightedUnionFind() : _n(0) {}\n  \
     \  explicit WeightedUnionFind(int n, Abel e = 0) : _n(n), parent_or_size(n, -1),\
-    \ diff_weight(n, e) {}\n\n    bool merge(int a, int b, Abel w) {\n        assert(0\
+    \ diff_weight(n, e) {}\n\n    int merge(int a, int b, Abel w) {\n        assert(0\
     \ <= a && a < _n);\n        assert(0 <= b && b < _n);\n        w += weight(a),\
     \ w -= weight(b);\n        int x = leader(a), y = leader(b);\n        if (x ==\
-    \ y) return false;\n        if (-parent_or_size[x] < -parent_or_size[y]) std::swap(x,\
+    \ y) return x;\n        if (-parent_or_size[x] < -parent_or_size[y]) std::swap(x,\
     \ y), w *= -1;\n        parent_or_size[x] += parent_or_size[y];\n        parent_or_size[y]\
-    \ = x;\n        diff_weight[y] = w;\n        return true;\n    }\n\n    bool same(int\
+    \ = x;\n        diff_weight[y] = w;\n        return x;\n    }\n\n    bool same(int\
     \ a, int b) {\n        assert(0 <= a && a < _n);\n        assert(0 <= b && b <\
     \ _n);\n        return leader(a) == leader(b);\n    }\n\n    int leader(int a)\
     \ {\n        assert(0 <= a && a < _n);\n        if (parent_or_size[a] < 0) return\
@@ -67,7 +67,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2021-03-20 06:10:18+09:00'
+  timestamp: '2021-03-21 02:00:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_1_B.test.cpp

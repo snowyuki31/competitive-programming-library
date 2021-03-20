@@ -45,10 +45,10 @@ data:
       title: snow/math/factorize.hpp
     - icon: ':warning:'
       path: snow/math/sieve.hpp
-      title: Sieve of Eratosthenes
+      title: Sieve of Eratosthenes (for faster factorization)
     - icon: ':heavy_check_mark:'
       path: snow/math/simple-sieve.hpp
-      title: snow/math/simple-sieve.hpp
+      title: Sieve of Eratosthenes
   - name: snow
     pages:
     - icon: ':warning:'
