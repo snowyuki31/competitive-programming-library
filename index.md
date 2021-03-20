@@ -1,11 +1,72 @@
 ---
 data:
   libraryCategories:
+  - name: atcoder
+    pages:
+    - icon: ':warning:'
+      path: atcoder/convolution.hpp
+      title: atcoder/convolution.hpp
+    - icon: ':warning:'
+      path: atcoder/dsu.hpp
+      title: atcoder/dsu.hpp
+    - icon: ':warning:'
+      path: atcoder/fenwicktree.hpp
+      title: atcoder/fenwicktree.hpp
+    - icon: ':x:'
+      path: atcoder/internal_bit.hpp
+      title: atcoder/internal_bit.hpp
+    - icon: ':warning:'
+      path: atcoder/internal_csr.hpp
+      title: atcoder/internal_csr.hpp
+    - icon: ':warning:'
+      path: atcoder/internal_math.hpp
+      title: atcoder/internal_math.hpp
+    - icon: ':warning:'
+      path: atcoder/internal_queue.hpp
+      title: atcoder/internal_queue.hpp
+    - icon: ':warning:'
+      path: atcoder/internal_scc.hpp
+      title: atcoder/internal_scc.hpp
+    - icon: ':warning:'
+      path: atcoder/internal_type_traits.hpp
+      title: atcoder/internal_type_traits.hpp
+    - icon: ':x:'
+      path: atcoder/lazysegtree.hpp
+      title: atcoder/lazysegtree.hpp
+    - icon: ':warning:'
+      path: atcoder/math.hpp
+      title: atcoder/math.hpp
+    - icon: ':warning:'
+      path: atcoder/maxflow.hpp
+      title: atcoder/maxflow.hpp
+    - icon: ':warning:'
+      path: atcoder/mincostflow.hpp
+      title: atcoder/mincostflow.hpp
+    - icon: ':warning:'
+      path: atcoder/modint.hpp
+      title: atcoder/modint.hpp
+    - icon: ':warning:'
+      path: atcoder/scc.hpp
+      title: atcoder/scc.hpp
+    - icon: ':x:'
+      path: atcoder/segtree.hpp
+      title: atcoder/segtree.hpp
+    - icon: ':warning:'
+      path: atcoder/string.hpp
+      title: atcoder/string.hpp
+    - icon: ':warning:'
+      path: atcoder/twosat.hpp
+      title: atcoder/twosat.hpp
   - name: snow/algorithm
     pages:
     - icon: ':heavy_check_mark:'
       path: snow/algorithm/binary-search.hpp
       title: snow/algorithm/binary-search.hpp
+  - name: snow/datastructure/segtree
+    pages:
+    - icon: ':x:'
+      path: snow/datastructure/segtree/wrapper.hpp
+      title: snow/datastructure/segtree/wrapper.hpp
   - name: snow/datastructure
     pages:
     - icon: ':heavy_check_mark:'
@@ -52,6 +113,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/math/simple-sieve.hpp
       title: Sieve of Eratosthenes
+  - name: snow/monoids
+    pages:
+    - icon: ':x:'
+      path: snow/monoids/min.hpp
+      title: snow/monoids/min.hpp
+    - icon: ':warning:'
+      path: snow/monoids/plus-size.hpp
+      title: snow/monoids/plus-size.hpp
+    - icon: ':x:'
+      path: snow/monoids/plus.hpp
+      title: snow/monoids/plus.hpp
   - name: snow
     pages:
     - icon: ':warning:'
@@ -77,6 +149,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_1_B.test.cpp
       title: test/aoj/DSL_1_B.test.cpp
+    - icon: ':x:'
+      path: test/aoj/DSL_2_B.test.cpp
+      title: test/aoj/DSL_2_B.test.cpp
+    - icon: ':x:'
+      path: test/aoj/DSL_2_F.test.cpp
+      title: test/aoj/DSL_2_F.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_1_A.test.cpp
       title: test/aoj/GRL_1_A.test.cpp
