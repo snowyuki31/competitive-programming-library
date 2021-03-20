@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/internal_bit.hpp
     title: atcoder/internal_bit.hpp
   _extendedRequiredBy:
-  - icon: ':x:'
-    path: snow/datastructure/segtree/wrapper.hpp
-    title: snow/datastructure/segtree/wrapper.hpp
+  - icon: ':heavy_check_mark:'
+    path: snow/utils/acl-wrapper.hpp
+    title: snow/utils/acl-wrapper.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_B.test.cpp
     title: test/aoj/DSL_2_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_F.test.cpp
     title: test/aoj/DSL_2_F.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"atcoder/lazysegtree.hpp\"\n\n\n\n#include <algorithm>\n\
@@ -164,9 +164,9 @@ data:
   isVerificationFile: false
   path: atcoder/lazysegtree.hpp
   requiredBy:
-  - snow/datastructure/segtree/wrapper.hpp
+  - snow/utils/acl-wrapper.hpp
   timestamp: '2021-03-21 08:31:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/DSL_2_F.test.cpp
   - test/aoj/DSL_2_B.test.cpp

@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/internal_bit.hpp
     title: atcoder/internal_bit.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/lazysegtree.hpp
     title: atcoder/lazysegtree.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/segtree.hpp
     title: atcoder/segtree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_B.test.cpp
     title: test/aoj/DSL_2_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_F.test.cpp
     title: test/aoj/DSL_2_F.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"snow/datastructure/segtree/wrapper.hpp\"\n\n#line 1 \"atcoder/segtree.hpp\"\
+  bundledCode: "#line 2 \"snow/utils/acl-wrapper.hpp\"\n\n#line 1 \"atcoder/segtree.hpp\"\
     \n\n\n\n#include <algorithm>\n#include <cassert>\n#include <vector>\n\n#line 1\
     \ \"atcoder/internal_bit.hpp\"\n\n\n\n#ifdef _MSC_VER\n#include <intrin.h>\n#endif\n\
     \nnamespace atcoder {\n\nnamespace internal {\n\n// @param n `0 <= n`\n// @return\
@@ -135,7 +135,7 @@ data:
     \ * k + 1]); }\n    void all_apply(int k, F f) {\n        d[k] = mapping(f, d[k]);\n\
     \        if (k < size) lz[k] = composition(f, lz[k]);\n    }\n    void push(int\
     \ k) {\n        all_apply(2 * k, lz[k]);\n        all_apply(2 * k + 1, lz[k]);\n\
-    \        lz[k] = id();\n    }\n};\n\n}  // namespace atcoder\n\n\n#line 5 \"snow/datastructure/segtree/wrapper.hpp\"\
+    \        lz[k] = id();\n    }\n};\n\n}  // namespace atcoder\n\n\n#line 5 \"snow/utils/acl-wrapper.hpp\"\
     \n\nnamespace snow {\n\n    template < class Monoid >\n    using segtree = atcoder::segtree<typename\
     \ Monoid::value_type, Monoid::op, Monoid::e>;\n\n    template < class Monoid,\
     \ class Mapping >\n    using lazy_segtree = atcoder::lazy_segtree<typename Monoid::value_type,\
@@ -152,17 +152,17 @@ data:
   - atcoder/internal_bit.hpp
   - atcoder/lazysegtree.hpp
   isVerificationFile: false
-  path: snow/datastructure/segtree/wrapper.hpp
+  path: snow/utils/acl-wrapper.hpp
   requiredBy: []
-  timestamp: '2021-03-21 08:31:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-03-21 08:45:05+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/DSL_2_F.test.cpp
   - test/aoj/DSL_2_B.test.cpp
-documentation_of: snow/datastructure/segtree/wrapper.hpp
+documentation_of: snow/utils/acl-wrapper.hpp
 layout: document
 redirect_from:
-- /library/snow/datastructure/segtree/wrapper.hpp
-- /library/snow/datastructure/segtree/wrapper.hpp.html
-title: snow/datastructure/segtree/wrapper.hpp
+- /library/snow/utils/acl-wrapper.hpp
+- /library/snow/utils/acl-wrapper.hpp.html
+title: snow/utils/acl-wrapper.hpp
 ---

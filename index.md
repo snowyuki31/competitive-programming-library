@@ -12,7 +12,7 @@ data:
     - icon: ':warning:'
       path: atcoder/fenwicktree.hpp
       title: atcoder/fenwicktree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/internal_bit.hpp
       title: atcoder/internal_bit.hpp
     - icon: ':warning:'
@@ -30,7 +30,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_type_traits.hpp
       title: atcoder/internal_type_traits.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/lazysegtree.hpp
       title: atcoder/lazysegtree.hpp
     - icon: ':warning:'
@@ -48,7 +48,7 @@ data:
     - icon: ':warning:'
       path: atcoder/scc.hpp
       title: atcoder/scc.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/segtree.hpp
       title: atcoder/segtree.hpp
     - icon: ':warning:'
@@ -62,11 +62,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/algorithm/binary-search.hpp
       title: snow/algorithm/binary-search.hpp
-  - name: snow/datastructure/segtree
-    pages:
-    - icon: ':x:'
-      path: snow/datastructure/segtree/wrapper.hpp
-      title: snow/datastructure/segtree/wrapper.hpp
   - name: snow/datastructure
     pages:
     - icon: ':heavy_check_mark:'
@@ -115,13 +110,13 @@ data:
       title: Sieve of Eratosthenes
   - name: snow/monoids
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: snow/monoids/min.hpp
       title: snow/monoids/min.hpp
     - icon: ':warning:'
       path: snow/monoids/plus-size.hpp
       title: snow/monoids/plus-size.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: snow/monoids/plus.hpp
       title: snow/monoids/plus.hpp
   - name: snow
@@ -129,6 +124,11 @@ data:
     - icon: ':warning:'
       path: snow/template.hpp
       title: snow/template.hpp
+  - name: snow/utils
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: snow/utils/acl-wrapper.hpp
+      title: snow/utils/acl-wrapper.hpp
   - name: test/oj
     pages:
     - icon: ':warning:'
@@ -149,10 +149,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_1_B.test.cpp
       title: test/aoj/DSL_1_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_B.test.cpp
       title: test/aoj/DSL_2_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_F.test.cpp
       title: test/aoj/DSL_2_F.test.cpp
     - icon: ':heavy_check_mark:'
