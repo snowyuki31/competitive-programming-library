@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/algorithm/binary-search.hpp
     title: snow/algorithm/binary-search.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: snow/io/helper.hpp
     title: snow/io/helper.hpp
   _extendedRequiredBy: []

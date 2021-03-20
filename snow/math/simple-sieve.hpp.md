@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':x:'
-    path: test/oj/enumerate_primes.test.cpp
-    title: test/oj/enumerate_primes.test.cpp
-  _isVerificationFailed: true
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/oj/enumerate_primes.cpp
+    title: test/oj/enumerate_primes.cpp
+  _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"snow/math/simple-sieve.hpp\"\n#include <vector>\n#include\
@@ -38,11 +38,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: snow/math/simple-sieve.hpp
-  requiredBy: []
+  requiredBy:
+  - test/oj/enumerate_primes.cpp
   timestamp: '2021-03-20 19:23:05+09:00'
-  verificationStatus: LIBRARY_ALL_WA
-  verifiedWith:
-  - test/oj/enumerate_primes.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: snow/math/simple-sieve.hpp
 layout: document
 redirect_from:

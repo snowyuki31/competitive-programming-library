@@ -29,7 +29,7 @@ data:
       title: snow/graph/shortest-path/warshall-floyd.hpp
   - name: snow/io
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: snow/io/helper.hpp
       title: snow/io/helper.hpp
     - icon: ':warning:'
@@ -43,10 +43,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/math/factorize.hpp
       title: snow/math/factorize.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: snow/math/sieve.hpp
       title: Sieve of Eratosthenes
-    - icon: ':x:'
+    - icon: ':warning:'
       path: snow/math/simple-sieve.hpp
       title: snow/math/simple-sieve.hpp
   - name: snow
@@ -54,9 +54,17 @@ data:
     - icon: ':warning:'
       path: snow/template.hpp
       title: snow/template.hpp
+  - name: test/oj
+    pages:
+    - icon: ':warning:'
+      path: test/oj/enumerate_primes.cpp
+      title: test/oj/enumerate_primes.cpp
   verificationCategories:
   - name: test/aoj
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/ALDS1_1_C.test.cpp
+      title: test/aoj/ALDS1_1_C.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/ALDS1_4_B.test.cpp
       title: test/aoj/ALDS1_4_B.test.cpp
@@ -78,10 +86,5 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/NTL_1_D.test.cpp
       title: test/aoj/NTL_1_D.test.cpp
-  - name: test/oj
-    pages:
-    - icon: ':x:'
-      path: test/oj/enumerate_primes.test.cpp
-      title: test/oj/enumerate_primes.test.cpp
 layout: toppage
 ---

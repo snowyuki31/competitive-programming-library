@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/oj/enumerate_primes.cpp
+    title: test/oj/enumerate_primes.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/ALDS1_4_B.test.cpp
     title: test/aoj/ALDS1_4_B.test.cpp
-  - icon: ':x:'
-    path: test/oj/enumerate_primes.test.cpp
-    title: test/oj/enumerate_primes.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"snow/io/helper.hpp\"\n#include <iostream>\n#include <vector>\n\
@@ -54,11 +54,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: snow/io/helper.hpp
-  requiredBy: []
+  requiredBy:
+  - test/oj/enumerate_primes.cpp
   timestamp: '2021-03-20 06:51:31+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/oj/enumerate_primes.test.cpp
   - test/aoj/ALDS1_4_B.test.cpp
 documentation_of: snow/io/helper.hpp
 layout: document
