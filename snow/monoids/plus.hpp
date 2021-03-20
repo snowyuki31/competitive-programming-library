@@ -1,6 +1,6 @@
 #pragma once
 
-inline namespace snow {
+namespace snow {
 
     template < typename T >
     struct plus_monoid {

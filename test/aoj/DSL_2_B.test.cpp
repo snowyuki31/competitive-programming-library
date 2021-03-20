@@ -1,14 +1,14 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B"
 
 #include <iostream>
-#include "snow/datastructure/segtree/wrapper.hpp"
+#include "snow/utils/acl-wrapper.hpp"
 #include "snow/monoids/plus.hpp"
 
 int main() {
     int n, q;
     std::cin >> n >> q;
 
-    snow::segtree<plus_monoid<int>> segtree(n);
+    snow::segtree<snow::plus_monoid<int>> segtree(n);
 
     while(q--) {
         int t;

@@ -1,14 +1,14 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F"
 
 #include <iostream>
-#include "snow/datastructure/segtree/wrapper.hpp"
+#include "snow/utils/acl-wrapper.hpp"
 #include "snow/monoids/min.hpp"
 
 int main() {
     int n, q;
     std::cin >> n >> q;
 
-    snow::lazy_segtree<min_monoid<int>, min_monoid<int>::update> segtree(n);
+    snow::lazy_segtree<snow::min_monoid<int>, snow::min_monoid<int>::update> segtree(n);
 
     while(q--) {
         int t;
