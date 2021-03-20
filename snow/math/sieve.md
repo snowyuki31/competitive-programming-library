@@ -9,10 +9,10 @@ documentation_of: snow/math/sieve.hpp
 
 ## How to use
 
-```sieve sieve(n)``` : 前処理$O(N\log\logN)$
+```sieve sieve(n)``` : 前処理$O(n\log\log n)$
 
 ```bool sieve.isprime(x)``` : $x$が素数かどうかを返す
 
 ```std::vector<int> sieve.enumerate_primes()``` : 素数列挙
 
-```std::map<int, int> factorize(int x)``` : $x$を素因数分解する．$O(\log x)$
+```std::map<int, int> factorize(int x)``` : 素因数分解$O(\log x)$
