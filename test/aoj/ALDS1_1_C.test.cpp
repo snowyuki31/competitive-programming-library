@@ -1,10 +1,10 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C"
 
 #include <iostream>
-#include "snow/math/sieve.hpp"
+#include "snow/math/simple-sieve.hpp"
 
 int main() {
-    snow::sieve sieve(1e8);
+    snow::simple_sieve sieve(1e8);
 
     int N;
     std::cin >> N;
@@ -15,6 +15,6 @@ int main() {
         ret += sieve.isprime(q);
     }
     std::cout << ret << '\n';
-    
+
     return 0;
 }

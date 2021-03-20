@@ -9,11 +9,11 @@ namespace snow {
 
 struct sieve {
     public:
-        sieve(int n) : n(n + 1), _sieve(n + 1){
+        sieve(int n) : _n(n + 1), _sieve(_n){
             std::iota(_sieve.begin(), _sieve.end(), 0);
-            for(int i = 2; i * i < n; ++i){
+            for(int i = 2; i * i <= n; ++i){
                 if(_sieve[i] < i) continue;
-                for(int j = i * i; j < n; j += i) if(_sieve[j] == j) _sieve[j] = i;
+                for(int j = i * i; j <= n; j += i) if(_sieve[j] == j) _sieve[j] = i;
             }
         }
 
@@ -39,8 +39,8 @@ struct sieve {
         }
 
     protected:
+        int _n;
         std::vector<int> _sieve;
-        int n;
 };
 
 } // namespace snow
