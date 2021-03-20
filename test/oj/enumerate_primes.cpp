@@ -10,7 +10,7 @@ int main() {
     std::cin >> N >> A >> B;
 
     snow::simple_sieve sieve(N);
-    auto ret = sieve.enumerate_prime();
+    auto ret = sieve.enumerate_primes();
     
     std::vector<int> ans;
     for(int i = B; i < ret.size(); i += A){

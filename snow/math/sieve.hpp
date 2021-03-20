@@ -17,16 +17,16 @@ struct sieve {
             }
         }
 
-        std::map<int, int> factorize(int n){
+        std::map<int, int> factorize(int x){
             std::map<int, int> res;
-            while(n != 1){
-                res[_sieve[n]]++;
-                n /= _sieve[n];
+            while(x != 1){
+                res[_sieve[x]]++;
+                x /= _sieve[x];
             }
             return res;
         }
 
-        std::vector<int> enumerate_prime() {
+        std::vector<int> enumerate_primes() {
             std::vector<int> primes;
             for(int i = 2; i < _sieve.size(); ++i) {
                 if(_sieve[i] == i) primes.emplace_back(i);
@@ -34,8 +34,8 @@ struct sieve {
             return primes;
         }
 
-        bool isprime(int n){
-            return _sieve[n] == n;
+        bool isprime(int x){
+            return _sieve[x] == x;
         }
 
     protected:

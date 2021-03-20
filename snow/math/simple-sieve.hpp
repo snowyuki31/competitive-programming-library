@@ -16,11 +16,11 @@ struct simple_sieve {
             }
         }
 
-        bool isprime(int n){
-            return !!prime[n];
+        bool isprime(int x){
+            return !!prime[x];
         }
 
-        std::vector<int> enumerate_prime() {
+        std::vector<int> enumerate_primes() {
             std::vector<int> prime_list;
             prime_list.reserve(std::count(prime.begin(), prime.end(), true));
             for(int i = 0; i < prime.size(); ++i) if(prime[i]) prime_list.emplace_back(i);

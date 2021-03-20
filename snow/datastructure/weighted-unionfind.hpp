@@ -13,17 +13,17 @@ struct WeightedUnionFind {
     WeightedUnionFind() : _n(0) {}
     explicit WeightedUnionFind(int n, Abel e = 0) : _n(n), parent_or_size(n, -1), diff_weight(n, e) {}
 
-    bool merge(int a, int b, Abel w) {
+    int merge(int a, int b, Abel w) {
         assert(0 <= a && a < _n);
         assert(0 <= b && b < _n);
         w += weight(a), w -= weight(b);
         int x = leader(a), y = leader(b);
-        if (x == y) return false;
+        if (x == y) return x;
         if (-parent_or_size[x] < -parent_or_size[y]) std::swap(x, y), w *= -1;
         parent_or_size[x] += parent_or_size[y];
         parent_or_size[y] = x;
         diff_weight[y] = w;
-        return true;
+        return x;
     }
 
     bool same(int a, int b) {

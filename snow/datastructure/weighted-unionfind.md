@@ -3,13 +3,11 @@ title: Weighted UnionFind
 documentation_of: snow/datastructure/weighted-unionfind.hpp
 ---
 
-# About
+## About
 
 [atcoder/dsu](https://github.com/atcoder/ac-library/blob/master/atcoder/dsu.hpp)のポテンシャル付きversionです．
 
-# How to use
-
-```bool d.merge(int a, int b)``` : 代表元ではなく，マージしたかどうかを返します．
+## How to use
 
 ```Abel d.weight(int a)```
 
