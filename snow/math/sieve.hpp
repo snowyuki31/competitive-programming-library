@@ -26,13 +26,13 @@ struct sieve {
             return res;
         }
 
-        // std::vector<int> enumerate_prime() {
-        //     std::vector<int> primes;
-        //     for(int i = 2; i < _sieve.size(); ++i) {
-        //         if(_sieve[i] == i) primes.emplace_back(i);
-        //     }
-        //     return primes;
-        // }
+        std::vector<int> enumerate_prime() {
+            std::vector<int> primes;
+            for(int i = 2; i < _sieve.size(); ++i) {
+                if(_sieve[i] == i) primes.emplace_back(i);
+            }
+            return primes;
+        }
 
         bool isprime(int n){
             return _sieve[n] == n;
