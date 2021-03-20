@@ -43,10 +43,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/math/factorize.hpp
       title: snow/math/factorize.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: snow/math/sieve.hpp
       title: Sieve of Eratosthenes
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: snow/math/simple-sieve.hpp
       title: snow/math/simple-sieve.hpp
   - name: snow

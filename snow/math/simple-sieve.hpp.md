@@ -5,13 +5,16 @@ data:
   - icon: ':warning:'
     path: test/oj/enumerate_primes.cpp
     title: test/oj/enumerate_primes.cpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/ALDS1_1_C.test.cpp
+    title: test/aoj/ALDS1_1_C.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"snow/math/simple-sieve.hpp\"\n#include <vector>\n#include\
+  bundledCode: "#line 2 \"snow/math/simple-sieve.hpp\"\n\n#include <vector>\n#include\
     \ <algorithm>\n#include <numeric>\n\nnamespace snow {\n\nstruct simple_sieve {\n\
     \    public:\n        simple_sieve(int n) : _n(n + 1), prime(_n, true) {\n   \
     \         if(n >= 0) prime[0] = false;\n            if(n >= 1) prime[1] = false;\n\
@@ -23,7 +26,7 @@ data:
     \            for(int i = 0; i < prime.size(); ++i) if(prime[i]) prime_list.emplace_back(i);\n\
     \            return prime_list;\n        }\n\n    protected:\n        int _n;\n\
     \        std::vector<bool> prime;\n};\n\n} // namespace snow\n"
-  code: "#pragma once\n#include <vector>\n#include <algorithm>\n#include <numeric>\n\
+  code: "#pragma once\n\n#include <vector>\n#include <algorithm>\n#include <numeric>\n\
     \nnamespace snow {\n\nstruct simple_sieve {\n    public:\n        simple_sieve(int\
     \ n) : _n(n + 1), prime(_n, true) {\n            if(n >= 0) prime[0] = false;\n\
     \            if(n >= 1) prime[1] = false;\n            for(int i = 2; i * i <=\
@@ -40,9 +43,10 @@ data:
   path: snow/math/simple-sieve.hpp
   requiredBy:
   - test/oj/enumerate_primes.cpp
-  timestamp: '2021-03-20 19:23:05+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-03-20 20:23:59+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/aoj/ALDS1_1_C.test.cpp
 documentation_of: snow/math/simple-sieve.hpp
 layout: document
 redirect_from:

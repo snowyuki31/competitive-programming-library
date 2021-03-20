@@ -7,7 +7,7 @@ data:
   - icon: ':warning:'
     path: snow/io/setup.hpp
     title: snow/io/setup.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: snow/math/simple-sieve.hpp
     title: snow/math/simple-sieve.hpp
   _extendedRequiredBy: []
@@ -19,7 +19,7 @@ data:
     links:
     - https://judge.yosupo.jp/problem/enumerate_primes
   bundledCode: "#line 1 \"test/oj/enumerate_primes.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_primes\"\
-    \n\n#include <iostream>\n#line 2 \"snow/math/simple-sieve.hpp\"\n#include <vector>\n\
+    \n\n#include <iostream>\n#line 2 \"snow/math/simple-sieve.hpp\"\n\n#include <vector>\n\
     #include <algorithm>\n#include <numeric>\n\nnamespace snow {\n\nstruct simple_sieve\
     \ {\n    public:\n        simple_sieve(int n) : _n(n + 1), prime(_n, true) {\n\
     \            if(n >= 0) prime[0] = false;\n            if(n >= 1) prime[1] = false;\n\
@@ -71,7 +71,7 @@ data:
   isVerificationFile: false
   path: test/oj/enumerate_primes.cpp
   requiredBy: []
-  timestamp: '2021-03-20 20:11:29+09:00'
+  timestamp: '2021-03-20 20:23:59+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/oj/enumerate_primes.cpp
