@@ -158,8 +158,13 @@ data:
     \ mapping(f_type f, value_type x) { return {(f.flag ? f.val * x.size : x.val),\
     \ x.size}; }\n            static f_type composition(f_type f, f_type g) { return\
     \ f.flag ? f : g; }\n            static f_type id(){ return {T(), false}; }\n\
-    \        };\n    };\n\n} // namespace snow\n#line 6 \"test/aoj/DSL_2_I.test.cpp\"\
-    \n\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n\n    snow::lazy_segtree<snow::plus_size_monoid<int>,\
+    \        };\n\n        struct affine {\n            using f_type = std::pair<T,\
+    \ T>;\n            static value_type mapping(f_type f, value_type x) { return\
+    \ {x.val * f.first + x.size * f.second, x.size}; }\n            static f_type\
+    \ composition(f_type f, f_type g) { return {g.first * f.first, g.second * f.first\
+    \ + f.second}; }\n            static f_type id(){ return {1, 0}; }\n        };\n\
+    \    };\n\n} // namespace snow\n#line 6 \"test/aoj/DSL_2_I.test.cpp\"\n\nint main()\
+    \ {\n    int n, q;\n    std::cin >> n >> q;\n\n    snow::lazy_segtree<snow::plus_size_monoid<int>,\
     \ snow::plus_size_monoid<int>::update> segtree(n);\n    for(int i = 0; i < n;\
     \ ++i) segtree.set(i, {0, 1});\n\n    while(q--) {\n        int t;\n        std::cin\
     \ >> t;\n\n        if(t == 0) {\n            int l, r, x;\n            std::cin\
@@ -186,7 +191,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_I.test.cpp
   requiredBy: []
-  timestamp: '2021-03-21 09:14:58+09:00'
+  timestamp: '2021-03-21 09:43:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_I.test.cpp
