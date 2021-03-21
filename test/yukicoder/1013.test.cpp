@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <time.h>
 #include <map>
 #include "snow/utils/xorshift.hpp"
 #include "snow/string/rolling-hash.hpp"
