@@ -13,7 +13,7 @@ int main() {
     int N = S.size();
 
     snow::xorShift128 xs(time(NULL));
-    auto seed = xs();
+    const auto seed = xs();
 
     snow::RollingHash RH(S, seed);
     
