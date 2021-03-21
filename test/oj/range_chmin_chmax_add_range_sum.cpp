@@ -8,7 +8,7 @@ int main() {
     int N, Q;
     std::cin >> N >> Q;
 
-    snow::segtree_beats<snow::beats<long>, snow::beats<long>::mapping> segtree(N);
+    // snow::segtree_beats<snow::beats<long>, snow::beats<long>::mapping> segtree(N);
     
 
 }
