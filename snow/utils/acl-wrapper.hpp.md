@@ -1,38 +1,41 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: atcoder/internal_bit.hpp
     title: atcoder/internal_bit.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: atcoder/lazysegtree.hpp
     title: atcoder/lazysegtree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: atcoder/segtree.hpp
     title: atcoder/segtree.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/oj/range_chmin_chmax_add_range_sum.cpp
+    title: test/oj/range_chmin_chmax_add_range_sum.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_B.test.cpp
     title: test/aoj/DSL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_F.test.cpp
     title: test/aoj/DSL_2_F.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_G.test.cpp
     title: test/aoj/DSL_2_G.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_H.test.cpp
     title: test/aoj/DSL_2_H.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_I.test.cpp
     title: test/aoj/DSL_2_I.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/oj/range_affine_range_sum.test.cpp
     title: test/oj/range_affine_range_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"snow/utils/acl-wrapper.hpp\"\n\n#line 1 \"atcoder/segtree.hpp\"\
@@ -142,7 +145,7 @@ data:
     \                        sm = op(d[r], sm);\n                        r--;\n  \
     \                  }\n                }\n                return r + 1 - size;\n\
     \            }\n            sm = op(d[r], sm);\n        } while ((r & -r) != r);\n\
-    \        return 0;\n    }\n\n  private:\n    int _n, size, log;\n    std::vector<S>\
+    \        return 0;\n    }\n\n  protected:\n    int _n, size, log;\n    std::vector<S>\
     \ d;\n    std::vector<F> lz;\n\n    void update(int k) { d[k] = op(d[2 * k], d[2\
     \ * k + 1]); }\n    void all_apply(int k, F f) {\n        d[k] = mapping(f, d[k]);\n\
     \        if (k < size) lz[k] = composition(f, lz[k]);\n    }\n    void push(int\
@@ -152,22 +155,39 @@ data:
     \ Monoid::value_type, Monoid::op, Monoid::e>;\n\n    template < class Monoid,\
     \ class Mapping >\n    using lazy_segtree = atcoder::lazy_segtree<typename Monoid::value_type,\
     \ Monoid::op, Monoid::e, typename Mapping::f_type, Mapping::mapping, Mapping::composition,\
-    \ Mapping::id>;\n\n} // namespace snow\n"
+    \ Mapping::id>;\n\n    template <class S, S (*op)(S, S), S (*e)(), class F, S\
+    \ (*mapping)(F, S), F (*composition)(F, F), F (*id)()>\n    struct _segtree_beats\
+    \ : atcoder::lazy_segtree<> {\n        void all_apply(int k, F f) {\n        \
+    \    d[k] = mapping(f, d[k]);\n            if (k < size){\n                lz[k]\
+    \ = composition(f, lz[k]);\n                if (d[k].fail) push(k), update(k);\n\
+    \            }\n        }\n    };\n\n    template < class Monoid, class Mapping\
+    \ >\n    using segtree_beats = _segtree_beats<typename Monoid::value_type, Monoid::op,\
+    \ Monoid::e, typename Mapping::f_type, Mapping::mapping, Mapping::composition,\
+    \ Mapping::id>;\n\n\n} // namespace snow\n"
   code: "#pragma once\n\n#include \"atcoder/segtree.hpp\"\n#include \"atcoder/lazysegtree.hpp\"\
     \n\nnamespace snow {\n\n    template < class Monoid >\n    using segtree = atcoder::segtree<typename\
     \ Monoid::value_type, Monoid::op, Monoid::e>;\n\n    template < class Monoid,\
     \ class Mapping >\n    using lazy_segtree = atcoder::lazy_segtree<typename Monoid::value_type,\
     \ Monoid::op, Monoid::e, typename Mapping::f_type, Mapping::mapping, Mapping::composition,\
-    \ Mapping::id>;\n\n} // namespace snow"
+    \ Mapping::id>;\n\n    template <class S, S (*op)(S, S), S (*e)(), class F, S\
+    \ (*mapping)(F, S), F (*composition)(F, F), F (*id)()>\n    struct _segtree_beats\
+    \ : atcoder::lazy_segtree<> {\n        void all_apply(int k, F f) {\n        \
+    \    d[k] = mapping(f, d[k]);\n            if (k < size){\n                lz[k]\
+    \ = composition(f, lz[k]);\n                if (d[k].fail) push(k), update(k);\n\
+    \            }\n        }\n    };\n\n    template < class Monoid, class Mapping\
+    \ >\n    using segtree_beats = _segtree_beats<typename Monoid::value_type, Monoid::op,\
+    \ Monoid::e, typename Mapping::f_type, Mapping::mapping, Mapping::composition,\
+    \ Mapping::id>;\n\n\n} // namespace snow"
   dependsOn:
   - atcoder/segtree.hpp
   - atcoder/internal_bit.hpp
   - atcoder/lazysegtree.hpp
   isVerificationFile: false
   path: snow/utils/acl-wrapper.hpp
-  requiredBy: []
-  timestamp: '2021-03-21 08:45:05+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  requiredBy:
+  - test/oj/range_chmin_chmax_add_range_sum.cpp
+  timestamp: '2021-03-21 19:40:10+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/oj/range_affine_range_sum.test.cpp
   - test/aoj/DSL_2_H.test.cpp

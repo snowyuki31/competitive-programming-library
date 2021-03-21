@@ -12,13 +12,13 @@ data:
     - icon: ':warning:'
       path: atcoder/fenwicktree.hpp
       title: atcoder/fenwicktree.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: atcoder/internal_bit.hpp
       title: atcoder/internal_bit.hpp
     - icon: ':warning:'
       path: atcoder/internal_csr.hpp
       title: atcoder/internal_csr.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: atcoder/internal_math.hpp
       title: atcoder/internal_math.hpp
     - icon: ':warning:'
@@ -27,10 +27,10 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_scc.hpp
       title: atcoder/internal_scc.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: atcoder/internal_type_traits.hpp
       title: atcoder/internal_type_traits.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: atcoder/lazysegtree.hpp
       title: atcoder/lazysegtree.hpp
     - icon: ':warning:'
@@ -42,13 +42,13 @@ data:
     - icon: ':warning:'
       path: atcoder/mincostflow.hpp
       title: atcoder/mincostflow.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: atcoder/modint.hpp
       title: atcoder/modint.hpp
     - icon: ':warning:'
       path: atcoder/scc.hpp
       title: atcoder/scc.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: atcoder/segtree.hpp
       title: atcoder/segtree.hpp
     - icon: ':warning:'
@@ -110,13 +110,16 @@ data:
       title: Sieve of Eratosthenes
   - name: snow/monoids
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
+      path: snow/monoids/beats.hpp
+      title: snow/monoids/beats.hpp
+    - icon: ':x:'
       path: snow/monoids/min.hpp
       title: snow/monoids/min.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: snow/monoids/plus-size.hpp
       title: snow/monoids/plus-size.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: snow/monoids/plus.hpp
       title: snow/monoids/plus.hpp
   - name: snow
@@ -126,14 +129,20 @@ data:
       title: snow/template.hpp
   - name: snow/utils
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: snow/utils/acl-wrapper.hpp
       title: snow/utils/acl-wrapper.hpp
+    - icon: ':warning:'
+      path: snow/utils/xorshift.hpp
+      title: snow/utils/xorshift.hpp
   - name: test/oj
     pages:
     - icon: ':warning:'
       path: test/oj/enumerate_primes.cpp
       title: test/oj/enumerate_primes.cpp
+    - icon: ':warning:'
+      path: test/oj/range_chmin_chmax_add_range_sum.cpp
+      title: test/oj/range_chmin_chmax_add_range_sum.cpp
   verificationCategories:
   - name: test/aoj
     pages:
@@ -149,19 +158,19 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_1_B.test.cpp
       title: test/aoj/DSL_1_B.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/DSL_2_B.test.cpp
       title: test/aoj/DSL_2_B.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/DSL_2_F.test.cpp
       title: test/aoj/DSL_2_F.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/DSL_2_G.test.cpp
       title: test/aoj/DSL_2_G.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/DSL_2_H.test.cpp
       title: test/aoj/DSL_2_H.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/DSL_2_I.test.cpp
       title: test/aoj/DSL_2_I.test.cpp
     - icon: ':heavy_check_mark:'
@@ -181,7 +190,7 @@ data:
       title: test/aoj/NTL_1_D.test.cpp
   - name: test/oj
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/oj/range_affine_range_sum.test.cpp
       title: test/oj/range_affine_range_sum.test.cpp
 layout: toppage

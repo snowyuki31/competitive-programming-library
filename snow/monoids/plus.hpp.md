@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_B.test.cpp
     title: test/aoj/DSL_2_B.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"snow/monoids/plus.hpp\"\n\nnamespace snow {\n\n    template\
@@ -24,7 +24,7 @@ data:
   path: snow/monoids/plus.hpp
   requiredBy: []
   timestamp: '2021-03-21 08:45:05+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/aoj/DSL_2_B.test.cpp
 documentation_of: snow/monoids/plus.hpp

@@ -1,35 +1,38 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: atcoder/internal_bit.hpp
     title: atcoder/internal_bit.hpp
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: snow/utils/acl-wrapper.hpp
     title: snow/utils/acl-wrapper.hpp
+  - icon: ':warning:'
+    path: test/oj/range_chmin_chmax_add_range_sum.cpp
+    title: test/oj/range_chmin_chmax_add_range_sum.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_B.test.cpp
     title: test/aoj/DSL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_F.test.cpp
     title: test/aoj/DSL_2_F.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_G.test.cpp
     title: test/aoj/DSL_2_G.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_H.test.cpp
     title: test/aoj/DSL_2_H.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_I.test.cpp
     title: test/aoj/DSL_2_I.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/oj/range_affine_range_sum.test.cpp
     title: test/oj/range_affine_range_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"atcoder/lazysegtree.hpp\"\n\n\n\n#include <algorithm>\n\
@@ -99,7 +102,7 @@ data:
     \                        sm = op(d[r], sm);\n                        r--;\n  \
     \                  }\n                }\n                return r + 1 - size;\n\
     \            }\n            sm = op(d[r], sm);\n        } while ((r & -r) != r);\n\
-    \        return 0;\n    }\n\n  private:\n    int _n, size, log;\n    std::vector<S>\
+    \        return 0;\n    }\n\n  protected:\n    int _n, size, log;\n    std::vector<S>\
     \ d;\n    std::vector<F> lz;\n\n    void update(int k) { d[k] = op(d[2 * k], d[2\
     \ * k + 1]); }\n    void all_apply(int k, F f) {\n        d[k] = mapping(f, d[k]);\n\
     \        if (k < size) lz[k] = composition(f, lz[k]);\n    }\n    void push(int\
@@ -165,7 +168,7 @@ data:
     \ = op(d[r], sm);\n                        r--;\n                    }\n     \
     \           }\n                return r + 1 - size;\n            }\n         \
     \   sm = op(d[r], sm);\n        } while ((r & -r) != r);\n        return 0;\n\
-    \    }\n\n  private:\n    int _n, size, log;\n    std::vector<S> d;\n    std::vector<F>\
+    \    }\n\n  protected:\n    int _n, size, log;\n    std::vector<S> d;\n    std::vector<F>\
     \ lz;\n\n    void update(int k) { d[k] = op(d[2 * k], d[2 * k + 1]); }\n    void\
     \ all_apply(int k, F f) {\n        d[k] = mapping(f, d[k]);\n        if (k < size)\
     \ lz[k] = composition(f, lz[k]);\n    }\n    void push(int k) {\n        all_apply(2\
@@ -176,9 +179,10 @@ data:
   isVerificationFile: false
   path: atcoder/lazysegtree.hpp
   requiredBy:
+  - test/oj/range_chmin_chmax_add_range_sum.cpp
   - snow/utils/acl-wrapper.hpp
-  timestamp: '2021-03-21 08:31:02+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2021-03-21 19:40:10+09:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/oj/range_affine_range_sum.test.cpp
   - test/aoj/DSL_2_H.test.cpp

@@ -1,35 +1,38 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: atcoder/internal_bit.hpp
     title: atcoder/internal_bit.hpp
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: snow/utils/acl-wrapper.hpp
     title: snow/utils/acl-wrapper.hpp
+  - icon: ':warning:'
+    path: test/oj/range_chmin_chmax_add_range_sum.cpp
+    title: test/oj/range_chmin_chmax_add_range_sum.cpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_B.test.cpp
     title: test/aoj/DSL_2_B.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_F.test.cpp
     title: test/aoj/DSL_2_F.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_G.test.cpp
     title: test/aoj/DSL_2_G.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_H.test.cpp
     title: test/aoj/DSL_2_H.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_I.test.cpp
     title: test/aoj/DSL_2_I.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/oj/range_affine_range_sum.test.cpp
     title: test/oj/range_affine_range_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"atcoder/segtree.hpp\"\n\n\n\n#include <algorithm>\n#include\
@@ -125,9 +128,10 @@ data:
   isVerificationFile: false
   path: atcoder/segtree.hpp
   requiredBy:
+  - test/oj/range_chmin_chmax_add_range_sum.cpp
   - snow/utils/acl-wrapper.hpp
   timestamp: '2021-03-21 08:31:02+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/oj/range_affine_range_sum.test.cpp
   - test/aoj/DSL_2_H.test.cpp

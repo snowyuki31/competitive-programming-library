@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: atcoder/internal_math.hpp
     title: atcoder/internal_math.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: atcoder/internal_type_traits.hpp
     title: atcoder/internal_type_traits.hpp
   _extendedRequiredBy:
@@ -12,12 +12,12 @@ data:
     path: atcoder/convolution.hpp
     title: atcoder/convolution.hpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/oj/range_affine_range_sum.test.cpp
     title: test/oj/range_affine_range_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 1 \"atcoder/modint.hpp\"\n\n\n\n#include <cassert>\n#include\
@@ -325,7 +325,7 @@ data:
   requiredBy:
   - atcoder/convolution.hpp
   timestamp: '2021-03-21 08:31:02+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/oj/range_affine_range_sum.test.cpp
 documentation_of: atcoder/modint.hpp
