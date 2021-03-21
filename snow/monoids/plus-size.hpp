@@ -27,6 +27,13 @@ namespace snow {
             static f_type composition(f_type f, f_type g) { return f.flag ? f : g; }
             static f_type id(){ return {T(), false}; }
         };
+
+        struct affine {
+            using f_type = std::pair<T, T>;
+            static value_type mapping(f_type f, value_type x) { return {x.val * f.first + x.size * f.second, x.size}; }
+            static f_type composition(f_type f, f_type g) { return {g.first * f.first, g.second * f.first + f.second}; }
+            static f_type id(){ return {1, 0}; }
+        };
     };
 
 } // namespace snow
