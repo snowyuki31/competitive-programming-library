@@ -3,7 +3,7 @@
 #include <vector>
 #include <queue>
 
-#include "snow/graph/graph.hpp"
+#include "snow/graph/template.hpp"
 
 namespace snow{
 
