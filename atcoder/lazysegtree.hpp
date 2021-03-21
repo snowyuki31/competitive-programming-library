@@ -167,7 +167,7 @@ struct lazy_segtree {
         return 0;
     }
 
-  private:
+  protected:
     int _n, size, log;
     std::vector<S> d;
     std::vector<F> lz;
