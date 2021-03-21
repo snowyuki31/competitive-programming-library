@@ -5,12 +5,13 @@
 "test/aoj/DSL_1_B.test.cpp": "2021-03-21 02:00:09 +0900",
 "test/aoj/DSL_2_B.test.cpp": "2021-03-21 08:45:05 +0900",
 "test/aoj/DSL_2_F.test.cpp": "2021-03-21 09:14:58 +0900",
-"test/aoj/DSL_2_G.test.cpp": "2021-03-21 09:15:27 +0900",
+"test/aoj/DSL_2_G.test.cpp": "2021-03-21 09:43:15 +0900",
 "test/aoj/DSL_2_H.test.cpp": "2021-03-21 09:14:58 +0900",
-"test/aoj/DSL_2_I.test.cpp": "2021-03-21 09:14:58 +0900",
+"test/aoj/DSL_2_I.test.cpp": "2021-03-21 09:43:15 +0900",
 "test/aoj/GRL_1_A.test.cpp": "2021-03-19 20:50:23 +0900",
 "test/aoj/GRL_1_B.test.cpp": "2021-03-19 20:50:23 +0900",
 "test/aoj/GRL_1_C.test.cpp": "2021-03-19 20:50:23 +0900",
 "test/aoj/NTL_1_A.test.cpp": "2021-03-19 20:50:23 +0900",
-"test/aoj/NTL_1_D.test.cpp": "2021-03-19 20:50:23 +0900"
+"test/aoj/NTL_1_D.test.cpp": "2021-03-19 20:50:23 +0900",
+"test/oj/range_affine_range_sum.test.cpp": "2021-03-21 09:43:15 +0900"
 }
