@@ -67,11 +67,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/datastructure/weighted-unionfind.hpp
       title: Weighted UnionFind
-  - name: snow/graph
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: snow/graph/graph.hpp
-      title: snow/graph/graph.hpp
   - name: snow/graph/shortest-path
     pages:
     - icon: ':heavy_check_mark:'
@@ -83,6 +78,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/graph/shortest-path/warshall-floyd.hpp
       title: snow/graph/shortest-path/warshall-floyd.hpp
+  - name: snow/graph
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: snow/graph/template.hpp
+      title: snow/graph/template.hpp
+    - icon: ':heavy_check_mark:'
+      path: snow/graph/topological-sort.hpp
+      title: snow/graph/topological-sort.hpp
   - name: snow/io
     pages:
     - icon: ':heavy_check_mark:'
@@ -193,5 +196,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/oj/range_affine_range_sum.test.cpp
       title: test/oj/range_affine_range_sum.test.cpp
+  - name: test/yukicoder
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/517.test.cpp
+      title: test/yukicoder/517.test.cpp
 layout: toppage
 ---

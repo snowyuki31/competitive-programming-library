@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: snow/graph/graph.hpp
-    title: snow/graph/graph.hpp
-  - icon: ':heavy_check_mark:'
     path: snow/graph/shortest-path/warshall-floyd.hpp
     title: snow/graph/shortest-path/warshall-floyd.hpp
+  - icon: ':heavy_check_mark:'
+    path: snow/graph/template.hpp
+    title: snow/graph/template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -19,7 +19,7 @@ data:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C
   bundledCode: "#line 1 \"test/aoj/GRL_1_C.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C\"\
     \n\n#include <iostream>\n\n#line 2 \"snow/graph/shortest-path/warshall-floyd.hpp\"\
-    \n\n#include <vector>\n\n#line 2 \"snow/graph/graph.hpp\"\n\r\n#line 4 \"snow/graph/graph.hpp\"\
+    \n\n#include <vector>\n\n#line 2 \"snow/graph/template.hpp\"\n\r\n#line 4 \"snow/graph/template.hpp\"\
     \n\r\nnamespace snow {\r\n\r\ntemplate < typename T >\r\nstruct Graph {\r\n  \
     \  struct Edge {\r\n        int from, to;\r\n        T weight;\r\n        Edge()\
     \ : from(0), to(0), weight(0) {}\r\n        Edge(int from, int to, T weight) :\
@@ -34,8 +34,9 @@ data:
     \    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a, b,\
     \ w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\
     \n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\
-    \n    //warshall-floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
-    \n\r\n};\r\n\r\n} // namespace snow\n#line 6 \"snow/graph/shortest-path/warshall-floyd.hpp\"\
+    \n    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
+    \n\r\n    //Topological sort\r\n    std::vector<int> topological_sort() const;\r\
+    \n};\r\n\r\n} // namespace snow\n#line 6 \"snow/graph/shortest-path/warshall-floyd.hpp\"\
     \n\nnamespace snow{\n\ntemplate < typename T >\nstd::vector<std::vector<T>> Graph<T>::warshall_floyd()\
     \ const{\n    int N = G.size();\n    std::vector<std::vector<T>> d(N, std::vector<T>(N,\
     \ INF));\n    \n    for(int i = 0; i < N; ++i) d[i][i] = 0;\n\n    for(int i =\
@@ -66,11 +67,11 @@ data:
     \ << '\\n';\n    }\n\n    return 0;\n}\n"
   dependsOn:
   - snow/graph/shortest-path/warshall-floyd.hpp
-  - snow/graph/graph.hpp
+  - snow/graph/template.hpp
   isVerificationFile: true
   path: test/aoj/GRL_1_C.test.cpp
   requiredBy: []
-  timestamp: '2021-03-19 20:50:23+09:00'
+  timestamp: '2021-03-22 03:30:25+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_1_C.test.cpp
