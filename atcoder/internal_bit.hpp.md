@@ -5,40 +5,40 @@ data:
   - icon: ':warning:'
     path: atcoder/convolution.hpp
     title: atcoder/convolution.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/lazysegtree.hpp
     title: atcoder/lazysegtree.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/segtree.hpp
     title: atcoder/segtree.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: snow/utils/acl-wrapper.hpp
     title: snow/utils/acl-wrapper.hpp
   - icon: ':warning:'
     path: test/oj/range_chmin_chmax_add_range_sum.cpp
     title: test/oj/range_chmin_chmax_add_range_sum.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_B.test.cpp
     title: test/aoj/DSL_2_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_F.test.cpp
     title: test/aoj/DSL_2_F.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_G.test.cpp
     title: test/aoj/DSL_2_G.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_H.test.cpp
     title: test/aoj/DSL_2_H.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_I.test.cpp
     title: test/aoj/DSL_2_I.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/oj/range_affine_range_sum.test.cpp
     title: test/oj/range_affine_range_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"atcoder/internal_bit.hpp\"\n\n\n\n#ifdef _MSC_VER\n#include\
@@ -69,7 +69,7 @@ data:
   - atcoder/segtree.hpp
   - atcoder/convolution.hpp
   timestamp: '2021-03-21 08:31:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/range_affine_range_sum.test.cpp
   - test/aoj/DSL_2_H.test.cpp

@@ -1,19 +1,19 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/internal_bit.hpp
     title: atcoder/internal_bit.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/lazysegtree.hpp
     title: atcoder/lazysegtree.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/segtree.hpp
     title: atcoder/segtree.hpp
   - icon: ':warning:'
     path: snow/monoids/beats.hpp
     title: snow/monoids/beats.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: snow/utils/acl-wrapper.hpp
     title: snow/utils/acl-wrapper.hpp
   _extendedRequiredBy: []
@@ -143,17 +143,17 @@ data:
     \ Monoid::value_type, Monoid::op, Monoid::e>;\n\n    template < class Monoid,\
     \ class Mapping >\n    using lazy_segtree = atcoder::lazy_segtree<typename Monoid::value_type,\
     \ Monoid::op, Monoid::e, typename Mapping::f_type, Mapping::mapping, Mapping::composition,\
-    \ Mapping::id>;\n\n    template <class S, S (*op)(S, S), S (*e)(), class F, S\
-    \ (*mapping)(F, S), F (*composition)(F, F), F (*id)()>\n    struct _segtree_beats\
-    \ : atcoder::lazy_segtree<> {\n        void all_apply(int k, F f) {\n        \
-    \    d[k] = mapping(f, d[k]);\n            if (k < size){\n                lz[k]\
-    \ = composition(f, lz[k]);\n                if (d[k].fail) push(k), update(k);\n\
-    \            }\n        }\n    };\n\n    template < class Monoid, class Mapping\
-    \ >\n    using segtree_beats = _segtree_beats<typename Monoid::value_type, Monoid::op,\
-    \ Monoid::e, typename Mapping::f_type, Mapping::mapping, Mapping::composition,\
-    \ Mapping::id>;\n\n\n} // namespace snow\n#line 2 \"snow/monoids/beats.hpp\"\n\
-    \nnamespace snow {\n\n    template <typename T> inline T second_lowest(T a, T\
-    \ a2, T c, T c2) noexcept {\n        return a == c ? std::min(a2, c2) : a2 <=\
+    \ Mapping::id>;\n\n    // template <class S, S (*op)(S, S), S (*e)(), class F,\
+    \ S (*mapping)(F, S), F (*composition)(F, F), F (*id)()>\n    // struct _segtree_beats\
+    \ : atcoder::lazy_segtree<> {\n    //     void all_apply(int k, F f) {\n    //\
+    \         d[k] = mapping(f, d[k]);\n    //         if (k < size){\n    //    \
+    \         lz[k] = composition(f, lz[k]);\n    //             if (d[k].fail) push(k),\
+    \ update(k);\n    //         }\n    //     }\n    // };\n\n    // template < class\
+    \ Monoid, class Mapping >\n    // using segtree_beats = _segtree_beats<typename\
+    \ Monoid::value_type, Monoid::op, Monoid::e, typename Mapping::f_type, Mapping::mapping,\
+    \ Mapping::composition, Mapping::id>;\n\n\n} // namespace snow\n#line 2 \"snow/monoids/beats.hpp\"\
+    \n\nnamespace snow {\n\n    template <typename T> inline T second_lowest(T a,\
+    \ T a2, T c, T c2) noexcept {\n        return a == c ? std::min(a2, c2) : a2 <=\
     \ c ? a2 : c2 <= a ? c2 : std::max(a, c);\n    }\n    template <typename T> inline\
     \ T second_highest(T a, T a2, T b, T b2) noexcept {\n        return a == b ? std::max(a2,\
     \ b2) : a2 >= b ? a2 : b2 >= a ? b2 : std::min(a, b);\n    }\n\n    template <\
@@ -197,12 +197,12 @@ data:
     \ += f.bias, x.hi2 += f.bias;\n                    return x;\n               \
     \ }\n                x.fail = true;\n                return x;\n            }\n\
     \        };\n    };\n\n} // namespace snow\n#line 6 \"test/oj/range_chmin_chmax_add_range_sum.cpp\"\
-    \n\nint main() {\n    int N, Q;\n    std::cin >> N >> Q;\n\n    snow::segtree_beats<snow::beats<long>,\
+    \n\nint main() {\n    int N, Q;\n    std::cin >> N >> Q;\n\n    // snow::segtree_beats<snow::beats<long>,\
     \ snow::beats<long>::mapping> segtree(N);\n    \n\n}\n"
   code: "#define PROBLEM \"https://old.yosupo.jp/problem/range_chmin_chmax_add_range_sum\"\
     \n\n#include <iostream>\n#include \"snow/utils/acl-wrapper.hpp\"\n#include \"\
     snow/monoids/beats.hpp\"\n\nint main() {\n    int N, Q;\n    std::cin >> N >>\
-    \ Q;\n\n    snow::segtree_beats<snow::beats<long>, snow::beats<long>::mapping>\
+    \ Q;\n\n    // snow::segtree_beats<snow::beats<long>, snow::beats<long>::mapping>\
     \ segtree(N);\n    \n\n}"
   dependsOn:
   - snow/utils/acl-wrapper.hpp
@@ -213,7 +213,7 @@ data:
   isVerificationFile: false
   path: test/oj/range_chmin_chmax_add_range_sum.cpp
   requiredBy: []
-  timestamp: '2021-03-21 19:40:10+09:00'
+  timestamp: '2021-03-21 19:53:17+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/oj/range_chmin_chmax_add_range_sum.cpp

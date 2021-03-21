@@ -8,16 +8,16 @@ data:
   - icon: ':warning:'
     path: atcoder/math.hpp
     title: atcoder/math.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/modint.hpp
     title: atcoder/modint.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/oj/range_affine_range_sum.test.cpp
     title: test/oj/range_affine_range_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://en.wikipedia.org/wiki/Barrett_reduction
@@ -179,7 +179,7 @@ data:
   - atcoder/modint.hpp
   - atcoder/convolution.hpp
   timestamp: '2021-03-21 08:31:02+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/range_affine_range_sum.test.cpp
 documentation_of: atcoder/internal_math.hpp

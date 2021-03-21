@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/internal_bit.hpp
     title: atcoder/internal_bit.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/lazysegtree.hpp
     title: atcoder/lazysegtree.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/segtree.hpp
     title: atcoder/segtree.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: snow/monoids/plus-size.hpp
     title: snow/monoids/plus-size.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: snow/utils/acl-wrapper.hpp
     title: snow/utils/acl-wrapper.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I
@@ -144,15 +144,15 @@ data:
     \ Monoid::value_type, Monoid::op, Monoid::e>;\n\n    template < class Monoid,\
     \ class Mapping >\n    using lazy_segtree = atcoder::lazy_segtree<typename Monoid::value_type,\
     \ Monoid::op, Monoid::e, typename Mapping::f_type, Mapping::mapping, Mapping::composition,\
-    \ Mapping::id>;\n\n    template <class S, S (*op)(S, S), S (*e)(), class F, S\
-    \ (*mapping)(F, S), F (*composition)(F, F), F (*id)()>\n    struct _segtree_beats\
-    \ : atcoder::lazy_segtree<> {\n        void all_apply(int k, F f) {\n        \
-    \    d[k] = mapping(f, d[k]);\n            if (k < size){\n                lz[k]\
-    \ = composition(f, lz[k]);\n                if (d[k].fail) push(k), update(k);\n\
-    \            }\n        }\n    };\n\n    template < class Monoid, class Mapping\
-    \ >\n    using segtree_beats = _segtree_beats<typename Monoid::value_type, Monoid::op,\
-    \ Monoid::e, typename Mapping::f_type, Mapping::mapping, Mapping::composition,\
-    \ Mapping::id>;\n\n\n} // namespace snow\n#line 2 \"snow/monoids/plus-size.hpp\"\
+    \ Mapping::id>;\n\n    // template <class S, S (*op)(S, S), S (*e)(), class F,\
+    \ S (*mapping)(F, S), F (*composition)(F, F), F (*id)()>\n    // struct _segtree_beats\
+    \ : atcoder::lazy_segtree<> {\n    //     void all_apply(int k, F f) {\n    //\
+    \         d[k] = mapping(f, d[k]);\n    //         if (k < size){\n    //    \
+    \         lz[k] = composition(f, lz[k]);\n    //             if (d[k].fail) push(k),\
+    \ update(k);\n    //         }\n    //     }\n    // };\n\n    // template < class\
+    \ Monoid, class Mapping >\n    // using segtree_beats = _segtree_beats<typename\
+    \ Monoid::value_type, Monoid::op, Monoid::e, typename Mapping::f_type, Mapping::mapping,\
+    \ Mapping::composition, Mapping::id>;\n\n\n} // namespace snow\n#line 2 \"snow/monoids/plus-size.hpp\"\
     \n\nnamespace snow {\n\n    template < typename T >\n    struct plus_size_monoid\
     \ {\n        struct value_type {\n            T val;\n            int size;\n\
     \        };\n        static value_type e() { return value_type{0, 0}; };\n   \
@@ -199,8 +199,8 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_I.test.cpp
   requiredBy: []
-  timestamp: '2021-03-21 19:40:10+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-03-21 19:53:17+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_I.test.cpp
 layout: document
