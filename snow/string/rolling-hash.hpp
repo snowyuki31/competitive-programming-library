@@ -3,7 +3,6 @@
 #include <time.h>
 #include <vector>
 #include <string>
-#include "snow/utils/xorshift.hpp"
 
 namespace snow {
 
@@ -11,8 +10,6 @@ namespace snow {
 struct RollingHash {
     using ull = unsigned long long;
     const unsigned long long BASE;
-    snow::xorShift128 xs;
-
     const ull MASK30 = (1ull << 30) - 1;
     const ull MASK31 = (1ull << 31) - 1;
     const ull MOD = (1ull << 61) - 1;
@@ -21,7 +18,7 @@ struct RollingHash {
 
     std::vector<ull> hashed, power;
 
-    RollingHash(const std::string& s) : hashed(s.size() + 1, 0), power(s.size() + 1, 0), xs(time(NULL)), BASE(xs()) {
+    RollingHash(const std::string& s, ull BASE = 8901016) : hashed(s.size() + 1, 0), power(s.size() + 1, 0), BASE(BASE) {
         power[0] = 1;
         for(int i = 0; i < s.size(); ++i) power[i + 1] = CalcMod(Mul(power[i], BASE));
         for(int i = 0; i < s.size(); ++i) hashed[i + 1] = CalcMod(Mul(hashed[i], BASE) + s[i]);
