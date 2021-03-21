@@ -14,7 +14,6 @@ int main() {
     while(q--) {
         int t;
         std::cin >> t;
-
         if(t == 0) {
             int l, r, x;
             std::cin >> l >> r >> x;
