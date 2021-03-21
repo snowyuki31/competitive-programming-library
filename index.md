@@ -125,6 +125,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/monoids/plus.hpp
       title: snow/monoids/plus.hpp
+  - name: snow/string
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: snow/string/rolling-hash.hpp
+      title: Rolling Hash
   - name: snow
     pages:
     - icon: ':warning:'
@@ -135,7 +140,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/utils/acl-wrapper.hpp
       title: snow/utils/acl-wrapper.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: snow/utils/xorshift.hpp
       title: snow/utils/xorshift.hpp
   - name: test/oj
@@ -198,6 +203,9 @@ data:
       title: test/oj/range_affine_range_sum.test.cpp
   - name: test/yukicoder
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/1013.test.cpp
+      title: test/yukicoder/1013.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/517.test.cpp
       title: test/yukicoder/517.test.cpp

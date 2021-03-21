@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1013.test.cpp
+    title: test/yukicoder/1013.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"snow/utils/xorshift.hpp\"\n\nnamespace snow {\n\nstruct\
@@ -25,8 +28,9 @@ data:
   path: snow/utils/xorshift.hpp
   requiredBy: []
   timestamp: '2021-03-21 19:40:10+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/1013.test.cpp
 documentation_of: snow/utils/xorshift.hpp
 layout: document
 redirect_from:
