@@ -23,10 +23,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F
-  bundledCode: "#line 1 \"test/aoj/DSL_2_F.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F\"\
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H
+  bundledCode: "#line 1 \"test/aoj/DSL_2_H.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H\"\
     \n\n#include <iostream>\n#line 2 \"snow/utils/acl-wrapper.hpp\"\n\n#line 1 \"\
     atcoder/segtree.hpp\"\n\n\n\n#include <algorithm>\n#include <cassert>\n#include\
     \ <vector>\n\n#line 1 \"atcoder/internal_bit.hpp\"\n\n\n\n#ifdef _MSC_VER\n#include\
@@ -156,23 +156,24 @@ data:
     \        };\n            static value_type mapping(f_type f, value_type x) { return\
     \ f.flag ? f.val : x; }\n            static f_type composition(f_type f, f_type\
     \ g) { return f.flag ? f : g; }\n            static f_type id(){ return {T(),\
-    \ false}; }\n        };\n    };\n\n} // namespace snow\n#line 6 \"test/aoj/DSL_2_F.test.cpp\"\
+    \ false}; }\n        };\n    };\n\n} // namespace snow\n#line 6 \"test/aoj/DSL_2_H.test.cpp\"\
     \n\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n\n    snow::lazy_segtree<snow::min_monoid<int>,\
-    \ snow::min_monoid<int>::update> segtree(n);\n\n    while(q--) {\n        int\
-    \ t;\n        std::cin >> t;\n\n        if(t == 0) {\n            int l, r, x;\n\
-    \            std::cin >> l >> r >> x;\n            segtree.apply(l, r + 1, {x,\
-    \ 1});\n        }\n        else {\n            int s, t;\n            std::cin\
-    \ >> s >> t;\n            std::cout << segtree.prod(s, t + 1) << '\\n';\n    \
-    \    }\n    }\n\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F\"\
+    \ snow::min_monoid<int>::add> segtree(n);\n    for(int i = 0; i < n; ++i) segtree.set(i,\
+    \ 0);\n\n    while(q--) {\n        int t;\n        std::cin >> t;\n\n        if(t\
+    \ == 0) {\n            int l, r, x;\n            std::cin >> l >> r >> x;\n  \
+    \          segtree.apply(l, r + 1, x);\n        }\n        else {\n          \
+    \  int s, t;\n            std::cin >> s >> t;\n            std::cout << segtree.prod(s,\
+    \ t + 1) << '\\n';\n        }\n    }\n\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H\"\
     \n\n#include <iostream>\n#include \"snow/utils/acl-wrapper.hpp\"\n#include \"\
     snow/monoids/min.hpp\"\n\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n\
-    \n    snow::lazy_segtree<snow::min_monoid<int>, snow::min_monoid<int>::update>\
-    \ segtree(n);\n\n    while(q--) {\n        int t;\n        std::cin >> t;\n\n\
-    \        if(t == 0) {\n            int l, r, x;\n            std::cin >> l >>\
-    \ r >> x;\n            segtree.apply(l, r + 1, {x, 1});\n        }\n        else\
-    \ {\n            int s, t;\n            std::cin >> s >> t;\n            std::cout\
-    \ << segtree.prod(s, t + 1) << '\\n';\n        }\n    }\n\n    return 0;\n}\n"
+    \n    snow::lazy_segtree<snow::min_monoid<int>, snow::min_monoid<int>::add> segtree(n);\n\
+    \    for(int i = 0; i < n; ++i) segtree.set(i, 0);\n\n    while(q--) {\n     \
+    \   int t;\n        std::cin >> t;\n\n        if(t == 0) {\n            int l,\
+    \ r, x;\n            std::cin >> l >> r >> x;\n            segtree.apply(l, r\
+    \ + 1, x);\n        }\n        else {\n            int s, t;\n            std::cin\
+    \ >> s >> t;\n            std::cout << segtree.prod(s, t + 1) << '\\n';\n    \
+    \    }\n    }\n\n    return 0;\n}\n"
   dependsOn:
   - snow/utils/acl-wrapper.hpp
   - atcoder/segtree.hpp
@@ -180,15 +181,15 @@ data:
   - atcoder/lazysegtree.hpp
   - snow/monoids/min.hpp
   isVerificationFile: true
-  path: test/aoj/DSL_2_F.test.cpp
+  path: test/aoj/DSL_2_H.test.cpp
   requiredBy: []
   timestamp: '2021-03-21 09:14:58+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/aoj/DSL_2_F.test.cpp
+documentation_of: test/aoj/DSL_2_H.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/DSL_2_F.test.cpp
-- /verify/test/aoj/DSL_2_F.test.cpp.html
-title: test/aoj/DSL_2_F.test.cpp
+- /verify/test/aoj/DSL_2_H.test.cpp
+- /verify/test/aoj/DSL_2_H.test.cpp.html
+title: test/aoj/DSL_2_H.test.cpp
 ---

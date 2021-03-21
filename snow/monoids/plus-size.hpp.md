@@ -2,29 +2,55 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_G.test.cpp
+    title: test/aoj/DSL_2_G.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_I.test.cpp
+    title: test/aoj/DSL_2_I.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"snow/monoids/plus-size.hpp\"\n\nnamespace snow {\n\n   \
-    \ template < typename T >\n    struct plus_size_monoid {\n        struct S {\n\
-    \            T val;\n            int size;\n        };\n        static S e() {\
-    \ return S{0, 0}; };\n        static S op(S l, S r) { return {l.val + r.val, l.size\
-    \ + r.size}; };\n    };\n\n} // namespace snow\n"
+    \ template < typename T >\n    struct plus_size_monoid {\n        struct value_type\
+    \ {\n            T val;\n            int size;\n        };\n        static value_type\
+    \ e() { return value_type{0, 0}; };\n        static value_type op(value_type l,\
+    \ value_type r) { return {l.val + r.val, l.size + r.size}; };\n\n        struct\
+    \ add {\n            using f_type = T;\n            static value_type mapping(f_type\
+    \ f, value_type x) { return {f * x.size + x.val, x.size}; }\n            static\
+    \ f_type composition(f_type f, f_type g) { return f + g; }\n            static\
+    \ f_type id(){ return T(); }\n        };\n\n        struct update {\n        \
+    \    struct f_type{\n                T val;\n                bool flag;\n    \
+    \        };\n            static value_type mapping(f_type f, value_type x) { return\
+    \ {(f.flag ? f.val * x.size : x.val), x.size}; }\n            static f_type composition(f_type\
+    \ f, f_type g) { return f.flag ? f : g; }\n            static f_type id(){ return\
+    \ {T(), false}; }\n        };\n    };\n\n} // namespace snow\n"
   code: "#pragma once\n\nnamespace snow {\n\n    template < typename T >\n    struct\
-    \ plus_size_monoid {\n        struct S {\n            T val;\n            int\
-    \ size;\n        };\n        static S e() { return S{0, 0}; };\n        static\
-    \ S op(S l, S r) { return {l.val + r.val, l.size + r.size}; };\n    };\n\n} //\
-    \ namespace snow"
+    \ plus_size_monoid {\n        struct value_type {\n            T val;\n      \
+    \      int size;\n        };\n        static value_type e() { return value_type{0,\
+    \ 0}; };\n        static value_type op(value_type l, value_type r) { return {l.val\
+    \ + r.val, l.size + r.size}; };\n\n        struct add {\n            using f_type\
+    \ = T;\n            static value_type mapping(f_type f, value_type x) { return\
+    \ {f * x.size + x.val, x.size}; }\n            static f_type composition(f_type\
+    \ f, f_type g) { return f + g; }\n            static f_type id(){ return T();\
+    \ }\n        };\n\n        struct update {\n            struct f_type{\n     \
+    \           T val;\n                bool flag;\n            };\n            static\
+    \ value_type mapping(f_type f, value_type x) { return {(f.flag ? f.val * x.size\
+    \ : x.val), x.size}; }\n            static f_type composition(f_type f, f_type\
+    \ g) { return f.flag ? f : g; }\n            static f_type id(){ return {T(),\
+    \ false}; }\n        };\n    };\n\n} // namespace snow"
   dependsOn: []
   isVerificationFile: false
   path: snow/monoids/plus-size.hpp
   requiredBy: []
-  timestamp: '2021-03-21 08:45:05+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2021-03-21 09:14:58+09:00'
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/aoj/DSL_2_I.test.cpp
+  - test/aoj/DSL_2_G.test.cpp
 documentation_of: snow/monoids/plus-size.hpp
 layout: document
 redirect_from:

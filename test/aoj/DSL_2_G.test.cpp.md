@@ -11,8 +11,8 @@ data:
     path: atcoder/segtree.hpp
     title: atcoder/segtree.hpp
   - icon: ':heavy_check_mark:'
-    path: snow/monoids/min.hpp
-    title: snow/monoids/min.hpp
+    path: snow/monoids/plus-size.hpp
+    title: snow/monoids/plus-size.hpp
   - icon: ':heavy_check_mark:'
     path: snow/utils/acl-wrapper.hpp
     title: snow/utils/acl-wrapper.hpp
@@ -23,10 +23,10 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F
-  bundledCode: "#line 1 \"test/aoj/DSL_2_F.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F\"\
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G
+  bundledCode: "#line 1 \"test/aoj/DSL_2_G.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G\"\
     \n\n#include <iostream>\n#line 2 \"snow/utils/acl-wrapper.hpp\"\n\n#line 1 \"\
     atcoder/segtree.hpp\"\n\n\n\n#include <algorithm>\n#include <cassert>\n#include\
     \ <vector>\n\n#line 1 \"atcoder/internal_bit.hpp\"\n\n\n\n#ifdef _MSC_VER\n#include\
@@ -144,51 +144,56 @@ data:
     \ Monoid::value_type, Monoid::op, Monoid::e>;\n\n    template < class Monoid,\
     \ class Mapping >\n    using lazy_segtree = atcoder::lazy_segtree<typename Monoid::value_type,\
     \ Monoid::op, Monoid::e, typename Mapping::f_type, Mapping::mapping, Mapping::composition,\
-    \ Mapping::id>;\n\n} // namespace snow\n#line 2 \"snow/monoids/min.hpp\"\n\nnamespace\
-    \ snow {\n\n    template < typename T >\n    struct min_monoid {\n        using\
-    \ value_type = T;\n        static value_type e() { return std::numeric_limits<T>::max();\
-    \ };\n        static value_type op(value_type l, value_type r){ return std::min(l,\
-    \ r); };\n\n        struct add {\n            using f_type = T;\n            static\
-    \ value_type mapping(f_type f, value_type x) { return f + x; }\n            static\
-    \ f_type composition(f_type f, f_type g) { return f + g; }\n            static\
-    \ f_type id(){ return T(); }\n        };\n\n        struct update {\n        \
-    \    struct f_type{\n                T val;\n                bool flag;\n    \
-    \        };\n            static value_type mapping(f_type f, value_type x) { return\
-    \ f.flag ? f.val : x; }\n            static f_type composition(f_type f, f_type\
-    \ g) { return f.flag ? f : g; }\n            static f_type id(){ return {T(),\
-    \ false}; }\n        };\n    };\n\n} // namespace snow\n#line 6 \"test/aoj/DSL_2_F.test.cpp\"\
-    \n\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n\n    snow::lazy_segtree<snow::min_monoid<int>,\
-    \ snow::min_monoid<int>::update> segtree(n);\n\n    while(q--) {\n        int\
-    \ t;\n        std::cin >> t;\n\n        if(t == 0) {\n            int l, r, x;\n\
-    \            std::cin >> l >> r >> x;\n            segtree.apply(l, r + 1, {x,\
-    \ 1});\n        }\n        else {\n            int s, t;\n            std::cin\
-    \ >> s >> t;\n            std::cout << segtree.prod(s, t + 1) << '\\n';\n    \
-    \    }\n    }\n\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F\"\
+    \ Mapping::id>;\n\n} // namespace snow\n#line 2 \"snow/monoids/plus-size.hpp\"\
+    \n\nnamespace snow {\n\n    template < typename T >\n    struct plus_size_monoid\
+    \ {\n        struct value_type {\n            T val;\n            int size;\n\
+    \        };\n        static value_type e() { return value_type{0, 0}; };\n   \
+    \     static value_type op(value_type l, value_type r) { return {l.val + r.val,\
+    \ l.size + r.size}; };\n\n        struct add {\n            using f_type = T;\n\
+    \            static value_type mapping(f_type f, value_type x) { return {f * x.size\
+    \ + x.val, x.size}; }\n            static f_type composition(f_type f, f_type\
+    \ g) { return f + g; }\n            static f_type id(){ return T(); }\n      \
+    \  };\n\n        struct update {\n            struct f_type{\n               \
+    \ T val;\n                bool flag;\n            };\n            static value_type\
+    \ mapping(f_type f, value_type x) { return {(f.flag ? f.val * x.size : x.val),\
+    \ x.size}; }\n            static f_type composition(f_type f, f_type g) { return\
+    \ f.flag ? f : g; }\n            static f_type id(){ return {T(), false}; }\n\
+    \        };\n    };\n\n} // namespace snow\n#line 6 \"test/aoj/DSL_2_G.test.cpp\"\
+    \n\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n\n    snow::lazy_segtree<snow::plus_size_monoid<long>,\
+    \ snow::plus_size_monoid<long>::add> segtree(n);\n    for(int i = 0; i < n; ++i)\
+    \ segtree.set(i, {0, 1});\n\n    while(q--) {\n        int t;\n        std::cin\
+    \ >> t;\n        if(t == 0) {\n            int l, r, x;\n            std::cin\
+    \ >> l >> r >> x;\n            --l, --r;\n            segtree.apply(l, r + 1,\
+    \ x);\n        }\n        else {\n            int s, t;\n            std::cin\
+    \ >> s >> t;\n            --s, --t;\n            std::cout << segtree.prod(s,\
+    \ t + 1).val << '\\n';\n        }\n    }\n\n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G\"\
     \n\n#include <iostream>\n#include \"snow/utils/acl-wrapper.hpp\"\n#include \"\
-    snow/monoids/min.hpp\"\n\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n\
-    \n    snow::lazy_segtree<snow::min_monoid<int>, snow::min_monoid<int>::update>\
-    \ segtree(n);\n\n    while(q--) {\n        int t;\n        std::cin >> t;\n\n\
-    \        if(t == 0) {\n            int l, r, x;\n            std::cin >> l >>\
-    \ r >> x;\n            segtree.apply(l, r + 1, {x, 1});\n        }\n        else\
-    \ {\n            int s, t;\n            std::cin >> s >> t;\n            std::cout\
-    \ << segtree.prod(s, t + 1) << '\\n';\n        }\n    }\n\n    return 0;\n}\n"
+    snow/monoids/plus-size.hpp\"\n\nint main() {\n    int n, q;\n    std::cin >> n\
+    \ >> q;\n\n    snow::lazy_segtree<snow::plus_size_monoid<long>, snow::plus_size_monoid<long>::add>\
+    \ segtree(n);\n    for(int i = 0; i < n; ++i) segtree.set(i, {0, 1});\n\n    while(q--)\
+    \ {\n        int t;\n        std::cin >> t;\n        if(t == 0) {\n          \
+    \  int l, r, x;\n            std::cin >> l >> r >> x;\n            --l, --r;\n\
+    \            segtree.apply(l, r + 1, x);\n        }\n        else {\n        \
+    \    int s, t;\n            std::cin >> s >> t;\n            --s, --t;\n     \
+    \       std::cout << segtree.prod(s, t + 1).val << '\\n';\n        }\n    }\n\n\
+    \    return 0;\n}\n"
   dependsOn:
   - snow/utils/acl-wrapper.hpp
   - atcoder/segtree.hpp
   - atcoder/internal_bit.hpp
   - atcoder/lazysegtree.hpp
-  - snow/monoids/min.hpp
+  - snow/monoids/plus-size.hpp
   isVerificationFile: true
-  path: test/aoj/DSL_2_F.test.cpp
+  path: test/aoj/DSL_2_G.test.cpp
   requiredBy: []
-  timestamp: '2021-03-21 09:14:58+09:00'
+  timestamp: '2021-03-21 09:15:27+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/aoj/DSL_2_F.test.cpp
+documentation_of: test/aoj/DSL_2_G.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/DSL_2_F.test.cpp
-- /verify/test/aoj/DSL_2_F.test.cpp.html
-title: test/aoj/DSL_2_F.test.cpp
+- /verify/test/aoj/DSL_2_G.test.cpp
+- /verify/test/aoj/DSL_2_G.test.cpp.html
+title: test/aoj/DSL_2_G.test.cpp
 ---

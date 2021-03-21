@@ -113,7 +113,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/monoids/min.hpp
       title: snow/monoids/min.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: snow/monoids/plus-size.hpp
       title: snow/monoids/plus-size.hpp
     - icon: ':heavy_check_mark:'
@@ -155,6 +155,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_F.test.cpp
       title: test/aoj/DSL_2_F.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/DSL_2_G.test.cpp
+      title: test/aoj/DSL_2_G.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/DSL_2_H.test.cpp
+      title: test/aoj/DSL_2_H.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/DSL_2_I.test.cpp
+      title: test/aoj/DSL_2_I.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_1_A.test.cpp
       title: test/aoj/GRL_1_A.test.cpp
