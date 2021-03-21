@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "snow/graph/graph.hpp"
+#include "snow/graph/template.hpp"
 
 namespace snow{
 
