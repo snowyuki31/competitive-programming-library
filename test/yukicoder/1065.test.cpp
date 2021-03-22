@@ -9,7 +9,11 @@
 #include "snow/io/helper.hpp"
 #include "snow/graph/shortest-path/dijkstra.hpp"
 
-int main(){
+
+/**
+ * @brief dijkstra (decimal floating point ver.)
+ */
+int main() {
     int N, M, X, Y;
     std::cin >> N >> M >> X >> Y;
     --X, --Y;
