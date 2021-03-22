@@ -12,7 +12,7 @@ data:
     title: atcoder/modint.hpp
   - icon: ':heavy_check_mark:'
     path: snow/math/binomial.hpp
-    title: "Binomial Coefficient ($\\binom{n}{k}$ \u524D\u51E6\u7406$O(n)$, $O(1)$)"
+    title: "Binomial Coefficient - $\\binom{n}{k}$ \u524D\u51E6\u7406$O(n)$, $O(1)$"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -233,7 +233,7 @@ data:
     \ {};\n\ntemplate <class T>\nusing is_dynamic_modint_t = std::enable_if_t<is_dynamic_modint<T>::value>;\n\
     \n}  // namespace internal\n\n}  // namespace atcoder\n\n\n#line 2 \"snow/math/binomial.hpp\"\
     \n\n#include <vector>\n\nnamespace snow {\n\n/**\n * @brief Binomial Coefficient\
-    \ ($\\binom{n}{k}$ \u524D\u51E6\u7406$O(n)$, $O(1)$)\n * @param N max N\n * @tparam\
+    \ - $\\binom{n}{k}$ \u524D\u51E6\u7406$O(n)$, $O(1)$\n * @param N max N\n * @tparam\
     \ mint \n */\ntemplate < typename mint >\nstruct Binomial {\n    public:\n   \
     \     Binomial(int N) : _N(N + 1), _M(mint::mod()), fac(_N), finv(_N), inv(_N)\
     \ {\n            fac[0] = fac[1] = 1;\n            finv[0] = finv[1] = 1;\n  \
@@ -262,7 +262,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DPL_5_E.test.cpp
   requiredBy: []
-  timestamp: '2021-03-23 05:36:30+09:00'
+  timestamp: '2021-03-23 06:07:59+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DPL_5_E.test.cpp

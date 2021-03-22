@@ -13,12 +13,12 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    document_title: "Binomial Coefficient ($\\binom{n}{k}$ \u524D\u51E6\u7406$O(n)$,\
-      \ $O(1)$)"
+    document_title: "Binomial Coefficient - $\\binom{n}{k}$ \u524D\u51E6\u7406$O(n)$,\
+      \ $O(1)$"
     links: []
   bundledCode: "#line 2 \"snow/math/binomial.hpp\"\n\n#include <vector>\n\nnamespace\
-    \ snow {\n\n/**\n * @brief Binomial Coefficient ($\\binom{n}{k}$ \u524D\u51E6\u7406\
-    $O(n)$, $O(1)$)\n * @param N max N\n * @tparam mint \n */\ntemplate < typename\
+    \ snow {\n\n/**\n * @brief Binomial Coefficient - $\\binom{n}{k}$ \u524D\u51E6\
+    \u7406$O(n)$, $O(1)$\n * @param N max N\n * @tparam mint \n */\ntemplate < typename\
     \ mint >\nstruct Binomial {\n    public:\n        Binomial(int N) : _N(N + 1),\
     \ _M(mint::mod()), fac(_N), finv(_N), inv(_N) {\n            fac[0] = fac[1] =\
     \ 1;\n            finv[0] = finv[1] = 1;\n            inv[1] = 1;\n          \
@@ -32,7 +32,7 @@ data:
     \ const int _M;\n        std::vector<mint> fac, finv, inv;\n};\n\n} // namespace\
     \ snow\n"
   code: "#pragma once\n\n#include <vector>\n\nnamespace snow {\n\n/**\n * @brief Binomial\
-    \ Coefficient ($\\binom{n}{k}$ \u524D\u51E6\u7406$O(n)$, $O(1)$)\n * @param N\
+    \ Coefficient - $\\binom{n}{k}$ \u524D\u51E6\u7406$O(n)$, $O(1)$\n * @param N\
     \ max N\n * @tparam mint \n */\ntemplate < typename mint >\nstruct Binomial {\n\
     \    public:\n        Binomial(int N) : _N(N + 1), _M(mint::mod()), fac(_N), finv(_N),\
     \ inv(_N) {\n            fac[0] = fac[1] = 1;\n            finv[0] = finv[1] =\
@@ -49,7 +49,7 @@ data:
   isVerificationFile: false
   path: snow/math/binomial.hpp
   requiredBy: []
-  timestamp: '2021-03-23 05:36:30+09:00'
+  timestamp: '2021-03-23 06:07:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1035.test.cpp
@@ -59,5 +59,5 @@ layout: document
 redirect_from:
 - /library/snow/math/binomial.hpp
 - /library/snow/math/binomial.hpp.html
-title: "Binomial Coefficient ($\\binom{n}{k}$ \u524D\u51E6\u7406$O(n)$, $O(1)$)"
+title: "Binomial Coefficient - $\\binom{n}{k}$ \u524D\u51E6\u7406$O(n)$, $O(1)$"
 ---
