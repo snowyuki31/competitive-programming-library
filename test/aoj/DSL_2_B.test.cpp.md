@@ -24,6 +24,7 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
+    document_title: Segment Tree (Point Set and Range Sum)
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B
   bundledCode: "#line 1 \"test/aoj/DSL_2_B.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
@@ -156,8 +157,9 @@ data:
     \n\nnamespace snow {\n\n    template < typename T >\n    struct plus_monoid {\n\
     \        using value_type = T;\n        static value_type e() { return T(); };\n\
     \        static value_type op(value_type l, value_type r){ return l + r; };\n\
-    \    };\n\n} // namespace snow\n#line 6 \"test/aoj/DSL_2_B.test.cpp\"\n\nint main()\
-    \ {\n    int n, q;\n    std::cin >> n >> q;\n\n    snow::segtree<snow::plus_monoid<int>>\
+    \    };\n\n} // namespace snow\n#line 6 \"test/aoj/DSL_2_B.test.cpp\"\n\n/**\n\
+    \ * @brief Segment Tree (Point Set and Range Sum)\n * \n */\nint main() {\n  \
+    \  int n, q;\n    std::cin >> n >> q;\n\n    snow::segtree<snow::plus_monoid<int>>\
     \ segtree(n);\n\n    while(q--) {\n        int t;\n        std::cin >> t;\n\n\
     \        if(t == 0) {\n            int i, x;\n            std::cin >> i >> x;\n\
     \            --i;\n            segtree.set(i, segtree.get(i) + x);\n        }\n\
@@ -166,13 +168,14 @@ data:
     \        }\n    }\n\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_B\"\
     \n\n#include <iostream>\n#include \"snow/utils/acl-wrapper.hpp\"\n#include \"\
-    snow/monoids/plus.hpp\"\n\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n\
-    \n    snow::segtree<snow::plus_monoid<int>> segtree(n);\n\n    while(q--) {\n\
-    \        int t;\n        std::cin >> t;\n\n        if(t == 0) {\n            int\
-    \ i, x;\n            std::cin >> i >> x;\n            --i;\n            segtree.set(i,\
-    \ segtree.get(i) + x);\n        }\n        else {\n            int s, t;\n   \
-    \         std::cin >> s >> t;\n            --s, --t;\n            std::cout <<\
-    \ segtree.prod(s, t + 1) << '\\n';\n        }\n    }\n\n}\n"
+    snow/monoids/plus.hpp\"\n\n/**\n * @brief Segment Tree (Point Set and Range Sum)\n\
+    \ * \n */\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n\n    snow::segtree<snow::plus_monoid<int>>\
+    \ segtree(n);\n\n    while(q--) {\n        int t;\n        std::cin >> t;\n\n\
+    \        if(t == 0) {\n            int i, x;\n            std::cin >> i >> x;\n\
+    \            --i;\n            segtree.set(i, segtree.get(i) + x);\n        }\n\
+    \        else {\n            int s, t;\n            std::cin >> s >> t;\n    \
+    \        --s, --t;\n            std::cout << segtree.prod(s, t + 1) << '\\n';\n\
+    \        }\n    }\n\n}\n"
   dependsOn:
   - snow/utils/acl-wrapper.hpp
   - atcoder/segtree.hpp
@@ -182,7 +185,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_B.test.cpp
   requiredBy: []
-  timestamp: '2021-03-21 19:53:17+09:00'
+  timestamp: '2021-03-22 12:08:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_B.test.cpp
@@ -190,5 +193,5 @@ layout: document
 redirect_from:
 - /verify/test/aoj/DSL_2_B.test.cpp
 - /verify/test/aoj/DSL_2_B.test.cpp.html
-title: test/aoj/DSL_2_B.test.cpp
+title: Segment Tree (Point Set and Range Sum)
 ---

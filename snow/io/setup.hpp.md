@@ -4,11 +4,11 @@ data:
   _extendedRequiredBy:
   - icon: ':warning:'
     path: test/oj/enumerate_primes.cpp
-    title: test/oj/enumerate_primes.cpp
+    title: Enumerate Primes
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1065.test.cpp
-    title: dijkstra (decimal floating point ver.)
+    title: Dijkstra (decimal floating point ver.)
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'

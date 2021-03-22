@@ -4,11 +4,11 @@ data:
   _extendedRequiredBy:
   - icon: ':warning:'
     path: test/oj/enumerate_primes.cpp
-    title: test/oj/enumerate_primes.cpp
+    title: Enumerate Primes
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/ALDS1_1_C.test.cpp
-    title: test/aoj/ALDS1_1_C.test.cpp
+    title: Eratosthenes's sieve (upto 1e8)
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'

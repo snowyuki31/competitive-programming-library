@@ -15,6 +15,7 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B
+    document_title: Binary Search
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B
   bundledCode: "#line 1 \"test/aoj/ALDS1_4_B.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B\"\
@@ -41,32 +42,33 @@ data:
     \ntemplate< typename T >\nstd::ostream &operator << (std::ostream &os, const std::set<\
     \ T > &st){\n    int ct = 0;\n    for(auto& s : st) os << s << (++ct != st.size()\
     \ ? \" \" : \"\");\n    return os;\n}\n#line 8 \"test/aoj/ALDS1_4_B.test.cpp\"\
-    \n\nint main() {\n    int n;\n    std::cin >> n;\n    std::vector<int> S(n);\n\
-    \    std::cin >> S;\n\n    int target;\n    bool lower_bound = true;\n    auto\
-    \ f = [&](int x) {\n        if(lower_bound) return S[x] >= target;\n        return\
-    \ S[x] > target;\n    };\n\n    int q;\n    std::cin >> q;\n    int ret = 0;\n\
-    \    while(q--){\n        std::cin >> target;\n\n        lower_bound = true;\n\
-    \        int left = snow::binary_search<int>(0, n, f);\n        lower_bound =\
-    \ false;\n        int right = snow::binary_search<int>(0, n, f);\n        ret\
-    \ += right > left;\n    }\n    std::cout << ret << '\\n';\n\n    return 0;\n}\n"
+    \n\n/**\n * @brief Binary Search\n * \n */\nint main() {\n    int n;\n    std::cin\
+    \ >> n;\n    std::vector<int> S(n);\n    std::cin >> S;\n\n    int target;\n \
+    \   bool lower_bound = true;\n    auto f = [&](int x) {\n        if(lower_bound)\
+    \ return S[x] >= target;\n        return S[x] > target;\n    };\n\n    int q;\n\
+    \    std::cin >> q;\n    int ret = 0;\n    while(q--){\n        std::cin >> target;\n\
+    \n        lower_bound = true;\n        int left = snow::binary_search<int>(0,\
+    \ n, f);\n        lower_bound = false;\n        int right = snow::binary_search<int>(0,\
+    \ n, f);\n        ret += right > left;\n    }\n    std::cout << ret << '\\n';\n\
+    \n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B\"\
     \n\n#include <iostream>\n#include <algorithm>\n#include <vector>\n#include \"\
-    snow/algorithm/binary-search.hpp\"\n#include \"snow/io/helper.hpp\"\n\nint main()\
-    \ {\n    int n;\n    std::cin >> n;\n    std::vector<int> S(n);\n    std::cin\
-    \ >> S;\n\n    int target;\n    bool lower_bound = true;\n    auto f = [&](int\
-    \ x) {\n        if(lower_bound) return S[x] >= target;\n        return S[x] >\
-    \ target;\n    };\n\n    int q;\n    std::cin >> q;\n    int ret = 0;\n    while(q--){\n\
-    \        std::cin >> target;\n\n        lower_bound = true;\n        int left\
-    \ = snow::binary_search<int>(0, n, f);\n        lower_bound = false;\n       \
-    \ int right = snow::binary_search<int>(0, n, f);\n        ret += right > left;\n\
-    \    }\n    std::cout << ret << '\\n';\n\n    return 0;\n}"
+    snow/algorithm/binary-search.hpp\"\n#include \"snow/io/helper.hpp\"\n\n/**\n *\
+    \ @brief Binary Search\n * \n */\nint main() {\n    int n;\n    std::cin >> n;\n\
+    \    std::vector<int> S(n);\n    std::cin >> S;\n\n    int target;\n    bool lower_bound\
+    \ = true;\n    auto f = [&](int x) {\n        if(lower_bound) return S[x] >= target;\n\
+    \        return S[x] > target;\n    };\n\n    int q;\n    std::cin >> q;\n   \
+    \ int ret = 0;\n    while(q--){\n        std::cin >> target;\n\n        lower_bound\
+    \ = true;\n        int left = snow::binary_search<int>(0, n, f);\n        lower_bound\
+    \ = false;\n        int right = snow::binary_search<int>(0, n, f);\n        ret\
+    \ += right > left;\n    }\n    std::cout << ret << '\\n';\n\n    return 0;\n}"
   dependsOn:
   - snow/algorithm/binary-search.hpp
   - snow/io/helper.hpp
   isVerificationFile: true
   path: test/aoj/ALDS1_4_B.test.cpp
   requiredBy: []
-  timestamp: '2021-03-20 06:51:31+09:00'
+  timestamp: '2021-03-22 12:08:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_4_B.test.cpp
@@ -74,5 +76,5 @@ layout: document
 redirect_from:
 - /verify/test/aoj/ALDS1_4_B.test.cpp
 - /verify/test/aoj/ALDS1_4_B.test.cpp.html
-title: test/aoj/ALDS1_4_B.test.cpp
+title: Binary Search
 ---

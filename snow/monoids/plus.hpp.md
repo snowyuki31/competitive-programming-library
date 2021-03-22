@@ -5,7 +5,7 @@ data:
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_B.test.cpp
-    title: test/aoj/DSL_2_B.test.cpp
+    title: Segment Tree (Point Set and Range Sum)
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'

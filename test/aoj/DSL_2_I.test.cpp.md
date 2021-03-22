@@ -24,6 +24,7 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I
+    document_title: Segment Tree (Range Add and Range Update)
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I
   bundledCode: "#line 1 \"test/aoj/DSL_2_I.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I\"\
@@ -171,8 +172,9 @@ data:
     \ {x.val * f.first + x.size * f.second, x.size}; }\n            static f_type\
     \ composition(f_type f, f_type g) { return {g.first * f.first, g.second * f.first\
     \ + f.second}; }\n            static f_type id(){ return {1, 0}; }\n        };\n\
-    \    };\n\n} // namespace snow\n#line 6 \"test/aoj/DSL_2_I.test.cpp\"\n\nint main()\
-    \ {\n    int n, q;\n    std::cin >> n >> q;\n\n    snow::lazy_segtree<snow::plus_size_monoid<int>,\
+    \    };\n\n} // namespace snow\n#line 6 \"test/aoj/DSL_2_I.test.cpp\"\n\n/**\n\
+    \ * @brief Segment Tree (Range Add and Range Update)\n * \n */\nint main() {\n\
+    \    int n, q;\n    std::cin >> n >> q;\n\n    snow::lazy_segtree<snow::plus_size_monoid<int>,\
     \ snow::plus_size_monoid<int>::update> segtree(n);\n    for(int i = 0; i < n;\
     \ ++i) segtree.set(i, {0, 1});\n\n    while(q--) {\n        int t;\n        std::cin\
     \ >> t;\n\n        if(t == 0) {\n            int l, r, x;\n            std::cin\
@@ -182,8 +184,9 @@ data:
     \    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_I\"\
     \n\n#include <iostream>\n#include \"snow/utils/acl-wrapper.hpp\"\n#include \"\
-    snow/monoids/plus-size.hpp\"\n\nint main() {\n    int n, q;\n    std::cin >> n\
-    \ >> q;\n\n    snow::lazy_segtree<snow::plus_size_monoid<int>, snow::plus_size_monoid<int>::update>\
+    snow/monoids/plus-size.hpp\"\n\n/**\n * @brief Segment Tree (Range Add and Range\
+    \ Update)\n * \n */\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n\n\
+    \    snow::lazy_segtree<snow::plus_size_monoid<int>, snow::plus_size_monoid<int>::update>\
     \ segtree(n);\n    for(int i = 0; i < n; ++i) segtree.set(i, {0, 1});\n\n    while(q--)\
     \ {\n        int t;\n        std::cin >> t;\n\n        if(t == 0) {\n        \
     \    int l, r, x;\n            std::cin >> l >> r >> x;\n            segtree.apply(l,\
@@ -199,7 +202,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_I.test.cpp
   requiredBy: []
-  timestamp: '2021-03-21 19:53:17+09:00'
+  timestamp: '2021-03-22 12:08:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_I.test.cpp
@@ -207,5 +210,5 @@ layout: document
 redirect_from:
 - /verify/test/aoj/DSL_2_I.test.cpp
 - /verify/test/aoj/DSL_2_I.test.cpp.html
-title: test/aoj/DSL_2_I.test.cpp
+title: Segment Tree (Range Add and Range Update)
 ---

@@ -5,13 +5,13 @@ data:
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_G.test.cpp
-    title: test/aoj/DSL_2_G.test.cpp
+    title: Segment Tree (Range Add and Range Sum)
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_I.test.cpp
-    title: test/aoj/DSL_2_I.test.cpp
+    title: Segment Tree (Range Add and Range Update)
   - icon: ':heavy_check_mark:'
     path: test/oj/range_affine_range_sum.test.cpp
-    title: test/oj/range_affine_range_sum.test.cpp
+    title: Range Affine Range Sum with modint
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'

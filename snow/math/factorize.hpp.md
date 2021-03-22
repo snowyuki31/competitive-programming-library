@@ -5,10 +5,10 @@ data:
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/2932.test.cpp
-    title: test/aoj/2932.test.cpp
+    title: Divisor / Factorize
   - icon: ':heavy_check_mark:'
     path: test/aoj/NTL_1_A.test.cpp
-    title: test/aoj/NTL_1_A.test.cpp
+    title: Factorize
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'

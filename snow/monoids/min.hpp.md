@@ -5,10 +5,10 @@ data:
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_F.test.cpp
-    title: test/aoj/DSL_2_F.test.cpp
+    title: Segment Tree (Range Min and Range Update)
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_H.test.cpp
-    title: test/aoj/DSL_2_H.test.cpp
+    title: Segment Tree (Range Add and Range Min)
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'

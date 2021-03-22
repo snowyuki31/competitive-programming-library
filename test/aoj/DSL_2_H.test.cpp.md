@@ -24,6 +24,7 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H
+    document_title: Segment Tree (Range Add and Range Min)
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H
   bundledCode: "#line 1 \"test/aoj/DSL_2_H.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H\"\
@@ -165,7 +166,8 @@ data:
     \ f.flag ? f.val : x; }\n            static f_type composition(f_type f, f_type\
     \ g) { return f.flag ? f : g; }\n            static f_type id(){ return {T(),\
     \ false}; }\n        };\n    };\n\n} // namespace snow\n#line 6 \"test/aoj/DSL_2_H.test.cpp\"\
-    \n\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n\n    snow::lazy_segtree<snow::min_monoid<int>,\
+    \n\n/**\n * @brief Segment Tree (Range Add and Range Min)\n * \n */\nint main()\
+    \ {\n    int n, q;\n    std::cin >> n >> q;\n\n    snow::lazy_segtree<snow::min_monoid<int>,\
     \ snow::min_monoid<int>::add> segtree(n);\n    for(int i = 0; i < n; ++i) segtree.set(i,\
     \ 0);\n\n    while(q--) {\n        int t;\n        std::cin >> t;\n\n        if(t\
     \ == 0) {\n            int l, r, x;\n            std::cin >> l >> r >> x;\n  \
@@ -174,14 +176,14 @@ data:
     \ t + 1) << '\\n';\n        }\n    }\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_H\"\
     \n\n#include <iostream>\n#include \"snow/utils/acl-wrapper.hpp\"\n#include \"\
-    snow/monoids/min.hpp\"\n\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n\
-    \n    snow::lazy_segtree<snow::min_monoid<int>, snow::min_monoid<int>::add> segtree(n);\n\
-    \    for(int i = 0; i < n; ++i) segtree.set(i, 0);\n\n    while(q--) {\n     \
-    \   int t;\n        std::cin >> t;\n\n        if(t == 0) {\n            int l,\
-    \ r, x;\n            std::cin >> l >> r >> x;\n            segtree.apply(l, r\
-    \ + 1, x);\n        }\n        else {\n            int s, t;\n            std::cin\
-    \ >> s >> t;\n            std::cout << segtree.prod(s, t + 1) << '\\n';\n    \
-    \    }\n    }\n\n    return 0;\n}\n"
+    snow/monoids/min.hpp\"\n\n/**\n * @brief Segment Tree (Range Add and Range Min)\n\
+    \ * \n */\nint main() {\n    int n, q;\n    std::cin >> n >> q;\n\n    snow::lazy_segtree<snow::min_monoid<int>,\
+    \ snow::min_monoid<int>::add> segtree(n);\n    for(int i = 0; i < n; ++i) segtree.set(i,\
+    \ 0);\n\n    while(q--) {\n        int t;\n        std::cin >> t;\n\n        if(t\
+    \ == 0) {\n            int l, r, x;\n            std::cin >> l >> r >> x;\n  \
+    \          segtree.apply(l, r + 1, x);\n        }\n        else {\n          \
+    \  int s, t;\n            std::cin >> s >> t;\n            std::cout << segtree.prod(s,\
+    \ t + 1) << '\\n';\n        }\n    }\n\n    return 0;\n}\n"
   dependsOn:
   - snow/utils/acl-wrapper.hpp
   - atcoder/segtree.hpp
@@ -191,7 +193,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DSL_2_H.test.cpp
   requiredBy: []
-  timestamp: '2021-03-21 19:53:17+09:00'
+  timestamp: '2021-03-22 12:08:23+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_H.test.cpp
@@ -199,5 +201,5 @@ layout: document
 redirect_from:
 - /verify/test/aoj/DSL_2_H.test.cpp
 - /verify/test/aoj/DSL_2_H.test.cpp.html
-title: test/aoj/DSL_2_H.test.cpp
+title: Segment Tree (Range Add and Range Min)
 ---

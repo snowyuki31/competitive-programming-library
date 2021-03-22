@@ -71,21 +71,21 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: snow/graph/shortest-path/bellman-ford.hpp
-      title: snow/graph/shortest-path/bellman-ford.hpp
+      title: Bellman-Ford
     - icon: ':heavy_check_mark:'
       path: snow/graph/shortest-path/dijkstra.hpp
-      title: snow/graph/shortest-path/dijkstra.hpp
+      title: Dijkstra
     - icon: ':heavy_check_mark:'
       path: snow/graph/shortest-path/warshall-floyd.hpp
-      title: snow/graph/shortest-path/warshall-floyd.hpp
+      title: Warshall-Floyd
   - name: snow/graph
     pages:
     - icon: ':heavy_check_mark:'
       path: snow/graph/template.hpp
-      title: snow/graph/template.hpp
+      title: Graph template
     - icon: ':heavy_check_mark:'
       path: snow/graph/topological-sort.hpp
-      title: snow/graph/topological-sort.hpp
+      title: Topological Sort
   - name: snow/io
     pages:
     - icon: ':heavy_check_mark:'
@@ -147,7 +147,7 @@ data:
     pages:
     - icon: ':warning:'
       path: test/oj/enumerate_primes.cpp
-      title: test/oj/enumerate_primes.cpp
+      title: Enumerate Primes
     - icon: ':warning:'
       path: test/oj/range_chmin_chmax_add_range_sum.cpp
       title: test/oj/range_chmin_chmax_add_range_sum.cpp
@@ -156,61 +156,61 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2932.test.cpp
-      title: test/aoj/2932.test.cpp
+      title: Divisor / Factorize
     - icon: ':heavy_check_mark:'
       path: test/aoj/ALDS1_1_C.test.cpp
-      title: test/aoj/ALDS1_1_C.test.cpp
+      title: Eratosthenes's sieve (upto 1e8)
     - icon: ':heavy_check_mark:'
       path: test/aoj/ALDS1_4_B.test.cpp
-      title: test/aoj/ALDS1_4_B.test.cpp
+      title: Binary Search
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_1_B.test.cpp
-      title: test/aoj/DSL_1_B.test.cpp
+      title: Weighted UnionFind
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_B.test.cpp
-      title: test/aoj/DSL_2_B.test.cpp
+      title: Segment Tree (Point Set and Range Sum)
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_F.test.cpp
-      title: test/aoj/DSL_2_F.test.cpp
+      title: Segment Tree (Range Min and Range Update)
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_G.test.cpp
-      title: test/aoj/DSL_2_G.test.cpp
+      title: Segment Tree (Range Add and Range Sum)
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_H.test.cpp
-      title: test/aoj/DSL_2_H.test.cpp
+      title: Segment Tree (Range Add and Range Min)
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_I.test.cpp
-      title: test/aoj/DSL_2_I.test.cpp
+      title: Segment Tree (Range Add and Range Update)
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_1_A.test.cpp
-      title: test/aoj/GRL_1_A.test.cpp
+      title: Dikstra
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_1_B.test.cpp
-      title: test/aoj/GRL_1_B.test.cpp
+      title: Bellman-Ford
     - icon: ':heavy_check_mark:'
       path: test/aoj/GRL_1_C.test.cpp
-      title: test/aoj/GRL_1_C.test.cpp
+      title: Warshall-Floyd (with Negative Cycle Detection)
     - icon: ':heavy_check_mark:'
       path: test/aoj/NTL_1_A.test.cpp
-      title: test/aoj/NTL_1_A.test.cpp
+      title: Factorize
     - icon: ':heavy_check_mark:'
       path: test/aoj/NTL_1_D.test.cpp
-      title: test/aoj/NTL_1_D.test.cpp
+      title: Euler's totient function
   - name: test/oj
     pages:
     - icon: ':heavy_check_mark:'
       path: test/oj/range_affine_range_sum.test.cpp
-      title: test/oj/range_affine_range_sum.test.cpp
+      title: Range Affine Range Sum with modint
   - name: test/yukicoder
     pages:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/0517.test.cpp
-      title: test/yukicoder/0517.test.cpp
+      title: Topological Sort
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1013.test.cpp
-      title: test/yukicoder/1013.test.cpp
+      title: Rolling Hash
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1065.test.cpp
-      title: dijkstra (decimal floating point ver.)
+      title: Dijkstra (decimal floating point ver.)
 layout: toppage
 ---
