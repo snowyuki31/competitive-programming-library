@@ -14,8 +14,6 @@ constexpr long long INF = 1LL << 60;
 #define pb push_back
 #define to_s to_string
 #define len(v) (ll) v.size()
-#define print(x) cout << (x) << '\n'
-#define drop(x) cout << (x) << '\n', exit(0)
 #define debug(x) cout << #x << ": " << (x) << '\n'
 
 using namespace std;
@@ -25,9 +23,15 @@ typedef unsigned long long ull;
 typedef long double ld;
 typedef pair<ll, ll> P;
 typedef tuple<ll, ll, ll> tpl;
-typedef vector<ll> vec;
-typedef vector<vector<ll>> vec2;
-typedef vector<vector<vector<ll>>> vec3;
+
+template <typename T = ll>
+using vec = vector<T>;
+
+template <typename T = ll>
+using vec2 = vector<vector<T>>;
+
+template <typename T = ll>
+using vec3 = vector<vector<vector<T>>>;
 
 template < typename T >
 inline bool chmax(T &a, const T &b) {

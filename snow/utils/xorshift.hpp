@@ -2,6 +2,9 @@
 
 namespace snow {
 
+/**
+ * @brief XorShift (Random Number Generator)
+ */
 struct xorShift128 {
     unsigned long long x = 123456789, y = 362436069, z = 521288629, w = 88675123;
     xorShift128(unsigned long long seed = 0) {

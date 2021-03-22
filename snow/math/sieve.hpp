@@ -28,7 +28,7 @@ struct sieve {
 
         std::vector<int> enumerate_primes() {
             std::vector<int> primes;
-            for(int i = 2; i < _sieve.size(); ++i) {
+            for(int i = 2; i < (int)_sieve.size(); ++i) {
                 if(_sieve[i] == i) primes.emplace_back(i);
             }
             return primes;

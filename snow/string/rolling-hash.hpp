@@ -5,7 +5,10 @@
 
 namespace snow {
 
-/* refference : https://qiita.com/keymoon/items/11fac5627672a6d6a9f6 */
+/**
+ * @brief Rolling Hash
+ * @ref https://qiita.com/keymoon/items/11fac5627672a6d6a9f6
+ */
 struct RollingHash {
     public:
         using ull = unsigned long long;
@@ -50,4 +53,4 @@ struct RollingHash {
         const ull POSITIVIZER = MOD * ((1ull << 3) - 1);
 };
 
-}
+} // namespace snow

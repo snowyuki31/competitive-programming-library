@@ -49,3 +49,25 @@ std::ostream &operator << (std::ostream &os, const std::set< T > &st){
     for(auto& s : st) os << s << (++ct != st.size() ? " " : "");
     return os;
 }
+
+void print() {
+    std::cout << '\n';
+}
+template<class T, class... Ts>
+void print(const T& a, const Ts&... b){
+    std::cout << a;
+    (std::cout << ... << (std::cout << ' ', b));
+    std::cout << '\n';
+}
+
+int drop() {
+    std::cout << '\n';
+    exit(1);
+}
+template<class T, class... Ts>
+int drop(const T& a, const Ts&... b){
+    std::cout << a;
+    (std::cout << ... << (std::cout << ' ', b));
+    std::cout << '\n';
+    exit(1);
+}
