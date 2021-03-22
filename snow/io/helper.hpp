@@ -50,6 +50,11 @@ std::ostream &operator << (std::ostream &os, const std::set< T > &st){
     return os;
 }
 
+template<class... T>
+void input(T&... a){
+    (std::cin >> ... >> a);
+}
+
 void print() {
     std::cout << '\n';
 }
