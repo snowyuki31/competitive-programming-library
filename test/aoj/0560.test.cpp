@@ -6,6 +6,10 @@
 #include "snow/io/helper.hpp"
 #include "snow/algorithm/cumsum2D.hpp"
 
+/**
+ * @brief Cumurative Sum (2D)
+ * 
+ */
 int main() {
     int N, M, K;
     std::cin >> N >> M >> K;

@@ -2,6 +2,12 @@
 
 namespace snow {
 
+/**
+ * @brief Euler's totient function ($O(\sqrt{n})$)
+ * 
+ * @tparam T 
+ * @param n 
+ */
 template < typename T >
 T euler_phi(T n) {
    T ret = n;

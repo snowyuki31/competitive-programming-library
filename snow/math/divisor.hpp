@@ -5,6 +5,12 @@
 
 namespace snow {
 
+/**
+ * @brief Divisor ($O(\sqrt{n})$)
+ * 
+ * @tparam T 
+ * @param n 
+ */
 template < typename T >
 std::vector<T> divisor(T n) {
     std::vector<T> ret;
