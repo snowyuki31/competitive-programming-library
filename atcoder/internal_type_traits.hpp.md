@@ -15,6 +15,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/oj/range_affine_range_sum.test.cpp
     title: Range Affine Range Sum with modint
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1396.test.cpp
+    title: Sieve of Eratosthenes for faster factorization
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -118,6 +121,7 @@ data:
   timestamp: '2021-03-21 08:31:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yukicoder/1396.test.cpp
   - test/oj/range_affine_range_sum.test.cpp
 documentation_of: atcoder/internal_type_traits.hpp
 layout: document

@@ -41,16 +41,21 @@ data:
     \ &is, std::vector< T > &v){\n    for(T &in : v) is >> in;\n    return is;\n}\n\
     \ntemplate< typename T >\nstd::ostream &operator << (std::ostream &os, const std::set<\
     \ T > &st){\n    int ct = 0;\n    for(auto& s : st) os << s << (++ct != st.size()\
-    \ ? \" \" : \"\");\n    return os;\n}\n#line 8 \"test/aoj/ALDS1_4_B.test.cpp\"\
-    \n\n/**\n * @brief Binary Search\n * \n */\nint main() {\n    int n;\n    std::cin\
-    \ >> n;\n    std::vector<int> S(n);\n    std::cin >> S;\n\n    int target;\n \
-    \   bool lower_bound = true;\n    auto f = [&](int x) {\n        if(lower_bound)\
-    \ return S[x] >= target;\n        return S[x] > target;\n    };\n\n    int q;\n\
-    \    std::cin >> q;\n    int ret = 0;\n    while(q--){\n        std::cin >> target;\n\
-    \n        lower_bound = true;\n        int left = snow::binary_search<int>(0,\
-    \ n, f);\n        lower_bound = false;\n        int right = snow::binary_search<int>(0,\
-    \ n, f);\n        ret += right > left;\n    }\n    std::cout << ret << '\\n';\n\
-    \n    return 0;\n}\n"
+    \ ? \" \" : \"\");\n    return os;\n}\n\nvoid print() {\n    std::cout << '\\\
+    n';\n}\ntemplate<class T, class... Ts>\nvoid print(const T& a, const Ts&... b){\n\
+    \    std::cout << a;\n    (std::cout << ... << (std::cout << ' ', b));\n    std::cout\
+    \ << '\\n';\n}\n\nint drop() {\n    std::cout << '\\n';\n    exit(1);\n}\ntemplate<class\
+    \ T, class... Ts>\nint drop(const T& a, const Ts&... b){\n    std::cout << a;\n\
+    \    (std::cout << ... << (std::cout << ' ', b));\n    std::cout << '\\n';\n \
+    \   exit(1);\n}\n#line 8 \"test/aoj/ALDS1_4_B.test.cpp\"\n\n/**\n * @brief Binary\
+    \ Search\n * \n */\nint main() {\n    int n;\n    std::cin >> n;\n    std::vector<int>\
+    \ S(n);\n    std::cin >> S;\n\n    int target;\n    bool lower_bound = true;\n\
+    \    auto f = [&](int x) {\n        if(lower_bound) return S[x] >= target;\n \
+    \       return S[x] > target;\n    };\n\n    int q;\n    std::cin >> q;\n    int\
+    \ ret = 0;\n    while(q--){\n        std::cin >> target;\n\n        lower_bound\
+    \ = true;\n        int left = snow::binary_search<int>(0, n, f);\n        lower_bound\
+    \ = false;\n        int right = snow::binary_search<int>(0, n, f);\n        ret\
+    \ += right > left;\n    }\n    std::cout << ret << '\\n';\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B\"\
     \n\n#include <iostream>\n#include <algorithm>\n#include <vector>\n#include \"\
     snow/algorithm/binary-search.hpp\"\n#include \"snow/io/helper.hpp\"\n\n/**\n *\
@@ -68,7 +73,7 @@ data:
   isVerificationFile: true
   path: test/aoj/ALDS1_4_B.test.cpp
   requiredBy: []
-  timestamp: '2021-03-22 12:08:23+09:00'
+  timestamp: '2021-03-22 12:48:12+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_4_B.test.cpp

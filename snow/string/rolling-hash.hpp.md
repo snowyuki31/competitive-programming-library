@@ -10,10 +10,11 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    document_title: Rolling Hash
     links:
     - https://qiita.com/keymoon/items/11fac5627672a6d6a9f6
   bundledCode: "#line 2 \"snow/string/rolling-hash.hpp\"\n\n#include <vector>\n#include\
-    \ <string>\n\nnamespace snow {\n\n/* refference : https://qiita.com/keymoon/items/11fac5627672a6d6a9f6\
+    \ <string>\n\nnamespace snow {\n\n/**\n * @brief Rolling Hash\n * @ref https://qiita.com/keymoon/items/11fac5627672a6d6a9f6\n\
     \ */\nstruct RollingHash {\n    public:\n        using ull = unsigned long long;\n\
     \n        RollingHash(const std::string& s, ull BASE = 8901016) : hashed(s.size()\
     \ + 1, 0), power(s.size() + 1, 0), BASE(BASE) {\n            power[0] = 1;\n \
@@ -32,13 +33,14 @@ data:
     \        std::vector<ull> hashed, power;\n        const unsigned long long BASE;\n\
     \        const ull MASK30 = (1ull << 30) - 1;\n        const ull MASK31 = (1ull\
     \ << 31) - 1;\n        const ull MOD = (1ull << 61) - 1;\n        const ull MASK61\
-    \ = MOD;\n        const ull POSITIVIZER = MOD * ((1ull << 3) - 1);\n};\n\n}\n"
+    \ = MOD;\n        const ull POSITIVIZER = MOD * ((1ull << 3) - 1);\n};\n\n} //\
+    \ namespace snow\n"
   code: "#pragma once\n\n#include <vector>\n#include <string>\n\nnamespace snow {\n\
-    \n/* refference : https://qiita.com/keymoon/items/11fac5627672a6d6a9f6 */\nstruct\
-    \ RollingHash {\n    public:\n        using ull = unsigned long long;\n\n    \
-    \    RollingHash(const std::string& s, ull BASE = 8901016) : hashed(s.size() +\
-    \ 1, 0), power(s.size() + 1, 0), BASE(BASE) {\n            power[0] = 1;\n   \
-    \         for(int i = 0; i < (int)s.size(); ++i) power[i + 1] = CalcMod(Mul(power[i],\
+    \n/**\n * @brief Rolling Hash\n * @ref https://qiita.com/keymoon/items/11fac5627672a6d6a9f6\n\
+    \ */\nstruct RollingHash {\n    public:\n        using ull = unsigned long long;\n\
+    \n        RollingHash(const std::string& s, ull BASE = 8901016) : hashed(s.size()\
+    \ + 1, 0), power(s.size() + 1, 0), BASE(BASE) {\n            power[0] = 1;\n \
+    \           for(int i = 0; i < (int)s.size(); ++i) power[i + 1] = CalcMod(Mul(power[i],\
     \ BASE));\n            for(int i = 0; i < (int)s.size(); ++i) hashed[i + 1] =\
     \ CalcMod(Mul(hashed[i], BASE) + s[i]);\n        }\n\n        //[L, r)\n     \
     \   ull get(int l, int r){\n            return CalcMod(hashed[r] + POSITIVIZER\
@@ -53,12 +55,13 @@ data:
     \        std::vector<ull> hashed, power;\n        const unsigned long long BASE;\n\
     \        const ull MASK30 = (1ull << 30) - 1;\n        const ull MASK31 = (1ull\
     \ << 31) - 1;\n        const ull MOD = (1ull << 61) - 1;\n        const ull MASK61\
-    \ = MOD;\n        const ull POSITIVIZER = MOD * ((1ull << 3) - 1);\n};\n\n}"
+    \ = MOD;\n        const ull POSITIVIZER = MOD * ((1ull << 3) - 1);\n};\n\n} //\
+    \ namespace snow"
   dependsOn: []
   isVerificationFile: false
   path: snow/string/rolling-hash.hpp
   requiredBy: []
-  timestamp: '2021-03-22 05:13:47+09:00'
+  timestamp: '2021-03-22 12:48:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1013.test.cpp

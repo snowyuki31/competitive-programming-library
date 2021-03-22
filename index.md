@@ -105,7 +105,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/math/factorize.hpp
       title: snow/math/factorize.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: snow/math/sieve.hpp
       title: Sieve of Eratosthenes (for faster factorization)
     - icon: ':heavy_check_mark:'
@@ -142,7 +142,7 @@ data:
       title: snow/utils/acl-wrapper.hpp
     - icon: ':heavy_check_mark:'
       path: snow/utils/xorshift.hpp
-      title: snow/utils/xorshift.hpp
+      title: XorShift (Random Number Generator)
   - name: test/oj
     pages:
     - icon: ':warning:'
@@ -212,5 +212,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1065.test.cpp
       title: Dijkstra (decimal floating point ver.)
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/1396.test.cpp
+      title: Sieve of Eratosthenes for faster factorization
 layout: toppage
 ---

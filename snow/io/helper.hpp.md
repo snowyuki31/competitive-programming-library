@@ -38,7 +38,13 @@ data:
     \ &v){\n    for(T &in : v) is >> in;\n    return is;\n}\n\ntemplate< typename\
     \ T >\nstd::ostream &operator << (std::ostream &os, const std::set< T > &st){\n\
     \    int ct = 0;\n    for(auto& s : st) os << s << (++ct != st.size() ? \" \"\
-    \ : \"\");\n    return os;\n}\n"
+    \ : \"\");\n    return os;\n}\n\nvoid print() {\n    std::cout << '\\n';\n}\n\
+    template<class T, class... Ts>\nvoid print(const T& a, const Ts&... b){\n    std::cout\
+    \ << a;\n    (std::cout << ... << (std::cout << ' ', b));\n    std::cout << '\\\
+    n';\n}\n\nint drop() {\n    std::cout << '\\n';\n    exit(1);\n}\ntemplate<class\
+    \ T, class... Ts>\nint drop(const T& a, const Ts&... b){\n    std::cout << a;\n\
+    \    (std::cout << ... << (std::cout << ' ', b));\n    std::cout << '\\n';\n \
+    \   exit(1);\n}\n"
   code: "#pragma once\n#include <iostream>\n#include <vector>\n#include <set>\n\n\
     template< typename T1, typename T2 >\nstd::ostream &operator << (std::ostream\
     \ &os, const std::pair< T1, T2 > &p) {\n    os << p.first << \" \" << p.second;\n\
@@ -56,13 +62,19 @@ data:
     \ &operator >>  (std::istream &is, std::vector< T > &v){\n    for(T &in : v) is\
     \ >> in;\n    return is;\n}\n\ntemplate< typename T >\nstd::ostream &operator\
     \ << (std::ostream &os, const std::set< T > &st){\n    int ct = 0;\n    for(auto&\
-    \ s : st) os << s << (++ct != st.size() ? \" \" : \"\");\n    return os;\n}\n"
+    \ s : st) os << s << (++ct != st.size() ? \" \" : \"\");\n    return os;\n}\n\n\
+    void print() {\n    std::cout << '\\n';\n}\ntemplate<class T, class... Ts>\nvoid\
+    \ print(const T& a, const Ts&... b){\n    std::cout << a;\n    (std::cout << ...\
+    \ << (std::cout << ' ', b));\n    std::cout << '\\n';\n}\n\nint drop() {\n   \
+    \ std::cout << '\\n';\n    exit(1);\n}\ntemplate<class T, class... Ts>\nint drop(const\
+    \ T& a, const Ts&... b){\n    std::cout << a;\n    (std::cout << ... << (std::cout\
+    \ << ' ', b));\n    std::cout << '\\n';\n    exit(1);\n}"
   dependsOn: []
   isVerificationFile: false
   path: snow/io/helper.hpp
   requiredBy:
   - test/oj/enumerate_primes.cpp
-  timestamp: '2021-03-20 06:51:31+09:00'
+  timestamp: '2021-03-22 12:48:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0517.test.cpp
