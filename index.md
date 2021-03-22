@@ -61,7 +61,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: snow/algorithm/binary-search.hpp
-      title: snow/algorithm/binary-search.hpp
+      title: Binary Search
   - name: snow/datastructure
     pages:
     - icon: ':heavy_check_mark:'
@@ -96,6 +96,9 @@ data:
       title: snow/io/setup.hpp
   - name: snow/math
     pages:
+    - icon: ':heavy_check_mark:'
+      path: snow/math/binomial.hpp
+      title: "Binomial Coefficient (\u524D\u51E6\u7406$O(n)$, $O(1)$)"
     - icon: ':heavy_check_mark:'
       path: snow/math/divisor.hpp
       title: snow/math/divisor.hpp
@@ -164,6 +167,9 @@ data:
       path: test/aoj/ALDS1_4_B.test.cpp
       title: Binary Search
     - icon: ':heavy_check_mark:'
+      path: test/aoj/DPL_5_E.test.cpp
+      title: Twelvefold way V
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_1_B.test.cpp
       title: Weighted UnionFind
     - icon: ':heavy_check_mark:'
@@ -200,7 +206,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: test/oj/range_affine_range_sum.test.cpp
-      title: Range Affine Range Sum with modint
+      title: Segment Tree (Range Affine and Range Sum with Modint)
   - name: test/yukicoder
     pages:
     - icon: ':heavy_check_mark:'
@@ -209,6 +215,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1013.test.cpp
       title: Rolling Hash
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/1035.test.cpp
+      title: Twelvefold way III
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1065.test.cpp
       title: Dijkstra (decimal floating point ver.)

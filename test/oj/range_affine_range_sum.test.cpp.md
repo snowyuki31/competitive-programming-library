@@ -33,7 +33,7 @@ data:
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://old.yosupo.jp/problem/range_affine_range_sum
-    document_title: Range Affine Range Sum with modint
+    document_title: Segment Tree (Range Affine and Range Sum with Modint)
     links:
     - https://old.yosupo.jp/problem/range_affine_range_sum
   bundledCode: "#line 1 \"test/oj/range_affine_range_sum.test.cpp\"\n#define PROBLEM\
@@ -389,20 +389,21 @@ data:
     \ <int id>\nstruct is_dynamic_modint<dynamic_modint<id>> : public std::true_type\
     \ {};\n\ntemplate <class T>\nusing is_dynamic_modint_t = std::enable_if_t<is_dynamic_modint<T>::value>;\n\
     \n}  // namespace internal\n\n}  // namespace atcoder\n\n\n#line 7 \"test/oj/range_affine_range_sum.test.cpp\"\
-    \nusing mint = atcoder::modint998244353;\n\n/**\n * @brief Range Affine Range\
-    \ Sum with modint\n * \n */\nint main() {\n    int N, Q;\n    std::cin >> N >>\
-    \ Q;\n    snow::lazy_segtree<snow::plus_size_monoid<mint>, snow::plus_size_monoid<mint>::affine>\
-    \ segtree(N);\n    for(int i = 0; i < N; ++i) {\n        int a;\n        std::cin\
-    \ >> a;\n        segtree.set(i, {a, 1});\n    }\n\n    while(Q--) {\n        int\
-    \ t, l, r;\n        std::cin >> t >> l >> r;\n        if(t == 0) {\n         \
-    \   int b, c;\n            std::cin >> b >> c;\n            segtree.apply(l, r,\
-    \ {b, c});\n        }\n        else {\n            std::cout << segtree.prod(l,\
-    \ r).val.val() << '\\n';\n        }\n    }\n}\n"
+    \nusing mint = atcoder::modint998244353;\n\n/**\n * @brief Segment Tree (Range\
+    \ Affine and Range Sum with Modint)\n * \n */\nint main() {\n    int N, Q;\n \
+    \   std::cin >> N >> Q;\n    snow::lazy_segtree<snow::plus_size_monoid<mint>,\
+    \ snow::plus_size_monoid<mint>::affine> segtree(N);\n    for(int i = 0; i < N;\
+    \ ++i) {\n        int a;\n        std::cin >> a;\n        segtree.set(i, {a, 1});\n\
+    \    }\n\n    while(Q--) {\n        int t, l, r;\n        std::cin >> t >> l >>\
+    \ r;\n        if(t == 0) {\n            int b, c;\n            std::cin >> b >>\
+    \ c;\n            segtree.apply(l, r, {b, c});\n        }\n        else {\n  \
+    \          std::cout << segtree.prod(l, r).val.val() << '\\n';\n        }\n  \
+    \  }\n}\n"
   code: "#define PROBLEM \"https://old.yosupo.jp/problem/range_affine_range_sum\"\n\
     \n#include <iostream>\n#include \"snow/utils/acl-wrapper.hpp\"\n#include \"snow/monoids/plus-size.hpp\"\
     \n#include \"atcoder/modint\"\nusing mint = atcoder::modint998244353;\n\n/**\n\
-    \ * @brief Range Affine Range Sum with modint\n * \n */\nint main() {\n    int\
-    \ N, Q;\n    std::cin >> N >> Q;\n    snow::lazy_segtree<snow::plus_size_monoid<mint>,\
+    \ * @brief Segment Tree (Range Affine and Range Sum with Modint)\n * \n */\nint\
+    \ main() {\n    int N, Q;\n    std::cin >> N >> Q;\n    snow::lazy_segtree<snow::plus_size_monoid<mint>,\
     \ snow::plus_size_monoid<mint>::affine> segtree(N);\n    for(int i = 0; i < N;\
     \ ++i) {\n        int a;\n        std::cin >> a;\n        segtree.set(i, {a, 1});\n\
     \    }\n\n    while(Q--) {\n        int t, l, r;\n        std::cin >> t >> l >>\
@@ -422,7 +423,7 @@ data:
   isVerificationFile: true
   path: test/oj/range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2021-03-22 12:08:23+09:00'
+  timestamp: '2021-03-23 01:20:06+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/oj/range_affine_range_sum.test.cpp
@@ -430,5 +431,5 @@ layout: document
 redirect_from:
 - /verify/test/oj/range_affine_range_sum.test.cpp
 - /verify/test/oj/range_affine_range_sum.test.cpp.html
-title: Range Affine Range Sum with modint
+title: Segment Tree (Range Affine and Range Sum with Modint)
 ---
