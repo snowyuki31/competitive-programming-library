@@ -6,6 +6,11 @@
 
 namespace snow{
 
+/**
+ * @brief Warshall-Floyd
+ * 
+ * @tparam T 
+ */
 template < typename T >
 std::vector<std::vector<T>> Graph<T>::warshall_floyd() const{
     int N = G.size();

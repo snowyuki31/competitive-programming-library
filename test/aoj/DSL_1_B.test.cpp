@@ -3,6 +3,10 @@
 #include <iostream>
 #include "snow/datastructure/weighted-unionfind.hpp"
 
+/**
+ * @brief Weighted UnionFind
+ * 
+ */
 int main() {
     int n, q;
     std::cin >> n >> q;

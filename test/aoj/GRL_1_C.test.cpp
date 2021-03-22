@@ -4,6 +4,10 @@
 
 #include "snow/graph/shortest-path/warshall-floyd.hpp"
 
+/**
+ * @brief Warshall-Floyd (with Negative Cycle Detection)
+ * 
+ */
 int main(){
     int V, E;
     std::cin >> V >> E;

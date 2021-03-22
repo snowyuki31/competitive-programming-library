@@ -4,6 +4,10 @@
 
 #include "snow/math/factorize.hpp"
 
+/**
+ * @brief Factorize
+ * 
+ */
 int main(){
     int n;
     std::cin >> n;

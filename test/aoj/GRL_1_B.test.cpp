@@ -5,6 +5,10 @@
 
 #include "snow/graph/shortest-path/bellman-ford.hpp"
 
+/**
+ * @brief Bellman-Ford
+ * 
+ */
 int main(){
     int V, E, r;
     std::cin >> V >> E >> r;

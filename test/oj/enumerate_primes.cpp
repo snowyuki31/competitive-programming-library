@@ -5,6 +5,10 @@
 #include "snow/io/setup.hpp"
 #include "snow/io/helper.hpp"
 
+/**
+ * @brief Enumerate Primes
+ * 
+ */
 int main() {
     int N, A, B;
     std::cin >> N >> A >> B;

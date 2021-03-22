@@ -4,6 +4,11 @@
 #include "snow/math/divisor.hpp"
 #include "snow/math/factorize.hpp"
 
+/**
+ * @brief Divisor / Factorize
+ * 
+ */
+
 int main() {
     long long N;
     std::cin >> N;

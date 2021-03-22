@@ -7,6 +7,11 @@
 
 namespace snow{
 
+/**
+ * @brief Dijkstra
+ * 
+ * @param s 
+ */
 template < typename T >
 std::vector<T> Graph<T>::dijkstra(int s) const{
     std::priority_queue<std::pair<T, int>, std::vector<std::pair<T, int>>, std::greater<>> que;

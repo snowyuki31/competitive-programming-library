@@ -7,6 +7,10 @@
 #include "snow/utils/xorshift.hpp"
 #include "snow/string/rolling-hash.hpp"
 
+/**
+ * @brief Rolling Hash
+ * 
+ */
 int main() {
     std::string S;
     std::cin >> S;

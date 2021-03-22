@@ -4,6 +4,10 @@
 #include "snow/utils/acl-wrapper.hpp"
 #include "snow/monoids/min.hpp"
 
+/**
+ * @brief Segment Tree (Range Min and Range Update)
+ * 
+ */
 int main() {
     int n, q;
     std::cin >> n >> q;

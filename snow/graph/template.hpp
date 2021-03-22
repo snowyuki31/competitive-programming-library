@@ -4,6 +4,9 @@
 
 namespace snow {
 
+/**
+ * @brief Graph template
+ */
 template < typename T >
 struct Graph {
     struct Edge {

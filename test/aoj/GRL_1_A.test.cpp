@@ -5,6 +5,10 @@
 
 #include "snow/graph/shortest-path/dijkstra.hpp"
 
+/**
+ * @brief Dikstra
+ * 
+ */
 int main(){
     int V, E, r;
     std::cin >> V >> E >> r;

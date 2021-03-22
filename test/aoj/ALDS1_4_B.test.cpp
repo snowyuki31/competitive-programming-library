@@ -6,6 +6,10 @@
 #include "snow/algorithm/binary-search.hpp"
 #include "snow/io/helper.hpp"
 
+/**
+ * @brief Binary Search
+ * 
+ */
 int main() {
     int n;
     std::cin >> n;

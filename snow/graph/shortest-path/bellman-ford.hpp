@@ -6,6 +6,11 @@
 
 namespace snow{
 
+/**
+ * @brief Bellman-Ford
+ * 
+ * @param s 
+ */
 template < typename T >
 std::vector<T> Graph<T>::bellman_ford(int s) const{
     std::vector<T> dist(G.size(), INF);

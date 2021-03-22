@@ -11,7 +11,7 @@
 
 
 /**
- * @brief dijkstra (decimal floating point ver.)
+ * @brief Dijkstra (decimal floating point ver.)
  */
 int main() {
     int N, M, X, Y;

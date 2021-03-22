@@ -4,9 +4,12 @@
 #include "snow/utils/acl-wrapper.hpp"
 #include "snow/monoids/plus-size.hpp"
 #include "atcoder/modint"
-
 using mint = atcoder::modint998244353;
 
+/**
+ * @brief Range Affine Range Sum with modint
+ * 
+ */
 int main() {
     int N, Q;
     std::cin >> N >> Q;

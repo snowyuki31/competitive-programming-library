@@ -3,6 +3,10 @@
 #include <iostream>
 #include "snow/math/simple-sieve.hpp"
 
+/**
+ * @brief Eratosthenes's sieve (upto 1e8)
+ * 
+ */
 int main() {
     snow::simple_sieve sieve(1e8);
 

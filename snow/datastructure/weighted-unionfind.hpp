@@ -6,7 +6,11 @@
 
 namespace snow {
 
-// Based on ac-library implementation
+/**
+ * @brief Weighted UnionFind
+ * @ref ac-library/atcoder/dsu
+ * @tparam Abel 
+ */
 template < typename Abel = int >
 struct WeightedUnionFind {
   public:

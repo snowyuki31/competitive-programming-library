@@ -4,6 +4,10 @@
 
 #include "snow/math/euler-phi.hpp"
 
+/**
+ * @brief Euler's totient function
+ * 
+ */
 int main(){
     int n;
     std::cin >> n;

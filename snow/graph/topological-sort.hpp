@@ -7,6 +7,10 @@
 
 namespace snow {
 
+/**
+ * @brief Topological Sort
+ * 
+ */
 template < typename T >
 std::vector<int> Graph<T>::topological_sort() const {
     int N = G.size();

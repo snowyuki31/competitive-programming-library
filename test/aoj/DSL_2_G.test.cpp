@@ -4,6 +4,10 @@
 #include "snow/utils/acl-wrapper.hpp"
 #include "snow/monoids/plus-size.hpp"
 
+/**
+ * @brief Segment Tree (Range Add and Range Sum)
+ * 
+ */
 int main() {
     int n, q;
     std::cin >> n >> q;
