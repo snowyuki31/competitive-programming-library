@@ -7,7 +7,7 @@
 using mint = atcoder::modint998244353;
 
 /**
- * @brief Range Affine Range Sum with modint
+ * @brief Segment Tree (Range Affine and Range Sum with Modint)
  * 
  */
 int main() {
