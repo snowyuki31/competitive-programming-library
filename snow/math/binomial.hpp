@@ -5,7 +5,7 @@
 namespace snow {
 
 /**
- * @brief Binomial Coefficient ($\binom{n}{k}$ 前処理$O(n)$, $O(1)$)
+ * @brief Binomial Coefficient - $\binom{n}{k}$ 前処理$O(n)$, $O(1)$
  * @param N max N
  * @tparam mint 
  */

@@ -3,7 +3,7 @@
 namespace snow {
 
 /**
- * @brief Euler's totient function ($O(\sqrt{n})$)
+ * @brief Euler's totient function - $O(\sqrt{n})$
  * 
  * @tparam T 
  * @param n 

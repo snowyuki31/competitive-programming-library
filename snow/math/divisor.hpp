@@ -6,7 +6,7 @@
 namespace snow {
 
 /**
- * @brief Divisor ($O(\sqrt{n})$)
+ * @brief Divisor - $O(\sqrt{n})$
  * 
  * @tparam T 
  * @param n 

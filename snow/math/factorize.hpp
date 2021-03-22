@@ -5,7 +5,7 @@
 namespace snow {
 
 /**
- * @brief Prime Factorization ($O(\sqrt{n})$)
+ * @brief Prime Factorization - $O(\sqrt{n})$
  * 
  * @tparam T 
  * @param v 
