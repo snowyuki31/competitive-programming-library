@@ -8,7 +8,7 @@ data:
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0560.test.cpp
-    title: test/aoj/0560.test.cpp
+    title: Cumurative Sum (2D)
   - icon: ':heavy_check_mark:'
     path: test/aoj/ALDS1_4_B.test.cpp
     title: Binary Search

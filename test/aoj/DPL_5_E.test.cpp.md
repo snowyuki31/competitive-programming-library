@@ -12,7 +12,7 @@ data:
     title: atcoder/modint.hpp
   - icon: ':heavy_check_mark:'
     path: snow/math/binomial.hpp
-    title: "Binomial Coefficient (\u524D\u51E6\u7406$O(n)$, $O(1)$)"
+    title: "Binomial Coefficient ($\\binom{n}{k}$ \u524D\u51E6\u7406$O(n)$, $O(1)$)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -233,22 +233,22 @@ data:
     \ {};\n\ntemplate <class T>\nusing is_dynamic_modint_t = std::enable_if_t<is_dynamic_modint<T>::value>;\n\
     \n}  // namespace internal\n\n}  // namespace atcoder\n\n\n#line 2 \"snow/math/binomial.hpp\"\
     \n\n#include <vector>\n\nnamespace snow {\n\n/**\n * @brief Binomial Coefficient\
-    \ (\u524D\u51E6\u7406$O(n)$, $O(1)$)\n * @param N max N\n * @tparam mint \n */\n\
-    template < typename mint >\nstruct Binomial {\n    public:\n        Binomial(int\
-    \ N) : _N(N + 1), _M(mint::mod()), fac(_N), finv(_N), inv(_N) {\n            fac[0]\
-    \ = fac[1] = 1;\n            finv[0] = finv[1] = 1;\n            inv[1] = 1;\n\
-    \            for (int i = 2; i < _N; ++i) {\n                fac[i] = fac[i -\
-    \ 1] * i;\n                inv[i] = _M - inv[_M % i] * (_M / i);\n           \
-    \     finv[i] = finv[i - 1] * inv[i];\n            }\n        }\n\n        /**\n\
-    \         * @brief Calculate nCk\n         * \n         * @param n \n        \
-    \ * @param k \n         */\n        mint get(int n, int k){\n            if (n\
-    \ < k) return 0;\n            if (n < 0 || k < 0) return 0;\n            return\
-    \ fac[n] * finv[k] * finv[n - k];\n        }\n\n    protected:\n        const\
-    \ int _N;\n        const int _M;\n        std::vector<mint> fac, finv, inv;\n\
-    };\n\n} // namespace snow\n#line 6 \"test/aoj/DPL_5_E.test.cpp\"\nusing mint =\
-    \ atcoder::modint1000000007;\n\n/**\n * @brief Twelvefold way V\n * \n */\nint\
-    \ main() {\n    int n, k;\n    std::cin >> n >> k;\n    snow::Binomial<mint> binom(k);\n\
-    \    std::cout << binom.get(k, n).val() << '\\n';\n}\n"
+    \ ($\\binom{n}{k}$ \u524D\u51E6\u7406$O(n)$, $O(1)$)\n * @param N max N\n * @tparam\
+    \ mint \n */\ntemplate < typename mint >\nstruct Binomial {\n    public:\n   \
+    \     Binomial(int N) : _N(N + 1), _M(mint::mod()), fac(_N), finv(_N), inv(_N)\
+    \ {\n            fac[0] = fac[1] = 1;\n            finv[0] = finv[1] = 1;\n  \
+    \          inv[1] = 1;\n            for (int i = 2; i < _N; ++i) {\n         \
+    \       fac[i] = fac[i - 1] * i;\n                inv[i] = _M - inv[_M % i] *\
+    \ (_M / i);\n                finv[i] = finv[i - 1] * inv[i];\n            }\n\
+    \        }\n\n        /**\n         * @brief Calculate nCk\n         * \n    \
+    \     * @param n \n         * @param k \n         */\n        mint get(int n,\
+    \ int k){\n            if (n < k) return 0;\n            if (n < 0 || k < 0) return\
+    \ 0;\n            return fac[n] * finv[k] * finv[n - k];\n        }\n\n    protected:\n\
+    \        const int _N;\n        const int _M;\n        std::vector<mint> fac,\
+    \ finv, inv;\n};\n\n} // namespace snow\n#line 6 \"test/aoj/DPL_5_E.test.cpp\"\
+    \nusing mint = atcoder::modint1000000007;\n\n/**\n * @brief Twelvefold way V\n\
+    \ * \n */\nint main() {\n    int n, k;\n    std::cin >> n >> k;\n    snow::Binomial<mint>\
+    \ binom(k);\n    std::cout << binom.get(k, n).val() << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DPL_5_E\"\
     \n\n#include <iostream>\n#include \"atcoder/modint\"\n#include \"snow/math/binomial.hpp\"\
     \nusing mint = atcoder::modint1000000007;\n\n/**\n * @brief Twelvefold way V\n\
@@ -262,7 +262,7 @@ data:
   isVerificationFile: true
   path: test/aoj/DPL_5_E.test.cpp
   requiredBy: []
-  timestamp: '2021-03-23 01:20:06+09:00'
+  timestamp: '2021-03-23 05:36:30+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DPL_5_E.test.cpp

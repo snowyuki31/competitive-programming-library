@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: snow/math/factorize.hpp
-    title: snow/math/factorize.hpp
+    title: Prime Factorization ($O(\sqrt{n})$)
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -17,15 +17,16 @@ data:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A
   bundledCode: "#line 1 \"test/aoj/NTL_1_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A\"\
     \r\n\r\n#include <iostream>\r\n\r\n#line 2 \"snow/math/factorize.hpp\"\n\r\n#include\
-    \ <map>\r\n\r\nnamespace snow {\r\n\r\ntemplate < typename T >\r\nstd::map<T,\
-    \ int> factorize(T v){\r\n    std::map<T, int> ret;\r\n    for(T i = 2; i * i\
-    \ <= v; ++i){\r\n        while(!(v % i)) ret[i]++, v /= i;\r\n    }\r\n    if(v\
-    \ != 1) ret[v]++;\r\n    return ret;\r\n}\r\n\r\n} // namespace snow\n#line 6\
-    \ \"test/aoj/NTL_1_A.test.cpp\"\n\r\n/**\r\n * @brief Factorize\r\n * \r\n */\r\
-    \nint main(){\r\n    int n;\r\n    std::cin >> n;\r\n    auto ret = snow::factorize(n);\r\
-    \n    std::cout << n << ':';\r\n    for(auto [k, v] : ret){\r\n        while(v--)\
-    \ std::cout << ' ' << k;\r\n    }\r\n    std::cout << '\\n';\r\n    \r\n    return\
-    \ 0;\r\n}\r\n"
+    \ <map>\r\n\r\nnamespace snow {\r\n\r\n/**\r\n * @brief Prime Factorization ($O(\\\
+    sqrt{n})$)\r\n * \r\n * @tparam T \r\n * @param v \r\n */\r\ntemplate < typename\
+    \ T >\r\nstd::map<T, int> factorize(T v){\r\n    std::map<T, int> ret;\r\n   \
+    \ for(T i = 2; i * i <= v; ++i){\r\n        while(!(v % i)) ret[i]++, v /= i;\r\
+    \n    }\r\n    if(v != 1) ret[v]++;\r\n    return ret;\r\n}\r\n\r\n} // namespace\
+    \ snow\n#line 6 \"test/aoj/NTL_1_A.test.cpp\"\n\r\n/**\r\n * @brief Factorize\r\
+    \n * \r\n */\r\nint main(){\r\n    int n;\r\n    std::cin >> n;\r\n    auto ret\
+    \ = snow::factorize(n);\r\n    std::cout << n << ':';\r\n    for(auto [k, v] :\
+    \ ret){\r\n        while(v--) std::cout << ' ' << k;\r\n    }\r\n    std::cout\
+    \ << '\\n';\r\n    \r\n    return 0;\r\n}\r\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_A\"\
     \r\n\r\n#include <iostream>\r\n\r\n#include \"snow/math/factorize.hpp\"\r\n\r\n\
     /**\r\n * @brief Factorize\r\n * \r\n */\r\nint main(){\r\n    int n;\r\n    std::cin\
@@ -37,7 +38,7 @@ data:
   isVerificationFile: true
   path: test/aoj/NTL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2021-03-22 12:08:23+09:00'
+  timestamp: '2021-03-23 05:36:30+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/NTL_1_A.test.cpp

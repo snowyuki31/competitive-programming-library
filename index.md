@@ -101,16 +101,16 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: snow/math/binomial.hpp
-      title: "Binomial Coefficient (\u524D\u51E6\u7406$O(n)$, $O(1)$)"
+      title: "Binomial Coefficient ($\\binom{n}{k}$ \u524D\u51E6\u7406$O(n)$, $O(1)$)"
     - icon: ':heavy_check_mark:'
       path: snow/math/divisor.hpp
-      title: snow/math/divisor.hpp
+      title: Divisor ($O(\sqrt{n})$)
     - icon: ':heavy_check_mark:'
       path: snow/math/euler-phi.hpp
-      title: snow/math/euler-phi.hpp
+      title: Euler's totient function ($O(\sqrt{n})$)
     - icon: ':heavy_check_mark:'
       path: snow/math/factorize.hpp
-      title: snow/math/factorize.hpp
+      title: Prime Factorization ($O(\sqrt{n})$)
     - icon: ':heavy_check_mark:'
       path: snow/math/sieve.hpp
       title: Sieve of Eratosthenes (for faster factorization)
@@ -162,7 +162,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: test/aoj/0560.test.cpp
-      title: test/aoj/0560.test.cpp
+      title: Cumurative Sum (2D)
     - icon: ':heavy_check_mark:'
       path: test/aoj/2932.test.cpp
       title: Divisor / Factorize
