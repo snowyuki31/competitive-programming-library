@@ -62,6 +62,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/algorithm/binary-search.hpp
       title: Binary Search
+    - icon: ':heavy_check_mark:'
+      path: snow/algorithm/cumsum2D.hpp
+      title: Cumulative Sum (2D)
   - name: snow/datastructure
     pages:
     - icon: ':heavy_check_mark:'
@@ -157,6 +160,9 @@ data:
   verificationCategories:
   - name: test/aoj
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/0560.test.cpp
+      title: test/aoj/0560.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/2932.test.cpp
       title: Divisor / Factorize

@@ -7,6 +7,9 @@ data:
     title: Enumerate Primes
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/0560.test.cpp
+    title: test/aoj/0560.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj/ALDS1_4_B.test.cpp
     title: Binary Search
   - icon: ':heavy_check_mark:'
@@ -38,7 +41,8 @@ data:
     \ &v){\n    for(T &in : v) is >> in;\n    return is;\n}\n\ntemplate< typename\
     \ T >\nstd::ostream &operator << (std::ostream &os, const std::set< T > &st){\n\
     \    int ct = 0;\n    for(auto& s : st) os << s << (++ct != st.size() ? \" \"\
-    \ : \"\");\n    return os;\n}\n\nvoid print() {\n    std::cout << '\\n';\n}\n\
+    \ : \"\");\n    return os;\n}\n\ntemplate<class... T>\nvoid input(T&... a){\n\
+    \    (std::cin >> ... >> a);\n}\n\nvoid print() {\n    std::cout << '\\n';\n}\n\
     template<class T, class... Ts>\nvoid print(const T& a, const Ts&... b){\n    std::cout\
     \ << a;\n    (std::cout << ... << (std::cout << ' ', b));\n    std::cout << '\\\
     n';\n}\n\nint drop() {\n    std::cout << '\\n';\n    exit(1);\n}\ntemplate<class\
@@ -63,6 +67,7 @@ data:
     \ >> in;\n    return is;\n}\n\ntemplate< typename T >\nstd::ostream &operator\
     \ << (std::ostream &os, const std::set< T > &st){\n    int ct = 0;\n    for(auto&\
     \ s : st) os << s << (++ct != st.size() ? \" \" : \"\");\n    return os;\n}\n\n\
+    template<class... T>\nvoid input(T&... a){\n    (std::cin >> ... >> a);\n}\n\n\
     void print() {\n    std::cout << '\\n';\n}\ntemplate<class T, class... Ts>\nvoid\
     \ print(const T& a, const Ts&... b){\n    std::cout << a;\n    (std::cout << ...\
     \ << (std::cout << ' ', b));\n    std::cout << '\\n';\n}\n\nint drop() {\n   \
@@ -74,11 +79,12 @@ data:
   path: snow/io/helper.hpp
   requiredBy:
   - test/oj/enumerate_primes.cpp
-  timestamp: '2021-03-22 12:48:12+09:00'
+  timestamp: '2021-03-23 03:17:52+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0517.test.cpp
   - test/yukicoder/1065.test.cpp
+  - test/aoj/0560.test.cpp
   - test/aoj/ALDS1_4_B.test.cpp
 documentation_of: snow/io/helper.hpp
 layout: document

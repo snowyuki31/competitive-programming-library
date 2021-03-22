@@ -52,7 +52,8 @@ data:
     \ &is, std::vector< T > &v){\n    for(T &in : v) is >> in;\n    return is;\n}\n\
     \ntemplate< typename T >\nstd::ostream &operator << (std::ostream &os, const std::set<\
     \ T > &st){\n    int ct = 0;\n    for(auto& s : st) os << s << (++ct != st.size()\
-    \ ? \" \" : \"\");\n    return os;\n}\n\nvoid print() {\n    std::cout << '\\\
+    \ ? \" \" : \"\");\n    return os;\n}\n\ntemplate<class... T>\nvoid input(T&...\
+    \ a){\n    (std::cin >> ... >> a);\n}\n\nvoid print() {\n    std::cout << '\\\
     n';\n}\ntemplate<class T, class... Ts>\nvoid print(const T& a, const Ts&... b){\n\
     \    std::cout << a;\n    (std::cout << ... << (std::cout << ' ', b));\n    std::cout\
     \ << '\\n';\n}\n\nint drop() {\n    std::cout << '\\n';\n    exit(1);\n}\ntemplate<class\
@@ -79,7 +80,7 @@ data:
   isVerificationFile: false
   path: test/oj/enumerate_primes.cpp
   requiredBy: []
-  timestamp: '2021-03-22 12:48:12+09:00'
+  timestamp: '2021-03-23 03:17:52+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/oj/enumerate_primes.cpp

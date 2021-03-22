@@ -43,6 +43,7 @@ data:
     \ >> in;\n    return is;\n}\n\ntemplate< typename T >\nstd::ostream &operator\
     \ << (std::ostream &os, const std::set< T > &st){\n    int ct = 0;\n    for(auto&\
     \ s : st) os << s << (++ct != st.size() ? \" \" : \"\");\n    return os;\n}\n\n\
+    template<class... T>\nvoid input(T&... a){\n    (std::cin >> ... >> a);\n}\n\n\
     void print() {\n    std::cout << '\\n';\n}\ntemplate<class T, class... Ts>\nvoid\
     \ print(const T& a, const Ts&... b){\n    std::cout << a;\n    (std::cout << ...\
     \ << (std::cout << ' ', b));\n    std::cout << '\\n';\n}\n\nint drop() {\n   \
@@ -75,7 +76,7 @@ data:
   isVerificationFile: true
   path: test/aoj/ALDS1_4_B.test.cpp
   requiredBy: []
-  timestamp: '2021-03-23 01:20:06+09:00'
+  timestamp: '2021-03-23 03:17:52+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_4_B.test.cpp
