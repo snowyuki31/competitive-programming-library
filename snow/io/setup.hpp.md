@@ -5,10 +5,13 @@ data:
   - icon: ':warning:'
     path: test/oj/enumerate_primes.cpp
     title: test/oj/enumerate_primes.cpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1065.test.cpp
+    title: dijkstra (decimal floating point ver.)
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"snow/io/setup.hpp\"\n#include <iostream>\n#include <iomanip>\n\
@@ -25,8 +28,9 @@ data:
   requiredBy:
   - test/oj/enumerate_primes.cpp
   timestamp: '2021-03-20 04:55:24+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yukicoder/1065.test.cpp
 documentation_of: snow/io/setup.hpp
 layout: document
 redirect_from:

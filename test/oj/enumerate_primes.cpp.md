@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/io/helper.hpp
     title: snow/io/helper.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: snow/io/setup.hpp
     title: snow/io/setup.hpp
   - icon: ':heavy_check_mark:'

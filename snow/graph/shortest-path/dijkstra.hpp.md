@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_1_A.test.cpp
     title: test/aoj/GRL_1_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1065.test.cpp
+    title: dijkstra (decimal floating point ver.)
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -61,6 +64,7 @@ data:
   timestamp: '2021-03-22 03:30:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yukicoder/1065.test.cpp
   - test/aoj/GRL_1_A.test.cpp
 documentation_of: snow/graph/shortest-path/dijkstra.hpp
 layout: document

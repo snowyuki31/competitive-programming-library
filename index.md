@@ -91,7 +91,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/io/helper.hpp
       title: snow/io/helper.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: snow/io/setup.hpp
       title: snow/io/setup.hpp
   - name: snow/math
@@ -204,10 +204,13 @@ data:
   - name: test/yukicoder
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/yukicoder/0517.test.cpp
+      title: test/yukicoder/0517.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1013.test.cpp
       title: test/yukicoder/1013.test.cpp
     - icon: ':heavy_check_mark:'
-      path: test/yukicoder/517.test.cpp
-      title: test/yukicoder/517.test.cpp
+      path: test/yukicoder/1065.test.cpp
+      title: dijkstra (decimal floating point ver.)
 layout: toppage
 ---

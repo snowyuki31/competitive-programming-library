@@ -10,8 +10,11 @@ data:
     path: test/aoj/ALDS1_4_B.test.cpp
     title: test/aoj/ALDS1_4_B.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/517.test.cpp
-    title: test/yukicoder/517.test.cpp
+    path: test/yukicoder/0517.test.cpp
+    title: test/yukicoder/0517.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yukicoder/1065.test.cpp
+    title: dijkstra (decimal floating point ver.)
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -62,7 +65,8 @@ data:
   timestamp: '2021-03-20 06:51:31+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/517.test.cpp
+  - test/yukicoder/0517.test.cpp
+  - test/yukicoder/1065.test.cpp
   - test/aoj/ALDS1_4_B.test.cpp
 documentation_of: snow/io/helper.hpp
 layout: document

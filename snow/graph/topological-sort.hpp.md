@@ -7,8 +7,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/517.test.cpp
-    title: test/yukicoder/517.test.cpp
+    path: test/yukicoder/0517.test.cpp
+    title: test/yukicoder/0517.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -58,7 +58,7 @@ data:
   timestamp: '2021-03-22 03:30:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/517.test.cpp
+  - test/yukicoder/0517.test.cpp
 documentation_of: snow/graph/topological-sort.hpp
 layout: document
 redirect_from:
