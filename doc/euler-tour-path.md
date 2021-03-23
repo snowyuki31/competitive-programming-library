@@ -5,11 +5,11 @@ documentation_of: snow/graph/tree/euler-tour-path.hpp
 
 ## About
 
-Euler Tourでパスクエリを処理します．
+Euler Tour + Segment Treeでパスクエリを処理します．
 
-現時点での実装では，Sum Queryのみ対応しています．
+現時点では，Sum Queryのみ対応しています．
 
-Abel群であれば処理でき，以下の部分を適宜書き換えます．
+Abel群であれば処理できるはずで，以下の部分を適宜書き換えます．
 
 ```cpp
 void set(int u, S x) {
