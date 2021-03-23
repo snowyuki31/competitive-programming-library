@@ -15,12 +15,17 @@ data:
     path: snow/graph/topological-sort.hpp
     title: Topological Sort
   - icon: ':heavy_check_mark:'
-    path: snow/graph/tree/euler-tour.hpp
+    path: snow/graph/tree/euler-tour-lca.hpp
+    title: snow/graph/tree/euler-tour-lca.hpp
+  - icon: ':heavy_check_mark:'
+    path: snow/graph/tree/euler-tour-path.hpp
+    title: Euler Tour (Point Set and Path Sum Query)
+  - icon: ':heavy_check_mark:'
+    path: snow/graph/tree/euler-tour-subtree.hpp
     title: Euler Tour (Point Set and Subtree Query)
   - icon: ':heavy_check_mark:'
-    path: snow/graph/tree/lowest-common-ancestor-segtree.hpp
-    title: "Lowest Common Ancestor (Segment Tree ver.) - \u524D\u51E6\u7406$O(N\\\
-      log N)$, $O(\\logN)$"
+    path: snow/graph/tree/euler-tour.hpp
+    title: Euler Tour
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_1_A.test.cpp
@@ -33,10 +38,13 @@ data:
     title: Warshall-Floyd (with Negative Cycle Detection)
   - icon: ':heavy_check_mark:'
     path: test/oj/lowest_common_ancestor_1.test.cpp
-    title: Lowest Common Ancestor (Segment Tree ver.)
+    title: Lowest Common Ancestor (Euler Tour ver.)
+  - icon: ':heavy_check_mark:'
+    path: test/oj/vertex_add_path_sum.test.cpp
+    title: Vertex Add Path Sum (Euler Tour ver.)
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_subtree_sum.test.cpp
-    title: Vertex Add Subtree Sum (With Euler-Tour)
+    title: Vertex Add Subtree Sum (Euler Tour ver.)
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0517.test.cpp
     title: Topological Sort
@@ -90,7 +98,9 @@ data:
   path: snow/graph/template.hpp
   requiredBy:
   - snow/graph/topological-sort.hpp
-  - snow/graph/tree/lowest-common-ancestor-segtree.hpp
+  - snow/graph/tree/euler-tour-path.hpp
+  - snow/graph/tree/euler-tour-subtree.hpp
+  - snow/graph/tree/euler-tour-lca.hpp
   - snow/graph/tree/euler-tour.hpp
   - snow/graph/shortest-path/bellman-ford.hpp
   - snow/graph/shortest-path/warshall-floyd.hpp
@@ -100,6 +110,7 @@ data:
   verifiedWith:
   - test/yukicoder/0517.test.cpp
   - test/yukicoder/1065.test.cpp
+  - test/oj/vertex_add_path_sum.test.cpp
   - test/oj/vertex_add_subtree_sum.test.cpp
   - test/oj/lowest_common_ancestor_1.test.cpp
   - test/aoj/GRL_1_C.test.cpp

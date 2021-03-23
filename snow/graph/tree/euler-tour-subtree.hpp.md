@@ -11,81 +11,43 @@ data:
     path: snow/graph/template.hpp
     title: Graph template
   - icon: ':heavy_check_mark:'
-    path: snow/graph/tree/euler-tour-subtree.hpp
-    title: Euler Tour (Point Set and Subtree Query)
-  - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour.hpp
     title: Euler Tour
-  - icon: ':heavy_check_mark:'
-    path: snow/io/helper.hpp
-    title: snow/io/helper.hpp
-  - icon: ':heavy_check_mark:'
-    path: snow/monoids/plus.hpp
-    title: snow/monoids/plus.hpp
   - icon: ':heavy_check_mark:'
     path: snow/utils/seg-wrapper.hpp
     title: snow/utils/seg-wrapper.hpp
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/oj/vertex_add_subtree_sum.test.cpp
+    title: Vertex Add Subtree Sum (Euler Tour ver.)
   _isVerificationFailed: false
-  _pathExtension: cpp
+  _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://old.yosupo.jp/problem/vertex_add_subtree_sum
-    document_title: Vertex Add Subtree Sum (Euler Tour ver.)
-    links:
-    - https://old.yosupo.jp/problem/vertex_add_subtree_sum
-  bundledCode: "#line 1 \"test/oj/vertex_add_subtree_sum.test.cpp\"\n#define PROBLEM\
-    \ \"https://old.yosupo.jp/problem/vertex_add_subtree_sum\"\n#include <iostream>\n\
-    #include <vector>\n#line 4 \"snow/io/helper.hpp\"\n#include <set>\n\ntemplate<\
-    \ typename T1, typename T2 >\nstd::ostream &operator << (std::ostream &os, const\
-    \ std::pair< T1, T2 > &p) {\n    os << p.first << \" \" << p.second;\n    return\
-    \ os;\n}\n\ntemplate< typename T1, typename T2 >\nstd::istream &operator >> (std::istream\
-    \ &is, std::pair< T1, T2 > &p) {\n    is >> p.first >> p.second;\n    return is;\n\
-    }\n\ntemplate< typename T1, typename T2, typename T3 >\nstd::ostream &operator\
-    \ << (std::ostream &os, const std::tuple< T1, T2, T3 > &t) {\n    auto &[a, b,\
-    \ c] = t;\n    os << a << \" \" << b << \" \" << c;\n    return os;\n}\n\ntemplate<\
-    \ typename T1, typename T2, typename T3 >\nstd::istream &operator >> (std::istream\
-    \ &is, std::tuple< T1, T2, T3 > &t) {\n    auto &[a, b, c] = t;\n    is >> a >>\
-    \ b >> c;\n    return is;\n}\n\ntemplate< typename T >\nstd::ostream &operator\
-    \ << (std::ostream &os, const std::vector< T > &v){\n    for (int i = 0; i < (int)v.size();\
-    \ ++i) {\n        os << v[i] << (i + 1 != v.size() ? \" \" : \"\");\n    }\n \
-    \   return os;\n}\n\ntemplate< typename T >\nstd::istream &operator >>  (std::istream\
-    \ &is, std::vector< T > &v){\n    for(T &in : v) is >> in;\n    return is;\n}\n\
-    \ntemplate< typename T >\nstd::ostream &operator << (std::ostream &os, const std::set<\
-    \ T > &st){\n    int ct = 0;\n    for(auto& s : st) os << s << (++ct != st.size()\
-    \ ? \" \" : \"\");\n    return os;\n}\n\ntemplate<class... T>\nvoid input(T&...\
-    \ a){\n    (std::cin >> ... >> a);\n}\n\nvoid print() {\n    std::cout << '\\\
-    n';\n}\ntemplate<class T, class... Ts>\nvoid print(const T& a, const Ts&... b){\n\
-    \    std::cout << a;\n    (std::cout << ... << (std::cout << ' ', b));\n    std::cout\
-    \ << '\\n';\n}\n\nint drop() {\n    std::cout << '\\n';\n    exit(1);\n}\ntemplate<class\
-    \ T, class... Ts>\nint drop(const T& a, const Ts&... b){\n    std::cout << a;\n\
-    \    (std::cout << ... << (std::cout << ' ', b));\n    std::cout << '\\n';\n \
-    \   exit(1);\n}\n#line 2 \"snow/graph/template.hpp\"\n\r\n#line 4 \"snow/graph/template.hpp\"\
-    \n\r\nnamespace snow {\r\n\r\n/**\r\n * @brief Graph template\r\n */\r\ntemplate\
-    \ < typename T >\r\nstruct Graph {\r\n    struct Edge {\r\n        int from, to;\r\
-    \n        T weight;\r\n        Edge() : from(0), to(0), weight(0) {}\r\n     \
-    \   Edge(int from, int to, T weight) : from(from), to(to), weight(weight) {}\r\
-    \n    };\r\n    using Edges = std::vector<Edge>;\r\n\r\n    const T INF = std::numeric_limits<T>::max();\r\
-    \n    std::vector<Edges> G;\r\n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int\
-    \ n) : G(n) {}\r\n\r\n    Edges operator[](int k) const{\r\n        return G[k];\r\
-    \n    }\r\n\r\n    size_t size() const{\r\n        return G.size();\r\n    }\r\
-    \n\r\n    void add_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(a,\
-    \ b, w);\r\n        G[b].emplace_back(b, a, w);\r\n    }\r\n\r\n    void add_directed_edge(int\
+    document_title: Euler Tour (Point Set and Subtree Query)
+    links: []
+  bundledCode: "#line 2 \"snow/graph/tree/euler-tour-subtree.hpp\"\n\n#include <vector>\n\
+    #line 2 \"snow/graph/tree/euler-tour.hpp\"\n\n#line 2 \"snow/graph/template.hpp\"\
+    \n\r\n#line 4 \"snow/graph/template.hpp\"\n\r\nnamespace snow {\r\n\r\n/**\r\n\
+    \ * @brief Graph template\r\n */\r\ntemplate < typename T >\r\nstruct Graph {\r\
+    \n    struct Edge {\r\n        int from, to;\r\n        T weight;\r\n        Edge()\
+    \ : from(0), to(0), weight(0) {}\r\n        Edge(int from, int to, T weight) :\
+    \ from(from), to(to), weight(weight) {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\
+    \n\r\n    const T INF = std::numeric_limits<T>::max();\r\n    std::vector<Edges>\
+    \ G;\r\n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n\
+    \    Edges operator[](int k) const{\r\n        return G[k];\r\n    }\r\n\r\n \
+    \   size_t size() const{\r\n        return G.size();\r\n    }\r\n\r\n    void\
+    \ add_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n\
+    \        G[b].emplace_back(b, a, w);\r\n    }\r\n\r\n    void add_directed_edge(int\
     \ a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n\
     \    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a, b,\
     \ w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\
     \n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\
     \n    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
     \n\r\n    //Topological sort\r\n    std::vector<int> topological_sort() const;\r\
-    \n};\r\n\r\n} // namespace snow\n#line 2 \"snow/monoids/plus.hpp\"\n\nnamespace\
-    \ snow {\n\n    template < typename T >\n    struct plus_monoid {\n        using\
-    \ value_type = T;\n        static value_type e() { return T(); };\n        static\
-    \ value_type op(value_type l, value_type r){ return l + r; };\n    };\n\n} //\
-    \ namespace snow\n#line 2 \"snow/graph/tree/euler-tour-subtree.hpp\"\n\n#line\
-    \ 2 \"snow/graph/tree/euler-tour.hpp\"\n\n#line 5 \"snow/graph/tree/euler-tour.hpp\"\
-    \n\nnamespace snow {\n\n/**\n * @brief Euler Tour\n * @tparam T edge weight type\n\
+    \n};\r\n\r\n} // namespace snow\n#line 5 \"snow/graph/tree/euler-tour.hpp\"\n\n\
+    namespace snow {\n\n/**\n * @brief Euler Tour\n * @tparam T edge weight type\n\
     \ */\ntemplate < typename T = int >\nstruct EulerTour {\n    public:\n       \
     \ EulerTour(snow::Graph<T> const& G, int root) : N(G.size()), vs(2 * N, 0), in(N,\
     \ 0), out(N, 0), depth(2 * N, 0) {\n            dfs(G, root, -1, 0);\n       \
@@ -162,48 +124,37 @@ data:
     \        }\n\n        S prod(int u) {\n            int l = this->get_in(u), r\
     \ = this->get_out(u);\n            return segtree.prod(l, r);\n        }\n\n \
     \   private:\n        int N;\n        snow::segtree<Monoid> segtree;\n};\n\n}\
-    \ // namespace snow\n#line 8 \"test/oj/vertex_add_subtree_sum.test.cpp\"\n\n/**\n\
-    \ * @brief Vertex Add Subtree Sum (Euler Tour ver.)\n * \n */\nint main() {\n\
-    \    int N, Q;\n    std::cin >> N >> Q;\n    std::vector<int> A(N);\n    std::cin\
-    \ >> A;\n\n    snow::Graph<int> G(N);\n    for (int i = 1; i <= N - 1; ++i){\n\
-    \        int p;\n        std::cin >> p;\n        G.add_edge(p, i);\n    }\n\n\
-    \    snow::EulerTourSubtree<snow::plus_monoid<long long>> euler(G, 0);\n    for(int\
-    \ i = 0; i < N; ++i) euler.set(i, A[i]);\n\n    while(Q--){\n        int t, u;\n\
-    \        std::cin >> t >> u;\n\n        if(t == 0){\n            int x;\n    \
-    \        std::cin >> x;\n            euler.set(u, euler.get(u) + x);\n       \
-    \ }\n        else std::cout << euler.prod(u) << '\\n';\n    }\n\n}\n"
-  code: "#define PROBLEM \"https://old.yosupo.jp/problem/vertex_add_subtree_sum\"\n\
-    #include <iostream>\n#include <vector>\n#include \"snow/io/helper.hpp\"\n#include\
-    \ \"snow/graph/template.hpp\"\n#include \"snow/monoids/plus.hpp\"\n#include \"\
-    snow/graph/tree/euler-tour-subtree.hpp\"\n\n/**\n * @brief Vertex Add Subtree\
-    \ Sum (Euler Tour ver.)\n * \n */\nint main() {\n    int N, Q;\n    std::cin >>\
-    \ N >> Q;\n    std::vector<int> A(N);\n    std::cin >> A;\n\n    snow::Graph<int>\
-    \ G(N);\n    for (int i = 1; i <= N - 1; ++i){\n        int p;\n        std::cin\
-    \ >> p;\n        G.add_edge(p, i);\n    }\n\n    snow::EulerTourSubtree<snow::plus_monoid<long\
-    \ long>> euler(G, 0);\n    for(int i = 0; i < N; ++i) euler.set(i, A[i]);\n\n\
-    \    while(Q--){\n        int t, u;\n        std::cin >> t >> u;\n\n        if(t\
-    \ == 0){\n            int x;\n            std::cin >> x;\n            euler.set(u,\
-    \ euler.get(u) + x);\n        }\n        else std::cout << euler.prod(u) << '\\\
-    n';\n    }\n\n}"
+    \ // namespace snow\n"
+  code: "#pragma once\n\n#include <vector>\n#include \"snow/graph/tree/euler-tour.hpp\"\
+    \n#include \"snow/utils/seg-wrapper.hpp\"\n#include \"snow/graph/template.hpp\"\
+    \n\nnamespace snow {\n\n/**\n * @brief Euler Tour (Point Set and Subtree Query)\n\
+    \ * @tparam Monoid Vertex value\n * @tparam T edge weight type\n */\ntemplate\
+    \ < class Monoid, typename T = int >\nstruct EulerTourSubtree : public EulerTour<T>\
+    \ {\n    public:\n        using S = typename Monoid::value_type;\n        EulerTourSubtree(snow::Graph<T>\
+    \ const &G, int root) : EulerTour<T>(G, root), N(G.size()), segtree(2 * N) {}\n\
+    \n        void set(int u, S x) {\n            segtree.set(this->get_in(u), x);\n\
+    \        }\n\n        S get(int u) {\n            return segtree.get(this->get_in(u));\n\
+    \        }\n\n        S prod(int u) {\n            int l = this->get_in(u), r\
+    \ = this->get_out(u);\n            return segtree.prod(l, r);\n        }\n\n \
+    \   private:\n        int N;\n        snow::segtree<Monoid> segtree;\n};\n\n}\
+    \ // namespace snow"
   dependsOn:
-  - snow/io/helper.hpp
-  - snow/graph/template.hpp
-  - snow/monoids/plus.hpp
-  - snow/graph/tree/euler-tour-subtree.hpp
   - snow/graph/tree/euler-tour.hpp
+  - snow/graph/template.hpp
   - snow/utils/seg-wrapper.hpp
   - atcoder/segtree.hpp
   - atcoder/internal_bit.hpp
-  isVerificationFile: true
-  path: test/oj/vertex_add_subtree_sum.test.cpp
+  isVerificationFile: false
+  path: snow/graph/tree/euler-tour-subtree.hpp
   requiredBy: []
   timestamp: '2021-03-24 05:47:20+09:00'
-  verificationStatus: TEST_ACCEPTED
-  verifiedWith: []
-documentation_of: test/oj/vertex_add_subtree_sum.test.cpp
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/oj/vertex_add_subtree_sum.test.cpp
+documentation_of: snow/graph/tree/euler-tour-subtree.hpp
 layout: document
 redirect_from:
-- /verify/test/oj/vertex_add_subtree_sum.test.cpp
-- /verify/test/oj/vertex_add_subtree_sum.test.cpp.html
-title: Vertex Add Subtree Sum (Euler Tour ver.)
+- /library/snow/graph/tree/euler-tour-subtree.hpp
+- /library/snow/graph/tree/euler-tour-subtree.hpp.html
+title: Euler Tour (Point Set and Subtree Query)
 ---

@@ -11,9 +11,6 @@ data:
     path: snow/graph/template.hpp
     title: Graph template
   - icon: ':heavy_check_mark:'
-    path: snow/graph/tree/euler-tour-lca.hpp
-    title: snow/graph/tree/euler-tour-lca.hpp
-  - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour.hpp
     title: Euler Tour
   - icon: ':heavy_check_mark:'
@@ -25,38 +22,26 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/utils/seg-wrapper.hpp
     title: snow/utils/seg-wrapper.hpp
-  _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: snow/graph/tree/euler-tour-path.hpp
+    title: Euler Tour (Point Set and Path Sum Query)
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/oj/lowest_common_ancestor_1.test.cpp
+    title: Lowest Common Ancestor (Euler Tour ver.)
+  - icon: ':heavy_check_mark:'
+    path: test/oj/vertex_add_path_sum.test.cpp
+    title: Vertex Add Path Sum (Euler Tour ver.)
   _isVerificationFailed: false
-  _pathExtension: cpp
+  _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/lca
-    document_title: Lowest Common Ancestor (Euler Tour ver.)
-    links:
-    - https://judge.yosupo.jp/problem/lca
-  bundledCode: "#line 1 \"test/oj/lowest_common_ancestor_1.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/lca\"\n\n#include <iostream>\n#line 2 \"snow/graph/template.hpp\"\
-    \n\r\n#include <vector>\r\n\r\nnamespace snow {\r\n\r\n/**\r\n * @brief Graph\
-    \ template\r\n */\r\ntemplate < typename T >\r\nstruct Graph {\r\n    struct Edge\
-    \ {\r\n        int from, to;\r\n        T weight;\r\n        Edge() : from(0),\
-    \ to(0), weight(0) {}\r\n        Edge(int from, int to, T weight) : from(from),\
-    \ to(to), weight(weight) {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\
-    \n\r\n    const T INF = std::numeric_limits<T>::max();\r\n    std::vector<Edges>\
-    \ G;\r\n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n\
-    \    Edges operator[](int k) const{\r\n        return G[k];\r\n    }\r\n\r\n \
-    \   size_t size() const{\r\n        return G.size();\r\n    }\r\n\r\n    void\
-    \ add_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n\
-    \        G[b].emplace_back(b, a, w);\r\n    }\r\n\r\n    void add_directed_edge(int\
-    \ a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n\
-    \    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a, b,\
-    \ w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\
-    \n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\
-    \n    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
-    \n\r\n    //Topological sort\r\n    std::vector<int> topological_sort() const;\r\
-    \n};\r\n\r\n} // namespace snow\n#line 2 \"snow/graph/tree/euler-tour-lca.hpp\"\
-    \n\n#line 1 \"atcoder/segtree.hpp\"\n\n\n\n#include <algorithm>\n#include <cassert>\n\
+    document_title: "Euler Tour (Lowest Common Ancestor Query)- \u524D\u51E6\u7406\
+      $O(N\\log N)$, $O(\\log N)$"
+    links: []
+  bundledCode: "#line 2 \"snow/graph/tree/euler-tour-lca.hpp\"\n\n#include <vector>\n\
+    #line 1 \"atcoder/segtree.hpp\"\n\n\n\n#include <algorithm>\n#include <cassert>\n\
     #line 7 \"atcoder/segtree.hpp\"\n\n#line 1 \"atcoder/internal_bit.hpp\"\n\n\n\n\
     #ifdef _MSC_VER\n#include <intrin.h>\n#endif\n\nnamespace atcoder {\n\nnamespace\
     \ internal {\n\n// @param n `0 <= n`\n// @return minimum non-negative `x` s.t.\
@@ -123,10 +108,28 @@ data:
     \        };\n            static value_type mapping(f_type f, value_type x) { return\
     \ f.flag ? f.val : x; }\n            static f_type composition(f_type f, f_type\
     \ g) { return f.flag ? f : g; }\n            static f_type id(){ return {T(),\
-    \ false}; }\n        };\n    };\n\n} // namespace snow\n#line 2 \"snow/graph/tree/euler-tour.hpp\"\
-    \n\n#line 5 \"snow/graph/tree/euler-tour.hpp\"\n\nnamespace snow {\n\n/**\n *\
-    \ @brief Euler Tour\n * @tparam T edge weight type\n */\ntemplate < typename T\
-    \ = int >\nstruct EulerTour {\n    public:\n        EulerTour(snow::Graph<T> const&\
+    \ false}; }\n        };\n    };\n\n} // namespace snow\n#line 2 \"snow/graph/template.hpp\"\
+    \n\r\n#line 4 \"snow/graph/template.hpp\"\n\r\nnamespace snow {\r\n\r\n/**\r\n\
+    \ * @brief Graph template\r\n */\r\ntemplate < typename T >\r\nstruct Graph {\r\
+    \n    struct Edge {\r\n        int from, to;\r\n        T weight;\r\n        Edge()\
+    \ : from(0), to(0), weight(0) {}\r\n        Edge(int from, int to, T weight) :\
+    \ from(from), to(to), weight(weight) {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\
+    \n\r\n    const T INF = std::numeric_limits<T>::max();\r\n    std::vector<Edges>\
+    \ G;\r\n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n\
+    \    Edges operator[](int k) const{\r\n        return G[k];\r\n    }\r\n\r\n \
+    \   size_t size() const{\r\n        return G.size();\r\n    }\r\n\r\n    void\
+    \ add_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n\
+    \        G[b].emplace_back(b, a, w);\r\n    }\r\n\r\n    void add_directed_edge(int\
+    \ a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n\
+    \    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a, b,\
+    \ w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\
+    \n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\
+    \n    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
+    \n\r\n    //Topological sort\r\n    std::vector<int> topological_sort() const;\r\
+    \n};\r\n\r\n} // namespace snow\n#line 2 \"snow/graph/tree/euler-tour.hpp\"\n\n\
+    #line 5 \"snow/graph/tree/euler-tour.hpp\"\n\nnamespace snow {\n\n/**\n * @brief\
+    \ Euler Tour\n * @tparam T edge weight type\n */\ntemplate < typename T = int\
+    \ >\nstruct EulerTour {\n    public:\n        EulerTour(snow::Graph<T> const&\
     \ G, int root) : N(G.size()), vs(2 * N, 0), in(N, 0), out(N, 0), depth(2 * N,\
     \ 0) {\n            dfs(G, root, -1, 0);\n        }\n\n        int get_in(int\
     \ x){\n            return in[x];\n        }\n\n        int get_out(int x){\n \
@@ -151,40 +154,45 @@ data:
     \           auto ret = segtree.prod(std::min(u_, v_), std::max(u_, v_) + 1);\n\
     \            return ret.second;\n        }\n\n    private:\n        int N;\n \
     \       snow::segtree<snow::min_monoid<std::pair<int, int>>> segtree;\n};\n\n\
-    } // namespace snow\n#line 6 \"test/oj/lowest_common_ancestor_1.test.cpp\"\n\n\
-    /**\n * @brief Lowest Common Ancestor (Euler Tour ver.)\n * \n */\nint main()\
-    \ {\n    int N, Q;\n    std::cin >> N >> Q;\n\n    snow::Graph<int> G(N);\n  \
-    \  for(int i = 1; i <= N - 1; ++i) {\n        int p;\n        std::cin >> p;\n\
-    \        G.add_edge(i, p);\n    }\n\n    snow::EulerTourLCA euler(G, 0);\n   \
-    \ while(Q--){\n        int u, v;\n        std::cin >> u >> v;\n        std::cout\
-    \ << euler.lca(u, v) << '\\n';\n    }\n\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#include <iostream>\n\
-    #include \"snow/graph/template.hpp\"\n#include \"snow/graph/tree/euler-tour-lca.hpp\"\
-    \n\n/**\n * @brief Lowest Common Ancestor (Euler Tour ver.)\n * \n */\nint main()\
-    \ {\n    int N, Q;\n    std::cin >> N >> Q;\n\n    snow::Graph<int> G(N);\n  \
-    \  for(int i = 1; i <= N - 1; ++i) {\n        int p;\n        std::cin >> p;\n\
-    \        G.add_edge(i, p);\n    }\n\n    snow::EulerTourLCA euler(G, 0);\n   \
-    \ while(Q--){\n        int u, v;\n        std::cin >> u >> v;\n        std::cout\
-    \ << euler.lca(u, v) << '\\n';\n    }\n\n    return 0;\n}"
+    } // namespace snow\n"
+  code: "#pragma once\n\n#include <vector>\n#include \"snow/utils/seg-wrapper.hpp\"\
+    \n#include \"snow/monoids/min.hpp\"\n#include \"snow/graph/template.hpp\"\n#include\
+    \ \"snow/graph/tree/euler-tour.hpp\"\n\nnamespace snow {\n\n/**\n * @brief Euler\
+    \ Tour (Lowest Common Ancestor Query)- \u524D\u51E6\u7406$O(N\\log N)$, $O(\\\
+    log N)$\n * \n */\ntemplate < typename T = int >\nstruct EulerTourLCA : public\
+    \ EulerTour<T> {\n    public:\n        EulerTourLCA(snow::Graph<T> const& G, int\
+    \ root) : EulerTour<T>(G, root), N(G.size()), segtree(2 * N) {\n            for(int\
+    \ i = 0; i < 2 * N; ++i) segtree.set(i, {this->get_depth(i), this->get_vertex(i)});\n\
+    \        }\n\n        int lca(int u, int v) {\n            int u_ = this->get_in(u),\
+    \ v_ = this->get_in(v);\n            auto ret = segtree.prod(std::min(u_, v_),\
+    \ std::max(u_, v_) + 1);\n            return ret.second;\n        }\n\n    private:\n\
+    \        int N;\n        snow::segtree<snow::min_monoid<std::pair<int, int>>>\
+    \ segtree;\n};\n\n} // namespace snow"
   dependsOn:
-  - snow/graph/template.hpp
-  - snow/graph/tree/euler-tour-lca.hpp
   - snow/utils/seg-wrapper.hpp
   - atcoder/segtree.hpp
   - atcoder/internal_bit.hpp
   - snow/monoids/min.hpp
   - snow/utils/pair-wrapper.hpp
+  - snow/graph/template.hpp
   - snow/graph/tree/euler-tour.hpp
-  isVerificationFile: true
-  path: test/oj/lowest_common_ancestor_1.test.cpp
-  requiredBy: []
+  isVerificationFile: false
+  path: snow/graph/tree/euler-tour-lca.hpp
+  requiredBy:
+  - snow/graph/tree/euler-tour-path.hpp
   timestamp: '2021-03-24 05:47:20+09:00'
-  verificationStatus: TEST_ACCEPTED
-  verifiedWith: []
-documentation_of: test/oj/lowest_common_ancestor_1.test.cpp
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/oj/vertex_add_path_sum.test.cpp
+  - test/oj/lowest_common_ancestor_1.test.cpp
+documentation_of: snow/graph/tree/euler-tour-lca.hpp
 layout: document
-redirect_from:
-- /verify/test/oj/lowest_common_ancestor_1.test.cpp
-- /verify/test/oj/lowest_common_ancestor_1.test.cpp.html
-title: Lowest Common Ancestor (Euler Tour ver.)
 ---
+
+## About
+
+Euler TourでLCAを求めます．
+
+現時点ではRMQがセグ木なのでクエリ$O(\log N)$です．
+
+TODO: Sparse tableの実装

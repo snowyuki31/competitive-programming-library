@@ -6,9 +6,11 @@ data:
     title: snow/utils/pair-wrapper.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: snow/graph/tree/lowest-common-ancestor-segtree.hpp
-    title: "Lowest Common Ancestor (Segment Tree ver.) - \u524D\u51E6\u7406$O(N\\\
-      log N)$, $O(\\logN)$"
+    path: snow/graph/tree/euler-tour-lca.hpp
+    title: snow/graph/tree/euler-tour-lca.hpp
+  - icon: ':heavy_check_mark:'
+    path: snow/graph/tree/euler-tour-path.hpp
+    title: Euler Tour (Point Set and Path Sum Query)
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_F.test.cpp
@@ -18,7 +20,10 @@ data:
     title: Segment Tree (Range Add and Range Min)
   - icon: ':heavy_check_mark:'
     path: test/oj/lowest_common_ancestor_1.test.cpp
-    title: Lowest Common Ancestor (Segment Tree ver.)
+    title: Lowest Common Ancestor (Euler Tour ver.)
+  - icon: ':heavy_check_mark:'
+    path: test/oj/vertex_add_path_sum.test.cpp
+    title: Vertex Add Path Sum (Euler Tour ver.)
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -61,10 +66,12 @@ data:
   isVerificationFile: false
   path: snow/monoids/min.hpp
   requiredBy:
-  - snow/graph/tree/lowest-common-ancestor-segtree.hpp
+  - snow/graph/tree/euler-tour-path.hpp
+  - snow/graph/tree/euler-tour-lca.hpp
   timestamp: '2021-03-23 15:48:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/oj/vertex_add_path_sum.test.cpp
   - test/oj/lowest_common_ancestor_1.test.cpp
   - test/aoj/DSL_2_H.test.cpp
   - test/aoj/DSL_2_F.test.cpp

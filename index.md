@@ -92,12 +92,17 @@ data:
   - name: snow/graph/tree
     pages:
     - icon: ':heavy_check_mark:'
-      path: snow/graph/tree/euler-tour.hpp
+      path: snow/graph/tree/euler-tour-lca.hpp
+      title: snow/graph/tree/euler-tour-lca.hpp
+    - icon: ':heavy_check_mark:'
+      path: snow/graph/tree/euler-tour-path.hpp
+      title: Euler Tour (Point Set and Path Sum Query)
+    - icon: ':heavy_check_mark:'
+      path: snow/graph/tree/euler-tour-subtree.hpp
       title: Euler Tour (Point Set and Subtree Query)
     - icon: ':heavy_check_mark:'
-      path: snow/graph/tree/lowest-common-ancestor-segtree.hpp
-      title: "Lowest Common Ancestor (Segment Tree ver.) - \u524D\u51E6\u7406$O(N\\\
-        log N)$, $O(\\logN)$"
+      path: snow/graph/tree/euler-tour.hpp
+      title: Euler Tour
   - name: snow/io
     pages:
     - icon: ':heavy_check_mark:'
@@ -224,13 +229,16 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: test/oj/lowest_common_ancestor_1.test.cpp
-      title: Lowest Common Ancestor (Segment Tree ver.)
+      title: Lowest Common Ancestor (Euler Tour ver.)
     - icon: ':heavy_check_mark:'
       path: test/oj/range_affine_range_sum.test.cpp
       title: Segment Tree (Range Affine and Range Sum with Modint)
     - icon: ':heavy_check_mark:'
+      path: test/oj/vertex_add_path_sum.test.cpp
+      title: Vertex Add Path Sum (Euler Tour ver.)
+    - icon: ':heavy_check_mark:'
       path: test/oj/vertex_add_subtree_sum.test.cpp
-      title: Vertex Add Subtree Sum (With Euler-Tour)
+      title: Vertex Add Subtree Sum (Euler Tour ver.)
   - name: test/yukicoder
     pages:
     - icon: ':heavy_check_mark:'

@@ -6,12 +6,14 @@ data:
     title: atcoder/internal_bit.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: snow/graph/tree/euler-tour.hpp
-    title: Euler Tour (Point Set and Subtree Query)
+    path: snow/graph/tree/euler-tour-lca.hpp
+    title: snow/graph/tree/euler-tour-lca.hpp
   - icon: ':heavy_check_mark:'
-    path: snow/graph/tree/lowest-common-ancestor-segtree.hpp
-    title: "Lowest Common Ancestor (Segment Tree ver.) - \u524D\u51E6\u7406$O(N\\\
-      log N)$, $O(\\logN)$"
+    path: snow/graph/tree/euler-tour-path.hpp
+    title: Euler Tour (Point Set and Path Sum Query)
+  - icon: ':heavy_check_mark:'
+    path: snow/graph/tree/euler-tour-subtree.hpp
+    title: Euler Tour (Point Set and Subtree Query)
   - icon: ':heavy_check_mark:'
     path: snow/utils/seg-wrapper.hpp
     title: snow/utils/seg-wrapper.hpp
@@ -21,10 +23,13 @@ data:
     title: Segment Tree (Point Set and Range Sum)
   - icon: ':heavy_check_mark:'
     path: test/oj/lowest_common_ancestor_1.test.cpp
-    title: Lowest Common Ancestor (Segment Tree ver.)
+    title: Lowest Common Ancestor (Euler Tour ver.)
+  - icon: ':heavy_check_mark:'
+    path: test/oj/vertex_add_path_sum.test.cpp
+    title: Vertex Add Path Sum (Euler Tour ver.)
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_subtree_sum.test.cpp
-    title: Vertex Add Subtree Sum (With Euler-Tour)
+    title: Vertex Add Subtree Sum (Euler Tour ver.)
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -123,12 +128,14 @@ data:
   isVerificationFile: false
   path: atcoder/segtree.hpp
   requiredBy:
-  - snow/graph/tree/lowest-common-ancestor-segtree.hpp
-  - snow/graph/tree/euler-tour.hpp
+  - snow/graph/tree/euler-tour-path.hpp
+  - snow/graph/tree/euler-tour-subtree.hpp
+  - snow/graph/tree/euler-tour-lca.hpp
   - snow/utils/seg-wrapper.hpp
   timestamp: '2021-03-21 08:31:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/oj/vertex_add_path_sum.test.cpp
   - test/oj/vertex_add_subtree_sum.test.cpp
   - test/oj/lowest_common_ancestor_1.test.cpp
   - test/aoj/DSL_2_B.test.cpp
