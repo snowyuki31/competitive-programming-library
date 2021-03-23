@@ -1,7 +1,7 @@
 #define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_G"
 
 #include <iostream>
-#include "snow/utils/seg-wrapper.hpp"
+#include "snow/utils/lazyseg-wrapper.hpp"
 #include "snow/monoids/plus-size.hpp"
 
 /**
