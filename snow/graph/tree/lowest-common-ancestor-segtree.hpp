@@ -1,14 +1,14 @@
 #pragma once
 
 #include <vector>
-#include "snow/utils/acl-wrapper.hpp"
+#include "snow/utils/seg-wrapper.hpp"
 #include "snow/monoids/min.hpp"
 #include "snow/graph/template.hpp"
 
 namespace snow {
 
 /**
- * @brief Lowest Common Ancestor Segtree ver. - 前処理$O(N\log N), $O(\logN)$
+ * @brief Lowest Common Ancestor (Segment Tree ver.) - 前処理$O(N\log N)$, $O(\logN)$
  * 
  */
 template < typename T = int >
@@ -27,9 +27,9 @@ struct LowestCommonAncestorBySeg {
 
     private:
         int N;
-        std::vector<int> depth; // id->depth
-        std::vector<int> vs;    // id->order
-        std::vector<int> id;    // order->id
+        std::vector<int> depth; // order->depth
+        std::vector<int> vs;    // order->vertex number
+        std::vector<int> id;    // vertex number->order
         snow::segtree<snow::min_monoid<std::pair<int, int>>> segtree;
 
         int order = 0;
@@ -44,7 +44,5 @@ struct LowestCommonAncestorBySeg {
             }
         }
 };
-
-
 
 } // namespace snow

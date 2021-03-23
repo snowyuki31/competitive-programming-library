@@ -1,7 +1,7 @@
 #define PROBLEM "https://old.yosupo.jp/problem/range_affine_range_sum"
 
 #include <iostream>
-#include "snow/utils/acl-wrapper.hpp"
+#include "snow/utils/lazyseg-wrapper.hpp"
 #include "snow/monoids/plus-size.hpp"
 #include "atcoder/modint"
 using mint = atcoder::modint998244353;

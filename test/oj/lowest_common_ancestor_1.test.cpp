@@ -4,6 +4,10 @@
 #include "snow/graph/template.hpp"
 #include "snow/graph/tree/lowest-common-ancestor-segtree.hpp"
 
+/**
+ * @brief Lowest Common Ancestor (Segment Tree ver.)
+ * 
+ */
 int main() {
     int N, Q;
     std::cin >> N >> Q;
