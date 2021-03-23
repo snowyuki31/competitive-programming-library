@@ -8,19 +8,22 @@ data:
   - icon: ':heavy_check_mark:'
     path: atcoder/lazysegtree.hpp
     title: atcoder/lazysegtree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: atcoder/segtree.hpp
     title: atcoder/segtree.hpp
   - icon: ':heavy_check_mark:'
-    path: snow/graph/tree/lowest-common-ancestor-segtree.hpp
-    title: "Lowest Common Ancestor Segtree ver. - \u524D\u51E6\u7406$O(N\\log N),\
-      \ $O(\\logN)$"
+    path: snow/graph/tree/euler-tour.hpp
+    title: Euler Tour (Point Set and Subtree Query)
   - icon: ':heavy_check_mark:'
-    path: snow/utils/acl-wrapper.hpp
-    title: snow/utils/acl-wrapper.hpp
-  - icon: ':warning:'
-    path: test/oj/range_chmin_chmax_add_range_sum.cpp
-    title: test/oj/range_chmin_chmax_add_range_sum.cpp
+    path: snow/graph/tree/lowest-common-ancestor-segtree.hpp
+    title: "Lowest Common Ancestor (Segment Tree ver.) - \u524D\u51E6\u7406$O(N\\\
+      log N)$, $O(\\logN)$"
+  - icon: ':heavy_check_mark:'
+    path: snow/utils/lazyseg-wrapper.hpp
+    title: snow/utils/lazyseg-wrapper.hpp
+  - icon: ':question:'
+    path: snow/utils/seg-wrapper.hpp
+    title: snow/utils/seg-wrapper.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_B.test.cpp
@@ -28,7 +31,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_F.test.cpp
     title: Segment Tree (Range Min and Range Update)
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/aoj/DSL_2_G.test.cpp
     title: Segment Tree (Range Add and Range Sum)
   - icon: ':heavy_check_mark:'
@@ -39,13 +42,16 @@ data:
     title: Segment Tree (Range Add and Range Update)
   - icon: ':heavy_check_mark:'
     path: test/oj/lowest_common_ancestor_1.test.cpp
-    title: test/oj/lowest_common_ancestor_1.test.cpp
+    title: Lowest Common Ancestor (Segment Tree ver.)
   - icon: ':heavy_check_mark:'
     path: test/oj/range_affine_range_sum.test.cpp
     title: Segment Tree (Range Affine and Range Sum with Modint)
-  _isVerificationFailed: false
+  - icon: ':heavy_check_mark:'
+    path: test/oj/vertex_add_subtree_sum.test.cpp
+    title: Vertex Add Subtree Sum (With Euler-Tour)
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 1 \"atcoder/internal_bit.hpp\"\n\n\n\n#ifdef _MSC_VER\n#include\
@@ -70,15 +76,17 @@ data:
   isVerificationFile: false
   path: atcoder/internal_bit.hpp
   requiredBy:
-  - test/oj/range_chmin_chmax_add_range_sum.cpp
   - snow/graph/tree/lowest-common-ancestor-segtree.hpp
-  - snow/utils/acl-wrapper.hpp
+  - snow/graph/tree/euler-tour.hpp
+  - snow/utils/seg-wrapper.hpp
+  - snow/utils/lazyseg-wrapper.hpp
   - atcoder/lazysegtree.hpp
   - atcoder/segtree.hpp
   - atcoder/convolution.hpp
   timestamp: '2021-03-21 08:31:02+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/oj/vertex_add_subtree_sum.test.cpp
   - test/oj/range_affine_range_sum.test.cpp
   - test/oj/lowest_common_ancestor_1.test.cpp
   - test/aoj/DSL_2_H.test.cpp

@@ -13,6 +13,9 @@ data:
     path: test/aoj/ALDS1_4_B.test.cpp
     title: Binary Search
   - icon: ':heavy_check_mark:'
+    path: test/oj/vertex_add_subtree_sum.test.cpp
+    title: Vertex Add Subtree Sum (With Euler-Tour)
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/0517.test.cpp
     title: Topological Sort
   - icon: ':heavy_check_mark:'
@@ -84,6 +87,7 @@ data:
   verifiedWith:
   - test/yukicoder/0517.test.cpp
   - test/yukicoder/1065.test.cpp
+  - test/oj/vertex_add_subtree_sum.test.cpp
   - test/aoj/0560.test.cpp
   - test/aoj/ALDS1_4_B.test.cpp
 documentation_of: snow/io/helper.hpp

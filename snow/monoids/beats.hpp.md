@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/oj/range_chmin_chmax_add_range_sum.cpp
-    title: test/oj/range_chmin_chmax_add_range_sum.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -105,8 +102,7 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: snow/monoids/beats.hpp
-  requiredBy:
-  - test/oj/range_chmin_chmax_add_range_sum.cpp
+  requiredBy: []
   timestamp: '2021-03-21 19:40:10+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

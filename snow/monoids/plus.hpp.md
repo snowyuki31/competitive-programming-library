@@ -1,11 +1,17 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: snow/graph/tree/euler-tour.hpp
+    title: Euler Tour (Point Set and Subtree Query)
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_B.test.cpp
     title: Segment Tree (Point Set and Range Sum)
+  - icon: ':heavy_check_mark:'
+    path: test/oj/vertex_add_subtree_sum.test.cpp
+    title: Vertex Add Subtree Sum (With Euler-Tour)
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -22,10 +28,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: snow/monoids/plus.hpp
-  requiredBy: []
+  requiredBy:
+  - snow/graph/tree/euler-tour.hpp
   timestamp: '2021-03-21 08:45:05+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/oj/vertex_add_subtree_sum.test.cpp
   - test/aoj/DSL_2_B.test.cpp
 documentation_of: snow/monoids/plus.hpp
 layout: document

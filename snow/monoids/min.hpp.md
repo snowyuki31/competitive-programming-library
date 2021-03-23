@@ -7,8 +7,8 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/lowest-common-ancestor-segtree.hpp
-    title: "Lowest Common Ancestor Segtree ver. - \u524D\u51E6\u7406$O(N\\log N),\
-      \ $O(\\logN)$"
+    title: "Lowest Common Ancestor (Segment Tree ver.) - \u524D\u51E6\u7406$O(N\\\
+      log N)$, $O(\\logN)$"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_F.test.cpp
@@ -18,7 +18,7 @@ data:
     title: Segment Tree (Range Add and Range Min)
   - icon: ':heavy_check_mark:'
     path: test/oj/lowest_common_ancestor_1.test.cpp
-    title: test/oj/lowest_common_ancestor_1.test.cpp
+    title: Lowest Common Ancestor (Segment Tree ver.)
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'

@@ -15,9 +15,12 @@ data:
     path: snow/graph/topological-sort.hpp
     title: Topological Sort
   - icon: ':heavy_check_mark:'
+    path: snow/graph/tree/euler-tour.hpp
+    title: Euler Tour (Point Set and Subtree Query)
+  - icon: ':heavy_check_mark:'
     path: snow/graph/tree/lowest-common-ancestor-segtree.hpp
-    title: "Lowest Common Ancestor Segtree ver. - \u524D\u51E6\u7406$O(N\\log N),\
-      \ $O(\\logN)$"
+    title: "Lowest Common Ancestor (Segment Tree ver.) - \u524D\u51E6\u7406$O(N\\\
+      log N)$, $O(\\logN)$"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_1_A.test.cpp
@@ -30,7 +33,10 @@ data:
     title: Warshall-Floyd (with Negative Cycle Detection)
   - icon: ':heavy_check_mark:'
     path: test/oj/lowest_common_ancestor_1.test.cpp
-    title: test/oj/lowest_common_ancestor_1.test.cpp
+    title: Lowest Common Ancestor (Segment Tree ver.)
+  - icon: ':heavy_check_mark:'
+    path: test/oj/vertex_add_subtree_sum.test.cpp
+    title: Vertex Add Subtree Sum (With Euler-Tour)
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0517.test.cpp
     title: Topological Sort
@@ -85,6 +91,7 @@ data:
   requiredBy:
   - snow/graph/topological-sort.hpp
   - snow/graph/tree/lowest-common-ancestor-segtree.hpp
+  - snow/graph/tree/euler-tour.hpp
   - snow/graph/shortest-path/bellman-ford.hpp
   - snow/graph/shortest-path/warshall-floyd.hpp
   - snow/graph/shortest-path/dijkstra.hpp
@@ -93,6 +100,7 @@ data:
   verifiedWith:
   - test/yukicoder/0517.test.cpp
   - test/yukicoder/1065.test.cpp
+  - test/oj/vertex_add_subtree_sum.test.cpp
   - test/oj/lowest_common_ancestor_1.test.cpp
   - test/aoj/GRL_1_C.test.cpp
   - test/aoj/GRL_1_B.test.cpp
