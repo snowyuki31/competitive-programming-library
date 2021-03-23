@@ -1,5 +1,7 @@
 #pragma once
 
+#include "snow/utils/pair-wrapper.hpp"
+
 namespace snow {
 
     template < typename T >
