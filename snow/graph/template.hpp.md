@@ -14,6 +14,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/graph/topological-sort.hpp
     title: Topological Sort
+  - icon: ':heavy_check_mark:'
+    path: snow/graph/tree/lowest-common-ancestor-segtree.hpp
+    title: "Lowest Common Ancestor Segtree ver. - \u524D\u51E6\u7406$O(N\\log N),\
+      \ $O(\\logN)$"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_1_A.test.cpp
@@ -24,6 +28,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_1_C.test.cpp
     title: Warshall-Floyd (with Negative Cycle Detection)
+  - icon: ':heavy_check_mark:'
+    path: test/oj/lowest_common_ancestor_1.test.cpp
+    title: test/oj/lowest_common_ancestor_1.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0517.test.cpp
     title: Topological Sort
@@ -77,6 +84,7 @@ data:
   path: snow/graph/template.hpp
   requiredBy:
   - snow/graph/topological-sort.hpp
+  - snow/graph/tree/lowest-common-ancestor-segtree.hpp
   - snow/graph/shortest-path/bellman-ford.hpp
   - snow/graph/shortest-path/warshall-floyd.hpp
   - snow/graph/shortest-path/dijkstra.hpp
@@ -85,6 +93,7 @@ data:
   verifiedWith:
   - test/yukicoder/0517.test.cpp
   - test/yukicoder/1065.test.cpp
+  - test/oj/lowest_common_ancestor_1.test.cpp
   - test/aoj/GRL_1_C.test.cpp
   - test/aoj/GRL_1_B.test.cpp
   - test/aoj/GRL_1_A.test.cpp

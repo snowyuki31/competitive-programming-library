@@ -89,6 +89,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/graph/topological-sort.hpp
       title: Topological Sort
+  - name: snow/graph/tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: snow/graph/tree/lowest-common-ancestor-segtree.hpp
+      title: "Lowest Common Ancestor Segtree ver. - \u524D\u51E6\u7406$O(N\\log N),\
+        \ $O(\\logN)$"
   - name: snow/io
     pages:
     - icon: ':heavy_check_mark:'
@@ -146,6 +152,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/utils/acl-wrapper.hpp
       title: snow/utils/acl-wrapper.hpp
+    - icon: ':heavy_check_mark:'
+      path: snow/utils/pair-wrapper.hpp
+      title: snow/utils/pair-wrapper.hpp
     - icon: ':heavy_check_mark:'
       path: snow/utils/xorshift.hpp
       title: XorShift (Random Number Generator)
@@ -210,6 +219,9 @@ data:
       title: Euler's totient function
   - name: test/oj
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/oj/lowest_common_ancestor_1.test.cpp
+      title: test/oj/lowest_common_ancestor_1.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/oj/range_affine_range_sum.test.cpp
       title: Segment Tree (Range Affine and Range Sum with Modint)

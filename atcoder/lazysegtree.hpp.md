@@ -6,6 +6,10 @@ data:
     title: atcoder/internal_bit.hpp
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: snow/graph/tree/lowest-common-ancestor-segtree.hpp
+    title: "Lowest Common Ancestor Segtree ver. - \u524D\u51E6\u7406$O(N\\log N),\
+      \ $O(\\logN)$"
+  - icon: ':heavy_check_mark:'
     path: snow/utils/acl-wrapper.hpp
     title: snow/utils/acl-wrapper.hpp
   - icon: ':warning:'
@@ -27,6 +31,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_I.test.cpp
     title: Segment Tree (Range Add and Range Update)
+  - icon: ':heavy_check_mark:'
+    path: test/oj/lowest_common_ancestor_1.test.cpp
+    title: test/oj/lowest_common_ancestor_1.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/oj/range_affine_range_sum.test.cpp
     title: Segment Tree (Range Affine and Range Sum with Modint)
@@ -180,11 +187,13 @@ data:
   path: atcoder/lazysegtree.hpp
   requiredBy:
   - test/oj/range_chmin_chmax_add_range_sum.cpp
+  - snow/graph/tree/lowest-common-ancestor-segtree.hpp
   - snow/utils/acl-wrapper.hpp
   timestamp: '2021-03-21 19:40:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/range_affine_range_sum.test.cpp
+  - test/oj/lowest_common_ancestor_1.test.cpp
   - test/aoj/DSL_2_H.test.cpp
   - test/aoj/DSL_2_F.test.cpp
   - test/aoj/DSL_2_B.test.cpp

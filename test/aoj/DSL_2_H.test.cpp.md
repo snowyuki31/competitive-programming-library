@@ -16,6 +16,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/utils/acl-wrapper.hpp
     title: snow/utils/acl-wrapper.hpp
+  - icon: ':heavy_check_mark:'
+    path: snow/utils/pair-wrapper.hpp
+    title: snow/utils/pair-wrapper.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -154,8 +157,14 @@ data:
     \ Monoid, class Mapping >\n    // using segtree_beats = _segtree_beats<typename\
     \ Monoid::value_type, Monoid::op, Monoid::e, typename Mapping::f_type, Mapping::mapping,\
     \ Mapping::composition, Mapping::id>;\n\n\n} // namespace snow\n#line 2 \"snow/monoids/min.hpp\"\
-    \n\nnamespace snow {\n\n    template < typename T >\n    struct min_monoid {\n\
-    \        using value_type = T;\n        static value_type e() { return std::numeric_limits<T>::max();\
+    \n\n#line 2 \"snow/utils/pair-wrapper.hpp\"\n\n#include <limits>\n#include <utility>\n\
+    \nnamespace std {\n\ntemplate <typename T0, typename T1>\nclass numeric_limits<std::pair<T0,\
+    \ T1>> {\npublic:\n    static constexpr std::pair<T0, T1> min() { return {std::numeric_limits<T0>::min(),\
+    \ std::numeric_limits<T1>::min()}; }\n    static constexpr std::pair<T0, T1> max()\
+    \ { return {std::numeric_limits<T0>::max(), std::numeric_limits<T1>::max()}; }\n\
+    };\n\n}  // namespace std\n#line 4 \"snow/monoids/min.hpp\"\n\nnamespace snow\
+    \ {\n\n    template < typename T >\n    struct min_monoid {\n        using value_type\
+    \ = T;\n        static value_type e() { return std::numeric_limits<T>::max();\
     \ };\n        static value_type op(value_type l, value_type r){ return std::min(l,\
     \ r); };\n\n        struct add {\n            using f_type = T;\n            static\
     \ value_type mapping(f_type f, value_type x) { return f + x; }\n            static\
@@ -190,10 +199,11 @@ data:
   - atcoder/internal_bit.hpp
   - atcoder/lazysegtree.hpp
   - snow/monoids/min.hpp
+  - snow/utils/pair-wrapper.hpp
   isVerificationFile: true
   path: test/aoj/DSL_2_H.test.cpp
   requiredBy: []
-  timestamp: '2021-03-22 12:08:23+09:00'
+  timestamp: '2021-03-23 15:48:28+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/DSL_2_H.test.cpp
