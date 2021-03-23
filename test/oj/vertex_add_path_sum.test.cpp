@@ -1,13 +1,13 @@
-#define PROBLEM "https://old.yosupo.jp/problem/vertex_add_subtree_sum"
+#define PROBLEM "https://old.yosupo.jp/problem/vertex_add_path_sum"
 #include <iostream>
 #include <vector>
 #include "snow/io/helper.hpp"
 #include "snow/graph/template.hpp"
 #include "snow/monoids/plus.hpp"
-#include "snow/graph/tree/euler-tour-subtree.hpp"
+#include "snow/graph/tree/euler-tour-path.hpp"
 
 /**
- * @brief Vertex Add Subtree Sum (Euler Tour ver.)
+ * @brief Vertex Add Path Sum (Euler Tour ver.)
  * 
  */
 int main() {
@@ -17,13 +17,13 @@ int main() {
     std::cin >> A;
 
     snow::Graph<int> G(N);
-    for (int i = 1; i <= N - 1; ++i){
-        int p;
-        std::cin >> p;
-        G.add_edge(p, i);
+    for (int i = 0; i < N - 1; ++i){
+        int u, v;
+        std::cin >> u >> v;
+        G.add_edge(u, v);
     }
 
-    snow::EulerTourSubtree<snow::plus_monoid<long long>> euler(G, 0);
+    snow::EulerTourPath<long long> euler(G, 0);
     for(int i = 0; i < N; ++i) euler.set(i, A[i]);
 
     while(Q--){
@@ -35,7 +35,11 @@ int main() {
             std::cin >> x;
             euler.set(u, euler.get(u) + x);
         }
-        else std::cout << euler.prod(u) << '\n';
+        else {
+            int v;
+            std::cin >> v;
+            std::cout << euler.prod(u, v) << '\n';
+        }
     }
 
 }

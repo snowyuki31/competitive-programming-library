@@ -2,10 +2,10 @@
 
 #include <iostream>
 #include "snow/graph/template.hpp"
-#include "snow/graph/tree/lowest-common-ancestor-segtree.hpp"
+#include "snow/graph/tree/euler-tour-lca.hpp"
 
 /**
- * @brief Lowest Common Ancestor (Segment Tree ver.)
+ * @brief Lowest Common Ancestor (Euler Tour ver.)
  * 
  */
 int main() {
@@ -19,11 +19,11 @@ int main() {
         G.add_edge(i, p);
     }
 
-    snow::LowestCommonAncestorBySeg LCA(G, 0);
+    snow::EulerTourLCA euler(G, 0);
     while(Q--){
         int u, v;
         std::cin >> u >> v;
-        std::cout << LCA.get(u, v) << '\n';
+        std::cout << euler.lca(u, v) << '\n';
     }
 
     return 0;

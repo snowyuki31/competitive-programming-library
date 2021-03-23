@@ -1,36 +1,35 @@
 #pragma once
 
 #include <vector>
-#include "snow/utils/seg-wrapper.hpp"
-#include "snow/monoids/plus.hpp"
 #include "snow/graph/template.hpp"
 
 namespace snow {
 
 /**
- * @brief Euler Tour (Point Set and Subtree Query)
- * @tparam S vertex value type
+ * @brief Euler Tour
  * @tparam T edge weight type
  */
-template < typename S, typename T = int >
+template < typename T = int >
 struct EulerTour {
     public:
-        EulerTour(snow::Graph<T> const& G, int root) : N(G.size()), vs(2 * N, 0), in(N, 0), out(N, 0), segtree(2 * N) {
-            euler_tour(G, root, -1, 0);
+        EulerTour(snow::Graph<T> const& G, int root) : N(G.size()), vs(2 * N, 0), in(N, 0), out(N, 0), depth(2 * N, 0) {
+            dfs(G, root, -1, 0);
         }
 
-        void set(int u, S x) {
-            segtree.set(in[u], x);
-            // segtree.set(out[u], -x); for path query
+        int get_in(int x){
+            return in[x];
         }
 
-        S get(int u) {
-            return segtree.get(in[u]);
+        int get_out(int x){
+            return out[x];
         }
 
-        S prod_subtree(int u) {
-            int l = in[u], r = out[u];
-            return segtree.prod(l, r);
+        int get_vertex(int x){
+            return vs[x];
+        }
+
+        int get_depth(int x){
+            return depth[x];
         }
 
     private:
@@ -38,15 +37,19 @@ struct EulerTour {
         std::vector<int> vs;    // order->vertex number
         std::vector<int> in;    // vertex number->order(in)
         std::vector<int> out;   // vertex number->order(out)
-        snow::segtree<snow::plus_monoid<S>> segtree;
+        std::vector<int> depth; // depth
 
         int order = 0;
-        void euler_tour(snow::Graph<T> const& G, int v, int p, int d) {
+        void dfs(snow::Graph<T> const& G, int v, int p, int d) {
             vs[order] = v;
+            depth[order] = d;
             in[v] = order++;
-            for(auto &e : G[v]) if(e.to != p) euler_tour(G, e.to, v, d + 1);
-            vs[order] = v;
-            out[v] = order++;
+            for(auto &e : G[v]) if(e.to != p) {
+                dfs(G, e.to, v, d + 1);
+                vs[order] = v;
+                depth[order++] = d;
+            }
+            out[v] = order;
         }
 };
 
