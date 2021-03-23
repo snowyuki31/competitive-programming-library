@@ -29,17 +29,17 @@ data:
     links: []
   bundledCode: "#line 2 \"snow/graph/tree/euler-tour-subtree.hpp\"\n\n#include <vector>\n\
     #line 2 \"snow/graph/tree/euler-tour.hpp\"\n\n#line 2 \"snow/graph/template.hpp\"\
-    \n\r\n#line 4 \"snow/graph/template.hpp\"\n\r\nnamespace snow {\r\n\r\n/**\r\n\
-    \ * @brief Graph template\r\n */\r\ntemplate < typename T >\r\nstruct Graph {\r\
-    \n    struct Edge {\r\n        int from, to;\r\n        T weight;\r\n        Edge()\
-    \ : from(0), to(0), weight(0) {}\r\n        Edge(int from, int to, T weight) :\
-    \ from(from), to(to), weight(weight) {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\
-    \n\r\n    const T INF = std::numeric_limits<T>::max();\r\n    std::vector<Edges>\
-    \ G;\r\n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n\
-    \    Edges operator[](int k) const{\r\n        return G[k];\r\n    }\r\n\r\n \
-    \   size_t size() const{\r\n        return G.size();\r\n    }\r\n\r\n    void\
-    \ add_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n\
-    \        G[b].emplace_back(b, a, w);\r\n    }\r\n\r\n    void add_directed_edge(int\
+    \n\r\n#line 4 \"snow/graph/template.hpp\"\n#include <limits>\r\n\r\nnamespace\
+    \ snow {\r\n\r\n/**\r\n * @brief Graph template\r\n */\r\ntemplate < typename\
+    \ T >\r\nstruct Graph {\r\n    struct Edge {\r\n        int from, to;\r\n    \
+    \    T weight;\r\n        Edge() : from(0), to(0), weight(0) {}\r\n        Edge(int\
+    \ from, int to, T weight) : from(from), to(to), weight(weight) {}\r\n    };\r\n\
+    \    using Edges = std::vector<Edge>;\r\n\r\n    const T INF = std::numeric_limits<T>::max();\r\
+    \n    std::vector<Edges> G;\r\n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int\
+    \ n) : G(n) {}\r\n\r\n    Edges operator[](int k) const{\r\n        return G[k];\r\
+    \n    }\r\n\r\n    size_t size() const{\r\n        return G.size();\r\n    }\r\
+    \n\r\n    void add_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(a,\
+    \ b, w);\r\n        G[b].emplace_back(b, a, w);\r\n    }\r\n\r\n    void add_directed_edge(int\
     \ a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n\
     \    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a, b,\
     \ w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\
@@ -147,7 +147,7 @@ data:
   isVerificationFile: false
   path: snow/graph/tree/euler-tour-subtree.hpp
   requiredBy: []
-  timestamp: '2021-03-24 05:47:20+09:00'
+  timestamp: '2021-03-24 06:02:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/vertex_add_subtree_sum.test.cpp

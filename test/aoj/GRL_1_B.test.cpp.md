@@ -21,7 +21,7 @@ data:
   bundledCode: "#line 1 \"test/aoj/GRL_1_B.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B\"\
     \r\n\r\n#include <iostream>\r\n#include <limits>\r\n\r\n#line 2 \"snow/graph/shortest-path/bellman-ford.hpp\"\
     \n\r\n#include <vector>\r\n\r\n#line 2 \"snow/graph/template.hpp\"\n\r\n#line\
-    \ 4 \"snow/graph/template.hpp\"\n\r\nnamespace snow {\r\n\r\n/**\r\n * @brief\
+    \ 5 \"snow/graph/template.hpp\"\n\r\nnamespace snow {\r\n\r\n/**\r\n * @brief\
     \ Graph template\r\n */\r\ntemplate < typename T >\r\nstruct Graph {\r\n    struct\
     \ Edge {\r\n        int from, to;\r\n        T weight;\r\n        Edge() : from(0),\
     \ to(0), weight(0) {}\r\n        Edge(int from, int to, T weight) : from(from),\
@@ -72,7 +72,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2021-03-22 12:08:23+09:00'
+  timestamp: '2021-03-24 06:02:59+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_1_B.test.cpp

@@ -7,7 +7,8 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour-lca.hpp
-    title: snow/graph/tree/euler-tour-lca.hpp
+    title: "Euler Tour (Lowest Common Ancestor Query)- \u524D\u51E6\u7406$O(N\\log\
+      \ N)$, $O(\\log N)$"
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour-path.hpp
     title: Euler Tour (Point Set and Path Sum Query)
@@ -32,40 +33,40 @@ data:
     links: []
   bundledCode: "#line 2 \"snow/graph/tree/euler-tour.hpp\"\n\n#include <vector>\n\
     #line 2 \"snow/graph/template.hpp\"\n\r\n#line 4 \"snow/graph/template.hpp\"\n\
-    \r\nnamespace snow {\r\n\r\n/**\r\n * @brief Graph template\r\n */\r\ntemplate\
-    \ < typename T >\r\nstruct Graph {\r\n    struct Edge {\r\n        int from, to;\r\
-    \n        T weight;\r\n        Edge() : from(0), to(0), weight(0) {}\r\n     \
-    \   Edge(int from, int to, T weight) : from(from), to(to), weight(weight) {}\r\
-    \n    };\r\n    using Edges = std::vector<Edge>;\r\n\r\n    const T INF = std::numeric_limits<T>::max();\r\
-    \n    std::vector<Edges> G;\r\n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int\
-    \ n) : G(n) {}\r\n\r\n    Edges operator[](int k) const{\r\n        return G[k];\r\
-    \n    }\r\n\r\n    size_t size() const{\r\n        return G.size();\r\n    }\r\
-    \n\r\n    void add_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(a,\
-    \ b, w);\r\n        G[b].emplace_back(b, a, w);\r\n    }\r\n\r\n    void add_directed_edge(int\
-    \ a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n\
-    \    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a, b,\
-    \ w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\
-    \n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\
-    \n    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
-    \n\r\n    //Topological sort\r\n    std::vector<int> topological_sort() const;\r\
-    \n};\r\n\r\n} // namespace snow\n#line 5 \"snow/graph/tree/euler-tour.hpp\"\n\n\
-    namespace snow {\n\n/**\n * @brief Euler Tour\n * @tparam T edge weight type\n\
-    \ */\ntemplate < typename T = int >\nstruct EulerTour {\n    public:\n       \
-    \ EulerTour(snow::Graph<T> const& G, int root) : N(G.size()), vs(2 * N, 0), in(N,\
-    \ 0), out(N, 0), depth(2 * N, 0) {\n            dfs(G, root, -1, 0);\n       \
-    \ }\n\n        int get_in(int x){\n            return in[x];\n        }\n\n  \
-    \      int get_out(int x){\n            return out[x];\n        }\n\n        int\
-    \ get_vertex(int x){\n            return vs[x];\n        }\n\n        int get_depth(int\
-    \ x){\n            return depth[x];\n        }\n\n    private:\n        int N;\n\
-    \        std::vector<int> vs;    // order->vertex number\n        std::vector<int>\
-    \ in;    // vertex number->order(in)\n        std::vector<int> out;   // vertex\
-    \ number->order(out)\n        std::vector<int> depth; // depth\n\n        int\
-    \ order = 0;\n        void dfs(snow::Graph<T> const& G, int v, int p, int d) {\n\
-    \            vs[order] = v;\n            depth[order] = d;\n            in[v]\
-    \ = order++;\n            for(auto &e : G[v]) if(e.to != p) {\n              \
-    \  dfs(G, e.to, v, d + 1);\n                vs[order] = v;\n                depth[order++]\
-    \ = d;\n            }\n            out[v] = order;\n        }\n};\n\n} // namespace\
-    \ snow\n"
+    #include <limits>\r\n\r\nnamespace snow {\r\n\r\n/**\r\n * @brief Graph template\r\
+    \n */\r\ntemplate < typename T >\r\nstruct Graph {\r\n    struct Edge {\r\n  \
+    \      int from, to;\r\n        T weight;\r\n        Edge() : from(0), to(0),\
+    \ weight(0) {}\r\n        Edge(int from, int to, T weight) : from(from), to(to),\
+    \ weight(weight) {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\n\r\n\
+    \    const T INF = std::numeric_limits<T>::max();\r\n    std::vector<Edges> G;\r\
+    \n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n    Edges\
+    \ operator[](int k) const{\r\n        return G[k];\r\n    }\r\n\r\n    size_t\
+    \ size() const{\r\n        return G.size();\r\n    }\r\n\r\n    void add_edge(int\
+    \ a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n        G[b].emplace_back(b,\
+    \ a, w);\r\n    }\r\n\r\n    void add_directed_edge(int a, int b, T w = 1){\r\n\
+    \        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n    void add_arrow(int a,\
+    \ int b, T w = 1){\r\n        add_directed_edge(a, b, w);\r\n    }\r\n\r\n   \
+    \ //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\n\r\n    //Bellman-Ford\r\
+    \n    std::vector<T> bellman_ford(int s) const;\r\n\r\n    //Warshall-Floyd\r\n\
+    \    std::vector<std::vector<T>> warshall_floyd() const;\r\n\r\n    //Topological\
+    \ sort\r\n    std::vector<int> topological_sort() const;\r\n};\r\n\r\n} // namespace\
+    \ snow\n#line 5 \"snow/graph/tree/euler-tour.hpp\"\n\nnamespace snow {\n\n/**\n\
+    \ * @brief Euler Tour\n * @tparam T edge weight type\n */\ntemplate < typename\
+    \ T = int >\nstruct EulerTour {\n    public:\n        EulerTour(snow::Graph<T>\
+    \ const& G, int root) : N(G.size()), vs(2 * N, 0), in(N, 0), out(N, 0), depth(2\
+    \ * N, 0) {\n            dfs(G, root, -1, 0);\n        }\n\n        int get_in(int\
+    \ x){\n            return in[x];\n        }\n\n        int get_out(int x){\n \
+    \           return out[x];\n        }\n\n        int get_vertex(int x){\n    \
+    \        return vs[x];\n        }\n\n        int get_depth(int x){\n         \
+    \   return depth[x];\n        }\n\n    private:\n        int N;\n        std::vector<int>\
+    \ vs;    // order->vertex number\n        std::vector<int> in;    // vertex number->order(in)\n\
+    \        std::vector<int> out;   // vertex number->order(out)\n        std::vector<int>\
+    \ depth; // depth\n\n        int order = 0;\n        void dfs(snow::Graph<T> const&\
+    \ G, int v, int p, int d) {\n            vs[order] = v;\n            depth[order]\
+    \ = d;\n            in[v] = order++;\n            for(auto &e : G[v]) if(e.to\
+    \ != p) {\n                dfs(G, e.to, v, d + 1);\n                vs[order]\
+    \ = v;\n                depth[order++] = d;\n            }\n            out[v]\
+    \ = order;\n        }\n};\n\n} // namespace snow\n"
   code: "#pragma once\n\n#include <vector>\n#include \"snow/graph/template.hpp\"\n\
     \nnamespace snow {\n\n/**\n * @brief Euler Tour\n * @tparam T edge weight type\n\
     \ */\ntemplate < typename T = int >\nstruct EulerTour {\n    public:\n       \
@@ -92,7 +93,7 @@ data:
   - snow/graph/tree/euler-tour-path.hpp
   - snow/graph/tree/euler-tour-subtree.hpp
   - snow/graph/tree/euler-tour-lca.hpp
-  timestamp: '2021-03-24 05:47:20+09:00'
+  timestamp: '2021-03-24 06:02:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/vertex_add_path_sum.test.cpp

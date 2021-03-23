@@ -20,11 +20,11 @@ data:
     links: []
   bundledCode: "#line 2 \"snow/graph/shortest-path/dijkstra.hpp\"\n\r\n#include <vector>\r\
     \n#include <queue>\r\n\r\n#line 2 \"snow/graph/template.hpp\"\n\r\n#line 4 \"\
-    snow/graph/template.hpp\"\n\r\nnamespace snow {\r\n\r\n/**\r\n * @brief Graph\
-    \ template\r\n */\r\ntemplate < typename T >\r\nstruct Graph {\r\n    struct Edge\
-    \ {\r\n        int from, to;\r\n        T weight;\r\n        Edge() : from(0),\
-    \ to(0), weight(0) {}\r\n        Edge(int from, int to, T weight) : from(from),\
-    \ to(to), weight(weight) {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\
+    snow/graph/template.hpp\"\n#include <limits>\r\n\r\nnamespace snow {\r\n\r\n/**\r\
+    \n * @brief Graph template\r\n */\r\ntemplate < typename T >\r\nstruct Graph {\r\
+    \n    struct Edge {\r\n        int from, to;\r\n        T weight;\r\n        Edge()\
+    \ : from(0), to(0), weight(0) {}\r\n        Edge(int from, int to, T weight) :\
+    \ from(from), to(to), weight(weight) {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\
     \n\r\n    const T INF = std::numeric_limits<T>::max();\r\n    std::vector<Edges>\
     \ G;\r\n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n\
     \    Edges operator[](int k) const{\r\n        return G[k];\r\n    }\r\n\r\n \
@@ -64,7 +64,7 @@ data:
   isVerificationFile: false
   path: snow/graph/shortest-path/dijkstra.hpp
   requiredBy: []
-  timestamp: '2021-03-22 12:08:23+09:00'
+  timestamp: '2021-03-24 06:02:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1065.test.cpp

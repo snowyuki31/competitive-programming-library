@@ -12,7 +12,8 @@ data:
     title: Graph template
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour-lca.hpp
-    title: snow/graph/tree/euler-tour-lca.hpp
+    title: "Euler Tour (Lowest Common Ancestor Query)- \u524D\u51E6\u7406$O(N\\log\
+      \ N)$, $O(\\log N)$"
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour.hpp
     title: Euler Tour
@@ -38,11 +39,11 @@ data:
     - https://judge.yosupo.jp/problem/lca
   bundledCode: "#line 1 \"test/oj/lowest_common_ancestor_1.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/lca\"\n\n#include <iostream>\n#line 2 \"snow/graph/template.hpp\"\
-    \n\r\n#include <vector>\r\n\r\nnamespace snow {\r\n\r\n/**\r\n * @brief Graph\
-    \ template\r\n */\r\ntemplate < typename T >\r\nstruct Graph {\r\n    struct Edge\
-    \ {\r\n        int from, to;\r\n        T weight;\r\n        Edge() : from(0),\
-    \ to(0), weight(0) {}\r\n        Edge(int from, int to, T weight) : from(from),\
-    \ to(to), weight(weight) {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\
+    \n\r\n#include <vector>\r\n#include <limits>\r\n\r\nnamespace snow {\r\n\r\n/**\r\
+    \n * @brief Graph template\r\n */\r\ntemplate < typename T >\r\nstruct Graph {\r\
+    \n    struct Edge {\r\n        int from, to;\r\n        T weight;\r\n        Edge()\
+    \ : from(0), to(0), weight(0) {}\r\n        Edge(int from, int to, T weight) :\
+    \ from(from), to(to), weight(weight) {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\
     \n\r\n    const T INF = std::numeric_limits<T>::max();\r\n    std::vector<Edges>\
     \ G;\r\n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n\
     \    Edges operator[](int k) const{\r\n        return G[k];\r\n    }\r\n\r\n \
@@ -106,14 +107,15 @@ data:
     \ + 1]); }\n};\n\n}  // namespace atcoder\n\n\n#line 3 \"snow/utils/seg-wrapper.hpp\"\
     \n\nnamespace snow {\n\n    template < class Monoid >\n    using segtree = atcoder::segtree<typename\
     \ Monoid::value_type, Monoid::op, Monoid::e>;\n\n} // namespace snow\n#line 2\
-    \ \"snow/monoids/min.hpp\"\n\n#line 2 \"snow/utils/pair-wrapper.hpp\"\n\n#include\
-    \ <limits>\n#include <utility>\n\nnamespace std {\n\ntemplate <typename T0, typename\
-    \ T1>\nclass numeric_limits<std::pair<T0, T1>> {\npublic:\n    static constexpr\
-    \ std::pair<T0, T1> min() { return {std::numeric_limits<T0>::min(), std::numeric_limits<T1>::min()};\
-    \ }\n    static constexpr std::pair<T0, T1> max() { return {std::numeric_limits<T0>::max(),\
-    \ std::numeric_limits<T1>::max()}; }\n};\n\n}  // namespace std\n#line 4 \"snow/monoids/min.hpp\"\
-    \n\nnamespace snow {\n\n    template < typename T >\n    struct min_monoid {\n\
-    \        using value_type = T;\n        static value_type e() { return std::numeric_limits<T>::max();\
+    \ \"snow/monoids/min.hpp\"\n\n#line 2 \"snow/utils/pair-wrapper.hpp\"\n\n#line\
+    \ 4 \"snow/utils/pair-wrapper.hpp\"\n#include <utility>\n\nnamespace std {\n\n\
+    template <typename T0, typename T1>\nclass numeric_limits<std::pair<T0, T1>> {\n\
+    public:\n    static constexpr std::pair<T0, T1> min() { return {std::numeric_limits<T0>::min(),\
+    \ std::numeric_limits<T1>::min()}; }\n    static constexpr std::pair<T0, T1> max()\
+    \ { return {std::numeric_limits<T0>::max(), std::numeric_limits<T1>::max()}; }\n\
+    };\n\n}  // namespace std\n#line 4 \"snow/monoids/min.hpp\"\n\nnamespace snow\
+    \ {\n\n    template < typename T >\n    struct min_monoid {\n        using value_type\
+    \ = T;\n        static value_type e() { return std::numeric_limits<T>::max();\
     \ };\n        static value_type op(value_type l, value_type r){ return std::min(l,\
     \ r); };\n\n        struct add {\n            using f_type = T;\n            static\
     \ value_type mapping(f_type f, value_type x) { return f + x; }\n            static\
@@ -178,7 +180,7 @@ data:
   isVerificationFile: true
   path: test/oj/lowest_common_ancestor_1.test.cpp
   requiredBy: []
-  timestamp: '2021-03-24 05:47:20+09:00'
+  timestamp: '2021-03-24 06:02:59+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/oj/lowest_common_ancestor_1.test.cpp

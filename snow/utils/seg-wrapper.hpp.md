@@ -10,7 +10,8 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour-lca.hpp
-    title: snow/graph/tree/euler-tour-lca.hpp
+    title: "Euler Tour (Lowest Common Ancestor Query)- \u524D\u51E6\u7406$O(N\\log\
+      \ N)$, $O(\\log N)$"
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour-path.hpp
     title: Euler Tour (Point Set and Path Sum Query)

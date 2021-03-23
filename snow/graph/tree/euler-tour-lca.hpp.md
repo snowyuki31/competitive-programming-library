@@ -109,7 +109,7 @@ data:
     \ f.flag ? f.val : x; }\n            static f_type composition(f_type f, f_type\
     \ g) { return f.flag ? f : g; }\n            static f_type id(){ return {T(),\
     \ false}; }\n        };\n    };\n\n} // namespace snow\n#line 2 \"snow/graph/template.hpp\"\
-    \n\r\n#line 4 \"snow/graph/template.hpp\"\n\r\nnamespace snow {\r\n\r\n/**\r\n\
+    \n\r\n#line 5 \"snow/graph/template.hpp\"\n\r\nnamespace snow {\r\n\r\n/**\r\n\
     \ * @brief Graph template\r\n */\r\ntemplate < typename T >\r\nstruct Graph {\r\
     \n    struct Edge {\r\n        int from, to;\r\n        T weight;\r\n        Edge()\
     \ : from(0), to(0), weight(0) {}\r\n        Edge(int from, int to, T weight) :\
@@ -180,18 +180,20 @@ data:
   path: snow/graph/tree/euler-tour-lca.hpp
   requiredBy:
   - snow/graph/tree/euler-tour-path.hpp
-  timestamp: '2021-03-24 05:47:20+09:00'
+  timestamp: '2021-03-24 06:02:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/vertex_add_path_sum.test.cpp
   - test/oj/lowest_common_ancestor_1.test.cpp
 documentation_of: snow/graph/tree/euler-tour-lca.hpp
 layout: document
+title: "Euler Tour (Lowest Common Ancestor Query)- \u524D\u51E6\u7406$O(N\\log N)$,\
+  \ $O(\\log N)$"
 ---
 
 ## About
 
-Euler TourでLCAを求めます．
+Euler Tour + RMQでLCAを求めます．
 
 現時点ではRMQがセグ木なのでクエリ$O(\log N)$です．
 

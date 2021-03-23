@@ -16,7 +16,8 @@ data:
     title: Topological Sort
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour-lca.hpp
-    title: snow/graph/tree/euler-tour-lca.hpp
+    title: "Euler Tour (Lowest Common Ancestor Query)- \u524D\u51E6\u7406$O(N\\log\
+      \ N)$, $O(\\log N)$"
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour-path.hpp
     title: Euler Tour (Point Set and Path Sum Query)
@@ -57,8 +58,27 @@ data:
   attributes:
     document_title: Graph template
     links: []
-  bundledCode: "#line 2 \"snow/graph/template.hpp\"\n\r\n#include <vector>\r\n\r\n\
-    namespace snow {\r\n\r\n/**\r\n * @brief Graph template\r\n */\r\ntemplate < typename\
+  bundledCode: "#line 2 \"snow/graph/template.hpp\"\n\r\n#include <vector>\r\n#include\
+    \ <limits>\r\n\r\nnamespace snow {\r\n\r\n/**\r\n * @brief Graph template\r\n\
+    \ */\r\ntemplate < typename T >\r\nstruct Graph {\r\n    struct Edge {\r\n   \
+    \     int from, to;\r\n        T weight;\r\n        Edge() : from(0), to(0), weight(0)\
+    \ {}\r\n        Edge(int from, int to, T weight) : from(from), to(to), weight(weight)\
+    \ {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\n\r\n    const T INF\
+    \ = std::numeric_limits<T>::max();\r\n    std::vector<Edges> G;\r\n\r\n    Graph()\
+    \ : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n    Edges operator[](int\
+    \ k) const{\r\n        return G[k];\r\n    }\r\n\r\n    size_t size() const{\r\
+    \n        return G.size();\r\n    }\r\n\r\n    void add_edge(int a, int b, T w\
+    \ = 1){\r\n        G[a].emplace_back(a, b, w);\r\n        G[b].emplace_back(b,\
+    \ a, w);\r\n    }\r\n\r\n    void add_directed_edge(int a, int b, T w = 1){\r\n\
+    \        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n    void add_arrow(int a,\
+    \ int b, T w = 1){\r\n        add_directed_edge(a, b, w);\r\n    }\r\n\r\n   \
+    \ //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\n\r\n    //Bellman-Ford\r\
+    \n    std::vector<T> bellman_ford(int s) const;\r\n\r\n    //Warshall-Floyd\r\n\
+    \    std::vector<std::vector<T>> warshall_floyd() const;\r\n\r\n    //Topological\
+    \ sort\r\n    std::vector<int> topological_sort() const;\r\n};\r\n\r\n} // namespace\
+    \ snow\n"
+  code: "#pragma once\r\n\r\n#include <vector>\r\n#include <limits>\r\n\r\nnamespace\
+    \ snow {\r\n\r\n/**\r\n * @brief Graph template\r\n */\r\ntemplate < typename\
     \ T >\r\nstruct Graph {\r\n    struct Edge {\r\n        int from, to;\r\n    \
     \    T weight;\r\n        Edge() : from(0), to(0), weight(0) {}\r\n        Edge(int\
     \ from, int to, T weight) : from(from), to(to), weight(weight) {}\r\n    };\r\n\
@@ -68,24 +88,6 @@ data:
     \n    }\r\n\r\n    size_t size() const{\r\n        return G.size();\r\n    }\r\
     \n\r\n    void add_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(a,\
     \ b, w);\r\n        G[b].emplace_back(b, a, w);\r\n    }\r\n\r\n    void add_directed_edge(int\
-    \ a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n\
-    \    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a, b,\
-    \ w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\
-    \n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\
-    \n    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
-    \n\r\n    //Topological sort\r\n    std::vector<int> topological_sort() const;\r\
-    \n};\r\n\r\n} // namespace snow\n"
-  code: "#pragma once\r\n\r\n#include <vector>\r\n\r\nnamespace snow {\r\n\r\n/**\r\
-    \n * @brief Graph template\r\n */\r\ntemplate < typename T >\r\nstruct Graph {\r\
-    \n    struct Edge {\r\n        int from, to;\r\n        T weight;\r\n        Edge()\
-    \ : from(0), to(0), weight(0) {}\r\n        Edge(int from, int to, T weight) :\
-    \ from(from), to(to), weight(weight) {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\
-    \n\r\n    const T INF = std::numeric_limits<T>::max();\r\n    std::vector<Edges>\
-    \ G;\r\n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n\
-    \    Edges operator[](int k) const{\r\n        return G[k];\r\n    }\r\n\r\n \
-    \   size_t size() const{\r\n        return G.size();\r\n    }\r\n\r\n    void\
-    \ add_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n\
-    \        G[b].emplace_back(b, a, w);\r\n    }\r\n\r\n    void add_directed_edge(int\
     \ a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n\
     \    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a, b,\
     \ w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\
@@ -105,7 +107,7 @@ data:
   - snow/graph/shortest-path/bellman-ford.hpp
   - snow/graph/shortest-path/warshall-floyd.hpp
   - snow/graph/shortest-path/dijkstra.hpp
-  timestamp: '2021-03-22 12:08:23+09:00'
+  timestamp: '2021-03-24 06:02:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/0517.test.cpp
