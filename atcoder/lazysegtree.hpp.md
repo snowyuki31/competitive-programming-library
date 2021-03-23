@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/internal_bit.hpp
     title: atcoder/internal_bit.hpp
   _extendedRequiredBy:
@@ -12,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_F.test.cpp
     title: Segment Tree (Range Min and Range Update)
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/DSL_2_G.test.cpp
+    title: Segment Tree (Range Add and Range Sum)
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_H.test.cpp
     title: Segment Tree (Range Add and Range Min)
@@ -178,6 +181,7 @@ data:
   - test/aoj/DSL_2_H.test.cpp
   - test/aoj/DSL_2_F.test.cpp
   - test/aoj/DSL_2_I.test.cpp
+  - test/aoj/DSL_2_G.test.cpp
 documentation_of: atcoder/lazysegtree.hpp
 layout: document
 redirect_from:

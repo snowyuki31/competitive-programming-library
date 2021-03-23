@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/internal_bit.hpp
     title: atcoder/internal_bit.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/segtree.hpp
     title: atcoder/segtree.hpp
   _extendedRequiredBy:
@@ -19,18 +19,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_B.test.cpp
     title: Segment Tree (Point Set and Range Sum)
-  - icon: ':x:'
-    path: test/aoj/DSL_2_G.test.cpp
-    title: Segment Tree (Range Add and Range Sum)
   - icon: ':heavy_check_mark:'
     path: test/oj/lowest_common_ancestor_1.test.cpp
     title: Lowest Common Ancestor (Segment Tree ver.)
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_subtree_sum.test.cpp
     title: Vertex Add Subtree Sum (With Euler-Tour)
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"atcoder/segtree.hpp\"\n\n\n\n#include <algorithm>\n#include\
@@ -95,12 +92,11 @@ data:
   - snow/graph/tree/lowest-common-ancestor-segtree.hpp
   - snow/graph/tree/euler-tour.hpp
   timestamp: '2021-03-23 17:14:08+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/vertex_add_subtree_sum.test.cpp
   - test/oj/lowest_common_ancestor_1.test.cpp
   - test/aoj/DSL_2_B.test.cpp
-  - test/aoj/DSL_2_G.test.cpp
 documentation_of: snow/utils/seg-wrapper.hpp
 layout: document
 redirect_from:

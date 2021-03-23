@@ -12,7 +12,7 @@ data:
     - icon: ':warning:'
       path: atcoder/fenwicktree.hpp
       title: atcoder/fenwicktree.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/internal_bit.hpp
       title: atcoder/internal_bit.hpp
     - icon: ':warning:'
@@ -48,7 +48,7 @@ data:
     - icon: ':warning:'
       path: atcoder/scc.hpp
       title: atcoder/scc.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/segtree.hpp
       title: atcoder/segtree.hpp
     - icon: ':warning:'
@@ -134,7 +134,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/monoids/min.hpp
       title: snow/monoids/min.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: snow/monoids/plus-size.hpp
       title: snow/monoids/plus-size.hpp
     - icon: ':heavy_check_mark:'
@@ -158,7 +158,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/utils/pair-wrapper.hpp
       title: snow/utils/pair-wrapper.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: snow/utils/seg-wrapper.hpp
       title: snow/utils/seg-wrapper.hpp
     - icon: ':heavy_check_mark:'
@@ -196,7 +196,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_F.test.cpp
       title: Segment Tree (Range Min and Range Update)
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_2_G.test.cpp
       title: Segment Tree (Range Add and Range Sum)
     - icon: ':heavy_check_mark:'
