@@ -1,5 +1,4 @@
 #pragma once
-
 #include <vector>
 #include "snow/graph/tree/euler-tour-lca.hpp"
 #include "snow/utils/seg-wrapper.hpp"

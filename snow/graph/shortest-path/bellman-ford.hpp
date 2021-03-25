@@ -18,9 +18,9 @@ std::vector<T> Graph<T>::bellman_ford(int s) const{
     for(int i = 0; i < (int)G.size(); ++i){
         for(int j = 0; j < (int)G.size(); ++j){
             for(auto& e : G[j]){
-                if(dist[e.from] == INF) continue;
-                if(dist[e.to] > dist[e.from] + e.weight){
-                    dist[e.to] = dist[e.from] + e.weight;
+                if(dist[j] == INF) continue;
+                if(dist[e.to] > dist[j] + e.weight){
+                    dist[e.to] = dist[j] + e.weight;
                     if(i == ((int)G.size() - 1)) return {};
                 }
             }

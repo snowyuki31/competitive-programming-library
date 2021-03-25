@@ -11,10 +11,10 @@ namespace snow {
 template < typename T >
 struct Graph {
     struct Edge {
-        int from, to;
+        int to;
         T weight;
-        Edge() : from(0), to(0), weight(0) {}
-        Edge(int from, int to, T weight) : from(from), to(to), weight(weight) {}
+        Edge() : to(0), weight(0) {}
+        Edge(int to, T weight) : to(to), weight(weight) {}
     };
     using Edges = std::vector<Edge>;
 
@@ -37,16 +37,16 @@ struct Graph {
     }
 
     void add_edge(int a, int b, T w = 1){
-        G[a].emplace_back(a, b, w);
-        G[b].emplace_back(b, a, w);
+        G[a].emplace_back(b, w);
+        G[b].emplace_back(a, w);
     }
 
     void add_directed_edge(int a, int b, T w = 1){
-        G[a].emplace_back(a, b, w);
+        G[a].emplace_back(b, w);
     }
 
     void add_arrow(int a, int b, T w = 1){
-        add_directed_edge(a, b, w);
+        add_directed_edge(b, w);
     }
 
     //Dijkstra

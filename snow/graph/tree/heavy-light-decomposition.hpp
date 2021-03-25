@@ -1,5 +1,4 @@
 #pragma once
-
 #include <utility>
 #include <vector>
 #include "snow/graph/template.hpp"
@@ -93,7 +92,6 @@ struct HeavyLightDecomposition {
 
     private:
         int N;
-        int _root;
         std::vector<int> sz;
         std::vector<int> in;
         std::vector<int> out;

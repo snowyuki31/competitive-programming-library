@@ -1,5 +1,4 @@
 #pragma once
-
 #include <vector>
 #include "snow/utils/seg-wrapper.hpp"
 #include "snow/monoids/min.hpp"
