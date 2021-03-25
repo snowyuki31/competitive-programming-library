@@ -40,7 +40,7 @@ struct EulerTour {
         std::vector<int> depth; // depth
 
         int order = 0;
-        void dfs(snow::Graph<T> const& G, int v, int p, int d) {
+        void dfs(snow::Graph<int> const& G, int v, int p, int d) {
             vs[order] = v;
             depth[order] = d;
             in[v] = order++;

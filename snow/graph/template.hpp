@@ -25,7 +25,10 @@ struct Graph {
     
     Graph(int n) : G(n) {}
 
-    Edges operator[](int k) const{
+    Edges& operator[](int k) {
+        return G[k];
+    }
+    const Edges& operator[](int k) const {
         return G[k];
     }
 

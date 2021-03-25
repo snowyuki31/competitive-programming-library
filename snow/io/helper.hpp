@@ -67,12 +67,12 @@ void print(const T& a, const Ts&... b){
 
 int drop() {
     std::cout << '\n';
-    exit(1);
+    exit(0);
 }
 template<class T, class... Ts>
 int drop(const T& a, const Ts&... b){
     std::cout << a;
     (std::cout << ... << (std::cout << ' ', b));
     std::cout << '\n';
-    exit(1);
+    exit(0);
 }
