@@ -5,9 +5,6 @@ data:
   - icon: ':warning:'
     path: test/oj/enumerate_primes.cpp
     title: Enumerate Primes
-  - icon: ':warning:'
-    path: test/oj/vertex_set_path_composite.cpp
-    title: Vertex Add Subtree Sum (Euler Tour ver.)
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0560.test.cpp
@@ -18,6 +15,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_path_sum.test.cpp
     title: Vertex Add Path Sum (Euler Tour ver.)
+  - icon: ':heavy_check_mark:'
+    path: test/oj/vertex_add_path_sum_2.test.cpp
+    title: Vertex Add Path Sum (Heavy Light Decomposition ver.)
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_subtree_sum.test.cpp
     title: Vertex Add Subtree Sum (Euler Tour ver.)
@@ -90,7 +90,6 @@ data:
   isVerificationFile: false
   path: snow/io/helper.hpp
   requiredBy:
-  - test/oj/vertex_set_path_composite.cpp
   - test/oj/enumerate_primes.cpp
   timestamp: '2021-03-25 14:58:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -98,6 +97,7 @@ data:
   - test/oj/vertex_add_subtree_sum_2.test.cpp
   - test/oj/vertex_add_subtree_sum.test.cpp
   - test/oj/vertex_add_path_sum.test.cpp
+  - test/oj/vertex_add_path_sum_2.test.cpp
   - test/yukicoder/1065.test.cpp
   - test/yukicoder/0517.test.cpp
   - test/aoj/0560.test.cpp

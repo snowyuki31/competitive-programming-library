@@ -18,9 +18,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour-subtree.hpp
     title: Euler Tour (Point Set and Subtree Query)
-  - icon: ':warning:'
-    path: test/oj/vertex_set_path_composite.cpp
-    title: Vertex Add Subtree Sum (Euler Tour ver.)
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_B.test.cpp
@@ -31,6 +28,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_path_sum.test.cpp
     title: Vertex Add Path Sum (Euler Tour ver.)
+  - icon: ':heavy_check_mark:'
+    path: test/oj/vertex_add_path_sum_2.test.cpp
+    title: Vertex Add Path Sum (Heavy Light Decomposition ver.)
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_subtree_sum.test.cpp
     title: Vertex Add Subtree Sum (Euler Tour ver.)
@@ -101,7 +101,6 @@ data:
   isVerificationFile: false
   path: snow/utils/seg-wrapper.hpp
   requiredBy:
-  - test/oj/vertex_set_path_composite.cpp
   - snow/graph/tree/euler-tour-subtree.hpp
   - snow/graph/tree/euler-tour-path.hpp
   - snow/graph/tree/euler-tour-lca.hpp
@@ -112,6 +111,7 @@ data:
   - test/oj/vertex_add_subtree_sum.test.cpp
   - test/oj/vertex_add_path_sum.test.cpp
   - test/oj/lowest_common_ancestor_1.test.cpp
+  - test/oj/vertex_add_path_sum_2.test.cpp
   - test/aoj/DSL_2_B.test.cpp
 documentation_of: snow/utils/seg-wrapper.hpp
 layout: document

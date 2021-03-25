@@ -178,9 +178,6 @@ data:
     - icon: ':warning:'
       path: test/oj/enumerate_primes.cpp
       title: Enumerate Primes
-    - icon: ':warning:'
-      path: test/oj/vertex_set_path_composite.cpp
-      title: Vertex Add Subtree Sum (Euler Tour ver.)
   verificationCategories:
   - name: test/aoj
     pages:
@@ -246,6 +243,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/oj/vertex_add_path_sum.test.cpp
       title: Vertex Add Path Sum (Euler Tour ver.)
+    - icon: ':heavy_check_mark:'
+      path: test/oj/vertex_add_path_sum_2.test.cpp
+      title: Vertex Add Path Sum (Heavy Light Decomposition ver.)
     - icon: ':heavy_check_mark:'
       path: test/oj/vertex_add_subtree_sum.test.cpp
       title: Vertex Add Subtree Sum (Euler Tour ver.)

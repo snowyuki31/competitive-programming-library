@@ -5,9 +5,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour-path.hpp
     title: Euler Tour (Point Set and Path Sum Query)
-  - icon: ':warning:'
-    path: test/oj/vertex_set_path_composite.cpp
-    title: Vertex Add Subtree Sum (Euler Tour ver.)
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/DSL_2_B.test.cpp
@@ -15,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_path_sum.test.cpp
     title: Vertex Add Path Sum (Euler Tour ver.)
+  - icon: ':heavy_check_mark:'
+    path: test/oj/vertex_add_path_sum_2.test.cpp
+    title: Vertex Add Path Sum (Heavy Light Decomposition ver.)
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_subtree_sum.test.cpp
     title: Vertex Add Subtree Sum (Euler Tour ver.)
@@ -38,7 +38,6 @@ data:
   isVerificationFile: false
   path: snow/monoids/plus.hpp
   requiredBy:
-  - test/oj/vertex_set_path_composite.cpp
   - snow/graph/tree/euler-tour-path.hpp
   timestamp: '2021-03-21 08:45:05+09:00'
   verificationStatus: LIBRARY_ALL_AC
@@ -46,6 +45,7 @@ data:
   - test/oj/vertex_add_subtree_sum_2.test.cpp
   - test/oj/vertex_add_subtree_sum.test.cpp
   - test/oj/vertex_add_path_sum.test.cpp
+  - test/oj/vertex_add_path_sum_2.test.cpp
   - test/aoj/DSL_2_B.test.cpp
 documentation_of: snow/monoids/plus.hpp
 layout: document

@@ -15,9 +15,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour-subtree.hpp
     title: Euler Tour (Point Set and Subtree Query)
-  - icon: ':warning:'
-    path: test/oj/vertex_set_path_composite.cpp
-    title: Vertex Add Subtree Sum (Euler Tour ver.)
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/oj/lowest_common_ancestor_1.test.cpp
@@ -94,7 +91,6 @@ data:
   isVerificationFile: false
   path: snow/graph/tree/euler-tour.hpp
   requiredBy:
-  - test/oj/vertex_set_path_composite.cpp
   - snow/graph/tree/euler-tour-subtree.hpp
   - snow/graph/tree/euler-tour-path.hpp
   - snow/graph/tree/euler-tour-lca.hpp

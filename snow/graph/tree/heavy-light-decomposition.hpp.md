@@ -10,6 +10,9 @@ data:
     path: test/oj/lowest_common_ancestor_2.test.cpp
     title: Lowest Common Ancestor (Heavy Light Decomposition ver.)
   - icon: ':heavy_check_mark:'
+    path: test/oj/vertex_add_path_sum_2.test.cpp
+    title: Vertex Add Path Sum (Heavy Light Decomposition ver.)
+  - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_subtree_sum_2.test.cpp
     title: Vertex Add Subtree Sum (Heavy Light Decomposition ver.)
   _isVerificationFailed: false
@@ -56,14 +59,25 @@ data:
     \ v);\n                if(next[u] == next[v]) return u;\n                v = par[next[v]];\n\
     \            }\n        }\n\n        /**\n         * @brief Get segments of id\
     \ corresponding to the path from u to v inclusive\n         * @param u\n     \
-    \    * @param v\n         */\n        std::vector<std::pair<int, int>> get_path(int\
-    \ u, int v) {\n            std::vector<std::pair<int, int>> path;\n          \
-    \  while (true){\n                if(in[u] > in[v]) std::swap(u, v);\n       \
-    \         path.emplace_back(std::max(in[next[v]], in[u]), in[v]);\n\n        \
-    \        if(next[u] != next[v]) v = par[next[v]];\n                else break;\n\
-    \            }\n            return path;\n        }\n\n    private:\n        int\
-    \ N;\n        int _root;\n        std::vector<int> sz;\n        std::vector<int>\
-    \ in;\n        std::vector<int> out;\n        std::vector<int> par;\n        std::vector<int>\
+    \    * @param v\n         * @return vector<pair<int, int>> : set of segments [l_i,\
+    \ r_i)\n         */\n        std::vector<std::pair<int, int>> get_path(int u,\
+    \ int v) {\n            std::vector<std::pair<int, int>> path;\n            while\
+    \ (true){\n                if(in[u] > in[v]) std::swap(u, v);\n              \
+    \  path.emplace_back(std::max(in[next[v]], in[u]), in[v] + 1);\n\n           \
+    \     if(next[u] != next[v]) v = par[next[v]];\n                else break;\n\
+    \            }\n            return path;\n        }\n\n        /**\n         *\
+    \ @brief Get segments of id corresponding to the edge-wise path from u to v inclusive\n\
+    \         * @param u\n         * @param v\n         * @return vector<pair<int,\
+    \ int>> : set of segments [l_i, r_i)\n         */\n        std::vector<std::pair<int,\
+    \ int>> get_edge_path(int u, int v){\n            std::vector<std::pair<int, int>>\
+    \ path;\n            while (true){\n                if(in[u] > in[v]) std::swap(u,\
+    \ v);\n                if(next[u] != next[v]) {\n                    path.emplace_back(in[next[v]],\
+    \ in[v] + 1);\n                    v = par[next[v]];\n                }\n    \
+    \            else{\n                    if(u != v) path.emplace_back(in[u] + 1,\
+    \ in[v] + 1);\n                    break;\n                }\n            }\n\
+    \            return path;\n        }\n\n    private:\n        int N;\n       \
+    \ int _root;\n        std::vector<int> sz;\n        std::vector<int> in;\n   \
+    \     std::vector<int> out;\n        std::vector<int> par;\n        std::vector<int>\
     \ next; // last vertex of heavy chain of x\n\n        void dfs_sz(snow::Graph<T>&\
     \ G, int v, int p = -1){\n            sz[v] = 1;\n            for(auto &e : G[v])\
     \ if(e.to != p) {\n                dfs_sz(G, e.to, v);\n                sz[v]\
@@ -90,14 +104,25 @@ data:
     \ v);\n                if(next[u] == next[v]) return u;\n                v = par[next[v]];\n\
     \            }\n        }\n\n        /**\n         * @brief Get segments of id\
     \ corresponding to the path from u to v inclusive\n         * @param u\n     \
-    \    * @param v\n         */\n        std::vector<std::pair<int, int>> get_path(int\
-    \ u, int v) {\n            std::vector<std::pair<int, int>> path;\n          \
-    \  while (true){\n                if(in[u] > in[v]) std::swap(u, v);\n       \
-    \         path.emplace_back(std::max(in[next[v]], in[u]), in[v]);\n\n        \
-    \        if(next[u] != next[v]) v = par[next[v]];\n                else break;\n\
-    \            }\n            return path;\n        }\n\n    private:\n        int\
-    \ N;\n        int _root;\n        std::vector<int> sz;\n        std::vector<int>\
-    \ in;\n        std::vector<int> out;\n        std::vector<int> par;\n        std::vector<int>\
+    \    * @param v\n         * @return vector<pair<int, int>> : set of segments [l_i,\
+    \ r_i)\n         */\n        std::vector<std::pair<int, int>> get_path(int u,\
+    \ int v) {\n            std::vector<std::pair<int, int>> path;\n            while\
+    \ (true){\n                if(in[u] > in[v]) std::swap(u, v);\n              \
+    \  path.emplace_back(std::max(in[next[v]], in[u]), in[v] + 1);\n\n           \
+    \     if(next[u] != next[v]) v = par[next[v]];\n                else break;\n\
+    \            }\n            return path;\n        }\n\n        /**\n         *\
+    \ @brief Get segments of id corresponding to the edge-wise path from u to v inclusive\n\
+    \         * @param u\n         * @param v\n         * @return vector<pair<int,\
+    \ int>> : set of segments [l_i, r_i)\n         */\n        std::vector<std::pair<int,\
+    \ int>> get_edge_path(int u, int v){\n            std::vector<std::pair<int, int>>\
+    \ path;\n            while (true){\n                if(in[u] > in[v]) std::swap(u,\
+    \ v);\n                if(next[u] != next[v]) {\n                    path.emplace_back(in[next[v]],\
+    \ in[v] + 1);\n                    v = par[next[v]];\n                }\n    \
+    \            else{\n                    if(u != v) path.emplace_back(in[u] + 1,\
+    \ in[v] + 1);\n                    break;\n                }\n            }\n\
+    \            return path;\n        }\n\n    private:\n        int N;\n       \
+    \ int _root;\n        std::vector<int> sz;\n        std::vector<int> in;\n   \
+    \     std::vector<int> out;\n        std::vector<int> par;\n        std::vector<int>\
     \ next; // last vertex of heavy chain of x\n\n        void dfs_sz(snow::Graph<T>&\
     \ G, int v, int p = -1){\n            sz[v] = 1;\n            for(auto &e : G[v])\
     \ if(e.to != p) {\n                dfs_sz(G, e.to, v);\n                sz[v]\
@@ -112,10 +137,11 @@ data:
   isVerificationFile: false
   path: snow/graph/tree/heavy-light-decomposition.hpp
   requiredBy: []
-  timestamp: '2021-03-25 14:58:28+09:00'
+  timestamp: '2021-03-25 16:33:17+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/vertex_add_subtree_sum_2.test.cpp
+  - test/oj/vertex_add_path_sum_2.test.cpp
   - test/oj/lowest_common_ancestor_2.test.cpp
 documentation_of: snow/graph/tree/heavy-light-decomposition.hpp
 layout: document

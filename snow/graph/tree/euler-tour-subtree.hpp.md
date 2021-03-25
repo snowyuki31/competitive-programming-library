@@ -16,10 +16,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/utils/seg-wrapper.hpp
     title: snow/utils/seg-wrapper.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/oj/vertex_set_path_composite.cpp
-    title: Vertex Add Subtree Sum (Euler Tour ver.)
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_subtree_sum.test.cpp
@@ -150,8 +147,7 @@ data:
   - atcoder/internal_bit.hpp
   isVerificationFile: false
   path: snow/graph/tree/euler-tour-subtree.hpp
-  requiredBy:
-  - test/oj/vertex_set_path_composite.cpp
+  requiredBy: []
   timestamp: '2021-03-25 14:58:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

@@ -29,12 +29,12 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://old.yosupo.jp/problem/vertex_add_subtree_sum
-    document_title: Vertex Add Subtree Sum (Heavy Light Decomposition ver.)
+    PROBLEM: https://old.yosupo.jp/problem/vertex_add_path_sum
+    document_title: Vertex Add Path Sum (Heavy Light Decomposition ver.)
     links:
-    - https://old.yosupo.jp/problem/vertex_add_subtree_sum
-  bundledCode: "#line 1 \"test/oj/vertex_add_subtree_sum_2.test.cpp\"\n#define PROBLEM\
-    \ \"https://old.yosupo.jp/problem/vertex_add_subtree_sum\"\n#include <iostream>\n\
+    - https://old.yosupo.jp/problem/vertex_add_path_sum
+  bundledCode: "#line 1 \"test/oj/vertex_add_path_sum_2.test.cpp\"\n#define PROBLEM\
+    \ \"https://old.yosupo.jp/problem/vertex_add_path_sum\"\n#include <iostream>\n\
     #include <vector>\n#line 4 \"snow/io/helper.hpp\"\n#include <set>\n\ntemplate<\
     \ typename T1, typename T2 >\nstd::ostream &operator << (std::ostream &os, const\
     \ std::pair< T1, T2 > &p) {\n    os << p.first << \" \" << p.second;\n    return\
@@ -177,33 +177,37 @@ data:
     \ G, int v, int p = -1){\n            par[v] = p, in[v] = order++;\n         \
     \   for(auto e : G[v]) if(e.to != p) {\n                next[e.to] = ((e.to ==\
     \ G[v].front().to) ? next[v] : e.to);\n                dfs_hld(G, e.to, v);\n\
-    \            }\n        }\n};\n\n} // namespace snow\n#line 9 \"test/oj/vertex_add_subtree_sum_2.test.cpp\"\
-    \n\n/**\n * @brief Vertex Add Subtree Sum (Heavy Light Decomposition ver.)\n *\
-    \ \n */\nint main() {\n    int N, Q;\n    std::cin >> N >> Q;\n    std::vector<int>\
-    \ A(N);\n    std::cin >> A;\n\n    snow::Graph<int> G(N);\n    for (int i = 1;\
-    \ i <= N - 1; ++i){\n        int p;\n        std::cin >> p;\n        G.add_edge(p,\
-    \ i);\n    }\n\n    snow::HeavyLightDecomposition<int> HLD(G, 0);\n    snow::segtree<snow::plus_monoid<long\
-    \ long>> segtree(N);\n\n    for(int i = 0; i < N; ++i) segtree.set(HLD.get_id(i),\
+    \            }\n        }\n};\n\n} // namespace snow\n#line 9 \"test/oj/vertex_add_path_sum_2.test.cpp\"\
+    \n\n/**\n * @brief Vertex Add Path Sum (Heavy Light Decomposition ver.)\n * \n\
+    \ */\nint main() {\n    int N, Q;\n    std::cin >> N >> Q;\n    std::vector<int>\
+    \ A(N);\n    std::cin >> A;\n\n    snow::Graph<int> G(N);\n    for (int i = 0;\
+    \ i < N - 1; ++i){\n        int u, v;\n        std::cin >> u >> v;\n        G.add_edge(u,\
+    \ v);\n    }\n\n    snow::HeavyLightDecomposition HLD(G, 0);\n    snow::segtree<snow::plus_monoid<long\
+    \ long>> segtree(N);\n    for(int i = 0; i < N; ++i) segtree.set(HLD.get_id(i),\
     \ A[i]);\n\n    while(Q--){\n        int t, u;\n        std::cin >> t >> u;\n\n\
     \        if(t == 0){\n            int x;\n            std::cin >> x;\n       \
-    \     segtree.set(HLD.get_id(u), segtree.get(HLD.get_id(u)) + x);\n        }\n\
-    \        else{\n            auto [l, r] = HLD.get_subtree(u);\n            std::cout\
-    \ << segtree.prod(l, r) << '\\n';\n        }\n    }\n\n}\n"
-  code: "#define PROBLEM \"https://old.yosupo.jp/problem/vertex_add_subtree_sum\"\n\
-    #include <iostream>\n#include <vector>\n#include \"snow/io/helper.hpp\"\n#include\
-    \ \"snow/graph/template.hpp\"\n#include \"snow/utils/seg-wrapper.hpp\"\n#include\
-    \ \"snow/monoids/plus.hpp\"\n#include \"snow/graph/tree/heavy-light-decomposition.hpp\"\
-    \n\n/**\n * @brief Vertex Add Subtree Sum (Heavy Light Decomposition ver.)\n *\
-    \ \n */\nint main() {\n    int N, Q;\n    std::cin >> N >> Q;\n    std::vector<int>\
-    \ A(N);\n    std::cin >> A;\n\n    snow::Graph<int> G(N);\n    for (int i = 1;\
-    \ i <= N - 1; ++i){\n        int p;\n        std::cin >> p;\n        G.add_edge(p,\
-    \ i);\n    }\n\n    snow::HeavyLightDecomposition<int> HLD(G, 0);\n    snow::segtree<snow::plus_monoid<long\
-    \ long>> segtree(N);\n\n    for(int i = 0; i < N; ++i) segtree.set(HLD.get_id(i),\
+    \     int id = HLD.get_id(u);\n            segtree.set(id, segtree.get(id) + x);\n\
+    \        }\n        else {\n            int v;\n            std::cin >> v;\n \
+    \           auto path = HLD.get_path(u, v);\n            long long ret = 0;\n\
+    \            for(auto [l, r] : path) ret += segtree.prod(l, r);\n            std::cout\
+    \ << ret << '\\n';\n        }\n    }\n}\n"
+  code: "#define PROBLEM \"https://old.yosupo.jp/problem/vertex_add_path_sum\"\n#include\
+    \ <iostream>\n#include <vector>\n#include \"snow/io/helper.hpp\"\n#include \"\
+    snow/graph/template.hpp\"\n#include \"snow/utils/seg-wrapper.hpp\"\n#include \"\
+    snow/monoids/plus.hpp\"\n#include \"snow/graph/tree/heavy-light-decomposition.hpp\"\
+    \n\n/**\n * @brief Vertex Add Path Sum (Heavy Light Decomposition ver.)\n * \n\
+    \ */\nint main() {\n    int N, Q;\n    std::cin >> N >> Q;\n    std::vector<int>\
+    \ A(N);\n    std::cin >> A;\n\n    snow::Graph<int> G(N);\n    for (int i = 0;\
+    \ i < N - 1; ++i){\n        int u, v;\n        std::cin >> u >> v;\n        G.add_edge(u,\
+    \ v);\n    }\n\n    snow::HeavyLightDecomposition HLD(G, 0);\n    snow::segtree<snow::plus_monoid<long\
+    \ long>> segtree(N);\n    for(int i = 0; i < N; ++i) segtree.set(HLD.get_id(i),\
     \ A[i]);\n\n    while(Q--){\n        int t, u;\n        std::cin >> t >> u;\n\n\
     \        if(t == 0){\n            int x;\n            std::cin >> x;\n       \
-    \     segtree.set(HLD.get_id(u), segtree.get(HLD.get_id(u)) + x);\n        }\n\
-    \        else{\n            auto [l, r] = HLD.get_subtree(u);\n            std::cout\
-    \ << segtree.prod(l, r) << '\\n';\n        }\n    }\n\n}"
+    \     int id = HLD.get_id(u);\n            segtree.set(id, segtree.get(id) + x);\n\
+    \        }\n        else {\n            int v;\n            std::cin >> v;\n \
+    \           auto path = HLD.get_path(u, v);\n            long long ret = 0;\n\
+    \            for(auto [l, r] : path) ret += segtree.prod(l, r);\n            std::cout\
+    \ << ret << '\\n';\n        }\n    }\n}"
   dependsOn:
   - snow/io/helper.hpp
   - snow/graph/template.hpp
@@ -213,15 +217,15 @@ data:
   - snow/monoids/plus.hpp
   - snow/graph/tree/heavy-light-decomposition.hpp
   isVerificationFile: true
-  path: test/oj/vertex_add_subtree_sum_2.test.cpp
+  path: test/oj/vertex_add_path_sum_2.test.cpp
   requiredBy: []
   timestamp: '2021-03-25 16:33:17+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/oj/vertex_add_subtree_sum_2.test.cpp
+documentation_of: test/oj/vertex_add_path_sum_2.test.cpp
 layout: document
 redirect_from:
-- /verify/test/oj/vertex_add_subtree_sum_2.test.cpp
-- /verify/test/oj/vertex_add_subtree_sum_2.test.cpp.html
-title: Vertex Add Subtree Sum (Heavy Light Decomposition ver.)
+- /verify/test/oj/vertex_add_path_sum_2.test.cpp
+- /verify/test/oj/vertex_add_path_sum_2.test.cpp.html
+title: Vertex Add Path Sum (Heavy Light Decomposition ver.)
 ---
