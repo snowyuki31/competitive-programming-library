@@ -336,9 +336,9 @@ data:
   timestamp: '2021-03-21 08:31:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/oj/range_affine_range_sum.test.cpp
   - test/yukicoder/1035.test.cpp
   - test/yukicoder/1396.test.cpp
-  - test/oj/range_affine_range_sum.test.cpp
   - test/aoj/DPL_5_E.test.cpp
 documentation_of: atcoder/modint.hpp
 layout: document

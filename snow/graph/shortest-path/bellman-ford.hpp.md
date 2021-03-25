@@ -23,10 +23,11 @@ data:
     \ weight(0) {}\r\n        Edge(int from, int to, T weight) : from(from), to(to),\
     \ weight(weight) {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\n\r\n\
     \    const T INF = std::numeric_limits<T>::max();\r\n    std::vector<Edges> G;\r\
-    \n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n    Edges\
-    \ operator[](int k) const{\r\n        return G[k];\r\n    }\r\n\r\n    size_t\
-    \ size() const{\r\n        return G.size();\r\n    }\r\n\r\n    void add_edge(int\
-    \ a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n        G[b].emplace_back(b,\
+    \n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n    Edges&\
+    \ operator[](int k) {\r\n        return G[k];\r\n    }\r\n    const Edges& operator[](int\
+    \ k) const {\r\n        return G[k];\r\n    }\r\n\r\n    size_t size() const{\r\
+    \n        return G.size();\r\n    }\r\n\r\n    void add_edge(int a, int b, T w\
+    \ = 1){\r\n        G[a].emplace_back(a, b, w);\r\n        G[b].emplace_back(b,\
     \ a, w);\r\n    }\r\n\r\n    void add_directed_edge(int a, int b, T w = 1){\r\n\
     \        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n    void add_arrow(int a,\
     \ int b, T w = 1){\r\n        add_directed_edge(a, b, w);\r\n    }\r\n\r\n   \
@@ -38,28 +39,28 @@ data:
     \n\r\n/**\r\n * @brief Bellman-Ford\r\n * \r\n * @param s \r\n */\r\ntemplate\
     \ < typename T >\r\nstd::vector<T> Graph<T>::bellman_ford(int s) const{\r\n  \
     \  std::vector<T> dist(G.size(), INF);\r\n    dist[s] = 0;\r\n    for(int i =\
-    \ 0; i < G.size(); ++i){\r\n        for(int j = 0; j < G.size(); ++j){\r\n   \
-    \         for(auto& e : G[j]){\r\n                if(dist[e.from] == INF) continue;\r\
-    \n                if(dist[e.to] > dist[e.from] + e.weight){\r\n              \
-    \      dist[e.to] = dist[e.from] + e.weight;\r\n                    if(i == (G.size()\
-    \ - 1)) return {};\r\n                }\r\n            }\r\n        }\r\n    }\r\
-    \n    return dist;\r\n}\r\n\r\n}\n"
+    \ 0; i < (int)G.size(); ++i){\r\n        for(int j = 0; j < (int)G.size(); ++j){\r\
+    \n            for(auto& e : G[j]){\r\n                if(dist[e.from] == INF)\
+    \ continue;\r\n                if(dist[e.to] > dist[e.from] + e.weight){\r\n \
+    \                   dist[e.to] = dist[e.from] + e.weight;\r\n                \
+    \    if(i == ((int)G.size() - 1)) return {};\r\n                }\r\n        \
+    \    }\r\n        }\r\n    }\r\n    return dist;\r\n}\r\n\r\n}\n"
   code: "#pragma once\r\n\r\n#include <vector>\r\n\r\n#include \"snow/graph/template.hpp\"\
     \r\n\r\nnamespace snow{\r\n\r\n/**\r\n * @brief Bellman-Ford\r\n * \r\n * @param\
     \ s \r\n */\r\ntemplate < typename T >\r\nstd::vector<T> Graph<T>::bellman_ford(int\
     \ s) const{\r\n    std::vector<T> dist(G.size(), INF);\r\n    dist[s] = 0;\r\n\
-    \    for(int i = 0; i < G.size(); ++i){\r\n        for(int j = 0; j < G.size();\
+    \    for(int i = 0; i < (int)G.size(); ++i){\r\n        for(int j = 0; j < (int)G.size();\
     \ ++j){\r\n            for(auto& e : G[j]){\r\n                if(dist[e.from]\
     \ == INF) continue;\r\n                if(dist[e.to] > dist[e.from] + e.weight){\r\
     \n                    dist[e.to] = dist[e.from] + e.weight;\r\n              \
-    \      if(i == (G.size() - 1)) return {};\r\n                }\r\n           \
-    \ }\r\n        }\r\n    }\r\n    return dist;\r\n}\r\n\r\n}"
+    \      if(i == ((int)G.size() - 1)) return {};\r\n                }\r\n      \
+    \      }\r\n        }\r\n    }\r\n    return dist;\r\n}\r\n\r\n}"
   dependsOn:
   - snow/graph/template.hpp
   isVerificationFile: false
   path: snow/graph/shortest-path/bellman-ford.hpp
   requiredBy: []
-  timestamp: '2021-03-24 06:02:59+09:00'
+  timestamp: '2021-03-25 14:58:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/GRL_1_B.test.cpp

@@ -46,10 +46,10 @@ data:
     \ a){\n    (std::cin >> ... >> a);\n}\n\nvoid print() {\n    std::cout << '\\\
     n';\n}\ntemplate<class T, class... Ts>\nvoid print(const T& a, const Ts&... b){\n\
     \    std::cout << a;\n    (std::cout << ... << (std::cout << ' ', b));\n    std::cout\
-    \ << '\\n';\n}\n\nint drop() {\n    std::cout << '\\n';\n    exit(1);\n}\ntemplate<class\
+    \ << '\\n';\n}\n\nint drop() {\n    std::cout << '\\n';\n    exit(0);\n}\ntemplate<class\
     \ T, class... Ts>\nint drop(const T& a, const Ts&... b){\n    std::cout << a;\n\
     \    (std::cout << ... << (std::cout << ' ', b));\n    std::cout << '\\n';\n \
-    \   exit(1);\n}\n#line 8 \"test/aoj/ALDS1_4_B.test.cpp\"\n\n/**\n * @brief Binary\
+    \   exit(0);\n}\n#line 8 \"test/aoj/ALDS1_4_B.test.cpp\"\n\n/**\n * @brief Binary\
     \ Search\n * \n */\nint main() {\n    int n;\n    std::cin >> n;\n    std::vector<int>\
     \ S(n);\n    std::cin >> S;\n\n    int target;\n    bool lower_bound = true;\n\
     \    auto f = [&](int x) {\n        if(lower_bound) return S[x] >= target;\n \
@@ -75,7 +75,7 @@ data:
   isVerificationFile: true
   path: test/aoj/ALDS1_4_B.test.cpp
   requiredBy: []
-  timestamp: '2021-03-23 06:07:59+09:00'
+  timestamp: '2021-03-25 14:58:28+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_4_B.test.cpp

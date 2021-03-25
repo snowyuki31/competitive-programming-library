@@ -5,6 +5,9 @@ data:
   - icon: ':warning:'
     path: test/oj/enumerate_primes.cpp
     title: Enumerate Primes
+  - icon: ':warning:'
+    path: test/oj/vertex_set_path_composite.cpp
+    title: Vertex Add Subtree Sum (Euler Tour ver.)
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0560.test.cpp
@@ -18,6 +21,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_subtree_sum.test.cpp
     title: Vertex Add Subtree Sum (Euler Tour ver.)
+  - icon: ':heavy_check_mark:'
+    path: test/oj/vertex_add_subtree_sum_2.test.cpp
+    title: Vertex Add Subtree Sum (Heavy Light Decomposition ver.)
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0517.test.cpp
     title: Topological Sort
@@ -51,10 +57,10 @@ data:
     \    (std::cin >> ... >> a);\n}\n\nvoid print() {\n    std::cout << '\\n';\n}\n\
     template<class T, class... Ts>\nvoid print(const T& a, const Ts&... b){\n    std::cout\
     \ << a;\n    (std::cout << ... << (std::cout << ' ', b));\n    std::cout << '\\\
-    n';\n}\n\nint drop() {\n    std::cout << '\\n';\n    exit(1);\n}\ntemplate<class\
+    n';\n}\n\nint drop() {\n    std::cout << '\\n';\n    exit(0);\n}\ntemplate<class\
     \ T, class... Ts>\nint drop(const T& a, const Ts&... b){\n    std::cout << a;\n\
     \    (std::cout << ... << (std::cout << ' ', b));\n    std::cout << '\\n';\n \
-    \   exit(1);\n}\n"
+    \   exit(0);\n}\n"
   code: "#pragma once\n#include <iostream>\n#include <vector>\n#include <set>\n\n\
     template< typename T1, typename T2 >\nstd::ostream &operator << (std::ostream\
     \ &os, const std::pair< T1, T2 > &p) {\n    os << p.first << \" \" << p.second;\n\
@@ -77,21 +83,23 @@ data:
     void print() {\n    std::cout << '\\n';\n}\ntemplate<class T, class... Ts>\nvoid\
     \ print(const T& a, const Ts&... b){\n    std::cout << a;\n    (std::cout << ...\
     \ << (std::cout << ' ', b));\n    std::cout << '\\n';\n}\n\nint drop() {\n   \
-    \ std::cout << '\\n';\n    exit(1);\n}\ntemplate<class T, class... Ts>\nint drop(const\
+    \ std::cout << '\\n';\n    exit(0);\n}\ntemplate<class T, class... Ts>\nint drop(const\
     \ T& a, const Ts&... b){\n    std::cout << a;\n    (std::cout << ... << (std::cout\
-    \ << ' ', b));\n    std::cout << '\\n';\n    exit(1);\n}"
+    \ << ' ', b));\n    std::cout << '\\n';\n    exit(0);\n}"
   dependsOn: []
   isVerificationFile: false
   path: snow/io/helper.hpp
   requiredBy:
+  - test/oj/vertex_set_path_composite.cpp
   - test/oj/enumerate_primes.cpp
-  timestamp: '2021-03-23 03:17:52+09:00'
+  timestamp: '2021-03-25 14:58:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/0517.test.cpp
-  - test/yukicoder/1065.test.cpp
-  - test/oj/vertex_add_path_sum.test.cpp
+  - test/oj/vertex_add_subtree_sum_2.test.cpp
   - test/oj/vertex_add_subtree_sum.test.cpp
+  - test/oj/vertex_add_path_sum.test.cpp
+  - test/yukicoder/1065.test.cpp
+  - test/yukicoder/0517.test.cpp
   - test/aoj/0560.test.cpp
   - test/aoj/ALDS1_4_B.test.cpp
 documentation_of: snow/io/helper.hpp

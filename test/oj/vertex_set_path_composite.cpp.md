@@ -29,15 +29,13 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://old.yosupo.jp/problem/vertex_add_subtree_sum
     document_title: Vertex Add Subtree Sum (Euler Tour ver.)
     links:
-    - https://old.yosupo.jp/problem/vertex_add_subtree_sum
-  bundledCode: "#line 1 \"test/oj/vertex_add_subtree_sum.test.cpp\"\n#define PROBLEM\
-    \ \"https://old.yosupo.jp/problem/vertex_add_subtree_sum\"\n#include <iostream>\n\
+    - https://judge.yosupo.jp/problem/vertex_set_path_composite
+  bundledCode: "#line 1 \"test/oj/vertex_set_path_composite.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/vertex_set_path_composite\"\n#include <iostream>\n\
     #include <vector>\n#line 4 \"snow/io/helper.hpp\"\n#include <set>\n\ntemplate<\
     \ typename T1, typename T2 >\nstd::ostream &operator << (std::ostream &os, const\
     \ std::pair< T1, T2 > &p) {\n    os << p.first << \" \" << p.second;\n    return\
@@ -164,7 +162,7 @@ data:
     \        }\n\n        S prod(int u) {\n            int l = this->get_in(u), r\
     \ = this->get_out(u);\n            return segtree.prod(l, r);\n        }\n\n \
     \   private:\n        int N;\n        snow::segtree<Monoid> segtree;\n};\n\n}\
-    \ // namespace snow\n#line 8 \"test/oj/vertex_add_subtree_sum.test.cpp\"\n\n/**\n\
+    \ // namespace snow\n#line 8 \"test/oj/vertex_set_path_composite.cpp\"\n\n/**\n\
     \ * @brief Vertex Add Subtree Sum (Euler Tour ver.)\n * \n */\nint main() {\n\
     \    int N, Q;\n    std::cin >> N >> Q;\n    std::vector<int> A(N);\n    std::cin\
     \ >> A;\n\n    snow::Graph<int> G(N);\n    for (int i = 1; i <= N - 1; ++i){\n\
@@ -174,8 +172,8 @@ data:
     \        std::cin >> t >> u;\n\n        if(t == 0){\n            int x;\n    \
     \        std::cin >> x;\n            euler.set(u, euler.get(u) + x);\n       \
     \ }\n        else std::cout << euler.prod(u) << '\\n';\n    }\n\n}\n"
-  code: "#define PROBLEM \"https://old.yosupo.jp/problem/vertex_add_subtree_sum\"\n\
-    #include <iostream>\n#include <vector>\n#include \"snow/io/helper.hpp\"\n#include\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_set_path_composite\"\
+    \n#include <iostream>\n#include <vector>\n#include \"snow/io/helper.hpp\"\n#include\
     \ \"snow/graph/template.hpp\"\n#include \"snow/monoids/plus.hpp\"\n#include \"\
     snow/graph/tree/euler-tour-subtree.hpp\"\n\n/**\n * @brief Vertex Add Subtree\
     \ Sum (Euler Tour ver.)\n * \n */\nint main() {\n    int N, Q;\n    std::cin >>\
@@ -196,16 +194,16 @@ data:
   - snow/utils/seg-wrapper.hpp
   - atcoder/segtree.hpp
   - atcoder/internal_bit.hpp
-  isVerificationFile: true
-  path: test/oj/vertex_add_subtree_sum.test.cpp
+  isVerificationFile: false
+  path: test/oj/vertex_set_path_composite.cpp
   requiredBy: []
   timestamp: '2021-03-25 14:58:28+09:00'
-  verificationStatus: TEST_ACCEPTED
+  verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: test/oj/vertex_add_subtree_sum.test.cpp
+documentation_of: test/oj/vertex_set_path_composite.cpp
 layout: document
 redirect_from:
-- /verify/test/oj/vertex_add_subtree_sum.test.cpp
-- /verify/test/oj/vertex_add_subtree_sum.test.cpp.html
+- /library/test/oj/vertex_set_path_composite.cpp
+- /library/test/oj/vertex_set_path_composite.cpp.html
 title: Vertex Add Subtree Sum (Euler Tour ver.)
 ---

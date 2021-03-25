@@ -104,6 +104,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/graph/tree/euler-tour.hpp
       title: Euler Tour
+    - icon: ':heavy_check_mark:'
+      path: snow/graph/tree/heavy-light-decomposition.hpp
+      title: Heavy Light Decomposition
   - name: snow/io
     pages:
     - icon: ':heavy_check_mark:'
@@ -175,6 +178,9 @@ data:
     - icon: ':warning:'
       path: test/oj/enumerate_primes.cpp
       title: Enumerate Primes
+    - icon: ':warning:'
+      path: test/oj/vertex_set_path_composite.cpp
+      title: Vertex Add Subtree Sum (Euler Tour ver.)
   verificationCategories:
   - name: test/aoj
     pages:
@@ -232,6 +238,9 @@ data:
       path: test/oj/lowest_common_ancestor_1.test.cpp
       title: Lowest Common Ancestor (Euler Tour ver.)
     - icon: ':heavy_check_mark:'
+      path: test/oj/lowest_common_ancestor_2.test.cpp
+      title: Lowest Common Ancestor (Heavy Light Decomposition ver.)
+    - icon: ':heavy_check_mark:'
       path: test/oj/range_affine_range_sum.test.cpp
       title: Segment Tree (Range Affine and Range Sum with Modint)
     - icon: ':heavy_check_mark:'
@@ -240,6 +249,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/oj/vertex_add_subtree_sum.test.cpp
       title: Vertex Add Subtree Sum (Euler Tour ver.)
+    - icon: ':heavy_check_mark:'
+      path: test/oj/vertex_add_subtree_sum_2.test.cpp
+      title: Vertex Add Subtree Sum (Heavy Light Decomposition ver.)
   - name: test/yukicoder
     pages:
     - icon: ':heavy_check_mark:'

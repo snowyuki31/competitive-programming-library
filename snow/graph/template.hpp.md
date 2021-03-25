@@ -27,6 +27,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour.hpp
     title: Euler Tour
+  - icon: ':heavy_check_mark:'
+    path: snow/graph/tree/heavy-light-decomposition.hpp
+    title: Heavy Light Decomposition
+  - icon: ':warning:'
+    path: test/oj/vertex_set_path_composite.cpp
+    title: Vertex Add Subtree Sum (Euler Tour ver.)
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_1_A.test.cpp
@@ -41,11 +47,17 @@ data:
     path: test/oj/lowest_common_ancestor_1.test.cpp
     title: Lowest Common Ancestor (Euler Tour ver.)
   - icon: ':heavy_check_mark:'
+    path: test/oj/lowest_common_ancestor_2.test.cpp
+    title: Lowest Common Ancestor (Heavy Light Decomposition ver.)
+  - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_path_sum.test.cpp
     title: Vertex Add Path Sum (Euler Tour ver.)
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_subtree_sum.test.cpp
     title: Vertex Add Subtree Sum (Euler Tour ver.)
+  - icon: ':heavy_check_mark:'
+    path: test/oj/vertex_add_subtree_sum_2.test.cpp
+    title: Vertex Add Subtree Sum (Heavy Light Decomposition ver.)
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/0517.test.cpp
     title: Topological Sort
@@ -65,9 +77,10 @@ data:
     \ {}\r\n        Edge(int from, int to, T weight) : from(from), to(to), weight(weight)\
     \ {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\n\r\n    const T INF\
     \ = std::numeric_limits<T>::max();\r\n    std::vector<Edges> G;\r\n\r\n    Graph()\
-    \ : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n    Edges operator[](int\
-    \ k) const{\r\n        return G[k];\r\n    }\r\n\r\n    size_t size() const{\r\
-    \n        return G.size();\r\n    }\r\n\r\n    void add_edge(int a, int b, T w\
+    \ : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n    Edges& operator[](int\
+    \ k) {\r\n        return G[k];\r\n    }\r\n    const Edges& operator[](int k)\
+    \ const {\r\n        return G[k];\r\n    }\r\n\r\n    size_t size() const{\r\n\
+    \        return G.size();\r\n    }\r\n\r\n    void add_edge(int a, int b, T w\
     \ = 1){\r\n        G[a].emplace_back(a, b, w);\r\n        G[b].emplace_back(b,\
     \ a, w);\r\n    }\r\n\r\n    void add_directed_edge(int a, int b, T w = 1){\r\n\
     \        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n    void add_arrow(int a,\
@@ -84,7 +97,8 @@ data:
     \ from, int to, T weight) : from(from), to(to), weight(weight) {}\r\n    };\r\n\
     \    using Edges = std::vector<Edge>;\r\n\r\n    const T INF = std::numeric_limits<T>::max();\r\
     \n    std::vector<Edges> G;\r\n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int\
-    \ n) : G(n) {}\r\n\r\n    Edges operator[](int k) const{\r\n        return G[k];\r\
+    \ n) : G(n) {}\r\n\r\n    Edges& operator[](int k) {\r\n        return G[k];\r\
+    \n    }\r\n    const Edges& operator[](int k) const {\r\n        return G[k];\r\
     \n    }\r\n\r\n    size_t size() const{\r\n        return G.size();\r\n    }\r\
     \n\r\n    void add_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(a,\
     \ b, w);\r\n        G[b].emplace_back(b, a, w);\r\n    }\r\n\r\n    void add_directed_edge(int\
@@ -99,25 +113,29 @@ data:
   isVerificationFile: false
   path: snow/graph/template.hpp
   requiredBy:
+  - test/oj/vertex_set_path_composite.cpp
   - snow/graph/topological-sort.hpp
-  - snow/graph/tree/euler-tour-path.hpp
   - snow/graph/tree/euler-tour-subtree.hpp
-  - snow/graph/tree/euler-tour-lca.hpp
+  - snow/graph/tree/heavy-light-decomposition.hpp
   - snow/graph/tree/euler-tour.hpp
-  - snow/graph/shortest-path/bellman-ford.hpp
+  - snow/graph/tree/euler-tour-path.hpp
+  - snow/graph/tree/euler-tour-lca.hpp
   - snow/graph/shortest-path/warshall-floyd.hpp
   - snow/graph/shortest-path/dijkstra.hpp
-  timestamp: '2021-03-24 06:02:59+09:00'
+  - snow/graph/shortest-path/bellman-ford.hpp
+  timestamp: '2021-03-25 14:58:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/0517.test.cpp
-  - test/yukicoder/1065.test.cpp
-  - test/oj/vertex_add_path_sum.test.cpp
+  - test/oj/vertex_add_subtree_sum_2.test.cpp
   - test/oj/vertex_add_subtree_sum.test.cpp
+  - test/oj/vertex_add_path_sum.test.cpp
   - test/oj/lowest_common_ancestor_1.test.cpp
-  - test/aoj/GRL_1_C.test.cpp
+  - test/oj/lowest_common_ancestor_2.test.cpp
+  - test/yukicoder/1065.test.cpp
+  - test/yukicoder/0517.test.cpp
   - test/aoj/GRL_1_B.test.cpp
   - test/aoj/GRL_1_A.test.cpp
+  - test/aoj/GRL_1_C.test.cpp
 documentation_of: snow/graph/template.hpp
 layout: document
 redirect_from:

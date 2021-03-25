@@ -117,61 +117,61 @@ data:
     \ from(from), to(to), weight(weight) {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\
     \n\r\n    const T INF = std::numeric_limits<T>::max();\r\n    std::vector<Edges>\
     \ G;\r\n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n\
-    \    Edges operator[](int k) const{\r\n        return G[k];\r\n    }\r\n\r\n \
-    \   size_t size() const{\r\n        return G.size();\r\n    }\r\n\r\n    void\
-    \ add_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n\
-    \        G[b].emplace_back(b, a, w);\r\n    }\r\n\r\n    void add_directed_edge(int\
-    \ a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n\
-    \    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a, b,\
-    \ w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\
-    \n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\
-    \n    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
-    \n\r\n    //Topological sort\r\n    std::vector<int> topological_sort() const;\r\
-    \n};\r\n\r\n} // namespace snow\n#line 2 \"snow/graph/tree/euler-tour.hpp\"\n\n\
-    #line 5 \"snow/graph/tree/euler-tour.hpp\"\n\nnamespace snow {\n\n/**\n * @brief\
-    \ Euler Tour\n * @tparam T edge weight type\n */\ntemplate < typename T = int\
-    \ >\nstruct EulerTour {\n    public:\n        EulerTour(snow::Graph<T> const&\
-    \ G, int root) : N(G.size()), vs(2 * N, 0), in(N, 0), out(N, 0), depth(2 * N,\
-    \ 0) {\n            dfs(G, root, -1, 0);\n        }\n\n        int get_in(int\
-    \ x){\n            return in[x];\n        }\n\n        int get_out(int x){\n \
-    \           return out[x];\n        }\n\n        int get_vertex(int x){\n    \
-    \        return vs[x];\n        }\n\n        int get_depth(int x){\n         \
-    \   return depth[x];\n        }\n\n    private:\n        int N;\n        std::vector<int>\
-    \ vs;    // order->vertex number\n        std::vector<int> in;    // vertex number->order(in)\n\
-    \        std::vector<int> out;   // vertex number->order(out)\n        std::vector<int>\
-    \ depth; // depth\n\n        int order = 0;\n        void dfs(snow::Graph<T> const&\
-    \ G, int v, int p, int d) {\n            vs[order] = v;\n            depth[order]\
-    \ = d;\n            in[v] = order++;\n            for(auto &e : G[v]) if(e.to\
-    \ != p) {\n                dfs(G, e.to, v, d + 1);\n                vs[order]\
-    \ = v;\n                depth[order++] = d;\n            }\n            out[v]\
-    \ = order;\n        }\n};\n\n} // namespace snow\n#line 8 \"snow/graph/tree/euler-tour-lca.hpp\"\
-    \n\nnamespace snow {\n\n/**\n * @brief Euler Tour (Lowest Common Ancestor Query)-\
-    \ \u524D\u51E6\u7406$O(N\\log N)$, $O(\\log N)$\n * \n */\ntemplate < typename\
-    \ T = int >\nstruct EulerTourLCA : public EulerTour<T> {\n    public:\n      \
-    \  EulerTourLCA(snow::Graph<T> const& G, int root) : EulerTour<T>(G, root), N(G.size()),\
-    \ segtree(2 * N) {\n            for(int i = 0; i < 2 * N; ++i) segtree.set(i,\
-    \ {this->get_depth(i), this->get_vertex(i)});\n        }\n\n        int lca(int\
-    \ u, int v) {\n            int u_ = this->get_in(u), v_ = this->get_in(v);\n \
-    \           auto ret = segtree.prod(std::min(u_, v_), std::max(u_, v_) + 1);\n\
-    \            return ret.second;\n        }\n\n    private:\n        int N;\n \
-    \       snow::segtree<snow::min_monoid<std::pair<int, int>>> segtree;\n};\n\n\
-    } // namespace snow\n#line 2 \"snow/monoids/plus.hpp\"\n\nnamespace snow {\n\n\
-    \    template < typename T >\n    struct plus_monoid {\n        using value_type\
-    \ = T;\n        static value_type e() { return T(); };\n        static value_type\
-    \ op(value_type l, value_type r){ return l + r; };\n    };\n\n} // namespace snow\n\
-    #line 8 \"snow/graph/tree/euler-tour-path.hpp\"\n\nnamespace snow {\n\n/**\n *\
-    \ @brief Euler Tour (Point Set and Path Sum Query)\n * @note Available if inverse\
-    \ element exists (i.e., Abel)\n * @tparam T edge weight type\n */\ntemplate <\
-    \ typename S, typename T = int >\nstruct EulerTourPath : public EulerTourLCA<T>\
-    \ {\n    public:\n        EulerTourPath(snow::Graph<T> const &G, int root) : EulerTourLCA<T>(G,\
-    \ root), N(G.size()), _root(root), segtree(2 * N) {}\n\n        void set(int u,\
-    \ S x) {\n            segtree.set(this->get_in(u), x);\n            segtree.set(this->get_out(u),\
-    \ -x); // You need apply inverse value here\n        }\n\n        S get(int u)\
-    \ {\n            return segtree.get(this->get_in(u));\n        }\n\n        //\
-    \ Path Query (from u to v, inclusive)\n        S prod(int u, int v) {\n      \
-    \      int lca = this->lca(u, v);\n            return _prod(u) + _prod(v) - 2\
-    \ * _prod(lca) + segtree.get(this->get_in(lca));\n        }\n\n    private:\n\
-    \        int N;\n        int _root;\n        snow::segtree<snow::plus_monoid<S>>\
+    \    Edges& operator[](int k) {\r\n        return G[k];\r\n    }\r\n    const\
+    \ Edges& operator[](int k) const {\r\n        return G[k];\r\n    }\r\n\r\n  \
+    \  size_t size() const{\r\n        return G.size();\r\n    }\r\n\r\n    void add_edge(int\
+    \ a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n        G[b].emplace_back(b,\
+    \ a, w);\r\n    }\r\n\r\n    void add_directed_edge(int a, int b, T w = 1){\r\n\
+    \        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n    void add_arrow(int a,\
+    \ int b, T w = 1){\r\n        add_directed_edge(a, b, w);\r\n    }\r\n\r\n   \
+    \ //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\n\r\n    //Bellman-Ford\r\
+    \n    std::vector<T> bellman_ford(int s) const;\r\n\r\n    //Warshall-Floyd\r\n\
+    \    std::vector<std::vector<T>> warshall_floyd() const;\r\n\r\n    //Topological\
+    \ sort\r\n    std::vector<int> topological_sort() const;\r\n};\r\n\r\n} // namespace\
+    \ snow\n#line 2 \"snow/graph/tree/euler-tour.hpp\"\n\n#line 5 \"snow/graph/tree/euler-tour.hpp\"\
+    \n\nnamespace snow {\n\n/**\n * @brief Euler Tour\n * @tparam T edge weight type\n\
+    \ */\ntemplate < typename T = int >\nstruct EulerTour {\n    public:\n       \
+    \ EulerTour(snow::Graph<T> const& G, int root) : N(G.size()), vs(2 * N, 0), in(N,\
+    \ 0), out(N, 0), depth(2 * N, 0) {\n            dfs(G, root, -1, 0);\n       \
+    \ }\n\n        int get_in(int x){\n            return in[x];\n        }\n\n  \
+    \      int get_out(int x){\n            return out[x];\n        }\n\n        int\
+    \ get_vertex(int x){\n            return vs[x];\n        }\n\n        int get_depth(int\
+    \ x){\n            return depth[x];\n        }\n\n    private:\n        int N;\n\
+    \        std::vector<int> vs;    // order->vertex number\n        std::vector<int>\
+    \ in;    // vertex number->order(in)\n        std::vector<int> out;   // vertex\
+    \ number->order(out)\n        std::vector<int> depth; // depth\n\n        int\
+    \ order = 0;\n        void dfs(snow::Graph<int> const& G, int v, int p, int d)\
+    \ {\n            vs[order] = v;\n            depth[order] = d;\n            in[v]\
+    \ = order++;\n            for(auto &e : G[v]) if(e.to != p) {\n              \
+    \  dfs(G, e.to, v, d + 1);\n                vs[order] = v;\n                depth[order++]\
+    \ = d;\n            }\n            out[v] = order;\n        }\n};\n\n} // namespace\
+    \ snow\n#line 8 \"snow/graph/tree/euler-tour-lca.hpp\"\n\nnamespace snow {\n\n\
+    /**\n * @brief Euler Tour (Lowest Common Ancestor Query)- \u524D\u51E6\u7406$O(N\\\
+    log N)$, $O(\\log N)$\n * \n */\ntemplate < typename T = int >\nstruct EulerTourLCA\
+    \ : public EulerTour<T> {\n    public:\n        EulerTourLCA(snow::Graph<T> const&\
+    \ G, int root) : EulerTour<T>(G, root), N(G.size()), segtree(2 * N) {\n      \
+    \      for(int i = 0; i < 2 * N; ++i) segtree.set(i, {this->get_depth(i), this->get_vertex(i)});\n\
+    \        }\n\n        int lca(int u, int v) {\n            int u_ = this->get_in(u),\
+    \ v_ = this->get_in(v);\n            auto ret = segtree.prod(std::min(u_, v_),\
+    \ std::max(u_, v_) + 1);\n            return ret.second;\n        }\n\n    private:\n\
+    \        int N;\n        snow::segtree<snow::min_monoid<std::pair<int, int>>>\
+    \ segtree;\n};\n\n} // namespace snow\n#line 2 \"snow/monoids/plus.hpp\"\n\nnamespace\
+    \ snow {\n\n    template < typename T >\n    struct plus_monoid {\n        using\
+    \ value_type = T;\n        static value_type e() { return T(); };\n        static\
+    \ value_type op(value_type l, value_type r){ return l + r; };\n    };\n\n} //\
+    \ namespace snow\n#line 8 \"snow/graph/tree/euler-tour-path.hpp\"\n\nnamespace\
+    \ snow {\n\n/**\n * @brief Euler Tour (Point Set and Path Sum Query)\n * @note\
+    \ Available if inverse element exists (i.e., Abel)\n * @tparam T edge weight type\n\
+    \ */\ntemplate < typename S, typename T = int >\nstruct EulerTourPath : public\
+    \ EulerTourLCA<T> {\n    public:\n        EulerTourPath(snow::Graph<T> const &G,\
+    \ int root) : EulerTourLCA<T>(G, root), N(G.size()), _root(root), segtree(2 *\
+    \ N) {}\n\n        void set(int u, S x) {\n            segtree.set(this->get_in(u),\
+    \ x);\n            segtree.set(this->get_out(u), -x); // You need apply inverse\
+    \ value here\n        }\n\n        S get(int u) {\n            return segtree.get(this->get_in(u));\n\
+    \        }\n\n        // Path Query (from u to v, inclusive)\n        S prod(int\
+    \ u, int v) {\n            int lca = this->lca(u, v);\n            return _prod(u)\
+    \ + _prod(v) - 2 * _prod(lca) + segtree.get(this->get_in(lca));\n        }\n\n\
+    \    private:\n        int N;\n        int _root;\n        snow::segtree<snow::plus_monoid<S>>\
     \ segtree;\n\n        S _prod(int u){\n            int l = this->get_in(_root),\
     \ r = this->get_out(u);\n            return segtree.prod(l, r);\n        }\n};\n\
     \n} // namespace snow\n"
@@ -206,7 +206,7 @@ data:
   isVerificationFile: false
   path: snow/graph/tree/euler-tour-path.hpp
   requiredBy: []
-  timestamp: '2021-03-24 06:02:59+09:00'
+  timestamp: '2021-03-25 14:58:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/vertex_add_path_sum.test.cpp

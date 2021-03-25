@@ -74,8 +74,8 @@ data:
   verifiedWith:
   - test/oj/vertex_add_path_sum.test.cpp
   - test/oj/lowest_common_ancestor_1.test.cpp
-  - test/aoj/DSL_2_H.test.cpp
   - test/aoj/DSL_2_F.test.cpp
+  - test/aoj/DSL_2_H.test.cpp
 documentation_of: snow/monoids/min.hpp
 layout: document
 redirect_from:

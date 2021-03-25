@@ -27,10 +27,11 @@ data:
     \ weight(0) {}\r\n        Edge(int from, int to, T weight) : from(from), to(to),\
     \ weight(weight) {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\n\r\n\
     \    const T INF = std::numeric_limits<T>::max();\r\n    std::vector<Edges> G;\r\
-    \n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n    Edges\
-    \ operator[](int k) const{\r\n        return G[k];\r\n    }\r\n\r\n    size_t\
-    \ size() const{\r\n        return G.size();\r\n    }\r\n\r\n    void add_edge(int\
-    \ a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n        G[b].emplace_back(b,\
+    \n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n    Edges&\
+    \ operator[](int k) {\r\n        return G[k];\r\n    }\r\n    const Edges& operator[](int\
+    \ k) const {\r\n        return G[k];\r\n    }\r\n\r\n    size_t size() const{\r\
+    \n        return G.size();\r\n    }\r\n\r\n    void add_edge(int a, int b, T w\
+    \ = 1){\r\n        G[a].emplace_back(a, b, w);\r\n        G[b].emplace_back(b,\
     \ a, w);\r\n    }\r\n\r\n    void add_directed_edge(int a, int b, T w = 1){\r\n\
     \        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n    void add_arrow(int a,\
     \ int b, T w = 1){\r\n        add_directed_edge(a, b, w);\r\n    }\r\n\r\n   \
@@ -76,7 +77,7 @@ data:
   isVerificationFile: true
   path: test/aoj/GRL_1_C.test.cpp
   requiredBy: []
-  timestamp: '2021-03-24 06:02:59+09:00'
+  timestamp: '2021-03-25 14:58:28+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/GRL_1_C.test.cpp

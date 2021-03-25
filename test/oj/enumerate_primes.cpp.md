@@ -56,10 +56,10 @@ data:
     \ a){\n    (std::cin >> ... >> a);\n}\n\nvoid print() {\n    std::cout << '\\\
     n';\n}\ntemplate<class T, class... Ts>\nvoid print(const T& a, const Ts&... b){\n\
     \    std::cout << a;\n    (std::cout << ... << (std::cout << ' ', b));\n    std::cout\
-    \ << '\\n';\n}\n\nint drop() {\n    std::cout << '\\n';\n    exit(1);\n}\ntemplate<class\
+    \ << '\\n';\n}\n\nint drop() {\n    std::cout << '\\n';\n    exit(0);\n}\ntemplate<class\
     \ T, class... Ts>\nint drop(const T& a, const Ts&... b){\n    std::cout << a;\n\
     \    (std::cout << ... << (std::cout << ' ', b));\n    std::cout << '\\n';\n \
-    \   exit(1);\n}\n#line 7 \"test/oj/enumerate_primes.cpp\"\n\n/**\n * @brief Enumerate\
+    \   exit(0);\n}\n#line 7 \"test/oj/enumerate_primes.cpp\"\n\n/**\n * @brief Enumerate\
     \ Primes\n * \n */\nint main() {\n    int N, A, B;\n    std::cin >> N >> A >>\
     \ B;\n\n    snow::simple_sieve sieve(N);\n    auto ret = sieve.enumerate_primes();\n\
     \    \n    std::vector<int> ans;\n    for(int i = B; i < ret.size(); i += A){\n\
@@ -80,7 +80,7 @@ data:
   isVerificationFile: false
   path: test/oj/enumerate_primes.cpp
   requiredBy: []
-  timestamp: '2021-03-23 03:17:52+09:00'
+  timestamp: '2021-03-25 14:58:28+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/oj/enumerate_primes.cpp

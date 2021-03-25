@@ -16,7 +16,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/utils/seg-wrapper.hpp
     title: snow/utils/seg-wrapper.hpp
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/oj/vertex_set_path_composite.cpp
+    title: Vertex Add Subtree Sum (Euler Tour ver.)
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_subtree_sum.test.cpp
@@ -36,7 +39,8 @@ data:
     \ from, int to, T weight) : from(from), to(to), weight(weight) {}\r\n    };\r\n\
     \    using Edges = std::vector<Edge>;\r\n\r\n    const T INF = std::numeric_limits<T>::max();\r\
     \n    std::vector<Edges> G;\r\n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int\
-    \ n) : G(n) {}\r\n\r\n    Edges operator[](int k) const{\r\n        return G[k];\r\
+    \ n) : G(n) {}\r\n\r\n    Edges& operator[](int k) {\r\n        return G[k];\r\
+    \n    }\r\n    const Edges& operator[](int k) const {\r\n        return G[k];\r\
     \n    }\r\n\r\n    size_t size() const{\r\n        return G.size();\r\n    }\r\
     \n\r\n    void add_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(a,\
     \ b, w);\r\n        G[b].emplace_back(b, a, w);\r\n    }\r\n\r\n    void add_directed_edge(int\
@@ -58,8 +62,8 @@ data:
     \        std::vector<int> vs;    // order->vertex number\n        std::vector<int>\
     \ in;    // vertex number->order(in)\n        std::vector<int> out;   // vertex\
     \ number->order(out)\n        std::vector<int> depth; // depth\n\n        int\
-    \ order = 0;\n        void dfs(snow::Graph<T> const& G, int v, int p, int d) {\n\
-    \            vs[order] = v;\n            depth[order] = d;\n            in[v]\
+    \ order = 0;\n        void dfs(snow::Graph<int> const& G, int v, int p, int d)\
+    \ {\n            vs[order] = v;\n            depth[order] = d;\n            in[v]\
     \ = order++;\n            for(auto &e : G[v]) if(e.to != p) {\n              \
     \  dfs(G, e.to, v, d + 1);\n                vs[order] = v;\n                depth[order++]\
     \ = d;\n            }\n            out[v] = order;\n        }\n};\n\n} // namespace\
@@ -146,8 +150,9 @@ data:
   - atcoder/internal_bit.hpp
   isVerificationFile: false
   path: snow/graph/tree/euler-tour-subtree.hpp
-  requiredBy: []
-  timestamp: '2021-03-24 06:02:59+09:00'
+  requiredBy:
+  - test/oj/vertex_set_path_composite.cpp
+  timestamp: '2021-03-25 14:58:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/vertex_add_subtree_sum.test.cpp
