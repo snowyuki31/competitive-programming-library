@@ -107,6 +107,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/graph/tree/heavy-light-decomposition.hpp
       title: Heavy Light Decomposition
+    - icon: ':warning:'
+      path: snow/graph/tree/rerooting.hpp
+      title: snow/graph/tree/rerooting.hpp
   - name: snow/io
     pages:
     - icon: ':heavy_check_mark:'

@@ -30,6 +30,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/heavy-light-decomposition.hpp
     title: Heavy Light Decomposition
+  - icon: ':warning:'
+    path: snow/graph/tree/rerooting.hpp
+    title: snow/graph/tree/rerooting.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_1_A.test.cpp
@@ -73,37 +76,35 @@ data:
   bundledCode: "#line 2 \"snow/graph/template.hpp\"\n\r\n#include <vector>\r\n#include\
     \ <limits>\r\n\r\nnamespace snow {\r\n\r\n/**\r\n * @brief Graph template\r\n\
     \ */\r\ntemplate < typename T >\r\nstruct Graph {\r\n    struct Edge {\r\n   \
-    \     int from, to;\r\n        T weight;\r\n        Edge() : from(0), to(0), weight(0)\
-    \ {}\r\n        Edge(int from, int to, T weight) : from(from), to(to), weight(weight)\
-    \ {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\n\r\n    const T INF\
-    \ = std::numeric_limits<T>::max();\r\n    std::vector<Edges> G;\r\n\r\n    Graph()\
-    \ : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n    Edges& operator[](int\
-    \ k) {\r\n        return G[k];\r\n    }\r\n    const Edges& operator[](int k)\
-    \ const {\r\n        return G[k];\r\n    }\r\n\r\n    size_t size() const{\r\n\
-    \        return G.size();\r\n    }\r\n\r\n    void add_edge(int a, int b, T w\
-    \ = 1){\r\n        G[a].emplace_back(a, b, w);\r\n        G[b].emplace_back(b,\
-    \ a, w);\r\n    }\r\n\r\n    void add_directed_edge(int a, int b, T w = 1){\r\n\
-    \        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n    void add_arrow(int a,\
-    \ int b, T w = 1){\r\n        add_directed_edge(a, b, w);\r\n    }\r\n\r\n   \
-    \ //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\n\r\n    //Bellman-Ford\r\
-    \n    std::vector<T> bellman_ford(int s) const;\r\n\r\n    //Warshall-Floyd\r\n\
-    \    std::vector<std::vector<T>> warshall_floyd() const;\r\n\r\n    //Topological\
-    \ sort\r\n    std::vector<int> topological_sort() const;\r\n};\r\n\r\n} // namespace\
-    \ snow\n"
-  code: "#pragma once\r\n\r\n#include <vector>\r\n#include <limits>\r\n\r\nnamespace\
-    \ snow {\r\n\r\n/**\r\n * @brief Graph template\r\n */\r\ntemplate < typename\
-    \ T >\r\nstruct Graph {\r\n    struct Edge {\r\n        int from, to;\r\n    \
-    \    T weight;\r\n        Edge() : from(0), to(0), weight(0) {}\r\n        Edge(int\
-    \ from, int to, T weight) : from(from), to(to), weight(weight) {}\r\n    };\r\n\
-    \    using Edges = std::vector<Edge>;\r\n\r\n    const T INF = std::numeric_limits<T>::max();\r\
+    \     int to;\r\n        T weight;\r\n        Edge() : to(0), weight(0) {}\r\n\
+    \        Edge(int to, T weight) : to(to), weight(weight) {}\r\n    };\r\n    using\
+    \ Edges = std::vector<Edge>;\r\n\r\n    const T INF = std::numeric_limits<T>::max();\r\
     \n    std::vector<Edges> G;\r\n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int\
     \ n) : G(n) {}\r\n\r\n    Edges& operator[](int k) {\r\n        return G[k];\r\
     \n    }\r\n    const Edges& operator[](int k) const {\r\n        return G[k];\r\
     \n    }\r\n\r\n    size_t size() const{\r\n        return G.size();\r\n    }\r\
-    \n\r\n    void add_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(a,\
-    \ b, w);\r\n        G[b].emplace_back(b, a, w);\r\n    }\r\n\r\n    void add_directed_edge(int\
-    \ a, int b, T w = 1){\r\n        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n\
-    \    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a, b,\
+    \n\r\n    void add_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(b,\
+    \ w);\r\n        G[b].emplace_back(a, w);\r\n    }\r\n\r\n    void add_directed_edge(int\
+    \ a, int b, T w = 1){\r\n        G[a].emplace_back(b, w);\r\n    }\r\n\r\n   \
+    \ void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(b, w);\r\
+    \n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\n\
+    \r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\n\
+    \    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
+    \n\r\n    //Topological sort\r\n    std::vector<int> topological_sort() const;\r\
+    \n};\r\n\r\n} // namespace snow\n"
+  code: "#pragma once\r\n\r\n#include <vector>\r\n#include <limits>\r\n\r\nnamespace\
+    \ snow {\r\n\r\n/**\r\n * @brief Graph template\r\n */\r\ntemplate < typename\
+    \ T >\r\nstruct Graph {\r\n    struct Edge {\r\n        int to;\r\n        T weight;\r\
+    \n        Edge() : to(0), weight(0) {}\r\n        Edge(int to, T weight) : to(to),\
+    \ weight(weight) {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\n\r\n\
+    \    const T INF = std::numeric_limits<T>::max();\r\n    std::vector<Edges> G;\r\
+    \n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n    Edges&\
+    \ operator[](int k) {\r\n        return G[k];\r\n    }\r\n    const Edges& operator[](int\
+    \ k) const {\r\n        return G[k];\r\n    }\r\n\r\n    size_t size() const{\r\
+    \n        return G.size();\r\n    }\r\n\r\n    void add_edge(int a, int b, T w\
+    \ = 1){\r\n        G[a].emplace_back(b, w);\r\n        G[b].emplace_back(a, w);\r\
+    \n    }\r\n\r\n    void add_directed_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(b,\
+    \ w);\r\n    }\r\n\r\n    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(b,\
     \ w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\
     \n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\
     \n    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
@@ -114,6 +115,7 @@ data:
   path: snow/graph/template.hpp
   requiredBy:
   - snow/graph/topological-sort.hpp
+  - snow/graph/tree/rerooting.hpp
   - snow/graph/tree/euler-tour-subtree.hpp
   - snow/graph/tree/heavy-light-decomposition.hpp
   - snow/graph/tree/euler-tour.hpp
@@ -122,7 +124,7 @@ data:
   - snow/graph/shortest-path/warshall-floyd.hpp
   - snow/graph/shortest-path/dijkstra.hpp
   - snow/graph/shortest-path/bellman-ford.hpp
-  timestamp: '2021-03-25 14:58:28+09:00'
+  timestamp: '2021-03-25 17:02:06+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/vertex_add_subtree_sum_2.test.cpp

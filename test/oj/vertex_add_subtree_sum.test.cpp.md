@@ -65,32 +65,30 @@ data:
     \   exit(0);\n}\n#line 2 \"snow/graph/template.hpp\"\n\r\n#line 4 \"snow/graph/template.hpp\"\
     \n#include <limits>\r\n\r\nnamespace snow {\r\n\r\n/**\r\n * @brief Graph template\r\
     \n */\r\ntemplate < typename T >\r\nstruct Graph {\r\n    struct Edge {\r\n  \
-    \      int from, to;\r\n        T weight;\r\n        Edge() : from(0), to(0),\
-    \ weight(0) {}\r\n        Edge(int from, int to, T weight) : from(from), to(to),\
-    \ weight(weight) {}\r\n    };\r\n    using Edges = std::vector<Edge>;\r\n\r\n\
-    \    const T INF = std::numeric_limits<T>::max();\r\n    std::vector<Edges> G;\r\
-    \n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int n) : G(n) {}\r\n\r\n    Edges&\
-    \ operator[](int k) {\r\n        return G[k];\r\n    }\r\n    const Edges& operator[](int\
-    \ k) const {\r\n        return G[k];\r\n    }\r\n\r\n    size_t size() const{\r\
-    \n        return G.size();\r\n    }\r\n\r\n    void add_edge(int a, int b, T w\
-    \ = 1){\r\n        G[a].emplace_back(a, b, w);\r\n        G[b].emplace_back(b,\
-    \ a, w);\r\n    }\r\n\r\n    void add_directed_edge(int a, int b, T w = 1){\r\n\
-    \        G[a].emplace_back(a, b, w);\r\n    }\r\n\r\n    void add_arrow(int a,\
-    \ int b, T w = 1){\r\n        add_directed_edge(a, b, w);\r\n    }\r\n\r\n   \
-    \ //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\n\r\n    //Bellman-Ford\r\
-    \n    std::vector<T> bellman_ford(int s) const;\r\n\r\n    //Warshall-Floyd\r\n\
-    \    std::vector<std::vector<T>> warshall_floyd() const;\r\n\r\n    //Topological\
-    \ sort\r\n    std::vector<int> topological_sort() const;\r\n};\r\n\r\n} // namespace\
-    \ snow\n#line 2 \"snow/monoids/plus.hpp\"\n\nnamespace snow {\n\n    template\
-    \ < typename T >\n    struct plus_monoid {\n        using value_type = T;\n  \
-    \      static value_type e() { return T(); };\n        static value_type op(value_type\
-    \ l, value_type r){ return l + r; };\n    };\n\n} // namespace snow\n#line 2 \"\
-    snow/graph/tree/euler-tour-subtree.hpp\"\n\n#line 2 \"snow/graph/tree/euler-tour.hpp\"\
-    \n\n#line 5 \"snow/graph/tree/euler-tour.hpp\"\n\nnamespace snow {\n\n/**\n *\
-    \ @brief Euler Tour\n * @tparam T edge weight type\n */\ntemplate < typename T\
-    \ = int >\nstruct EulerTour {\n    public:\n        EulerTour(snow::Graph<T> const&\
-    \ G, int root) : N(G.size()), vs(2 * N, 0), in(N, 0), out(N, 0), depth(2 * N,\
-    \ 0) {\n            dfs(G, root, -1, 0);\n        }\n\n        int get_in(int\
+    \      int to;\r\n        T weight;\r\n        Edge() : to(0), weight(0) {}\r\n\
+    \        Edge(int to, T weight) : to(to), weight(weight) {}\r\n    };\r\n    using\
+    \ Edges = std::vector<Edge>;\r\n\r\n    const T INF = std::numeric_limits<T>::max();\r\
+    \n    std::vector<Edges> G;\r\n\r\n    Graph() : G() {}\r\n    \r\n    Graph(int\
+    \ n) : G(n) {}\r\n\r\n    Edges& operator[](int k) {\r\n        return G[k];\r\
+    \n    }\r\n    const Edges& operator[](int k) const {\r\n        return G[k];\r\
+    \n    }\r\n\r\n    size_t size() const{\r\n        return G.size();\r\n    }\r\
+    \n\r\n    void add_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(b,\
+    \ w);\r\n        G[b].emplace_back(a, w);\r\n    }\r\n\r\n    void add_directed_edge(int\
+    \ a, int b, T w = 1){\r\n        G[a].emplace_back(b, w);\r\n    }\r\n\r\n   \
+    \ void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(b, w);\r\
+    \n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\n\
+    \r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\n\
+    \    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
+    \n\r\n    //Topological sort\r\n    std::vector<int> topological_sort() const;\r\
+    \n};\r\n\r\n} // namespace snow\n#line 2 \"snow/monoids/plus.hpp\"\n\nnamespace\
+    \ snow {\n\n    template < typename T >\n    struct plus_monoid {\n        using\
+    \ value_type = T;\n        static value_type e() { return T(); };\n        static\
+    \ value_type op(value_type l, value_type r){ return l + r; };\n    };\n\n} //\
+    \ namespace snow\n#line 4 \"snow/graph/tree/euler-tour.hpp\"\n\nnamespace snow\
+    \ {\n\n/**\n * @brief Euler Tour\n * @tparam T edge weight type\n */\ntemplate\
+    \ < typename T = int >\nstruct EulerTour {\n    public:\n        EulerTour(snow::Graph<T>\
+    \ const& G, int root) : N(G.size()), vs(2 * N, 0), in(N, 0), out(N, 0), depth(2\
+    \ * N, 0) {\n            dfs(G, root, -1, 0);\n        }\n\n        int get_in(int\
     \ x){\n            return in[x];\n        }\n\n        int get_out(int x){\n \
     \           return out[x];\n        }\n\n        int get_vertex(int x){\n    \
     \        return vs[x];\n        }\n\n        int get_depth(int x){\n         \
@@ -152,7 +150,7 @@ data:
     \ update(int k) { d[k] = op(d[2 * k], d[2 * k + 1]); }\n};\n\n}  // namespace\
     \ atcoder\n\n\n#line 3 \"snow/utils/seg-wrapper.hpp\"\n\nnamespace snow {\n\n\
     \    template < class Monoid >\n    using segtree = atcoder::segtree<typename\
-    \ Monoid::value_type, Monoid::op, Monoid::e>;\n\n} // namespace snow\n#line 7\
+    \ Monoid::value_type, Monoid::op, Monoid::e>;\n\n} // namespace snow\n#line 6\
     \ \"snow/graph/tree/euler-tour-subtree.hpp\"\n\nnamespace snow {\n\n/**\n * @brief\
     \ Euler Tour (Point Set and Subtree Query)\n * @tparam Monoid Vertex value\n *\
     \ @tparam T edge weight type\n */\ntemplate < class Monoid, typename T = int >\n\
@@ -199,7 +197,7 @@ data:
   isVerificationFile: true
   path: test/oj/vertex_add_subtree_sum.test.cpp
   requiredBy: []
-  timestamp: '2021-03-25 14:58:28+09:00'
+  timestamp: '2021-03-25 17:02:06+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/oj/vertex_add_subtree_sum.test.cpp
