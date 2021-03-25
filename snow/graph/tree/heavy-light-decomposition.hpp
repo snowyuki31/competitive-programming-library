@@ -55,15 +55,38 @@ struct HeavyLightDecomposition {
          * @brief Get segments of id corresponding to the path from u to v inclusive
          * @param u
          * @param v
+         * @return vector<pair<int, int>> : set of segments [l_i, r_i)
          */
         std::vector<std::pair<int, int>> get_path(int u, int v) {
             std::vector<std::pair<int, int>> path;
             while (true){
                 if(in[u] > in[v]) std::swap(u, v);
-                path.emplace_back(std::max(in[next[v]], in[u]), in[v]);
+                path.emplace_back(std::max(in[next[v]], in[u]), in[v] + 1);
 
                 if(next[u] != next[v]) v = par[next[v]];
                 else break;
+            }
+            return path;
+        }
+
+        /**
+         * @brief Get segments of id corresponding to the edge-wise path from u to v inclusive
+         * @param u
+         * @param v
+         * @return vector<pair<int, int>> : set of segments [l_i, r_i)
+         */
+        std::vector<std::pair<int, int>> get_edge_path(int u, int v){
+            std::vector<std::pair<int, int>> path;
+            while (true){
+                if(in[u] > in[v]) std::swap(u, v);
+                if(next[u] != next[v]) {
+                    path.emplace_back(in[next[v]], in[v] + 1);
+                    v = par[next[v]];
+                }
+                else{
+                    if(u != v) path.emplace_back(in[u] + 1, in[v] + 1);
+                    break;
+                }
             }
             return path;
         }
