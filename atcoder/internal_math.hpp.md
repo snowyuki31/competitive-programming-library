@@ -13,6 +13,9 @@ data:
     title: atcoder/modint.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj/1327.test.cpp
+    title: Matrix
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_E.test.cpp
     title: Twelvefold way V
   - icon: ':heavy_check_mark:'
@@ -193,6 +196,7 @@ data:
   - test/oj/range_affine_range_sum.test.cpp
   - test/yukicoder/1396.test.cpp
   - test/yukicoder/1035.test.cpp
+  - test/aoj/1327.test.cpp
   - test/aoj/DPL_5_E.test.cpp
 documentation_of: atcoder/internal_math.hpp
 layout: document

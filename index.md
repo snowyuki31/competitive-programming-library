@@ -132,7 +132,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/math/factorize.hpp
       title: Prime Factorization - $O(\sqrt{n})$
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: snow/math/matrix.hpp
       title: snow/math/matrix.hpp
     - icon: ':heavy_check_mark:'
@@ -190,6 +190,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/0560.test.cpp
       title: Cumurative Sum (2D)
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/1327.test.cpp
+      title: Matrix
     - icon: ':heavy_check_mark:'
       path: test/aoj/2932.test.cpp
       title: Divisor / Factorize
@@ -263,9 +266,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/0517.test.cpp
       title: Topological Sort
-    - icon: ':x:'
-      path: test/yukicoder/0840.test.cpp
-      title: test/yukicoder/0840.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1013.test.cpp
       title: Rolling Hash
