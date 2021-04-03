@@ -5,6 +5,11 @@
 
 namespace snow {
 
+/**
+ * @brief Matrix template
+ * 
+ * @tparam T 
+ */
 template< typename T >
 struct Matrix{
     std::vector<std::vector<T>> mat;
