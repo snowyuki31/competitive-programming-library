@@ -5,6 +5,7 @@
 #include <bits/stdc++.h>
 
 constexpr long long INF = 1LL << 60;
+constexpr long double PI = 3.141592653589;
 
 #define rep(i, n) for (ll i = 0; i < (n); ++i)
 #define rep1(i, n) for (ll i = 1; i <= (n); ++i)

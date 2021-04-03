@@ -1,5 +1,4 @@
 #define PROBLEM "https://yukicoder.me/problems/no/517"
-
 #include <iostream>
 #include <vector>
 #include <string>

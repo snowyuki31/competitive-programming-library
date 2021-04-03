@@ -46,7 +46,7 @@ struct Graph {
     }
 
     void add_arrow(int a, int b, T w = 1){
-        add_directed_edge(b, w);
+        add_directed_edge(a, b, w);
     }
 
     //Dijkstra
