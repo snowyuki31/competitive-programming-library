@@ -42,10 +42,10 @@ data:
   timestamp: '2021-03-21 08:45:05+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/oj/vertex_add_path_sum_2.test.cpp
+  - test/oj/vertex_add_path_sum.test.cpp
   - test/oj/vertex_add_subtree_sum_2.test.cpp
   - test/oj/vertex_add_subtree_sum.test.cpp
-  - test/oj/vertex_add_path_sum.test.cpp
-  - test/oj/vertex_add_path_sum_2.test.cpp
   - test/aoj/DSL_2_B.test.cpp
 documentation_of: snow/monoids/plus.hpp
 layout: document

@@ -132,6 +132,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/math/factorize.hpp
       title: Prime Factorization - $O(\sqrt{n})$
+    - icon: ':warning:'
+      path: snow/math/matrix.hpp
+      title: snow/math/matrix.hpp
     - icon: ':heavy_check_mark:'
       path: snow/math/sieve.hpp
       title: Sieve of Eratosthenes (for faster factorization)
@@ -260,6 +263,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/0517.test.cpp
       title: Topological Sort
+    - icon: ':x:'
+      path: test/yukicoder/0840.test.cpp
+      title: test/yukicoder/0840.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1013.test.cpp
       title: Rolling Hash

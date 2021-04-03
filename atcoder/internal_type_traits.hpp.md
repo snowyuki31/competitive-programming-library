@@ -128,8 +128,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/range_affine_range_sum.test.cpp
-  - test/yukicoder/1035.test.cpp
   - test/yukicoder/1396.test.cpp
+  - test/yukicoder/1035.test.cpp
   - test/aoj/DPL_5_E.test.cpp
 documentation_of: atcoder/internal_type_traits.hpp
 layout: document

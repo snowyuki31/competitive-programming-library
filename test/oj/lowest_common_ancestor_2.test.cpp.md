@@ -32,12 +32,12 @@ data:
     \        return G.size();\r\n    }\r\n\r\n    void add_edge(int a, int b, T w\
     \ = 1){\r\n        G[a].emplace_back(b, w);\r\n        G[b].emplace_back(a, w);\r\
     \n    }\r\n\r\n    void add_directed_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(b,\
-    \ w);\r\n    }\r\n\r\n    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(b,\
-    \ w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\
-    \n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\
-    \n    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
-    \n\r\n    //Topological sort\r\n    std::vector<int> topological_sort() const;\r\
-    \n};\r\n\r\n} // namespace snow\n#line 2 \"snow/graph/tree/heavy-light-decomposition.hpp\"\
+    \ w);\r\n    }\r\n\r\n    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a,\
+    \ b, w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s)\
+    \ const;\r\n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\
+    \n\r\n    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd()\
+    \ const;\r\n\r\n    //Topological sort\r\n    std::vector<int> topological_sort()\
+    \ const;\r\n};\r\n\r\n} // namespace snow\n#line 2 \"snow/graph/tree/heavy-light-decomposition.hpp\"\
     \n#include <utility>\n#line 5 \"snow/graph/tree/heavy-light-decomposition.hpp\"\
     \n\nnamespace snow {\n\n/**\n * @brief Heavy Light Decomposition\n * \n * @tparam\
     \ T \n * @ref https://codeforces.com/blog/entry/53170\n */\ntemplate < typename\
@@ -103,7 +103,7 @@ data:
   isVerificationFile: true
   path: test/oj/lowest_common_ancestor_2.test.cpp
   requiredBy: []
-  timestamp: '2021-03-25 17:02:06+09:00'
+  timestamp: '2021-04-04 03:29:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/oj/lowest_common_ancestor_2.test.cpp

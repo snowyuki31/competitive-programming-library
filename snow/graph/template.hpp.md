@@ -86,7 +86,7 @@ data:
     \n\r\n    void add_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(b,\
     \ w);\r\n        G[b].emplace_back(a, w);\r\n    }\r\n\r\n    void add_directed_edge(int\
     \ a, int b, T w = 1){\r\n        G[a].emplace_back(b, w);\r\n    }\r\n\r\n   \
-    \ void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(b, w);\r\
+    \ void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a, b, w);\r\
     \n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\n\
     \r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\n\
     \    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
@@ -104,40 +104,40 @@ data:
     \n        return G.size();\r\n    }\r\n\r\n    void add_edge(int a, int b, T w\
     \ = 1){\r\n        G[a].emplace_back(b, w);\r\n        G[b].emplace_back(a, w);\r\
     \n    }\r\n\r\n    void add_directed_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(b,\
-    \ w);\r\n    }\r\n\r\n    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(b,\
-    \ w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\
-    \n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\
-    \n    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
-    \n\r\n    //Topological sort\r\n    std::vector<int> topological_sort() const;\r\
-    \n};\r\n\r\n} // namespace snow"
+    \ w);\r\n    }\r\n\r\n    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a,\
+    \ b, w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s)\
+    \ const;\r\n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\
+    \n\r\n    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd()\
+    \ const;\r\n\r\n    //Topological sort\r\n    std::vector<int> topological_sort()\
+    \ const;\r\n};\r\n\r\n} // namespace snow"
   dependsOn: []
   isVerificationFile: false
   path: snow/graph/template.hpp
   requiredBy:
-  - snow/graph/topological-sort.hpp
-  - snow/graph/tree/rerooting.hpp
   - snow/graph/tree/euler-tour-subtree.hpp
+  - snow/graph/tree/rerooting.hpp
+  - snow/graph/tree/euler-tour-lca.hpp
   - snow/graph/tree/heavy-light-decomposition.hpp
   - snow/graph/tree/euler-tour.hpp
   - snow/graph/tree/euler-tour-path.hpp
-  - snow/graph/tree/euler-tour-lca.hpp
-  - snow/graph/shortest-path/warshall-floyd.hpp
   - snow/graph/shortest-path/dijkstra.hpp
+  - snow/graph/shortest-path/warshall-floyd.hpp
   - snow/graph/shortest-path/bellman-ford.hpp
-  timestamp: '2021-03-25 17:02:06+09:00'
+  - snow/graph/topological-sort.hpp
+  timestamp: '2021-04-04 03:29:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/oj/vertex_add_subtree_sum_2.test.cpp
-  - test/oj/vertex_add_subtree_sum.test.cpp
-  - test/oj/vertex_add_path_sum.test.cpp
   - test/oj/lowest_common_ancestor_1.test.cpp
   - test/oj/vertex_add_path_sum_2.test.cpp
+  - test/oj/vertex_add_path_sum.test.cpp
+  - test/oj/vertex_add_subtree_sum_2.test.cpp
   - test/oj/lowest_common_ancestor_2.test.cpp
+  - test/oj/vertex_add_subtree_sum.test.cpp
   - test/yukicoder/1065.test.cpp
   - test/yukicoder/0517.test.cpp
-  - test/aoj/GRL_1_B.test.cpp
   - test/aoj/GRL_1_A.test.cpp
   - test/aoj/GRL_1_C.test.cpp
+  - test/aoj/GRL_1_B.test.cpp
 documentation_of: snow/graph/template.hpp
 layout: document
 redirect_from:

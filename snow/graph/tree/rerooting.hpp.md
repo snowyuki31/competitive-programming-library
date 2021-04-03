@@ -24,7 +24,7 @@ data:
     \n\r\n    void add_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(b,\
     \ w);\r\n        G[b].emplace_back(a, w);\r\n    }\r\n\r\n    void add_directed_edge(int\
     \ a, int b, T w = 1){\r\n        G[a].emplace_back(b, w);\r\n    }\r\n\r\n   \
-    \ void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(b, w);\r\
+    \ void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a, b, w);\r\
     \n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\n\
     \r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\n\
     \    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
@@ -39,7 +39,7 @@ data:
   isVerificationFile: false
   path: snow/graph/tree/rerooting.hpp
   requiredBy: []
-  timestamp: '2021-03-25 17:02:06+09:00'
+  timestamp: '2021-04-04 03:29:57+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: snow/graph/tree/rerooting.hpp

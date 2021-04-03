@@ -63,8 +63,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/range_affine_range_sum.test.cpp
-  - test/aoj/DSL_2_I.test.cpp
   - test/aoj/DSL_2_G.test.cpp
+  - test/aoj/DSL_2_I.test.cpp
 documentation_of: snow/monoids/plus-size.hpp
 layout: document
 redirect_from:

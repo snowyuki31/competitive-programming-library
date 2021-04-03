@@ -51,19 +51,19 @@ data:
     \        return G.size();\r\n    }\r\n\r\n    void add_edge(int a, int b, T w\
     \ = 1){\r\n        G[a].emplace_back(b, w);\r\n        G[b].emplace_back(a, w);\r\
     \n    }\r\n\r\n    void add_directed_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(b,\
-    \ w);\r\n    }\r\n\r\n    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(b,\
-    \ w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\
-    \n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\
-    \n    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
-    \n\r\n    //Topological sort\r\n    std::vector<int> topological_sort() const;\r\
-    \n};\r\n\r\n} // namespace snow\n#line 1 \"atcoder/segtree.hpp\"\n\n\n\n#include\
-    \ <algorithm>\n#include <cassert>\n#line 7 \"atcoder/segtree.hpp\"\n\n#line 1\
-    \ \"atcoder/internal_bit.hpp\"\n\n\n\n#ifdef _MSC_VER\n#include <intrin.h>\n#endif\n\
-    \nnamespace atcoder {\n\nnamespace internal {\n\n// @param n `0 <= n`\n// @return\
-    \ minimum non-negative `x` s.t. `n <= 2**x`\nint ceil_pow2(int n) {\n    int x\
-    \ = 0;\n    while ((1U << x) < (unsigned int)(n)) x++;\n    return x;\n}\n\n//\
-    \ @param n `1 <= n`\n// @return minimum non-negative `x` s.t. `(n & (1 << x))\
-    \ != 0`\nint bsf(unsigned int n) {\n#ifdef _MSC_VER\n    unsigned long index;\n\
+    \ w);\r\n    }\r\n\r\n    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a,\
+    \ b, w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s)\
+    \ const;\r\n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\
+    \n\r\n    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd()\
+    \ const;\r\n\r\n    //Topological sort\r\n    std::vector<int> topological_sort()\
+    \ const;\r\n};\r\n\r\n} // namespace snow\n#line 1 \"atcoder/segtree.hpp\"\n\n\
+    \n\n#include <algorithm>\n#include <cassert>\n#line 7 \"atcoder/segtree.hpp\"\n\
+    \n#line 1 \"atcoder/internal_bit.hpp\"\n\n\n\n#ifdef _MSC_VER\n#include <intrin.h>\n\
+    #endif\n\nnamespace atcoder {\n\nnamespace internal {\n\n// @param n `0 <= n`\n\
+    // @return minimum non-negative `x` s.t. `n <= 2**x`\nint ceil_pow2(int n) {\n\
+    \    int x = 0;\n    while ((1U << x) < (unsigned int)(n)) x++;\n    return x;\n\
+    }\n\n// @param n `1 <= n`\n// @return minimum non-negative `x` s.t. `(n & (1 <<\
+    \ x)) != 0`\nint bsf(unsigned int n) {\n#ifdef _MSC_VER\n    unsigned long index;\n\
     \    _BitScanForward(&index, n);\n    return index;\n#else\n    return __builtin_ctz(n);\n\
     #endif\n}\n\n}  // namespace internal\n\n}  // namespace atcoder\n\n\n#line 9\
     \ \"atcoder/segtree.hpp\"\n\nnamespace atcoder {\n\ntemplate <class S, S (*op)(S,\
@@ -179,7 +179,7 @@ data:
   isVerificationFile: true
   path: test/oj/lowest_common_ancestor_1.test.cpp
   requiredBy: []
-  timestamp: '2021-03-25 17:02:06+09:00'
+  timestamp: '2021-04-04 03:29:57+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/oj/lowest_common_ancestor_1.test.cpp

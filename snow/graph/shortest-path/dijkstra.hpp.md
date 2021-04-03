@@ -32,12 +32,12 @@ data:
     \        return G.size();\r\n    }\r\n\r\n    void add_edge(int a, int b, T w\
     \ = 1){\r\n        G[a].emplace_back(b, w);\r\n        G[b].emplace_back(a, w);\r\
     \n    }\r\n\r\n    void add_directed_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(b,\
-    \ w);\r\n    }\r\n\r\n    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(b,\
-    \ w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\
-    \n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\
-    \n    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
-    \n\r\n    //Topological sort\r\n    std::vector<int> topological_sort() const;\r\
-    \n};\r\n\r\n} // namespace snow\n#line 7 \"snow/graph/shortest-path/dijkstra.hpp\"\
+    \ w);\r\n    }\r\n\r\n    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a,\
+    \ b, w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s)\
+    \ const;\r\n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\
+    \n\r\n    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd()\
+    \ const;\r\n\r\n    //Topological sort\r\n    std::vector<int> topological_sort()\
+    \ const;\r\n};\r\n\r\n} // namespace snow\n#line 7 \"snow/graph/shortest-path/dijkstra.hpp\"\
     \n\r\nnamespace snow{\r\n\r\n/**\r\n * @brief Dijkstra\r\n * \r\n * @param s \r\
     \n */\r\ntemplate < typename T >\r\nstd::vector<T> Graph<T>::dijkstra(int s) const{\r\
     \n    std::priority_queue<std::pair<T, int>, std::vector<std::pair<T, int>>, std::greater<>>\
@@ -64,7 +64,7 @@ data:
   isVerificationFile: false
   path: snow/graph/shortest-path/dijkstra.hpp
   requiredBy: []
-  timestamp: '2021-03-25 17:02:06+09:00'
+  timestamp: '2021-04-04 03:29:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1065.test.cpp

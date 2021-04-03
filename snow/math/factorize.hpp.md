@@ -34,8 +34,8 @@ data:
   timestamp: '2021-03-23 06:07:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/NTL_1_A.test.cpp
   - test/aoj/2932.test.cpp
+  - test/aoj/NTL_1_A.test.cpp
 documentation_of: snow/math/factorize.hpp
 layout: document
 redirect_from:

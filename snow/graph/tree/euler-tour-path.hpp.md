@@ -121,13 +121,13 @@ data:
     \        return G.size();\r\n    }\r\n\r\n    void add_edge(int a, int b, T w\
     \ = 1){\r\n        G[a].emplace_back(b, w);\r\n        G[b].emplace_back(a, w);\r\
     \n    }\r\n\r\n    void add_directed_edge(int a, int b, T w = 1){\r\n        G[a].emplace_back(b,\
-    \ w);\r\n    }\r\n\r\n    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(b,\
-    \ w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s) const;\r\
-    \n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\n\r\
-    \n    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd() const;\r\
-    \n\r\n    //Topological sort\r\n    std::vector<int> topological_sort() const;\r\
-    \n};\r\n\r\n} // namespace snow\n#line 4 \"snow/graph/tree/euler-tour.hpp\"\n\n\
-    namespace snow {\n\n/**\n * @brief Euler Tour\n * @tparam T edge weight type\n\
+    \ w);\r\n    }\r\n\r\n    void add_arrow(int a, int b, T w = 1){\r\n        add_directed_edge(a,\
+    \ b, w);\r\n    }\r\n\r\n    //Dijkstra\r\n    std::vector<T> dijkstra(int s)\
+    \ const;\r\n\r\n    //Bellman-Ford\r\n    std::vector<T> bellman_ford(int s) const;\r\
+    \n\r\n    //Warshall-Floyd\r\n    std::vector<std::vector<T>> warshall_floyd()\
+    \ const;\r\n\r\n    //Topological sort\r\n    std::vector<int> topological_sort()\
+    \ const;\r\n};\r\n\r\n} // namespace snow\n#line 4 \"snow/graph/tree/euler-tour.hpp\"\
+    \n\nnamespace snow {\n\n/**\n * @brief Euler Tour\n * @tparam T edge weight type\n\
     \ */\ntemplate < typename T = int >\nstruct EulerTour {\n    public:\n       \
     \ EulerTour(snow::Graph<T> const& G, int root) : N(G.size()), vs(2 * N, 0), in(N,\
     \ 0), out(N, 0), depth(2 * N, 0) {\n            dfs(G, root, -1, 0);\n       \
@@ -204,7 +204,7 @@ data:
   isVerificationFile: false
   path: snow/graph/tree/euler-tour-path.hpp
   requiredBy: []
-  timestamp: '2021-03-25 17:02:06+09:00'
+  timestamp: '2021-04-04 03:29:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/vertex_add_path_sum.test.cpp
