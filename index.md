@@ -134,7 +134,7 @@ data:
       title: Prime Factorization - $O(\sqrt{n})$
     - icon: ':heavy_check_mark:'
       path: snow/math/matrix.hpp
-      title: snow/math/matrix.hpp
+      title: Matrix template
     - icon: ':heavy_check_mark:'
       path: snow/math/sieve.hpp
       title: Sieve of Eratosthenes (for faster factorization)
