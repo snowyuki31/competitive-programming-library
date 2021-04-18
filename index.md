@@ -124,6 +124,9 @@ data:
       path: snow/math/binomial.hpp
       title: "Binomial Coefficient - $\\binom{n}{k}$ \u524D\u51E6\u7406$O(n)$, $O(1)$"
     - icon: ':heavy_check_mark:'
+      path: snow/math/convert-base.hpp
+      title: Base Conversion
+    - icon: ':heavy_check_mark:'
       path: snow/math/divisor.hpp
       title: Divisor - $O(\sqrt{n})$
     - icon: ':heavy_check_mark:'
@@ -264,8 +267,14 @@ data:
   - name: test/yukicoder
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/yukicoder/0499.test.cpp
+      title: Conversion Base (base 7)
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/0517.test.cpp
       title: Topological Sort
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/0782.test.cpp
+      title: Conversion Base (negative base)
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1013.test.cpp
       title: Rolling Hash
