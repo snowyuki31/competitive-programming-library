@@ -18,7 +18,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_csr.hpp
       title: atcoder/internal_csr.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/internal_math.hpp
       title: atcoder/internal_math.hpp
     - icon: ':warning:'
@@ -27,7 +27,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_scc.hpp
       title: atcoder/internal_scc.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/internal_type_traits.hpp
       title: atcoder/internal_type_traits.hpp
     - icon: ':heavy_check_mark:'
@@ -42,7 +42,7 @@ data:
     - icon: ':warning:'
       path: atcoder/mincostflow.hpp
       title: atcoder/mincostflow.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/modint.hpp
       title: atcoder/modint.hpp
     - icon: ':warning:'
@@ -120,9 +120,10 @@ data:
       title: snow/io/setup.hpp
   - name: snow/math
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: snow/math/binomial.hpp
-      title: "Binomial Coefficient - $\\binom{n}{k}$ \u524D\u51E6\u7406$O(n)$, $O(1)$"
+      title: "Binomial Coefficient - $\\binom{n}{k} \\bmod{p}$ \u524D\u51E6\u7406\
+        $O(n)$, $O(1)$"
     - icon: ':x:'
       path: snow/math/convert-base.hpp
       title: Base Conversion
@@ -135,9 +136,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/math/factorize.hpp
       title: Prime Factorization - $O(\sqrt{n})$
-    - icon: ':warning:'
-      path: snow/math/lucas.hpp
-      title: Lucas's theorem (Binomial Coefficient mod p)
     - icon: ':heavy_check_mark:'
       path: snow/math/matrix.hpp
       title: Matrix template
@@ -208,7 +206,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/ALDS1_4_B.test.cpp
       title: Binary Search
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/DPL_5_E.test.cpp
       title: Twelvefold way V
     - icon: ':heavy_check_mark:'
@@ -281,7 +279,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1013.test.cpp
       title: Rolling Hash
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/1035.test.cpp
       title: Twelvefold way III
     - icon: ':heavy_check_mark:'

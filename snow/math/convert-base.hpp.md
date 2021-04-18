@@ -1,10 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: snow/math/lucas.hpp
-    title: Lucas's theorem (Binomial Coefficient mod p)
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':x:'
     path: test/yukicoder/0499.test.cpp
@@ -41,8 +38,7 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: snow/math/convert-base.hpp
-  requiredBy:
-  - snow/math/lucas.hpp
+  requiredBy: []
   timestamp: '2021-04-19 02:46:08+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
