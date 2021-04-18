@@ -123,7 +123,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/math/binomial.hpp
       title: "Binomial Coefficient - $\\binom{n}{k}$ \u524D\u51E6\u7406$O(n)$, $O(1)$"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: snow/math/convert-base.hpp
       title: Base Conversion
     - icon: ':heavy_check_mark:'
@@ -135,6 +135,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/math/factorize.hpp
       title: Prime Factorization - $O(\sqrt{n})$
+    - icon: ':warning:'
+      path: snow/math/lucas.hpp
+      title: Lucas's theorem (Binomial Coefficient mod p)
     - icon: ':heavy_check_mark:'
       path: snow/math/matrix.hpp
       title: Matrix template
@@ -266,13 +269,13 @@ data:
       title: Vertex Add Subtree Sum (Heavy Light Decomposition ver.)
   - name: test/yukicoder
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/0499.test.cpp
       title: Conversion Base (base 7)
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/0517.test.cpp
       title: Topological Sort
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yukicoder/0782.test.cpp
       title: Conversion Base (negative base)
     - icon: ':heavy_check_mark:'
