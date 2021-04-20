@@ -18,7 +18,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_csr.hpp
       title: atcoder/internal_csr.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/internal_math.hpp
       title: atcoder/internal_math.hpp
     - icon: ':warning:'
@@ -27,7 +27,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_scc.hpp
       title: atcoder/internal_scc.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/internal_type_traits.hpp
       title: atcoder/internal_type_traits.hpp
     - icon: ':heavy_check_mark:'
@@ -42,7 +42,7 @@ data:
     - icon: ':warning:'
       path: atcoder/mincostflow.hpp
       title: atcoder/mincostflow.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: atcoder/modint.hpp
       title: atcoder/modint.hpp
     - icon: ':warning:'
@@ -120,11 +120,11 @@ data:
       title: snow/io/setup.hpp
   - name: snow/math
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: snow/math/binomial.hpp
       title: "Binomial Coefficient - $\\binom{n}{k} \\bmod{p}$ \u524D\u51E6\u7406\
         $O(n)$, $O(1)$"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: snow/math/convert-base.hpp
       title: Base Conversion
     - icon: ':heavy_check_mark:'
@@ -206,7 +206,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/ALDS1_4_B.test.cpp
       title: Binary Search
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_5_E.test.cpp
       title: Twelvefold way V
     - icon: ':heavy_check_mark:'
@@ -267,19 +267,19 @@ data:
       title: Vertex Add Subtree Sum (Heavy Light Decomposition ver.)
   - name: test/yukicoder
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/0499.test.cpp
       title: Conversion Base (base 7)
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/0517.test.cpp
       title: Topological Sort
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/0782.test.cpp
       title: Conversion Base (negative base)
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1013.test.cpp
       title: Rolling Hash
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/1035.test.cpp
       title: Twelvefold way III
     - icon: ':heavy_check_mark:'

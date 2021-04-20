@@ -8,28 +8,28 @@ data:
   - icon: ':warning:'
     path: atcoder/math.hpp
     title: atcoder/math.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/modint.hpp
     title: atcoder/modint.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/1327.test.cpp
     title: Matrix
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj/DPL_5_E.test.cpp
     title: Twelvefold way V
   - icon: ':heavy_check_mark:'
     path: test/oj/range_affine_range_sum.test.cpp
     title: Segment Tree (Range Affine and Range Sum with Modint)
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yukicoder/1035.test.cpp
     title: Twelvefold way III
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1396.test.cpp
     title: Sieve of Eratosthenes for faster factorization
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links:
     - https://en.wikipedia.org/wiki/Barrett_reduction
@@ -191,7 +191,7 @@ data:
   - atcoder/math.hpp
   - atcoder/modint.hpp
   timestamp: '2021-03-21 08:31:02+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/range_affine_range_sum.test.cpp
   - test/yukicoder/1396.test.cpp
