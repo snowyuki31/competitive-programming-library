@@ -12,4 +12,4 @@ struct IoSetup {
     }
 } iosetup;
 
-}
+} // namespace snow

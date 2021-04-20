@@ -46,7 +46,7 @@ std::istream &operator >>  (std::istream &is, std::vector< T > &v){
 template< typename T >
 std::ostream &operator << (std::ostream &os, const std::set< T > &st){
     int ct = 0;
-    for(auto& s : st) os << s << (++ct != st.size() ? " " : "");
+    for(auto& s : st) os << s << (++ct != (int)st.size() ? " " : "");
     return os;
 }
 

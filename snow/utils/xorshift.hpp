@@ -21,9 +21,7 @@ struct xorShift128 {
      * @brief Get random number in [l, r).
      */
     unsigned long long operator()(unsigned long long l, unsigned long long r) {
-        unsigned long long t = x ^ (x << 11);
-        x = y; y = z; z = w;
-        w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
+        w = this->operator()();
         return w % (r - l) + l;
     }
 };
