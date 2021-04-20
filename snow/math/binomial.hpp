@@ -12,7 +12,7 @@ namespace snow {
 template < typename mint >
 struct Binomial {
     public:
-        Binomial(int N) : _N(N + 1), _M(mint::mod()), D(min(_N, _M)), fac(D), finv(D), inv(D) {
+        Binomial(int N) : _N(N + 1), _M(mint::mod()), D(std::min(_N, _M)), fac(D), finv(D), inv(D) {
             fac[0] = fac[1] = 1;
             finv[0] = finv[1] = 1;
             inv[1] = 1;

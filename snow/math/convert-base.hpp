@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <algorithm>
+#include <cassert>
 
 namespace snow {
 /**
@@ -23,7 +24,7 @@ std::vector<T> convert_base(T val, T base, int length = 0){
     if(ret.empty()) ret.emplace_back(0);
 
     if(length){
-        assert(ret.size() <= length);
+        assert((int)ret.size() <= length);
         while (ret.size() < length) ret.emplace_back(0);
     }
 
