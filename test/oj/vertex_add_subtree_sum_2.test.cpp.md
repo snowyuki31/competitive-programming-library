@@ -51,7 +51,7 @@ data:
     \   return os;\n}\n\ntemplate< typename T >\nstd::istream &operator >>  (std::istream\
     \ &is, std::vector< T > &v){\n    for(T &in : v) is >> in;\n    return is;\n}\n\
     \ntemplate< typename T >\nstd::ostream &operator << (std::ostream &os, const std::set<\
-    \ T > &st){\n    int ct = 0;\n    for(auto& s : st) os << s << (++ct != st.size()\
+    \ T > &st){\n    int ct = 0;\n    for(auto& s : st) os << s << (++ct != (int)st.size()\
     \ ? \" \" : \"\");\n    return os;\n}\n\ntemplate<class... T>\nvoid input(T&...\
     \ a){\n    (std::cin >> ... >> a);\n}\n\nvoid print() {\n    std::cout << '\\\
     n';\n}\ntemplate<class T, class... Ts>\nvoid print(const T& a, const Ts&... b){\n\
@@ -214,7 +214,7 @@ data:
   isVerificationFile: true
   path: test/oj/vertex_add_subtree_sum_2.test.cpp
   requiredBy: []
-  timestamp: '2021-04-04 03:29:57+09:00'
+  timestamp: '2021-04-21 03:38:29+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/oj/vertex_add_subtree_sum_2.test.cpp

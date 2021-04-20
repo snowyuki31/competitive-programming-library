@@ -17,17 +17,17 @@ data:
   bundledCode: "#line 2 \"snow/io/setup.hpp\"\n#include <iostream>\n#include <iomanip>\n\
     \nnamespace snow{\n\nstruct IoSetup {\n    IoSetup() {\n        std::cin.tie(nullptr);\n\
     \        std::ios::sync_with_stdio(false);\n        std::cout << std::fixed <<\
-    \ std::setprecision(10);\n    }\n} iosetup;\n\n}\n"
+    \ std::setprecision(10);\n    }\n} iosetup;\n\n} // namespace snow\n"
   code: "#pragma once\n#include <iostream>\n#include <iomanip>\n\nnamespace snow{\n\
     \nstruct IoSetup {\n    IoSetup() {\n        std::cin.tie(nullptr);\n        std::ios::sync_with_stdio(false);\n\
     \        std::cout << std::fixed << std::setprecision(10);\n    }\n} iosetup;\n\
-    \n}"
+    \n} // namespace snow"
   dependsOn: []
   isVerificationFile: false
   path: snow/io/setup.hpp
   requiredBy:
   - test/oj/enumerate_primes.cpp
-  timestamp: '2021-03-20 04:55:24+09:00'
+  timestamp: '2021-04-21 03:38:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1065.test.cpp

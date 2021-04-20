@@ -20,9 +20,8 @@ data:
     \ x ^ (x << 11);\n        x = y; y = z; z = w;\n        return w = (w ^ (w >>\
     \ 19)) ^ (t ^ (t >> 8));\n    }\n\n    /**\n     * @brief Get random number in\
     \ [l, r).\n     */\n    unsigned long long operator()(unsigned long long l, unsigned\
-    \ long long r) {\n        unsigned long long t = x ^ (x << 11);\n        x = y;\
-    \ y = z; z = w;\n        w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));\n        return\
-    \ w % (r - l) + l;\n    }\n};\n\n} // namespace snow\n"
+    \ long long r) {\n        w = this->operator()();\n        return w % (r - l)\
+    \ + l;\n    }\n};\n\n} // namespace snow\n"
   code: "#pragma once\n#include <time.h>\n\nnamespace snow {\n\n/**\n * @brief XorShift\
     \ (Random Number Generator)\n */\nstruct xorShift128 {\n    unsigned long long\
     \ x = 123456789, y = 362436069, z = 521288629, w = 88675123;\n    xorShift128(unsigned\
@@ -31,14 +30,13 @@ data:
     \ x = y; y = z; z = w;\n        return w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));\n\
     \    }\n\n    /**\n     * @brief Get random number in [l, r).\n     */\n    unsigned\
     \ long long operator()(unsigned long long l, unsigned long long r) {\n       \
-    \ unsigned long long t = x ^ (x << 11);\n        x = y; y = z; z = w;\n      \
-    \  w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));\n        return w % (r - l) + l;\n  \
-    \  }\n};\n\n} // namespace snow"
+    \ w = this->operator()();\n        return w % (r - l) + l;\n    }\n};\n\n} //\
+    \ namespace snow"
   dependsOn: []
   isVerificationFile: false
   path: snow/utils/xorshift.hpp
   requiredBy: []
-  timestamp: '2021-04-21 03:08:47+09:00'
+  timestamp: '2021-04-21 03:38:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1013.test.cpp
