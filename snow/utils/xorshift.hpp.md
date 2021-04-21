@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/yukicoder/1013.test.cpp
+    path: test/yukicoder/0430.test.cpp
     title: Rolling Hash
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -39,7 +39,7 @@ data:
   timestamp: '2021-04-21 03:38:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/1013.test.cpp
+  - test/yukicoder/0430.test.cpp
 documentation_of: snow/utils/xorshift.hpp
 layout: document
 redirect_from:

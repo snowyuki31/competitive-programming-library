@@ -68,6 +68,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/algorithm/doubling.hpp
       title: Doubling
+    - icon: ':heavy_check_mark:'
+      path: snow/algorithm/weighted-doubling.hpp
+      title: Wegihted Doubling
   - name: snow/datastructure
     pages:
     - icon: ':heavy_check_mark:'
@@ -277,6 +280,9 @@ data:
   - name: test/yukicoder
     pages:
     - icon: ':heavy_check_mark:'
+      path: test/yukicoder/0430.test.cpp
+      title: Rolling Hash
+    - icon: ':heavy_check_mark:'
       path: test/yukicoder/0499.test.cpp
       title: Conversion Base (base 7)
     - icon: ':heavy_check_mark:'
@@ -287,7 +293,7 @@ data:
       title: Conversion Base (negative base)
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1013.test.cpp
-      title: Rolling Hash
+      title: Weighted Doubling
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/1035.test.cpp
       title: Twelvefold way III
