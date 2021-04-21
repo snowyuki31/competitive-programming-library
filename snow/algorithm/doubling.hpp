@@ -6,11 +6,10 @@ namespace snow {
 /**
  * @brief Doubling
  */
-template < typename T >
 struct Doubling {
     public:
-        Doubling(std::vector<T>& f, long long lim) : N(f.size()), LIM(64 - __builtin_clzll(lim)), table(LIM, std::vector<T>(N, -1)){
-            // Built Doubling Table.
+        Doubling(std::vector<int>& f, long long lim) : N(f.size()), LIM(64 - __builtin_clzll(lim)), table(LIM, std::vector<int>(N, -1)){
+            // Build Doubling Table.
             for (int i = 0; i < N; ++i) table[0][i] = f[i];
             for (int k = 1; k < LIM; ++k) {
                 for (int i = 0; i < N; ++i) {
@@ -24,8 +23,11 @@ struct Doubling {
          * @fn
          * @brief Get position after t times of operations, starting from p.
          */
-        T get(T p, long long t){
-            for(int k = LIM - 1; k >= 0; --k) if((t >> k) & 1) p = table[k][p];
+        int get(int p, long long t){
+            for(int k = LIM - 1; k >= 0; --k) if((t >> k) & 1){
+                p = table[k][p];
+                if(p == -1) break;
+            }
             return p;
         }
 
@@ -36,7 +38,7 @@ struct Doubling {
     private:
         const int N;
         const int LIM;
-        std::vector<std::vector<T>> table;
+        std::vector<std::vector<int>> table;
 };
 
 } // namespace snow
