@@ -10,6 +10,9 @@ data:
     path: test/aoj/0560.test.cpp
     title: Cumurative Sum (2D)
   - icon: ':heavy_check_mark:'
+    path: test/aoj/2320.test.cpp
+    title: Doubling
+  - icon: ':heavy_check_mark:'
     path: test/aoj/ALDS1_4_B.test.cpp
     title: Binary Search
   - icon: ':heavy_check_mark:'
@@ -100,6 +103,7 @@ data:
   - test/oj/vertex_add_subtree_sum.test.cpp
   - test/yukicoder/1065.test.cpp
   - test/yukicoder/0517.test.cpp
+  - test/aoj/2320.test.cpp
   - test/aoj/0560.test.cpp
   - test/aoj/ALDS1_4_B.test.cpp
 documentation_of: snow/io/helper.hpp

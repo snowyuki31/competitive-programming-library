@@ -65,7 +65,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/algorithm/cumsum2D.hpp
       title: Cumulative Sum (2D)
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: snow/algorithm/doubling.hpp
       title: Doubling
   - name: snow/datastructure
@@ -175,6 +175,9 @@ data:
   - name: snow/utils
     pages:
     - icon: ':heavy_check_mark:'
+      path: snow/utils/flatten.hpp
+      title: Flatten
+    - icon: ':heavy_check_mark:'
       path: snow/utils/lazyseg-wrapper.hpp
       title: snow/utils/lazyseg-wrapper.hpp
     - icon: ':heavy_check_mark:'
@@ -200,6 +203,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/1327.test.cpp
       title: Matrix
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/2320.test.cpp
+      title: Doubling
     - icon: ':heavy_check_mark:'
       path: test/aoj/2932.test.cpp
       title: Divisor / Factorize
