@@ -17,8 +17,8 @@ data:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C
   bundledCode: "#line 1 \"test/aoj/ALDS1_1_C.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
     \n\n#include <iostream>\n#line 2 \"snow/math/simple-sieve.hpp\"\n\n#include <vector>\n\
-    #include <algorithm>\n#include <numeric>\n\nnamespace snow {\n\nstruct simple_sieve\
-    \ {\n    public:\n        simple_sieve(int n) : _n(n + 1), prime(_n, true) {\n\
+    #include <algorithm>\n#include <numeric>\n\nnamespace snow {\n\nstruct SimpleSieve\
+    \ {\n    public:\n        SimpleSieve(int n) : _n(n + 1), prime(_n, true) {\n\
     \            if(n >= 0) prime[0] = false;\n            if(n >= 1) prime[1] = false;\n\
     \            for(int i = 2; i * i <= n; ++i) if(prime[i]) {\n                for\
     \ (int j = i * i; j <= n; j += i) prime[j] = false;\n            }\n        }\n\
@@ -29,13 +29,13 @@ data:
     \            return prime_list;\n        }\n\n    protected:\n        int _n;\n\
     \        std::vector<bool> prime;\n};\n\n} // namespace snow\n#line 5 \"test/aoj/ALDS1_1_C.test.cpp\"\
     \n\n/**\n * @brief Eratosthenes's sieve (upto 1e8)\n * \n */\nint main() {\n \
-    \   snow::simple_sieve sieve(1e8);\n\n    int N;\n    std::cin >> N;\n    int\
-    \ ret = 0;\n    while(N--) {\n        int q;\n        std::cin >> q;\n       \
-    \ ret += sieve.isprime(q);\n    }\n    std::cout << ret << '\\n';\n\n    return\
-    \ 0;\n}\n"
+    \   snow::SimpleSieve sieve(1e8);\n\n    int N;\n    std::cin >> N;\n    int ret\
+    \ = 0;\n    while(N--) {\n        int q;\n        std::cin >> q;\n        ret\
+    \ += sieve.isprime(q);\n    }\n    std::cout << ret << '\\n';\n\n    return 0;\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
     \n\n#include <iostream>\n#include \"snow/math/simple-sieve.hpp\"\n\n/**\n * @brief\
-    \ Eratosthenes's sieve (upto 1e8)\n * \n */\nint main() {\n    snow::simple_sieve\
+    \ Eratosthenes's sieve (upto 1e8)\n * \n */\nint main() {\n    snow::SimpleSieve\
     \ sieve(1e8);\n\n    int N;\n    std::cin >> N;\n    int ret = 0;\n    while(N--)\
     \ {\n        int q;\n        std::cin >> q;\n        ret += sieve.isprime(q);\n\
     \    }\n    std::cout << ret << '\\n';\n\n    return 0;\n}"
@@ -44,7 +44,7 @@ data:
   isVerificationFile: true
   path: test/aoj/ALDS1_1_C.test.cpp
   requiredBy: []
-  timestamp: '2021-03-22 12:08:23+09:00'
+  timestamp: '2021-04-22 02:05:45+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_1_C.test.cpp

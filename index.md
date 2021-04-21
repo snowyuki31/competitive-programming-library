@@ -65,6 +65,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/algorithm/cumsum2D.hpp
       title: Cumulative Sum (2D)
+    - icon: ':warning:'
+      path: snow/algorithm/doubling.hpp
+      title: Doubling
   - name: snow/datastructure
     pages:
     - icon: ':heavy_check_mark:'

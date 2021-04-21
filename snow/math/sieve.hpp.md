@@ -12,8 +12,8 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"snow/math/sieve.hpp\"\n\n#include <algorithm>\n#include\
-    \ <numeric>\n#include <vector>\n#include <map>\n\nnamespace snow {\n\nstruct sieve\
-    \ {\n    public:\n        sieve(int n) : _n(n + 1), _sieve(_n){\n            std::iota(_sieve.begin(),\
+    \ <numeric>\n#include <vector>\n#include <map>\n\nnamespace snow {\n\nstruct Sieve\
+    \ {\n    public:\n        Sieve(int n) : _n(n + 1), _sieve(_n){\n            std::iota(_sieve.begin(),\
     \ _sieve.end(), 0);\n            for(int i = 2; i * i <= n; ++i){\n          \
     \      if(_sieve[i] < i) continue;\n                for(int j = i * i; j <= n;\
     \ j += i) if(_sieve[j] == j) _sieve[j] = i;\n            }\n        }\n\n    \
@@ -27,7 +27,7 @@ data:
     \        }\n\n    protected:\n        int _n;\n        std::vector<int> _sieve;\n\
     };\n\n} // namespace snow\n"
   code: "#pragma once\n\n#include <algorithm>\n#include <numeric>\n#include <vector>\n\
-    #include <map>\n\nnamespace snow {\n\nstruct sieve {\n    public:\n        sieve(int\
+    #include <map>\n\nnamespace snow {\n\nstruct Sieve {\n    public:\n        Sieve(int\
     \ n) : _n(n + 1), _sieve(_n){\n            std::iota(_sieve.begin(), _sieve.end(),\
     \ 0);\n            for(int i = 2; i * i <= n; ++i){\n                if(_sieve[i]\
     \ < i) continue;\n                for(int j = i * i; j <= n; j += i) if(_sieve[j]\
@@ -44,7 +44,7 @@ data:
   isVerificationFile: false
   path: snow/math/sieve.hpp
   requiredBy: []
-  timestamp: '2021-03-22 12:48:12+09:00'
+  timestamp: '2021-04-22 02:05:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1396.test.cpp

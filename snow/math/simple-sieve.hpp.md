@@ -15,9 +15,9 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"snow/math/simple-sieve.hpp\"\n\n#include <vector>\n#include\
-    \ <algorithm>\n#include <numeric>\n\nnamespace snow {\n\nstruct simple_sieve {\n\
-    \    public:\n        simple_sieve(int n) : _n(n + 1), prime(_n, true) {\n   \
-    \         if(n >= 0) prime[0] = false;\n            if(n >= 1) prime[1] = false;\n\
+    \ <algorithm>\n#include <numeric>\n\nnamespace snow {\n\nstruct SimpleSieve {\n\
+    \    public:\n        SimpleSieve(int n) : _n(n + 1), prime(_n, true) {\n    \
+    \        if(n >= 0) prime[0] = false;\n            if(n >= 1) prime[1] = false;\n\
     \            for(int i = 2; i * i <= n; ++i) if(prime[i]) {\n                for\
     \ (int j = i * i; j <= n; j += i) prime[j] = false;\n            }\n        }\n\
     \n        bool isprime(int x){\n            return !!prime[x];\n        }\n\n\
@@ -27,7 +27,7 @@ data:
     \            return prime_list;\n        }\n\n    protected:\n        int _n;\n\
     \        std::vector<bool> prime;\n};\n\n} // namespace snow\n"
   code: "#pragma once\n\n#include <vector>\n#include <algorithm>\n#include <numeric>\n\
-    \nnamespace snow {\n\nstruct simple_sieve {\n    public:\n        simple_sieve(int\
+    \nnamespace snow {\n\nstruct SimpleSieve {\n    public:\n        SimpleSieve(int\
     \ n) : _n(n + 1), prime(_n, true) {\n            if(n >= 0) prime[0] = false;\n\
     \            if(n >= 1) prime[1] = false;\n            for(int i = 2; i * i <=\
     \ n; ++i) if(prime[i]) {\n                for (int j = i * i; j <= n; j += i)\
@@ -43,7 +43,7 @@ data:
   path: snow/math/simple-sieve.hpp
   requiredBy:
   - test/oj/enumerate_primes.cpp
-  timestamp: '2021-03-21 02:00:09+09:00'
+  timestamp: '2021-04-22 02:05:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/ALDS1_1_C.test.cpp

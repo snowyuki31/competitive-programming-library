@@ -21,8 +21,8 @@ data:
     - https://judge.yosupo.jp/problem/enumerate_primes
   bundledCode: "#line 1 \"test/oj/enumerate_primes.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_primes\"\
     \n\n#include <iostream>\n#line 2 \"snow/math/simple-sieve.hpp\"\n\n#include <vector>\n\
-    #include <algorithm>\n#include <numeric>\n\nnamespace snow {\n\nstruct simple_sieve\
-    \ {\n    public:\n        simple_sieve(int n) : _n(n + 1), prime(_n, true) {\n\
+    #include <algorithm>\n#include <numeric>\n\nnamespace snow {\n\nstruct SimpleSieve\
+    \ {\n    public:\n        SimpleSieve(int n) : _n(n + 1), prime(_n, true) {\n\
     \            if(n >= 0) prime[0] = false;\n            if(n >= 1) prime[1] = false;\n\
     \            for(int i = 2; i * i <= n; ++i) if(prime[i]) {\n                for\
     \ (int j = i * i; j <= n; j += i) prime[j] = false;\n            }\n        }\n\
@@ -61,16 +61,16 @@ data:
     \    (std::cout << ... << (std::cout << ' ', b));\n    std::cout << '\\n';\n \
     \   exit(0);\n}\n#line 7 \"test/oj/enumerate_primes.cpp\"\n\n/**\n * @brief Enumerate\
     \ Primes\n * \n */\nint main() {\n    int N, A, B;\n    std::cin >> N >> A >>\
-    \ B;\n\n    snow::simple_sieve sieve(N);\n    auto ret = sieve.enumerate_primes();\n\
-    \    \n    std::vector<int> ans;\n    for(int i = B; i < ret.size(); i += A){\n\
-    \        ans.emplace_back(ret[i]);\n    }\n\n    std::cout << ret.size() << '\
-    \ ' << ans.size() << '\\n';\n    std::cout << ans << '\\n';\n}\n"
+    \ B;\n\n    snow::SimpleSieve sieve(N);\n    auto ret = sieve.enumerate_primes();\n\
+    \    \n    std::vector<int> ans;\n    for(int i = B; i < (int)ret.size(); i +=\
+    \ A){\n        ans.emplace_back(ret[i]);\n    }\n\n    std::cout << ret.size()\
+    \ << ' ' << ans.size() << '\\n';\n    std::cout << ans << '\\n';\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_primes\"\n\n\
     #include <iostream>\n#include \"snow/math/simple-sieve.hpp\"\n#include \"snow/io/setup.hpp\"\
     \n#include \"snow/io/helper.hpp\"\n\n/**\n * @brief Enumerate Primes\n * \n */\n\
-    int main() {\n    int N, A, B;\n    std::cin >> N >> A >> B;\n\n    snow::simple_sieve\
+    int main() {\n    int N, A, B;\n    std::cin >> N >> A >> B;\n\n    snow::SimpleSieve\
     \ sieve(N);\n    auto ret = sieve.enumerate_primes();\n    \n    std::vector<int>\
-    \ ans;\n    for(int i = B; i < ret.size(); i += A){\n        ans.emplace_back(ret[i]);\n\
+    \ ans;\n    for(int i = B; i < (int)ret.size(); i += A){\n        ans.emplace_back(ret[i]);\n\
     \    }\n\n    std::cout << ret.size() << ' ' << ans.size() << '\\n';\n    std::cout\
     \ << ans << '\\n';\n}"
   dependsOn:
@@ -80,7 +80,7 @@ data:
   isVerificationFile: false
   path: test/oj/enumerate_primes.cpp
   requiredBy: []
-  timestamp: '2021-04-21 03:38:29+09:00'
+  timestamp: '2021-04-22 02:05:45+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: test/oj/enumerate_primes.cpp
