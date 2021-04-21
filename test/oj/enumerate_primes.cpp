@@ -13,11 +13,11 @@ int main() {
     int N, A, B;
     std::cin >> N >> A >> B;
 
-    snow::simple_sieve sieve(N);
+    snow::SimpleSieve sieve(N);
     auto ret = sieve.enumerate_primes();
     
     std::vector<int> ans;
-    for(int i = B; i < ret.size(); i += A){
+    for(int i = B; i < (int)ret.size(); i += A){
         ans.emplace_back(ret[i]);
     }
 

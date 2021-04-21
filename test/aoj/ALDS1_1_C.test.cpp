@@ -8,7 +8,7 @@
  * 
  */
 int main() {
-    snow::simple_sieve sieve(1e8);
+    snow::SimpleSieve sieve(1e8);
 
     int N;
     std::cin >> N;

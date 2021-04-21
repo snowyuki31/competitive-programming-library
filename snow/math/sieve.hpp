@@ -7,9 +7,9 @@
 
 namespace snow {
 
-struct sieve {
+struct Sieve {
     public:
-        sieve(int n) : _n(n + 1), _sieve(_n){
+        Sieve(int n) : _n(n + 1), _sieve(_n){
             std::iota(_sieve.begin(), _sieve.end(), 0);
             for(int i = 2; i * i <= n; ++i){
                 if(_sieve[i] < i) continue;

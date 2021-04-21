@@ -27,7 +27,7 @@ int main() {
         }
     }
 
-    snow::cumsum2D cumj(J), cumo(O), cumi(I);
+    snow::Cumsum2D cumj(J), cumo(O), cumi(I);
 
     while(K--) {
         int a, b, c, d;

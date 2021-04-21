@@ -14,7 +14,7 @@ int main() {
     int N;
     std::cin >> N;
 
-    snow::sieve sieve(N);
+    snow::Sieve sieve(N);
     std::unordered_map<int, int> memo;
 
     bool found = false;
