@@ -70,7 +70,7 @@ data:
       title: Doubling
     - icon: ':heavy_check_mark:'
       path: snow/algorithm/weighted-doubling.hpp
-      title: Wegihted Doubling
+      title: Weighted Doubling
   - name: snow/datastructure
     pages:
     - icon: ':heavy_check_mark:'

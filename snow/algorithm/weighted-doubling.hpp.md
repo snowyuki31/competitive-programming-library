@@ -10,10 +10,10 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    document_title: Wegihted Doubling
+    document_title: Weighted Doubling
     links: []
   bundledCode: "#line 2 \"snow/algorithm/weighted-doubling.hpp\"\n#include <vector>\n\
-    #include <utility>\n\nnamespace snow {\n\n/**\n * @brief Wegihted Doubling\n */\n\
+    #include <utility>\n\nnamespace snow {\n\n/**\n * @brief Weighted Doubling\n */\n\
     template < typename Monoid >\nstruct WeightedDoubling {\n    using Data = std::pair<int,\
     \ Monoid>;\n\n    public:\n        WeightedDoubling(std::vector<Data>& f, long\
     \ long lim, const Monoid I = Monoid()) : N(f.size()), LIM(64 - __builtin_clzll(lim)),\
@@ -35,7 +35,7 @@ data:
     \ int LIM;\n        const Monoid I;\n        std::vector<std::vector<Data>> table;\n\
     };\n\n} // namespace snow\n"
   code: "#pragma once\n#include <vector>\n#include <utility>\n\nnamespace snow {\n\
-    \n/**\n * @brief Wegihted Doubling\n */\ntemplate < typename Monoid >\nstruct\
+    \n/**\n * @brief Weighted Doubling\n */\ntemplate < typename Monoid >\nstruct\
     \ WeightedDoubling {\n    using Data = std::pair<int, Monoid>;\n\n    public:\n\
     \        WeightedDoubling(std::vector<Data>& f, long long lim, const Monoid I\
     \ = Monoid()) : N(f.size()), LIM(64 - __builtin_clzll(lim)), table(LIM, std::vector<Data>(N,\
@@ -59,7 +59,7 @@ data:
   isVerificationFile: false
   path: snow/algorithm/weighted-doubling.hpp
   requiredBy: []
-  timestamp: '2021-04-22 07:13:01+09:00'
+  timestamp: '2021-04-22 17:44:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1013.test.cpp
@@ -68,5 +68,5 @@ layout: document
 redirect_from:
 - /library/snow/algorithm/weighted-doubling.hpp
 - /library/snow/algorithm/weighted-doubling.hpp.html
-title: Wegihted Doubling
+title: Weighted Doubling
 ---
