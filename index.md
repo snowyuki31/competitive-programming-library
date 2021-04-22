@@ -97,7 +97,7 @@ data:
       title: Topological Sort
   - name: snow/graph/tree
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: snow/graph/tree/diameter.hpp
       title: "Diameter (\u6728\u306E\u76F4\u5F84)"
     - icon: ':heavy_check_mark:'
@@ -200,9 +200,6 @@ data:
     - icon: ':warning:'
       path: test/oj/enumerate_primes.cpp
       title: Enumerate Primes
-    - icon: ':warning:'
-      path: test/oj/tree_diameter.cpp
-      title: Tree Diameter
   verificationCategories:
   - name: test/aoj
     pages:
@@ -271,6 +268,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/oj/range_affine_range_sum.test.cpp
       title: Segment Tree (Range Affine and Range Sum with Modint)
+    - icon: ':heavy_check_mark:'
+      path: test/oj/tree_diameter.test.cpp
+      title: Tree Diameter
     - icon: ':heavy_check_mark:'
       path: test/oj/vertex_add_path_sum.test.cpp
       title: Vertex Add Path Sum (Euler Tour ver.)

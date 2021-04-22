@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/graph/template.hpp
     title: Graph template
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: snow/graph/tree/diameter.hpp
     title: "Diameter (\u6728\u306E\u76F4\u5F84)"
   - icon: ':heavy_check_mark:'
@@ -14,12 +14,14 @@ data:
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/tree_diameter
     document_title: Tree Diameter
     links:
     - https://judge.yosupo.jp/problem/tree_diameter
-  bundledCode: "#line 1 \"test/oj/tree_diameter.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/tree_diameter\"\
+  bundledCode: "#line 1 \"test/oj/tree_diameter.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/tree_diameter\"\
     \n#include <iostream>\n#line 3 \"snow/io/helper.hpp\"\n#include <vector>\n#include\
     \ <set>\n\ntemplate< typename T1, typename T2 >\nstd::ostream &operator << (std::ostream\
     \ &os, const std::pair< T1, T2 > &p) {\n    os << p.first << \" \" << p.second;\n\
@@ -84,7 +86,7 @@ data:
     \        }\n\n        void _dfs(snow::Graph<T> const &G, int s, int p, std::vector<int>\
     \ &path){\n            for(auto e : G[s]) if(e.to != p and is_on(e.to)){\n   \
     \             path.emplace_back(e.to);\n                _dfs(G, e.to, s, path);\n\
-    \            }\n        }\n};\n\n} // namespace snow\n#line 5 \"test/oj/tree_diameter.cpp\"\
+    \            }\n        }\n};\n\n} // namespace snow\n#line 5 \"test/oj/tree_diameter.test.cpp\"\
     \n\n/**\n * @brief Tree Diameter\n * \n */\nint main() {\n    int N;\n    std::cin\
     \ >> N;\n    snow::Graph<long long> G(N);\n    for (int i = 0; i < N - 1; ++i){\n\
     \        int a, b;\n        long long c;\n        std::cin >> a >> b >> c;\n \
@@ -103,16 +105,16 @@ data:
   - snow/io/helper.hpp
   - snow/graph/tree/diameter.hpp
   - snow/graph/template.hpp
-  isVerificationFile: false
-  path: test/oj/tree_diameter.cpp
+  isVerificationFile: true
+  path: test/oj/tree_diameter.test.cpp
   requiredBy: []
-  timestamp: '2021-04-22 17:27:30+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2021-04-22 17:40:11+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: test/oj/tree_diameter.cpp
+documentation_of: test/oj/tree_diameter.test.cpp
 layout: document
 redirect_from:
-- /library/test/oj/tree_diameter.cpp
-- /library/test/oj/tree_diameter.cpp.html
+- /verify/test/oj/tree_diameter.test.cpp
+- /verify/test/oj/tree_diameter.test.cpp.html
 title: Tree Diameter
 ---

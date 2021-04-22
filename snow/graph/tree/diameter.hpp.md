@@ -4,14 +4,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/graph/template.hpp
     title: Graph template
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/oj/tree_diameter.cpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/oj/tree_diameter.test.cpp
     title: Tree Diameter
-  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Diameter (\u6728\u306E\u76F4\u5F84)"
     links: []
@@ -82,11 +82,11 @@ data:
   - snow/graph/template.hpp
   isVerificationFile: false
   path: snow/graph/tree/diameter.hpp
-  requiredBy:
-  - test/oj/tree_diameter.cpp
+  requiredBy: []
   timestamp: '2021-04-22 17:27:30+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/oj/tree_diameter.test.cpp
 documentation_of: snow/graph/tree/diameter.hpp
 layout: document
 redirect_from:

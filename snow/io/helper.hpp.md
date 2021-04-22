@@ -5,9 +5,6 @@ data:
   - icon: ':warning:'
     path: test/oj/enumerate_primes.cpp
     title: Enumerate Primes
-  - icon: ':warning:'
-    path: test/oj/tree_diameter.cpp
-    title: Tree Diameter
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0560.test.cpp
@@ -18,6 +15,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/ALDS1_4_B.test.cpp
     title: Binary Search
+  - icon: ':heavy_check_mark:'
+    path: test/oj/tree_diameter.test.cpp
+    title: Tree Diameter
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_path_sum.test.cpp
     title: Vertex Add Path Sum (Euler Tour ver.)
@@ -97,7 +97,6 @@ data:
   path: snow/io/helper.hpp
   requiredBy:
   - test/oj/enumerate_primes.cpp
-  - test/oj/tree_diameter.cpp
   timestamp: '2021-04-21 03:38:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -106,6 +105,7 @@ data:
   - test/oj/vertex_add_path_sum_2.test.cpp
   - test/oj/vertex_add_path_sum.test.cpp
   - test/oj/vertex_add_subtree_sum_2.test.cpp
+  - test/oj/tree_diameter.test.cpp
   - test/oj/vertex_add_subtree_sum.test.cpp
   - test/aoj/ALDS1_4_B.test.cpp
   - test/aoj/0560.test.cpp
