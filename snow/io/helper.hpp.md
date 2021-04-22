@@ -5,6 +5,9 @@ data:
   - icon: ':warning:'
     path: test/oj/enumerate_primes.cpp
     title: Enumerate Primes
+  - icon: ':warning:'
+    path: test/oj/tree_diameter.cpp
+    title: Tree Diameter
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/0560.test.cpp
@@ -94,18 +97,19 @@ data:
   path: snow/io/helper.hpp
   requiredBy:
   - test/oj/enumerate_primes.cpp
+  - test/oj/tree_diameter.cpp
   timestamp: '2021-04-21 03:38:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yukicoder/1065.test.cpp
+  - test/yukicoder/0517.test.cpp
   - test/oj/vertex_add_path_sum_2.test.cpp
   - test/oj/vertex_add_path_sum.test.cpp
   - test/oj/vertex_add_subtree_sum_2.test.cpp
   - test/oj/vertex_add_subtree_sum.test.cpp
-  - test/yukicoder/1065.test.cpp
-  - test/yukicoder/0517.test.cpp
-  - test/aoj/2320.test.cpp
-  - test/aoj/0560.test.cpp
   - test/aoj/ALDS1_4_B.test.cpp
+  - test/aoj/0560.test.cpp
+  - test/aoj/2320.test.cpp
 documentation_of: snow/io/helper.hpp
 layout: document
 redirect_from:

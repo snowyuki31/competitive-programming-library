@@ -97,6 +97,9 @@ data:
       title: Topological Sort
   - name: snow/graph/tree
     pages:
+    - icon: ':warning:'
+      path: snow/graph/tree/diameter.hpp
+      title: "Diameter (\u6728\u306E\u76F4\u5F84)"
     - icon: ':heavy_check_mark:'
       path: snow/graph/tree/euler-tour-lca.hpp
       title: "Euler Tour (Lowest Common Ancestor Query)- \u524D\u51E6\u7406$O(N\\\
@@ -197,6 +200,9 @@ data:
     - icon: ':warning:'
       path: test/oj/enumerate_primes.cpp
       title: Enumerate Primes
+    - icon: ':warning:'
+      path: test/oj/tree_diameter.cpp
+      title: Tree Diameter
   verificationCategories:
   - name: test/aoj
     pages:

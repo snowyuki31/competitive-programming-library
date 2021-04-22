@@ -67,8 +67,8 @@ data:
   isVerificationFile: false
   path: snow/monoids/min.hpp
   requiredBy:
-  - snow/graph/tree/euler-tour-lca.hpp
   - snow/graph/tree/euler-tour-path.hpp
+  - snow/graph/tree/euler-tour-lca.hpp
   timestamp: '2021-03-23 15:48:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

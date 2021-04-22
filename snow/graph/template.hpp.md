@@ -14,6 +14,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/graph/topological-sort.hpp
     title: Topological Sort
+  - icon: ':warning:'
+    path: snow/graph/tree/diameter.hpp
+    title: "Diameter (\u6728\u306E\u76F4\u5F84)"
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour-lca.hpp
     title: "Euler Tour (Lowest Common Ancestor Query)- \u524D\u51E6\u7406$O(N\\log\
@@ -33,6 +36,9 @@ data:
   - icon: ':warning:'
     path: snow/graph/tree/rerooting.hpp
     title: snow/graph/tree/rerooting.hpp
+  - icon: ':warning:'
+    path: test/oj/tree_diameter.cpp
+    title: Tree Diameter
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/GRL_1_A.test.cpp
@@ -114,30 +120,32 @@ data:
   isVerificationFile: false
   path: snow/graph/template.hpp
   requiredBy:
-  - snow/graph/tree/euler-tour-subtree.hpp
-  - snow/graph/tree/rerooting.hpp
-  - snow/graph/tree/euler-tour-lca.hpp
-  - snow/graph/tree/heavy-light-decomposition.hpp
-  - snow/graph/tree/euler-tour.hpp
-  - snow/graph/tree/euler-tour-path.hpp
-  - snow/graph/shortest-path/dijkstra.hpp
-  - snow/graph/shortest-path/warshall-floyd.hpp
-  - snow/graph/shortest-path/bellman-ford.hpp
   - snow/graph/topological-sort.hpp
+  - snow/graph/shortest-path/warshall-floyd.hpp
+  - snow/graph/shortest-path/dijkstra.hpp
+  - snow/graph/shortest-path/bellman-ford.hpp
+  - snow/graph/tree/euler-tour-subtree.hpp
+  - snow/graph/tree/euler-tour.hpp
+  - snow/graph/tree/diameter.hpp
+  - snow/graph/tree/heavy-light-decomposition.hpp
+  - snow/graph/tree/rerooting.hpp
+  - snow/graph/tree/euler-tour-path.hpp
+  - snow/graph/tree/euler-tour-lca.hpp
+  - test/oj/tree_diameter.cpp
   timestamp: '2021-04-04 03:29:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yukicoder/1065.test.cpp
+  - test/yukicoder/0517.test.cpp
   - test/oj/lowest_common_ancestor_1.test.cpp
   - test/oj/vertex_add_path_sum_2.test.cpp
   - test/oj/vertex_add_path_sum.test.cpp
   - test/oj/vertex_add_subtree_sum_2.test.cpp
   - test/oj/lowest_common_ancestor_2.test.cpp
   - test/oj/vertex_add_subtree_sum.test.cpp
-  - test/yukicoder/1065.test.cpp
-  - test/yukicoder/0517.test.cpp
   - test/aoj/GRL_1_A.test.cpp
-  - test/aoj/GRL_1_C.test.cpp
   - test/aoj/GRL_1_B.test.cpp
+  - test/aoj/GRL_1_C.test.cpp
 documentation_of: snow/graph/template.hpp
 layout: document
 redirect_from:

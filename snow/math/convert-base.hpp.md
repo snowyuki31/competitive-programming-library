@@ -42,8 +42,8 @@ data:
   timestamp: '2021-04-21 02:54:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/0782.test.cpp
   - test/yukicoder/0499.test.cpp
+  - test/yukicoder/0782.test.cpp
 documentation_of: snow/math/convert-base.hpp
 layout: document
 redirect_from:
