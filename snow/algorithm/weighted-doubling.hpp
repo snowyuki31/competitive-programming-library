@@ -5,7 +5,7 @@
 namespace snow {
 
 /**
- * @brief Wegihted Doubling
+ * @brief Weighted Doubling
  */
 template < typename Monoid >
 struct WeightedDoubling {
