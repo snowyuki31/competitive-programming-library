@@ -6,7 +6,7 @@
 namespace geometry {
 
 /**
- * @brief Convex-Hull
+ * @brief Convex-Hull (凸包)
  * 
  */
 template < typename T >
