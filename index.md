@@ -79,20 +79,20 @@ data:
   - name: snow/geometry
     pages:
     - icon: ':heavy_check_mark:'
+      path: snow/geometry/area.hpp
+      title: "Area (\u591A\u89D2\u5F62\u306E\u9762\u7A4D)"
+    - icon: ':heavy_check_mark:'
       path: snow/geometry/ccw.hpp
       title: Counter-Clockwise
     - icon: ':heavy_check_mark:'
       path: snow/geometry/convex-hull.hpp
-      title: Convex-Hull
+      title: "Convex-Hull (\u51F8\u5305)"
     - icon: ':heavy_check_mark:'
       path: snow/geometry/rotating-calipers.hpp
       title: "Rotating-Calipers (\u6700\u9060\u70B9\u5BFE)"
     - icon: ':heavy_check_mark:'
       path: snow/geometry/template.hpp
       title: snow/geometry/template.hpp
-    - icon: ':warning:'
-      path: snow/geometry/tmp.hpp
-      title: snow/geometry/tmp.hpp
   - name: snow/graph/shortest-path
     pages:
     - icon: ':heavy_check_mark:'
@@ -236,6 +236,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/CGL_1_C.test.cpp
       title: Counter-Clockwise
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/CGL_3_A.test.cpp
+      title: Area
     - icon: ':heavy_check_mark:'
       path: test/aoj/CGL_4_A.test.cpp
       title: Convex-Hull

@@ -3,11 +3,14 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
+    path: snow/geometry/area.hpp
+    title: "Area (\u591A\u89D2\u5F62\u306E\u9762\u7A4D)"
+  - icon: ':heavy_check_mark:'
     path: snow/geometry/ccw.hpp
     title: Counter-Clockwise
   - icon: ':heavy_check_mark:'
     path: snow/geometry/convex-hull.hpp
-    title: Convex-Hull
+    title: "Convex-Hull (\u51F8\u5305)"
   - icon: ':heavy_check_mark:'
     path: snow/geometry/rotating-calipers.hpp
     title: "Rotating-Calipers (\u6700\u9060\u70B9\u5BFE)"
@@ -15,6 +18,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/CGL_1_C.test.cpp
     title: Counter-Clockwise
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/CGL_3_A.test.cpp
+    title: Area
   - icon: ':heavy_check_mark:'
     path: test/aoj/CGL_4_A.test.cpp
     title: Convex-Hull
@@ -119,10 +125,12 @@ data:
   - snow/geometry/convex-hull.hpp
   - snow/geometry/ccw.hpp
   - snow/geometry/rotating-calipers.hpp
+  - snow/geometry/area.hpp
   timestamp: '2021-04-24 10:08:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/CGL_4_B.test.cpp
+  - test/aoj/CGL_3_A.test.cpp
   - test/aoj/CGL_1_C.test.cpp
   - test/aoj/CGL_4_A.test.cpp
 documentation_of: snow/geometry/template.hpp

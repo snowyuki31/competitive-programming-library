@@ -6,7 +6,7 @@ data:
     title: Counter-Clockwise
   - icon: ':heavy_check_mark:'
     path: snow/geometry/convex-hull.hpp
-    title: Convex-Hull
+    title: "Convex-Hull (\u51F8\u5305)"
   - icon: ':heavy_check_mark:'
     path: snow/geometry/template.hpp
     title: snow/geometry/template.hpp
@@ -17,11 +17,11 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A&lang=ja
+    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A
     document_title: Convex-Hull
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A&lang=ja
-  bundledCode: "#line 1 \"test/aoj/CGL_4_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A&lang=ja\"\
+    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A
+  bundledCode: "#line 1 \"test/aoj/CGL_4_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A\"\
     \n#include <algorithm>\n#include <iostream>\n#include <utility>\n#line 2 \"snow/geometry/convex-hull.hpp\"\
     \n#include <vector>\n#line 2 \"snow/geometry/geometry\"\n\n#line 3 \"snow/geometry/template.hpp\"\
     \n#include <complex>\n#line 5 \"snow/geometry/template.hpp\"\n\nnamespace geometry\
@@ -73,14 +73,14 @@ data:
     \ return CCW;\n    if(cross(B, C) < -EPS) return CW;\n    if(dot(B, C) < 0) return\
     \ BACK;\n    if(norm(B) < norm(C)) return FRONT;\n    return ON;\n}\n\n} // namespace\
     \ geometry\n#line 5 \"snow/geometry/convex-hull.hpp\"\n\nnamespace geometry {\n\
-    \n/**\n * @brief Convex-Hull\n * \n */\ntemplate < typename T >\nstd::vector<Point<T>>\
-    \ convex_hull(std::vector<Point<T>> X){\n    std::sort(X.begin(), X.end());\n\
-    \    int k = 0;\n    int n = X.size();\n    std::vector<Point<T>> res(2 * n);\n\
-    \    for(int i = 0; i < n; ++i){\n        while(k > 1 and ccw(res[k - 2], res[k\
-    \ - 1], X[i]) == CW) --k;\n        res[k++] = X[i];\n    }\n    for(int i = n\
-    \ - 2, t = k; i >= 0; --i){\n        while(k > t and ccw(res[k - 2], res[k - 1],\
-    \ X[i]) == CW) --k;\n        res[k++] = X[i];\n    }\n    res.resize(k - 1);\n\
-    \    return res;\n}\n\n} // namespace geometry\n#line 6 \"test/aoj/CGL_4_A.test.cpp\"\
+    \n/**\n * @brief Convex-Hull (\u51F8\u5305)\n * \n */\ntemplate < typename T >\n\
+    std::vector<Point<T>> convex_hull(std::vector<Point<T>> X){\n    std::sort(X.begin(),\
+    \ X.end());\n    int k = 0;\n    int n = X.size();\n    std::vector<Point<T>>\
+    \ res(2 * n);\n    for(int i = 0; i < n; ++i){\n        while(k > 1 and ccw(res[k\
+    \ - 2], res[k - 1], X[i]) == CW) --k;\n        res[k++] = X[i];\n    }\n    for(int\
+    \ i = n - 2, t = k; i >= 0; --i){\n        while(k > t and ccw(res[k - 2], res[k\
+    \ - 1], X[i]) == CW) --k;\n        res[k++] = X[i];\n    }\n    res.resize(k -\
+    \ 1);\n    return res;\n}\n\n} // namespace geometry\n#line 6 \"test/aoj/CGL_4_A.test.cpp\"\
     \n\n/**\n * @brief Convex-Hull\n */\nint main() {\n    int N;\n    std::cin >>\
     \ N;\n    std::vector<geometry::Point<long double>> points(N);\n    for (int i\
     \ = 0; i < N; ++i) std::cin >> points[i];\n\n    auto ret = geometry::convex_hull(points);\n\
@@ -89,7 +89,7 @@ data:
     \ x = a, y = b, min_pos = i;\n    }\n\n    std::rotate(ret.begin(), ret.begin()\
     \ + min_pos, ret.end());\n\n    std::cout << ret.size() << '\\n';\n    for(auto\
     \ r : ret) std::cout << r << '\\n';\n\n    return 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A&lang=ja\"\
+  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=CGL_4_A\"\
     \n#include <algorithm>\n#include <iostream>\n#include <utility>\n#include \"snow/geometry/convex-hull.hpp\"\
     \n\n/**\n * @brief Convex-Hull\n */\nint main() {\n    int N;\n    std::cin >>\
     \ N;\n    std::vector<geometry::Point<long double>> points(N);\n    for (int i\
@@ -106,7 +106,7 @@ data:
   isVerificationFile: true
   path: test/aoj/CGL_4_A.test.cpp
   requiredBy: []
-  timestamp: '2021-04-24 10:08:33+09:00'
+  timestamp: '2021-04-24 10:51:15+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/CGL_4_A.test.cpp

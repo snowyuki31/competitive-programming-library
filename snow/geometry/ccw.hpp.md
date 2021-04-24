@@ -7,7 +7,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: snow/geometry/convex-hull.hpp
-    title: Convex-Hull
+    title: "Convex-Hull (\u51F8\u5305)"
   - icon: ':heavy_check_mark:'
     path: snow/geometry/rotating-calipers.hpp
     title: "Rotating-Calipers (\u6700\u9060\u70B9\u5BFE)"
