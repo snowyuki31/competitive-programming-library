@@ -10,7 +10,7 @@
 namespace geometry {
 
 /**
- * @brief Rotating-Calipers (最遠点対)
+ * @brief Rotating-Calipers (Furthest point pair)
  * 
  */
 template< typename T >
