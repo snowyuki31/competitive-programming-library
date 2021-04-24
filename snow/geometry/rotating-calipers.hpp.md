@@ -6,7 +6,7 @@ data:
     title: Counter-Clockwise
   - icon: ':heavy_check_mark:'
     path: snow/geometry/convex-hull.hpp
-    title: "Convex-Hull (\u51F8\u5305)"
+    title: Convex-Hull
   - icon: ':heavy_check_mark:'
     path: snow/geometry/template.hpp
     title: snow/geometry/template.hpp
@@ -22,7 +22,7 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    document_title: "Rotating-Calipers (\u6700\u9060\u70B9\u5BFE)"
+    document_title: Rotating-Calipers (Furthest point pair)
     links: []
   bundledCode: "#line 2 \"snow/geometry/rotating-calipers.hpp\"\n#include <cassert>\n\
     #include <vector>\n#include <algorithm>\n#include <utility>\n#line 2 \"snow/io/setup.hpp\"\
@@ -79,18 +79,18 @@ data:
     \ return CCW;\n    if(cross(B, C) < -EPS) return CW;\n    if(dot(B, C) < 0) return\
     \ BACK;\n    if(norm(B) < norm(C)) return FRONT;\n    return ON;\n}\n\n} // namespace\
     \ geometry\n#line 5 \"snow/geometry/convex-hull.hpp\"\n\nnamespace geometry {\n\
-    \n/**\n * @brief Convex-Hull (\u51F8\u5305)\n * \n */\ntemplate < typename T >\n\
-    std::vector<Point<T>> convex_hull(std::vector<Point<T>> X){\n    std::sort(X.begin(),\
-    \ X.end());\n    int k = 0;\n    int n = X.size();\n    std::vector<Point<T>>\
-    \ res(2 * n);\n    for(int i = 0; i < n; ++i){\n        while(k > 1 and ccw(res[k\
-    \ - 2], res[k - 1], X[i]) == CW) --k;\n        res[k++] = X[i];\n    }\n    for(int\
-    \ i = n - 2, t = k; i >= 0; --i){\n        while(k > t and ccw(res[k - 2], res[k\
-    \ - 1], X[i]) == CW) --k;\n        res[k++] = X[i];\n    }\n    res.resize(k -\
-    \ 1);\n    return res;\n}\n\n} // namespace geometry\n#line 9 \"snow/geometry/rotating-calipers.hpp\"\
-    \n\nnamespace geometry {\n\n/**\n * @brief Rotating-Calipers (\u6700\u9060\u70B9\
-    \u5BFE)\n * \n */\ntemplate< typename T >\nstruct RotatingCalipers{\n    public:\n\
-    \        RotatingCalipers(const std::vector<geometry::Point<T>>& points) {\n \
-    \           assert(points.size() > 1);\n            CH = geometry::convex_hull(points);\n\
+    \n/**\n * @brief Convex-Hull\n * \n */\ntemplate < typename T >\nstd::vector<Point<T>>\
+    \ convex_hull(std::vector<Point<T>> X){\n    std::sort(X.begin(), X.end());\n\
+    \    int k = 0;\n    int n = X.size();\n    std::vector<Point<T>> res(2 * n);\n\
+    \    for(int i = 0; i < n; ++i){\n        while(k > 1 and ccw(res[k - 2], res[k\
+    \ - 1], X[i]) == CW) --k;\n        res[k++] = X[i];\n    }\n    for(int i = n\
+    \ - 2, t = k; i >= 0; --i){\n        while(k > t and ccw(res[k - 2], res[k - 1],\
+    \ X[i]) == CW) --k;\n        res[k++] = X[i];\n    }\n    res.resize(k - 1);\n\
+    \    return res;\n}\n\n} // namespace geometry\n#line 9 \"snow/geometry/rotating-calipers.hpp\"\
+    \n\nnamespace geometry {\n\n/**\n * @brief Rotating-Calipers (Furthest point pair)\n\
+    \ * \n */\ntemplate< typename T >\nstruct RotatingCalipers{\n    public:\n   \
+    \     RotatingCalipers(const std::vector<geometry::Point<T>>& points) {\n    \
+    \        assert(points.size() > 1);\n            CH = geometry::convex_hull(points);\n\
     \            _rotating_calipers();\n        }\n\n        T get_distance() { return\
     \ dist; }\n\n        std::pair<geometry::Point<T>, geometry::Point<T>> get_pair(){\n\
     \            return {CH[px], CH[py]};\n        }\n\n    private:\n        std::vector<geometry::Point<T>>\
@@ -110,7 +110,7 @@ data:
   code: "#pragma once\n#include <cassert>\n#include <vector>\n#include <algorithm>\n\
     #include <utility>\n#include \"snow/io/setup.hpp\"\n#include \"snow/geometry/geometry\"\
     \n#include \"snow/geometry/convex-hull.hpp\"\n\nnamespace geometry {\n\n/**\n\
-    \ * @brief Rotating-Calipers (\u6700\u9060\u70B9\u5BFE)\n * \n */\ntemplate< typename\
+    \ * @brief Rotating-Calipers (Furthest point pair)\n * \n */\ntemplate< typename\
     \ T >\nstruct RotatingCalipers{\n    public:\n        RotatingCalipers(const std::vector<geometry::Point<T>>&\
     \ points) {\n            assert(points.size() > 1);\n            CH = geometry::convex_hull(points);\n\
     \            _rotating_calipers();\n        }\n\n        T get_distance() { return\
@@ -137,7 +137,7 @@ data:
   isVerificationFile: false
   path: snow/geometry/rotating-calipers.hpp
   requiredBy: []
-  timestamp: '2021-04-24 10:51:15+09:00'
+  timestamp: '2021-04-24 11:01:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/CGL_4_B.test.cpp
@@ -146,5 +146,5 @@ layout: document
 redirect_from:
 - /library/snow/geometry/rotating-calipers.hpp
 - /library/snow/geometry/rotating-calipers.hpp.html
-title: "Rotating-Calipers (\u6700\u9060\u70B9\u5BFE)"
+title: Rotating-Calipers (Furthest point pair)
 ---

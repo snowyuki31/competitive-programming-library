@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: snow/geometry/rotating-calipers.hpp
-    title: "Rotating-Calipers (\u6700\u9060\u70B9\u5BFE)"
+    title: Rotating-Calipers (Furthest point pair)
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/CGL_4_B.test.cpp

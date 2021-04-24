@@ -10,7 +10,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: snow/geometry/rotating-calipers.hpp
-    title: "Rotating-Calipers (\u6700\u9060\u70B9\u5BFE)"
+    title: Rotating-Calipers (Furthest point pair)
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj/CGL_4_A.test.cpp
@@ -22,7 +22,7 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    document_title: "Convex-Hull (\u51F8\u5305)"
+    document_title: Convex-Hull
     links: []
   bundledCode: "#line 2 \"snow/geometry/convex-hull.hpp\"\n#include <vector>\n#include\
     \ <algorithm>\n#line 2 \"snow/geometry/geometry\"\n\n#line 2 \"snow/geometry/template.hpp\"\
@@ -75,23 +75,23 @@ data:
     \ return CCW;\n    if(cross(B, C) < -EPS) return CW;\n    if(dot(B, C) < 0) return\
     \ BACK;\n    if(norm(B) < norm(C)) return FRONT;\n    return ON;\n}\n\n} // namespace\
     \ geometry\n#line 5 \"snow/geometry/convex-hull.hpp\"\n\nnamespace geometry {\n\
-    \n/**\n * @brief Convex-Hull (\u51F8\u5305)\n * \n */\ntemplate < typename T >\n\
-    std::vector<Point<T>> convex_hull(std::vector<Point<T>> X){\n    std::sort(X.begin(),\
+    \n/**\n * @brief Convex-Hull\n * \n */\ntemplate < typename T >\nstd::vector<Point<T>>\
+    \ convex_hull(std::vector<Point<T>> X){\n    std::sort(X.begin(), X.end());\n\
+    \    int k = 0;\n    int n = X.size();\n    std::vector<Point<T>> res(2 * n);\n\
+    \    for(int i = 0; i < n; ++i){\n        while(k > 1 and ccw(res[k - 2], res[k\
+    \ - 1], X[i]) == CW) --k;\n        res[k++] = X[i];\n    }\n    for(int i = n\
+    \ - 2, t = k; i >= 0; --i){\n        while(k > t and ccw(res[k - 2], res[k - 1],\
+    \ X[i]) == CW) --k;\n        res[k++] = X[i];\n    }\n    res.resize(k - 1);\n\
+    \    return res;\n}\n\n} // namespace geometry\n"
+  code: "#pragma once\n#include <vector>\n#include <algorithm>\n#include \"snow/geometry/geometry\"\
+    \n\nnamespace geometry {\n\n/**\n * @brief Convex-Hull\n * \n */\ntemplate < typename\
+    \ T >\nstd::vector<Point<T>> convex_hull(std::vector<Point<T>> X){\n    std::sort(X.begin(),\
     \ X.end());\n    int k = 0;\n    int n = X.size();\n    std::vector<Point<T>>\
     \ res(2 * n);\n    for(int i = 0; i < n; ++i){\n        while(k > 1 and ccw(res[k\
     \ - 2], res[k - 1], X[i]) == CW) --k;\n        res[k++] = X[i];\n    }\n    for(int\
     \ i = n - 2, t = k; i >= 0; --i){\n        while(k > t and ccw(res[k - 2], res[k\
     \ - 1], X[i]) == CW) --k;\n        res[k++] = X[i];\n    }\n    res.resize(k -\
-    \ 1);\n    return res;\n}\n\n} // namespace geometry\n"
-  code: "#pragma once\n#include <vector>\n#include <algorithm>\n#include \"snow/geometry/geometry\"\
-    \n\nnamespace geometry {\n\n/**\n * @brief Convex-Hull (\u51F8\u5305)\n * \n */\n\
-    template < typename T >\nstd::vector<Point<T>> convex_hull(std::vector<Point<T>>\
-    \ X){\n    std::sort(X.begin(), X.end());\n    int k = 0;\n    int n = X.size();\n\
-    \    std::vector<Point<T>> res(2 * n);\n    for(int i = 0; i < n; ++i){\n    \
-    \    while(k > 1 and ccw(res[k - 2], res[k - 1], X[i]) == CW) --k;\n        res[k++]\
-    \ = X[i];\n    }\n    for(int i = n - 2, t = k; i >= 0; --i){\n        while(k\
-    \ > t and ccw(res[k - 2], res[k - 1], X[i]) == CW) --k;\n        res[k++] = X[i];\n\
-    \    }\n    res.resize(k - 1);\n    return res;\n}\n\n} // namespace geometry"
+    \ 1);\n    return res;\n}\n\n} // namespace geometry"
   dependsOn:
   - snow/geometry/template.hpp
   - snow/geometry/ccw.hpp
@@ -99,7 +99,7 @@ data:
   path: snow/geometry/convex-hull.hpp
   requiredBy:
   - snow/geometry/rotating-calipers.hpp
-  timestamp: '2021-04-24 10:51:15+09:00'
+  timestamp: '2021-04-24 11:01:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/CGL_4_B.test.cpp
@@ -109,5 +109,5 @@ layout: document
 redirect_from:
 - /library/snow/geometry/convex-hull.hpp
 - /library/snow/geometry/convex-hull.hpp.html
-title: "Convex-Hull (\u51F8\u5305)"
+title: Convex-Hull
 ---
