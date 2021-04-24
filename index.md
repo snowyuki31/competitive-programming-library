@@ -76,6 +76,23 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/datastructure/weighted-unionfind.hpp
       title: Weighted UnionFind
+  - name: snow/geometry
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: snow/geometry/ccw.hpp
+      title: Counter-Clockwise
+    - icon: ':heavy_check_mark:'
+      path: snow/geometry/convex-hull.hpp
+      title: Convex-Hull
+    - icon: ':heavy_check_mark:'
+      path: snow/geometry/rotating-calipers.hpp
+      title: "Rotating-Calipers (\u6700\u9060\u70B9\u5BFE)"
+    - icon: ':heavy_check_mark:'
+      path: snow/geometry/template.hpp
+      title: snow/geometry/template.hpp
+    - icon: ':warning:'
+      path: snow/geometry/tmp.hpp
+      title: snow/geometry/tmp.hpp
   - name: snow/graph/shortest-path
     pages:
     - icon: ':heavy_check_mark:'
@@ -195,11 +212,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/utils/xorshift.hpp
       title: XorShift (Random Number Generator)
-  - name: test/oj
-    pages:
-    - icon: ':warning:'
-      path: test/oj/enumerate_primes.cpp
-      title: Enumerate Primes
   verificationCategories:
   - name: test/aoj
     pages:
@@ -221,6 +233,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/ALDS1_4_B.test.cpp
       title: Binary Search
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/CGL_1_C.test.cpp
+      title: Counter-Clockwise
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/CGL_4_A.test.cpp
+      title: Convex-Hull
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/CGL_4_B.test.cpp
+      title: Diameter of a Convex Polygon
     - icon: ':heavy_check_mark:'
       path: test/aoj/DPL_5_E.test.cpp
       title: Twelvefold way V

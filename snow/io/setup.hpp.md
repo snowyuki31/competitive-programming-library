@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/oj/enumerate_primes.cpp
-    title: Enumerate Primes
+  - icon: ':heavy_check_mark:'
+    path: snow/geometry/rotating-calipers.hpp
+    title: "Rotating-Calipers (\u6700\u9060\u70B9\u5BFE)"
   _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj/CGL_4_B.test.cpp
+    title: Diameter of a Convex Polygon
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1065.test.cpp
     title: Dijkstra (decimal floating point ver.)
@@ -26,11 +29,12 @@ data:
   isVerificationFile: false
   path: snow/io/setup.hpp
   requiredBy:
-  - test/oj/enumerate_primes.cpp
+  - snow/geometry/rotating-calipers.hpp
   timestamp: '2021-04-21 03:38:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yukicoder/1065.test.cpp
+  - test/aoj/CGL_4_B.test.cpp
 documentation_of: snow/io/setup.hpp
 layout: document
 redirect_from:
