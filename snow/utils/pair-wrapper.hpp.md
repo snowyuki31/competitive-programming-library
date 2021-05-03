@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour-path.hpp
     title: Euler Tour (Point Set and Path Sum Query)
+  - icon: ':warning:'
+    path: snow/monoids/max.hpp
+    title: snow/monoids/max.hpp
   - icon: ':heavy_check_mark:'
     path: snow/monoids/min.hpp
     title: snow/monoids/min.hpp
@@ -47,6 +50,7 @@ data:
   path: snow/utils/pair-wrapper.hpp
   requiredBy:
   - snow/monoids/min.hpp
+  - snow/monoids/max.hpp
   - snow/graph/tree/euler-tour-path.hpp
   - snow/graph/tree/euler-tour-lca.hpp
   timestamp: '2021-03-23 15:48:28+09:00'

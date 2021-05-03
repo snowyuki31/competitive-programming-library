@@ -176,6 +176,9 @@ data:
     - icon: ':warning:'
       path: snow/monoids/beats.hpp
       title: snow/monoids/beats.hpp
+    - icon: ':warning:'
+      path: snow/monoids/max.hpp
+      title: snow/monoids/max.hpp
     - icon: ':heavy_check_mark:'
       path: snow/monoids/min.hpp
       title: snow/monoids/min.hpp
