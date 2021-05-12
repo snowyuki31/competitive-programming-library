@@ -94,8 +94,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/CGL_4_B.test.cpp
-  - test/aoj/CGL_1_C.test.cpp
   - test/aoj/CGL_4_A.test.cpp
+  - test/aoj/CGL_1_C.test.cpp
 documentation_of: snow/geometry/ccw.hpp
 layout: document
 redirect_from:

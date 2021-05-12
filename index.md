@@ -12,13 +12,13 @@ data:
     - icon: ':warning:'
       path: atcoder/fenwicktree.hpp
       title: atcoder/fenwicktree.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/internal_bit.hpp
       title: atcoder/internal_bit.hpp
     - icon: ':warning:'
       path: atcoder/internal_csr.hpp
       title: atcoder/internal_csr.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/internal_math.hpp
       title: atcoder/internal_math.hpp
     - icon: ':warning:'
@@ -27,7 +27,7 @@ data:
     - icon: ':warning:'
       path: atcoder/internal_scc.hpp
       title: atcoder/internal_scc.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/internal_type_traits.hpp
       title: atcoder/internal_type_traits.hpp
     - icon: ':heavy_check_mark:'
@@ -42,13 +42,13 @@ data:
     - icon: ':warning:'
       path: atcoder/mincostflow.hpp
       title: atcoder/mincostflow.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/modint.hpp
       title: atcoder/modint.hpp
     - icon: ':warning:'
       path: atcoder/scc.hpp
       title: atcoder/scc.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: atcoder/segtree.hpp
       title: atcoder/segtree.hpp
     - icon: ':warning:'
@@ -106,7 +106,7 @@ data:
       title: Warshall-Floyd
   - name: snow/graph
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: snow/graph/template.hpp
       title: Graph template
     - icon: ':heavy_check_mark:'
@@ -130,7 +130,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/graph/tree/euler-tour.hpp
       title: Euler Tour
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: snow/graph/tree/heavy-light-decomposition.hpp
       title: Heavy Light Decomposition
     - icon: ':warning:'
@@ -138,7 +138,7 @@ data:
       title: snow/graph/tree/rerooting.hpp
   - name: snow/io
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: snow/io/helper.hpp
       title: snow/io/helper.hpp
     - icon: ':heavy_check_mark:'
@@ -162,7 +162,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/math/factorize.hpp
       title: Prime Factorization - $O(\sqrt{n})$
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
+      path: snow/math/gauss_jordan.hpp
+      title: Gauss Jordan's Elimination
+    - icon: ':question:'
       path: snow/math/matrix.hpp
       title: Matrix template
     - icon: ':heavy_check_mark:'
@@ -185,7 +188,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/monoids/plus-size.hpp
       title: snow/monoids/plus-size.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: snow/monoids/plus.hpp
       title: snow/monoids/plus.hpp
   - name: snow/string
@@ -209,7 +212,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: snow/utils/pair-wrapper.hpp
       title: snow/utils/pair-wrapper.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: snow/utils/seg-wrapper.hpp
       title: snow/utils/seg-wrapper.hpp
     - icon: ':heavy_check_mark:'
@@ -289,9 +292,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/oj/lowest_common_ancestor_1.test.cpp
       title: Lowest Common Ancestor (Euler Tour ver.)
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/oj/lowest_common_ancestor_2.test.cpp
       title: Lowest Common Ancestor (Heavy Light Decomposition ver.)
+    - icon: ':x:'
+      path: test/oj/matrix_product.test.cpp
+      title: Matrix Product
     - icon: ':heavy_check_mark:'
       path: test/oj/range_affine_range_sum.test.cpp
       title: Segment Tree (Range Affine and Range Sum with Modint)
@@ -301,13 +307,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/oj/vertex_add_path_sum.test.cpp
       title: Vertex Add Path Sum (Euler Tour ver.)
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/oj/vertex_add_path_sum_2.test.cpp
       title: Vertex Add Path Sum (Heavy Light Decomposition ver.)
     - icon: ':heavy_check_mark:'
       path: test/oj/vertex_add_subtree_sum.test.cpp
       title: Vertex Add Subtree Sum (Euler Tour ver.)
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/oj/vertex_add_subtree_sum_2.test.cpp
       title: Vertex Add Subtree Sum (Heavy Light Decomposition ver.)
   - name: test/yukicoder

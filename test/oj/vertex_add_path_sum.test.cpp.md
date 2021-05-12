@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: atcoder/internal_bit.hpp
     title: atcoder/internal_bit.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: atcoder/segtree.hpp
     title: atcoder/segtree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: snow/graph/template.hpp
     title: Graph template
   - icon: ':heavy_check_mark:'
@@ -20,19 +20,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour.hpp
     title: Euler Tour
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: snow/io/helper.hpp
     title: snow/io/helper.hpp
   - icon: ':heavy_check_mark:'
     path: snow/monoids/min.hpp
     title: snow/monoids/min.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: snow/monoids/plus.hpp
     title: snow/monoids/plus.hpp
   - icon: ':heavy_check_mark:'
     path: snow/utils/pair-wrapper.hpp
     title: snow/utils/pair-wrapper.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: snow/utils/seg-wrapper.hpp
     title: snow/utils/seg-wrapper.hpp
   _extendedRequiredBy: []

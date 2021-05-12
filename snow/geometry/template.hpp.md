@@ -122,17 +122,17 @@ data:
   isVerificationFile: false
   path: snow/geometry/template.hpp
   requiredBy:
+  - snow/geometry/area.hpp
   - snow/geometry/convex-hull.hpp
   - snow/geometry/ccw.hpp
   - snow/geometry/rotating-calipers.hpp
-  - snow/geometry/area.hpp
   timestamp: '2021-04-24 10:08:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj/CGL_4_B.test.cpp
   - test/aoj/CGL_3_A.test.cpp
-  - test/aoj/CGL_1_C.test.cpp
+  - test/aoj/CGL_4_B.test.cpp
   - test/aoj/CGL_4_A.test.cpp
+  - test/aoj/CGL_1_C.test.cpp
 documentation_of: snow/geometry/template.hpp
 layout: document
 redirect_from:

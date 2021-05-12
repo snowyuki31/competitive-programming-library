@@ -30,7 +30,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour.hpp
     title: Euler Tour
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: snow/graph/tree/heavy-light-decomposition.hpp
     title: Heavy Light Decomposition
   - icon: ':warning:'
@@ -49,7 +49,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/oj/lowest_common_ancestor_1.test.cpp
     title: Lowest Common Ancestor (Euler Tour ver.)
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/oj/lowest_common_ancestor_2.test.cpp
     title: Lowest Common Ancestor (Heavy Light Decomposition ver.)
   - icon: ':heavy_check_mark:'
@@ -58,13 +58,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_path_sum.test.cpp
     title: Vertex Add Path Sum (Euler Tour ver.)
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/oj/vertex_add_path_sum_2.test.cpp
     title: Vertex Add Path Sum (Heavy Light Decomposition ver.)
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_subtree_sum.test.cpp
     title: Vertex Add Subtree Sum (Euler Tour ver.)
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/oj/vertex_add_subtree_sum_2.test.cpp
     title: Vertex Add Subtree Sum (Heavy Light Decomposition ver.)
   - icon: ':heavy_check_mark:'
@@ -73,9 +73,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1065.test.cpp
     title: Dijkstra (decimal floating point ver.)
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     document_title: Graph template
     links: []
@@ -120,32 +120,32 @@ data:
   isVerificationFile: false
   path: snow/graph/template.hpp
   requiredBy:
-  - snow/graph/topological-sort.hpp
-  - snow/graph/shortest-path/warshall-floyd.hpp
-  - snow/graph/shortest-path/dijkstra.hpp
-  - snow/graph/shortest-path/bellman-ford.hpp
-  - snow/graph/tree/euler-tour-subtree.hpp
-  - snow/graph/tree/euler-tour.hpp
-  - snow/graph/tree/diameter.hpp
   - snow/graph/tree/heavy-light-decomposition.hpp
-  - snow/graph/tree/rerooting.hpp
-  - snow/graph/tree/euler-tour-path.hpp
   - snow/graph/tree/euler-tour-lca.hpp
+  - snow/graph/tree/euler-tour.hpp
+  - snow/graph/tree/euler-tour-path.hpp
+  - snow/graph/tree/euler-tour-subtree.hpp
+  - snow/graph/tree/diameter.hpp
+  - snow/graph/tree/rerooting.hpp
+  - snow/graph/topological-sort.hpp
+  - snow/graph/shortest-path/bellman-ford.hpp
+  - snow/graph/shortest-path/dijkstra.hpp
+  - snow/graph/shortest-path/warshall-floyd.hpp
   timestamp: '2021-04-04 03:29:57+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/yukicoder/1065.test.cpp
-  - test/yukicoder/0517.test.cpp
-  - test/oj/lowest_common_ancestor_1.test.cpp
-  - test/oj/vertex_add_path_sum_2.test.cpp
-  - test/oj/vertex_add_path_sum.test.cpp
   - test/oj/vertex_add_subtree_sum_2.test.cpp
-  - test/oj/lowest_common_ancestor_2.test.cpp
   - test/oj/tree_diameter.test.cpp
   - test/oj/vertex_add_subtree_sum.test.cpp
+  - test/oj/vertex_add_path_sum_2.test.cpp
+  - test/oj/lowest_common_ancestor_1.test.cpp
+  - test/oj/lowest_common_ancestor_2.test.cpp
+  - test/oj/vertex_add_path_sum.test.cpp
   - test/aoj/GRL_1_A.test.cpp
-  - test/aoj/GRL_1_B.test.cpp
   - test/aoj/GRL_1_C.test.cpp
+  - test/aoj/GRL_1_B.test.cpp
+  - test/yukicoder/0517.test.cpp
+  - test/yukicoder/1065.test.cpp
 documentation_of: snow/graph/template.hpp
 layout: document
 redirect_from:

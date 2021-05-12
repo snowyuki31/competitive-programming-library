@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: snow/graph/template.hpp
     title: Graph template
   _extendedRequiredBy: []
@@ -67,8 +67,8 @@ data:
   timestamp: '2021-04-04 03:29:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/1065.test.cpp
   - test/aoj/GRL_1_A.test.cpp
+  - test/yukicoder/1065.test.cpp
 documentation_of: snow/graph/shortest-path/dijkstra.hpp
 layout: document
 redirect_from:

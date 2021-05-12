@@ -55,8 +55,8 @@ data:
   timestamp: '2021-04-21 02:54:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/1035.test.cpp
   - test/aoj/DPL_5_E.test.cpp
+  - test/yukicoder/1035.test.cpp
 documentation_of: snow/math/binomial.hpp
 layout: document
 title: "Binomial Coefficient - $\\binom{n}{k} \\bmod{p}$ \u524D\u51E6\u7406$O(n)$,\

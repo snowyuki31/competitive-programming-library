@@ -15,18 +15,18 @@ data:
     title: Matrix template
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1327
-    document_title: Matrix
+    PROBLEM: https://judge.yosupo.jp/problem/matrix_product
+    document_title: Matrix Product
     links:
-    - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1327
-  bundledCode: "#line 1 \"test/aoj/1327.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1327\"\
-    \n#include <iostream>\n#include <vector>\n#line 2 \"snow/math/matrix.hpp\"\n#include\
-    \ <cassert>\n#line 5 \"snow/math/matrix.hpp\"\n#include <utility>\n\nnamespace\
+    - https://judge.yosupo.jp/problem/matrix_product
+  bundledCode: "#line 1 \"test/oj/matrix_product.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/matrix_product\"\
+    \n#include <iostream>\n#line 2 \"snow/math/matrix.hpp\"\n#include <cassert>\n\
+    #line 4 \"snow/math/matrix.hpp\"\n#include <vector>\n#include <utility>\n\nnamespace\
     \ snow {\n\n/**\n * @brief Matrix template\n * \n * @tparam T \n */\ntemplate<\
     \ typename T >\nstruct Matrix{\n    std::vector<std::vector<T>> mat;\n    constexpr\
     \ Matrix(int N = 1, int M = 1, T val = 0) noexcept : mat(N, std::vector<T>(M,\
@@ -267,48 +267,46 @@ data:
     \ntemplate <class> struct is_dynamic_modint : public std::false_type {};\ntemplate\
     \ <int id>\nstruct is_dynamic_modint<dynamic_modint<id>> : public std::true_type\
     \ {};\n\ntemplate <class T>\nusing is_dynamic_modint_t = std::enable_if_t<is_dynamic_modint<T>::value>;\n\
-    \n}  // namespace internal\n\n}  // namespace atcoder\n\n\n#line 6 \"test/aoj/1327.test.cpp\"\
-    \n\n/**\n * @brief Matrix\n * \n */\nint main(){\n    while(1){\n        int N,\
-    \ M, A, B, C, T;\n        std::cin >> N >> M >> A >> B >> C >> T;\n        if(N\
-    \ == 0) break;\n        \n        using mint = atcoder::modint;\n\n        mint::set_mod(M);\n\
-    \        std::vector<mint> init(N);\n        for(int i = 0; i < N; ++i){\n   \
-    \         int tmp;\n            std::cin >> tmp;\n            init[i] = tmp;\n\
-    \        }\n\n        std::vector<std::vector<mint>> f(N, std::vector<mint>(N));\n\
-    \        for(int i = 0; i < N; ++i){\n            if(i >= 1) f[i][i - 1] = A;\n\
-    \            f[i][i] = B;\n            if(i + 1 < N) f[i][i + 1] = C;\n      \
-    \  }\n\n        snow::Matrix mat(f);\n        snow::Matrix ret = mat.pow(T);\n\
-    \n        std::vector<mint> ans = ret * init;\n        \n        std::cout <<\
-    \ ans[0].val();\n        for(int i = 1; i < N; ++i) std::cout << ' ' << ans[i].val();\n\
-    \        std::cout << '\\n';\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1327\"\
-    \n#include <iostream>\n#include <vector>\n#include \"snow/math/matrix.hpp\"\n\
-    #include \"atcoder/modint\"\n\n/**\n * @brief Matrix\n * \n */\nint main(){\n\
-    \    while(1){\n        int N, M, A, B, C, T;\n        std::cin >> N >> M >> A\
-    \ >> B >> C >> T;\n        if(N == 0) break;\n        \n        using mint = atcoder::modint;\n\
-    \n        mint::set_mod(M);\n        std::vector<mint> init(N);\n        for(int\
-    \ i = 0; i < N; ++i){\n            int tmp;\n            std::cin >> tmp;\n  \
-    \          init[i] = tmp;\n        }\n\n        std::vector<std::vector<mint>>\
-    \ f(N, std::vector<mint>(N));\n        for(int i = 0; i < N; ++i){\n         \
-    \   if(i >= 1) f[i][i - 1] = A;\n            f[i][i] = B;\n            if(i +\
-    \ 1 < N) f[i][i + 1] = C;\n        }\n\n        snow::Matrix mat(f);\n       \
-    \ snow::Matrix ret = mat.pow(T);\n\n        std::vector<mint> ans = ret * init;\n\
-    \        \n        std::cout << ans[0].val();\n        for(int i = 1; i < N; ++i)\
-    \ std::cout << ' ' << ans[i].val();\n        std::cout << '\\n';\n    }\n}"
+    \n}  // namespace internal\n\n}  // namespace atcoder\n\n\n#line 5 \"test/oj/matrix_product.test.cpp\"\
+    \nusing mint = atcoder::modint998244353;\n\n/**\n * @brief Matrix Product\n *\
+    \ \n */\nint main() {\n    int N, M, K;\n    std::cin >> N >> M >> K;\n    std::vector<std::vector<mint>>\
+    \ A(N, std::vector<mint>(M));\n    std::vector<std::vector<mint>> B(M, std::vector<mint>(K));\n\
+    \    for (int i = 0; i < N; ++i){\n        for (int j = 0; j < M; ++j){\n    \
+    \        int t;\n            std::cin >> t;\n            A[i][j] = t;\n      \
+    \  }\n    }\n    for (int j = 0; j < M; ++j){\n        for (int k = 0; k < K;\
+    \ ++k){\n            int t;\n            std::cin >> t;\n            B[j][k] =\
+    \ t;\n        }\n    }\n    snow::Matrix<mint> a(A), b(B);\n\n    auto ret = a\
+    \ * b;\n\n    for(int i = 0; i < N; ++i){\n        std::cout << ret[i][0].val();\n\
+    \        for(int k = 0; k < K; ++k) if(k) std::cout << \" \" << ret[i][k].val();\n\
+    \        std::cout << '\\n';\n    }\n    \n    return 0;\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/matrix_product\"\n#include\
+    \ <iostream>\n#include \"snow/math/matrix.hpp\"\n#include \"atcoder/modint\"\n\
+    using mint = atcoder::modint998244353;\n\n/**\n * @brief Matrix Product\n * \n\
+    \ */\nint main() {\n    int N, M, K;\n    std::cin >> N >> M >> K;\n    std::vector<std::vector<mint>>\
+    \ A(N, std::vector<mint>(M));\n    std::vector<std::vector<mint>> B(M, std::vector<mint>(K));\n\
+    \    for (int i = 0; i < N; ++i){\n        for (int j = 0; j < M; ++j){\n    \
+    \        int t;\n            std::cin >> t;\n            A[i][j] = t;\n      \
+    \  }\n    }\n    for (int j = 0; j < M; ++j){\n        for (int k = 0; k < K;\
+    \ ++k){\n            int t;\n            std::cin >> t;\n            B[j][k] =\
+    \ t;\n        }\n    }\n    snow::Matrix<mint> a(A), b(B);\n\n    auto ret = a\
+    \ * b;\n\n    for(int i = 0; i < N; ++i){\n        std::cout << ret[i][0].val();\n\
+    \        for(int k = 0; k < K; ++k) if(k) std::cout << \" \" << ret[i][k].val();\n\
+    \        std::cout << '\\n';\n    }\n    \n    return 0;\n}"
   dependsOn:
   - snow/math/matrix.hpp
   - atcoder/modint.hpp
   - atcoder/internal_math.hpp
   - atcoder/internal_type_traits.hpp
   isVerificationFile: true
-  path: test/aoj/1327.test.cpp
+  path: test/oj/matrix_product.test.cpp
   requiredBy: []
   timestamp: '2021-05-13 03:29:26+09:00'
-  verificationStatus: TEST_ACCEPTED
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: test/aoj/1327.test.cpp
+documentation_of: test/oj/matrix_product.test.cpp
 layout: document
 redirect_from:
-- /verify/test/aoj/1327.test.cpp
-- /verify/test/aoj/1327.test.cpp.html
-title: Matrix
+- /verify/test/oj/matrix_product.test.cpp
+- /verify/test/oj/matrix_product.test.cpp.html
+title: Matrix Product
 ---

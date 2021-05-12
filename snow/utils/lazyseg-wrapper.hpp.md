@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: atcoder/internal_bit.hpp
     title: atcoder/internal_bit.hpp
   - icon: ':heavy_check_mark:'
@@ -120,10 +120,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/range_affine_range_sum.test.cpp
-  - test/aoj/DSL_2_H.test.cpp
-  - test/aoj/DSL_2_G.test.cpp
   - test/aoj/DSL_2_F.test.cpp
+  - test/aoj/DSL_2_G.test.cpp
   - test/aoj/DSL_2_I.test.cpp
+  - test/aoj/DSL_2_H.test.cpp
 documentation_of: snow/utils/lazyseg-wrapper.hpp
 layout: document
 redirect_from:

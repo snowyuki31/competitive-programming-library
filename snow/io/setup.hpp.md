@@ -33,8 +33,8 @@ data:
   timestamp: '2021-04-21 03:38:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/1065.test.cpp
   - test/aoj/CGL_4_B.test.cpp
+  - test/yukicoder/1065.test.cpp
 documentation_of: snow/io/setup.hpp
 layout: document
 redirect_from:

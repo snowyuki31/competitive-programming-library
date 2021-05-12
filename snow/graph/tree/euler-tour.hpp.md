@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: snow/graph/template.hpp
     title: Graph template
   _extendedRequiredBy:
@@ -91,15 +91,15 @@ data:
   isVerificationFile: false
   path: snow/graph/tree/euler-tour.hpp
   requiredBy:
-  - snow/graph/tree/euler-tour-subtree.hpp
-  - snow/graph/tree/euler-tour-path.hpp
   - snow/graph/tree/euler-tour-lca.hpp
+  - snow/graph/tree/euler-tour-path.hpp
+  - snow/graph/tree/euler-tour-subtree.hpp
   timestamp: '2021-04-04 03:29:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/oj/vertex_add_subtree_sum.test.cpp
   - test/oj/lowest_common_ancestor_1.test.cpp
   - test/oj/vertex_add_path_sum.test.cpp
-  - test/oj/vertex_add_subtree_sum.test.cpp
 documentation_of: snow/graph/tree/euler-tour.hpp
 layout: document
 redirect_from:

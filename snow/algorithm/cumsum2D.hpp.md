@@ -24,8 +24,10 @@ data:
     \            }\n        }\n\n        /**\n         * @brief get cumsum [sx, gx),\
     \ [sy, gy)\n         */\n        T get(int sx, int sy, int gx, int gy) const {\n\
     \            return _data[gx][gy] - _data[sx][gy] - _data[gx][sy] + _data[sx][sy];\n\
-    \        }\n\n    private:\n        int H, W;\n        std::vector<std::vector<T>>\
-    \ _data;\n};\n\n} // namespace snow\n"
+    \        }\n\n        std::vector<T> &operator[](int i) { return _data[i]; }\n\
+    \        const std::vector<T> &operator[](int i) const { return _data[i]; }\n\n\
+    \    private:\n        int H, W;\n        std::vector<std::vector<T>> _data;\n\
+    };\n\n} // namespace snow\n"
   code: "#pragma once\n\n#include <vector>\n\nnamespace snow {\n\n/**\n * @brief Cumulative\
     \ Sum (2D)\n */\ntemplate < typename T >\nstruct Cumsum2D {\n    public:\n   \
     \     Cumsum2D(std::vector<std::vector<T>> const& data) : H(data.size()), W(data.front().size()),\
@@ -37,13 +39,15 @@ data:
     \                }\n            }\n        }\n\n        /**\n         * @brief\
     \ get cumsum [sx, gx), [sy, gy)\n         */\n        T get(int sx, int sy, int\
     \ gx, int gy) const {\n            return _data[gx][gy] - _data[sx][gy] - _data[gx][sy]\
-    \ + _data[sx][sy];\n        }\n\n    private:\n        int H, W;\n        std::vector<std::vector<T>>\
+    \ + _data[sx][sy];\n        }\n\n        std::vector<T> &operator[](int i) { return\
+    \ _data[i]; }\n        const std::vector<T> &operator[](int i) const { return\
+    \ _data[i]; }\n\n    private:\n        int H, W;\n        std::vector<std::vector<T>>\
     \ _data;\n};\n\n} // namespace snow"
   dependsOn: []
   isVerificationFile: false
   path: snow/algorithm/cumsum2D.hpp
   requiredBy: []
-  timestamp: '2021-04-22 02:05:45+09:00'
+  timestamp: '2021-05-13 03:29:26+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj/0560.test.cpp
