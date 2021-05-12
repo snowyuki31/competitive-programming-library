@@ -30,6 +30,9 @@ struct Cumsum2D {
             return _data[gx][gy] - _data[sx][gy] - _data[gx][sy] + _data[sx][sy];
         }
 
+        std::vector<T> &operator[](int i) { return _data[i]; }
+        const std::vector<T> &operator[](int i) const { return _data[i]; }
+
     private:
         int H, W;
         std::vector<std::vector<T>> _data;

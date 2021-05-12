@@ -1,4 +1,5 @@
 #pragma once
+#include <cassert>
 #include <iostream>
 #include <vector>
 #include <utility>
@@ -13,7 +14,7 @@ namespace snow {
 template< typename T >
 struct Matrix{
     std::vector<std::vector<T>> mat;
-    constexpr Matrix(int n = 1, int m = 1, T v = 0) noexcept : mat(n, std::vector<T>(m, v)) {}
+    constexpr Matrix(int N = 1, int M = 1, T val = 0) noexcept : mat(N, std::vector<T>(M, val)) {}
     constexpr Matrix(std::vector<std::vector<T>> v) noexcept: mat(v) {}
 
     size_t size() const { return mat.size(); }
@@ -24,50 +25,52 @@ struct Matrix{
     constexpr Matrix operator*(const Matrix &A) const noexcept { return Matrix(*this) *= A; }
 
     constexpr Matrix& operator+=(const Matrix &A) noexcept{
-        auto [n, m] = A.shape();
-        for (int i = 0; i < (int)n; ++i)
-            for (int j = 0; j < (int)m; ++j)
+        auto [N, M] = A.shape();
+        for (int i = 0; i < (int)N; ++i)
+            for (int j = 0; j < (int)M; ++j)
                 mat[i][j] += A[i][j];
         return *this;
     }
 
     constexpr Matrix& operator-=(const Matrix &A) noexcept{
-        auto [n, m] = A.shape();
-        for (int i = 0; i < (int)n; ++i)
-            for (int j = 0; j < (int)m; ++j)
+        auto [N, M] = A.shape();
+        for (int i = 0; i < (int)N; ++i)
+            for (int j = 0; j < (int)M; ++j)
                 mat[i][j] -= A[i][j];
         return *this;
     }
 
     constexpr Matrix& operator*=(const Matrix &A) noexcept{
-        auto [n, m] = A.shape();
-        Matrix<T> res(n, m);
-        for (int i = 0; i < (int)n; ++i) 
-            for (int j = 0; j < (int)m; ++j)
-                for (int k = 0; k < (int)A.size(); ++k) 
-                    res[i][j] += mat[i][k] * A[k][j];
+        auto [N, M] = this->shape();
+        auto [M_, K] = A.shape();
+        assert(M == M_);
+        Matrix<T> res(N, K);
+        for (int i = 0; i < (int)N; ++i) 
+            for (int j = 0; j < (int)M; ++j)
+                for (int k = 0; k < (int)K; ++k) 
+                    res[i][k] += mat[i][j] * A[j][k];
         mat = res.mat;
         return *this;
     }
 
     constexpr std::vector<T> operator*(const std::vector<T> &v) noexcept{
-        auto [n, m] = shape();
-        std::vector<T> ret(n);
-        for(int i = 0; i < (int)n; ++i)
-            for(int j = 0; j < (int)m; ++j)
+        auto [N, M] = shape();
+        std::vector<T> ret(N);
+        for(int i = 0; i < (int)N; ++i)
+            for(int j = 0; j < (int)M; ++j)
                 ret[i] += mat[i][j] * v[j];
         return ret;
     }
 
-    Matrix<T> pow(long long N) noexcept{
-        auto [n, m] = shape();
-        Matrix<T> res(n, m);
+    Matrix<T> pow(long long X) noexcept{
+        auto [N, M] = this->shape();
+        Matrix<T> res(N, M);
         Matrix<T> B(mat);
         for (int i = 0; i < (int)mat.size(); ++i) res[i][i] = 1;
-        while(N){
-            if(N & 1) res = res * B;
+        while(X){
+            if(X & 1) res = res * B;
             B *= B;
-            N >>= 1;
+            X >>= 1;
         }
         return res;
     }

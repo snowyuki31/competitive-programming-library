@@ -20,7 +20,7 @@ struct SimpleSieve {
             return !!prime[x];
         }
 
-        std::vector<int> enumerate_primes() {
+        std::vector<int> enumerate_primes() const {
             std::vector<int> prime_list;
             prime_list.reserve(std::count(prime.begin(), prime.end(), true));
             for(int i = 0; i < prime.size(); ++i) if(prime[i]) prime_list.emplace_back(i);
@@ -29,7 +29,7 @@ struct SimpleSieve {
 
     protected:
         int _n;
-        std::vector<bool> prime;
+        std::vector<char> prime;
 };
 
 } // namespace snow

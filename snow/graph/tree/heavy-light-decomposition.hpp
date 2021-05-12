@@ -14,14 +14,14 @@ namespace snow {
 template < typename T = int >
 struct HeavyLightDecomposition {
     public:
-        HeavyLightDecomposition(snow::Graph<T>& G, int root) : N(G.size()), sz(N), in(N), par(N), next(N) {
+        HeavyLightDecomposition(snow::Graph<T>& G, int root) : N(G.size()), sz(N), in(N), par(N), next(N), depth(N) {
             dfs_sz(G, root);
             next[root] = root;
             dfs_hld(G, root);
         }
 
         /**
-         * @brief Get vertex id
+         * @brief Get vertex id.
          * @param v 
          */
         int get_id(int v){
@@ -29,15 +29,23 @@ struct HeavyLightDecomposition {
         }
 
         /**
-         * @brief Get a segment of id corresponding to the subtree of v
-         * @param v 
+         * @brief Get Edge id.
          */
-        std::pair<int, int> get_subtree(int v){
-            return {in[v], in[v] + sz[v]};
+        int get_edge_id(int u, int v){
+            if(depth[u] > depth[v]) swap(u, v);
+            return get_id(v);
         }
 
         /**
-         * @brief Get Lowest Common Ancestor of (u, v)
+         * @brief Get depth.
+         * 
+         */
+        int get_depth(int u){
+            return depth[u];
+        }
+
+        /**
+         * @brief Get Lowest Common Ancestor of (u, v).
          * 
          * @param u 
          * @param v 
@@ -51,7 +59,15 @@ struct HeavyLightDecomposition {
         }
 
         /**
-         * @brief Get segments of id corresponding to the path from u to v inclusive
+         * @brief Get a segment of id corresponding to the subtree of v.
+         * @param v 
+         */
+        std::pair<int, int> get_subtree(int v){
+            return {in[v], in[v] + sz[v]};
+        }
+
+        /**
+         * @brief Get segments of id corresponding to the path from u to v inclusive.
          * @param u
          * @param v
          * @return vector<pair<int, int>> : set of segments [l_i, r_i)
@@ -69,7 +85,7 @@ struct HeavyLightDecomposition {
         }
 
         /**
-         * @brief Get segments of id corresponding to the edge-wise path from u to v inclusive
+         * @brief Get segments of id corresponding to the edge-wise path from u to v inclusive.
          * @param u
          * @param v
          * @return vector<pair<int, int>> : set of segments [l_i, r_i)
@@ -97,9 +113,11 @@ struct HeavyLightDecomposition {
         std::vector<int> out;
         std::vector<int> par;
         std::vector<int> next; // last vertex of heavy chain of x
+        std::vector<int> depth;
 
         void dfs_sz(snow::Graph<T>& G, int v, int p = -1){
             sz[v] = 1;
+            if(p != -1) depth[v] = depth[p] + 1;
             for(auto &e : G[v]) if(e.to != p) {
                 dfs_sz(G, e.to, v);
                 sz[v] += sz[e.to];
