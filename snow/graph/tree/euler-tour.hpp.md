@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: snow/graph/template.hpp
     title: Graph template
   _extendedRequiredBy:

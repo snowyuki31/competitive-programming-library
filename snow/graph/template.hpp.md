@@ -30,7 +30,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/euler-tour.hpp
     title: Euler Tour
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: snow/graph/tree/heavy-light-decomposition.hpp
     title: Heavy Light Decomposition
   - icon: ':warning:'
@@ -49,7 +49,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/oj/lowest_common_ancestor_1.test.cpp
     title: Lowest Common Ancestor (Euler Tour ver.)
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/oj/lowest_common_ancestor_2.test.cpp
     title: Lowest Common Ancestor (Heavy Light Decomposition ver.)
   - icon: ':heavy_check_mark:'
@@ -58,13 +58,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_path_sum.test.cpp
     title: Vertex Add Path Sum (Euler Tour ver.)
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_path_sum_2.test.cpp
     title: Vertex Add Path Sum (Heavy Light Decomposition ver.)
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_subtree_sum.test.cpp
     title: Vertex Add Subtree Sum (Euler Tour ver.)
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_subtree_sum_2.test.cpp
     title: Vertex Add Subtree Sum (Heavy Light Decomposition ver.)
   - icon: ':heavy_check_mark:'
@@ -73,9 +73,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1065.test.cpp
     title: Dijkstra (decimal floating point ver.)
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: Graph template
     links: []
@@ -132,7 +132,7 @@ data:
   - snow/graph/shortest-path/dijkstra.hpp
   - snow/graph/shortest-path/warshall-floyd.hpp
   timestamp: '2021-04-04 03:29:57+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/vertex_add_subtree_sum_2.test.cpp
   - test/oj/tree_diameter.test.cpp

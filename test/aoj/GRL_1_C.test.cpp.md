@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/graph/shortest-path/warshall-floyd.hpp
     title: Warshall-Floyd
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: snow/graph/template.hpp
     title: Graph template
   _extendedRequiredBy: []

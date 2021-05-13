@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/internal_bit.hpp
     title: atcoder/internal_bit.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/segtree.hpp
     title: atcoder/segtree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: snow/graph/template.hpp
     title: Graph template
   - icon: ':heavy_check_mark:'
@@ -20,13 +20,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: snow/monoids/min.hpp
     title: snow/monoids/min.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: snow/monoids/plus.hpp
     title: snow/monoids/plus.hpp
   - icon: ':heavy_check_mark:'
     path: snow/utils/pair-wrapper.hpp
     title: snow/utils/pair-wrapper.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: snow/utils/seg-wrapper.hpp
     title: snow/utils/seg-wrapper.hpp
   _extendedRequiredBy: []

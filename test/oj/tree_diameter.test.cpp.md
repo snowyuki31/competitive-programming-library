@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: snow/graph/template.hpp
     title: Graph template
   - icon: ':heavy_check_mark:'
     path: snow/graph/tree/diameter.hpp
     title: "Diameter (\u6728\u306E\u76F4\u5F84)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: snow/io/helper.hpp
     title: snow/io/helper.hpp
   _extendedRequiredBy: []

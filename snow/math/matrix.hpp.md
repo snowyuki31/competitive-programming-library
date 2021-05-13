@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj/1327.test.cpp
     title: Matrix
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/oj/matrix_product.test.cpp
     title: Matrix Product
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: Matrix template
     links: []
@@ -96,7 +96,7 @@ data:
   requiredBy:
   - snow/math/gauss_jordan.hpp
   timestamp: '2021-05-13 03:29:26+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/matrix_product.test.cpp
   - test/aoj/1327.test.cpp

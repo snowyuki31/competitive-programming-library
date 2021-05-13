@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: snow/graph/template.hpp
     title: Graph template
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/oj/lowest_common_ancestor_2.test.cpp
     title: Lowest Common Ancestor (Heavy Light Decomposition ver.)
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_path_sum_2.test.cpp
     title: Vertex Add Path Sum (Heavy Light Decomposition ver.)
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_subtree_sum_2.test.cpp
     title: Vertex Add Subtree Sum (Heavy Light Decomposition ver.)
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: Heavy Light Decomposition
     links:
@@ -50,7 +50,7 @@ data:
     \ root);\n        }\n\n        /**\n         * @brief Get vertex id.\n       \
     \  * @param v \n         */\n        int get_id(int v){\n            return in[v];\n\
     \        }\n\n        /**\n         * @brief Get Edge id.\n         */\n     \
-    \   int get_edge_id(int u, int v){\n            if(depth[u] > depth[v]) swap(u,\
+    \   int get_edge_id(int u, int v){\n            if(depth[u] > depth[v]) std::swap(u,\
     \ v);\n            return get_id(v);\n        }\n\n        /**\n         * @brief\
     \ Get depth.\n         * \n         */\n        int get_depth(int u){\n      \
     \      return depth[u];\n        }\n\n        /**\n         * @brief Get Lowest\
@@ -101,7 +101,7 @@ data:
     \ root);\n        }\n\n        /**\n         * @brief Get vertex id.\n       \
     \  * @param v \n         */\n        int get_id(int v){\n            return in[v];\n\
     \        }\n\n        /**\n         * @brief Get Edge id.\n         */\n     \
-    \   int get_edge_id(int u, int v){\n            if(depth[u] > depth[v]) swap(u,\
+    \   int get_edge_id(int u, int v){\n            if(depth[u] > depth[v]) std::swap(u,\
     \ v);\n            return get_id(v);\n        }\n\n        /**\n         * @brief\
     \ Get depth.\n         * \n         */\n        int get_depth(int u){\n      \
     \      return depth[u];\n        }\n\n        /**\n         * @brief Get Lowest\
@@ -148,8 +148,8 @@ data:
   isVerificationFile: false
   path: snow/graph/tree/heavy-light-decomposition.hpp
   requiredBy: []
-  timestamp: '2021-05-13 03:29:26+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-05-13 14:45:09+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/vertex_add_subtree_sum_2.test.cpp
   - test/oj/vertex_add_path_sum_2.test.cpp

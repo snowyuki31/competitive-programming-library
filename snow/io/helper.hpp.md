@@ -18,13 +18,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_path_sum.test.cpp
     title: Vertex Add Path Sum (Euler Tour ver.)
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_path_sum_2.test.cpp
     title: Vertex Add Path Sum (Heavy Light Decomposition ver.)
   - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_subtree_sum.test.cpp
     title: Vertex Add Subtree Sum (Euler Tour ver.)
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/oj/vertex_add_subtree_sum_2.test.cpp
     title: Vertex Add Subtree Sum (Heavy Light Decomposition ver.)
   - icon: ':heavy_check_mark:'
@@ -33,9 +33,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yukicoder/1065.test.cpp
     title: Dijkstra (decimal floating point ver.)
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"snow/io/helper.hpp\"\n#include <iostream>\n#include <vector>\n\
@@ -94,7 +94,7 @@ data:
   path: snow/io/helper.hpp
   requiredBy: []
   timestamp: '2021-04-21 03:38:29+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/oj/vertex_add_subtree_sum_2.test.cpp
   - test/oj/tree_diameter.test.cpp

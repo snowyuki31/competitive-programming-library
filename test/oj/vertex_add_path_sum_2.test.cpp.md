@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/internal_bit.hpp
     title: atcoder/internal_bit.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: atcoder/segtree.hpp
     title: atcoder/segtree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: snow/graph/template.hpp
     title: Graph template
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: snow/graph/tree/heavy-light-decomposition.hpp
     title: Heavy Light Decomposition
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: snow/io/helper.hpp
     title: snow/io/helper.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: snow/monoids/plus.hpp
     title: snow/monoids/plus.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: snow/utils/seg-wrapper.hpp
     title: snow/utils/seg-wrapper.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://old.yosupo.jp/problem/vertex_add_path_sum
@@ -141,7 +141,7 @@ data:
     \ root);\n        }\n\n        /**\n         * @brief Get vertex id.\n       \
     \  * @param v \n         */\n        int get_id(int v){\n            return in[v];\n\
     \        }\n\n        /**\n         * @brief Get Edge id.\n         */\n     \
-    \   int get_edge_id(int u, int v){\n            if(depth[u] > depth[v]) swap(u,\
+    \   int get_edge_id(int u, int v){\n            if(depth[u] > depth[v]) std::swap(u,\
     \ v);\n            return get_id(v);\n        }\n\n        /**\n         * @brief\
     \ Get depth.\n         * \n         */\n        int get_depth(int u){\n      \
     \      return depth[u];\n        }\n\n        /**\n         * @brief Get Lowest\
@@ -224,8 +224,8 @@ data:
   isVerificationFile: true
   path: test/oj/vertex_add_path_sum_2.test.cpp
   requiredBy: []
-  timestamp: '2021-05-13 03:29:26+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-05-13 14:45:09+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/oj/vertex_add_path_sum_2.test.cpp
 layout: document
