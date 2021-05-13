@@ -32,7 +32,7 @@ struct HeavyLightDecomposition {
          * @brief Get Edge id.
          */
         int get_edge_id(int u, int v){
-            if(depth[u] > depth[v]) swap(u, v);
+            if(depth[u] > depth[v]) std::swap(u, v);
             return get_id(v);
         }
 
